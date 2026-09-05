@@ -1,0 +1,29 @@
+{
+  "source_directory": "/home/daxubar/python/cocktaillog_crawler/data",
+  "files": {
+    "cocktail.csv": {
+      "rows": 955,
+      "sha256": "70ac3d7e0ca68de16978a554351064109fefc0a567fca0c4cac9ea9477ff8e77"
+    },
+    "cocktail_drink.csv": {
+      "rows": 2922,
+      "sha256": "580c0e5b159f0bdaf1935f6fd9495006e2c0552366a8d44a32b5348e5b2d23a2"
+    },
+    "drink.csv": {
+      "rows": 209,
+      "sha256": "b422d817ef69de2fc5885b3452f3178c86e32c5ea9c65d818df9f1ce3ef7c637"
+    },
+    "drink_kind.csv": {
+      "rows": 139,
+      "sha256": "49b822280cf9d33b5d73fb0b1ed8af54c25a1dac5a49fc926e56e9e21078b412"
+    },
+    "technique.csv": {
+      "rows": 10,
+      "sha256": "aa6c72ea778bc681b843939a99960ea1349896964814a5dbde5c4792f2206d03"
+    },
+    "glass.csv": {
+      "rows": 19,
+      "sha256": "e0b3bb31053e39009100074b90b12b39b04c77adf259fd318efb27bd0c8e8720"
+    }
+  }
+}

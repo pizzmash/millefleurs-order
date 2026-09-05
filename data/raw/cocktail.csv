@@ -1,0 +1,956 @@
+id,name,description,alcohol,glass_id,technique_id,image
+0,ジン・トニック,ジンをベースにしたカクテルの中で、最もポピュラーなカクテル。ジンの香りとトニックの爽快感。シンプルなレシピだけに、味わいは作り手によって微妙に異なる。,度数 約 12.4 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_gin_tonic_01.jpg?v=2
+1,ニンジャ・タートル,忍者をモチーフにした亀のヒーローで1990年に公開されたアニメ「ミュータント・タートルズ」から、アメリカのバーテンダーが考えたカクテル。ジンのドライさが甘みを抑え、程良い柑橘系の甘さでアルコール感を結構感じる味わい。,度数 約 15 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ninja_turtle_01.jpg?v=2
+2,グレープバイン,甘酸っぱい柑橘系のさっぱりとしたテイストが人気のカクテル,度数 約 17 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_grapevine_01.jpg
+3,ジンリッキー,ジンの香味にライムの酸味がアクセントとなって、キレのいい爽快感がある。甘くなく、さっぱりとした味わい。,度数 約 12 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_gin_rickey_01.jpg?v=2
+4,ジン・アンド・ビターズ,使用するグラスの内側をアンゴスチュラ・ビターズで濡らしてビルドで作る。昔、イギリス海軍将校の食前酒として生まれたカクテル。ピンクジンと呼ばれる。,度数 約 40 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_gin_and_bitters_01.jpg
+5,ジューン・ブライド,,度数 強い (25度以上),3,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_june_bride_01.jpg
+6,マティーニ,別名「カクテルの王様」とも言われ、特に通に好まれる上級者向けカクテル。映画『7年目の浮気』ではマリリン・モンローが、『007』ではジェームス・ボンドが好んで飲んだカクテル。味わいは極めてドライな辛口。アルコール度数も非常に高い。,度数 強い (25度以上),1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_martini_01.jpg
+7,ギブソン,マティーニのオリーブに対して、こちらは同じレシピながらパール・オニオンを沈める。1890年代のアメリカの人気イラストレーター、チャールズ・ダナ・ギブソンに由来。やや辛口な味わい。,度数 強い (25度以上),1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_gibson_01.jpg?v=2
+8,ブルームーン,名前は数年に一度起こる満月で、「青っぽく見える月」で珍しい現象のこと。パルフェタムールのカクテルで最も有名なレシピ。パルフェタムールの甘さが、ジンとレモンの酸味によって引き締められたような味わい。ジンの爽やかな香りとスイート・バイオレットの豊かな香りが楽しめる。,度数 約 26 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_blue_moon_01.jpg
+9,スカイ・アンド・シー,綺麗な青色で、ジンの強いアルコール感を感じた後からパイナップルジュースの味が感じられる。,度数 約 26 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sky_and_sea_01.jpg
+10,ホワイト・レディ,アルコール、甘み、酸味のバランスが抜群。度数が高いわりにとっても口当たりが良くて、すっきりとした味わい。ジンをブランデーにかえると「サイドカー」、ウォッカにかえると「バラライカ」、ラムにかえると「XYZ」になる。,度数 約 30 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_white_lady_01.jpg
+11,ブルー・レディ,ホワイト・レディのベースをブルーキュラソーにし、卵白を加えたレシピ。飲み口は非常に優しく飲みやすく、スッキリ爽やかながらも強すぎず、まろやかな味わい。,度数 約 17 %,3,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_blue_lady_01.jpg
+12,フリッパー,カンパリとアマレットの風味を感じる味わい。,度数 約 29 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_flipper-02_01.jpg
+13,ペル・メル,さっぱりとした口当たり。,度数 強い (25度以上),1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_pall_mall_01.jpg
+14,ジン・フィズ,ジンの風味とレモンの酸味が合わさり、さっぱりとして爽やかな口当たりで飲みやすい。,度数 約 12 %,4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_gin_fizz_01.jpg
+15,ギムレット,ジンとライムのシンプルなカクテル。ジンの香りとライムの酸味が合わさり、甘さとキレに香りとまろやかさのバランスが魅力。1890年頃、イギリス海軍の軍医であったギムレット卿が、艦内で将校に配給されていたジンの飲み過ぎを憂慮し、健康維持のためにライム・ジュースを混ぜて飲むことを提唱したことが起源。砂糖が入ったコーディアルライムジュースを使うと甘めに仕上がる。果汁100%のライムジュースだと、爽やかな香りが際立つ仕上がりになる。,度数 約 30 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_gimlet_01.jpg
+16,ギムレット・ハイボール,ギムレットをソーダで割ったハイボール。ジンとライムがスッキリ爽やか香り。爽やかな味わいのギムレットに炭酸が加わってさらに爽快感がアップ。,度数 普通 (9度〜24度),4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_gimlet_highball_01.jpg
+17,ジンライム,ライムの酸味とジンの風味を、そのままさっぱりと味わうことができるカクテル。カクテル言葉は「色あせぬ恋」。同じ材料でもシェイクするだけでギムレットというカクテルになる。甘いカクテルが苦手な方にはおすすめ。,度数 約 30 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_gin_and_Lime_01.jpg
+18,プリンセス・メアリー,1922年に行われたメアリー王女の結婚式の記念として、ロンドンにある「シローズクラブ」のハリー・マッケルホーン氏が考案したカクテル。クリーミーな甘口の味わいで、食後のデザートにもおすすめ。ブランデーベースの「アレキサンダー」のバリエーションカクテル。,度数 約 24 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_princess_mary_01.jpg?v=2
+19,ドマーニ～明日～,名前はイタリア語で「明日」の意味 。カンパリの苦味にアマレットの甘みとブラッド・オレンジジュースのフルーティさが加わり、飲みやすいカクテル。2005 Suntoy The Cocktail Award ロングカクテル部門 最優秀賞。山本悠可氏の作品。,度数 普通 (9度〜24度),5,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_domani_01.jpg
+20,ブライア・ローズ,名前は「眠れる森の美女」という意味。ジンの風味を感じながら甘さを感じ味わい。小池真理子氏の創作。1998年 第2回 全国 バー レディース カクテルコンクール 金賞を受賞。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_briar_rose_01.jpg
+21,スターリー・ナイト,フルーティな甘みを感じる味わい。横田智子氏の創作。1998年 第25回 N.B.A. 全国 バーテンダー 技能競技大会 総合 準優勝、創作部門 第2位を受賞。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_starry_night_01.jpg
+22,バートン・スペシャル,豊かで贅沢な風味とすっきりとドライな味わい。,度数 約 35 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_barton_special_01.jpg
+23,青い珊瑚礁,ペパーミントのグリーンを南の海に、赤いチェリーを島や珊瑚に見立てた美しいカクテル。ジンとペパーミントリキュールが絶妙にマッチした、甘く濃厚な味わい 。後味でしっかりとミントのさわやかな風味を楽しめる 。1950年 第2回オールジャパン・ドリンクス・コンクール 優勝作品。,度数 約 35 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_blue_coral_reef_01.jpg
+24,トマティーニ,ジンのドライさをトマトジュースの甘みが和らげて飲みやすい。,,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tomartini_01.jpg
+25,オーキッド,名前は蘭の花、あるいは淡紫色の意味。まろやかな口当たりで、スミレの花の香り。,度数 約 25 %,3,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_orchid_01.jpg
+26,20th・センチュリー・リミテッド,ピンクがかった美しい紫色で、酸味を感じてスッキリ爽やかな味わい。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_twentieth_century_limitted_01.jpg
+27,ローザ,きりっとした口当たりと豊かな香り。,度数 約 36 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_rosa_01.jpg
+28,ブラッディ・サム,名前はありふれたイギリス人の名から。トマトの香りとドロリとした口当たりで、塩と胡椒を加えるとピリッと引き締められた味わいになる。ウォッカベースにすると「ブラッディー・メアリー」になる。禁酒法時代のアメリカで、このトマトジュース色をしたブラッディ・サムはごまかしやすかったことから、盛んに飲まれていた。,度数 約 12 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bloody_sam_01.jpg
+29,紫水晶,名前は宝石のアメジストのこと。薄田恒氏の創作。1964年のサントリーカクテルコンペティションジンの部 優勝作品。パルフェタムールの香りが仄かに漂っている。少し甘めで飲みやすい。,度数 強い (25度以上),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_murasaki_suisho_01.jpg
+30,アリス・クイーン,程良い甘味と酸味があり、口当たりが良く、さっぱりとして飲みやすい。松本藤尾氏の創作。1958年 優勝を受賞。,,6,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_alice_queen_01.jpg
+31,スターダスト・レビュー,ドライな味わい。アルコール度数は高いが、とても爽やかで飲みやすい。庄司浩氏の創作。1996年 第20回 H.B.A. 創作 カクテル コンペティション ドライ部門 第1位を受賞。,度数 強い (25度以上),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_stardust_review_01.jpg
+32,タンカレー・プロミス,タンカレーの香り豊かな風味と程良い甘みを感じ、とても味わい深い。HBA日本ホテルバーメンズ協会 カクテルコンペティション2005 タンカレーNo.10部門 準優勝。齋藤倫生氏の創作。,度数 強い (25度以上),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tanqueray_promise_01.jpg?v=2
+33,イエロー・ラットラー,ネーミングの由来は黄色いガラガラヘビという名前。ベルモットの豊かな香りを感じ、さっぱりとした口当たり。,度数 約 17 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yellow_rattler_01.jpg
+34,トム・コリンズ,イギリス・ロンドンのバーテンダーのジョン・コリンズがつくった「ジョン・コリンズ」というカクテルが元祖。ほんのり甘く、爽やかな味わい。「ジン・フィズ」と材料と作り方はほとんど同じ。,度数 普通 (9度〜24度),4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tom_collins_01.jpg
+35,フレイム・オブ・マティーニ,パルフェタムールの香りとカンパリの苦味にジンが合わさった風味が素晴らしい。甘みを感じつつも苦味もあり、ドライな味わい。堀内雅人氏の創作。1999年 ジャーディン W&S カクテル コンペティション タンカレー部門 第3位を受賞。,度数 約 31 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_flame_of_martini_01.jpg
+36,オレンジ・ブロッサム,名前は直訳すると「オレンジの花」という意味。ジンとオレンジジュースが合わさることで、爽やかな甘酸っぱさを感じる味わい。1920年代のアメリカ禁酒法時代に生まれたカクテル。闇ルートで流れた粗悪な酒で、とてもそのまま飲むことができない状態に対し、オレンジジュースを加え、なんとか飲めるようにしたカクテル。アレンジでアンゴスチュラ・アロマティック・ビターズを1 dash加えると味がより引き締まり、よりドライな味わいになる。,度数 普通 (9度〜24度),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_orange_blossom-01_01.jpg?v=2
+37,オレンジ・ブロッサム,ジンの爽やかな香りにオレンジの甘みとフルーティさを感じる味わい。スクリュー・ドライバーのベースをジンに変えたカクテル。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_orange_blossom-02_01.jpg?v=2
+38,ジン・バック,"名前に入っている""buck""には""stag""(牡鹿)の意味があり、キックの効いた酔いやすいカクテルという意味。すっきりとした飲み心地で甘みのある味わい。ジンバックの発祥のバーがロンドンにあることから、「ロンドン・バック」とも呼ばれている。",度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_gin_buck_01.jpg
+39,ブルー・デビル,シトラス系の香りが漂い、柑橘系の甘みと程良い酸味で、さっぱりとした口当たりのカクテル。,度数 約 23 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_blue_devil_01.jpg
+40,アンシャンテ,名前はフランス語で「始めまして」の意味。ライチリキュールの香りと甘みを感じながらも、さっぱりとしていて、後味でジンの風味をしっかりと感じる甘酸っぱいカクテル。銀座バーオーパの大槻健二氏の創作。,度数 約 24 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_enchante_01.jpg
+41,ブロンクス,ニューヨーク、マンハッタン島に位置するブロンクスから、名付けられたカクテル。アメリカの禁酒法時代に、密造された粗悪なジンを飲むために考えられた。オレンジとスート・ベルモットのほのかな甘みを感じながらも、ジンのキレの良い辛口さも感じる。ジンをラムに代えると「サード・レール」。卵黄を加えると「ブロンクス・ゴールド」。卵白を加えると「ブロンクス・シルバー」。,度数 約 23 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bronx-01_01.jpg
+42,ブロンクス,ニューヨーク、マンハッタン島に位置するブロンクスから、名付けられたカクテル。オレンジ系のフルーティな甘みがジンのドライさを和らげている。,度数 普通 (9度〜24度),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bronx-02_01.jpg
+43,ブロンクス・シルバー,ブロンクスはニューヨーク市内の区の名称、有名なブロンクス動物園がある。このレシピの卵白を卵黄を代えると「ブロンクス・ゴールド」になり、卵白を除くと「ブロンクス」になる。ブロンクスに卵白が加わることで、ドライさとアルコール感さが和らぎ、滑らかな舌触りになっている。,度数 約 13 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bronx_silver_01.jpg
+44,ブロンクス・ゴールド,ブロンクスはニューヨーク市内の区の名称、有名なブロンクス動物園がある。このレシピの卵黄を卵白を代えると「ブロンクス・シルバー」になり、卵黄を除くと「ブロンクス」になる。ブロンクスに卵黄が加わることで、ドライさとアルコール感さが和らぎ、甘みは感じず、濃厚さが増したコクのある味わい。,度数 約 16 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bronx_gold_01.jpg
+45,ブロンクス・テラス,「ブロンクス」からスイート・ベルモットを省き、オレンジジュースをライムジュースに変更したカクテル。甘さは無く、ライムの酸味を感じ、すっきりとした味わい。,度数 約 22 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bronx_terrace_01.jpg
+46,ブロンクス・ドライ,「ブロンクス」からスイート・ベルモットを省いたカクテル。ジンとドライ・ベルモットの辛口な組み合わせにオレンジのアクセントで、ほのかに甘さを感じ、すっきりとした味わい。,度数 約 22 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bronx_dry_01.jpg
+47,ジン・ウーロン,ジンの風味をしっかりと感じ、烏龍茶の風味がジンのアルコールの強さを和らげており、さっぱりとしていて飲みやすい。ジンの比率を多めにした方が、ジンの風味が烏龍茶の味に埋もれにくい。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_gin_oolong_01.jpg
+48,ジン・ソーダ,材料がジンとソーダだけなので、手軽に作れる。ジンの爽やかな風味をダイレクトに感じながら、炭酸の発泡感で喉越しが良い。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_gin_soda_01.jpg
+49,アビー,名前はキリスト教の大修道院の意味。オレンジの甘みは殆ど感じず、すっきりとした香りと味わい。,度数 約 22 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_abbey_01.jpg
+50,ホノルル,名前はハワイの州のホノルルから。オレンジやパイナップルやレモンのトロピカルをイメージさせるジュースをそれぞれ少しだけ加わることにより、口当たりが柔らかくなり、キリッとしたテイストで味に厚みが増している。,度数 約 35 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_honolulu-01_01.jpg
+51,ブルー・トレイン,程良い甘さとさっぱりとした味わい。「ホワイト・レディ」の材料にブルーキュラソーを1tsp.追加してシェイクしたカクテル。,度数 約 26 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_blue_train_01.jpg
+52,レッド・ライオン,名前は、ヨーロッパの家紋に、赤いライオンを模したものが多く、その名が名付けられた。名前の「Red Lion」は、イギリスではパブの目印でもある。フルーティーでさっぱりとした味わい。1933年、ロンドンで開催されたブリティッシュ・エンパイア・カクテル・コンペティションの入賞作品。,度数 約 22 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_red_lion_01.jpg
+53,テンカラット・アクセサリー,洗練された宝石のアクセサリーに例えたカクテル。タンカレー No.10のプレミアムなジンのテイストにパイナップルと青リンゴの甘みが合わさり、洗練された味わい。ジンのドライな味の中に、ほのかな甘味と酸味を感じ、味を引き立てている。キャッチコピーは、「クリスタルのきらめきを放つタンカレーの神秘。今、その光を失わず、10カラットの宝石として生まれ変わった。それは、あなたを輝かせる最高のアクセサリーです。」HBA日本ホテルバーメンズ協会 カクテルコンペティション2005 タンカレーNo.10部門 優勝。岡田一郎氏の創作。,度数 強い (25度以上),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ten_caray_accessary_01.jpg
+54,スターティング・オーバー,名前は「再出発」「新しい出発」の意味。ブランデーの芳醇な香りが漂い、ジンの切れ味によるシャープさがあり、アルコール度数の高い辛口ながらも穏やかな味。漫画『バーテンダー』に掲載されていたカクテル。,度数 約 34 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_starting_over_01.jpg
+55,ジン・コーラ,コーラの甘味の中にジンの風味を感じ、甘くて喉越しがすっきりとしたカクテル。「コーク」はコカ・コーラ社が発売する「コカ・コーラ」の愛称。コーラをコカ・コーラにすると「ジン・コーク」になる。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_gin_cola_01.jpg
+56,ベネット,名前は人名。程よい甘さと酸味の爽やかなテイストで、バランスが良い味わい。1920年代に誕生したと言われているクラシック・カクテル。ギムレットにビターズとシュガーシロップを加えたカクテル。,度数 約 26 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bennett_01.jpg
+57,ブラック・ルシアン,コーヒーリキュールの香りと甘い風味が特徴。アルコール度数の高さにも関わらず、甘口で飲みやすいカクテル。,度数 約 30 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_black_russian_01.jpg?v=2
+58,ホワイト・ルシアン,「ブラック・ルシアン」に生クリームをフロートしたバリエーション。「ブラック・ルシアン」に生クリームのクリーミーさと甘みが加わった味わい。「ルシアン」はロシア人を指す英語で、材料にウォッカが含まれていることに由来。,度数 約 30 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_white_russian_01.jpg?v=2
+59,コスモポリタン,名前は「全世界共通」や「国際人」という意味で、現在では世界的に有名になったカクテル。アメリカの大人気ドラマ「セックス・アンド・ザ・シティ」で主人公のキャリーが愛飲していたカクテルで、海外でも日本でも女性に人気。マティーニの種類のひとつ。美しい赤色が特徴的。フルーティで口当たりも良くて飲みやすく、味のバランスが取れた一杯。,度数 約 20 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cosmopolitan_01.jpg
+60,パッショネート・コスモ,瑞々しくシャープな風味に仕上がり。スタンダードカクテルの「コスモポリタン」のアレンジレシピ。,度数 強い (25度以上),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passionate_cosmo_01.jpg
+61,ベイ・ブリーズ,アメリカで人気のあるジューシーなカクテル。フルーティな味わい。ソフトドリンク感覚でとても飲みやすい。,度数 約 10 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bay_breeze_01.jpg
+62,フランボワーズ・サワー,甘酸っぱい味わい。木イチゴのリキュールのフランボワーズ・リキュールを使った代表的なカクテル。,度数 約 12 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_framboise_sour_01.jpg?v=2
+63,グランブルー,トロピカルでスッキリとした味わい。淡いピンクとブルーのグラデーション。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_grand_blue_01.jpg
+64,ホワイト・スパイダー,シンプルにウォッカとペパーミントの香りを楽しめ、気分がすっきりとする爽やかなカクテル。ベースをブランデーに帰ると「スティンガー」になる。,度数 約 30 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_white_spider_01.jpg
+65,スレッジハンマー,名前は両手で持って振り下ろす大きな金槌という意味。酒を飲みなれていないと、ガツンとくるような効きの強さから命名された。酸味があって、かなり強い口当たり。,度数 約 35 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sledgehammer_01.jpg
+66,ラクゥエル,J.M.de Sousa氏の創作。1990年 第19回 I.C.C. メキシコシティ(メキシコ)大会 アフターディナー 部門 第1位を受賞。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_raquel_01.jpg
+67,サン・エキスポ,大阪万博の時に小林省三氏の創作。1970年 J.B.A. EXPO'70 世界コクテールコン クール ロング部門 グランプリを受賞。,,5,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sun_expo_01.jpg
+68,ロシアン・コーヒー,ロシア風「玉子酒」とも言えるロシアンコーヒー。卵黄が入ることで、カスタードクリームのようなまろやかな甘味がある。ロシアでは、身体を芯まで温める飲み物として愛されている。上手に作るコツは、卵黄が固まらないようにかき混ぜながら熱いコーヒーを注ぐこと。,度数 弱い (8度以下),7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_russian_coffee_01.jpg
+69,ブルー・レディ,パルフェタムールの甘みとライムの酸味で飲みやすい。森章氏の創作。1971年 札幌 オリンピック 記念 カクテル コンペティション 優勝を受賞。,度数 約 27 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_blue_lady-02_01.jpg
+70,フリッパー,甘くフルーティな味わい。大津千絵氏の創作。1995年 第8回 N.B.A. 関東 Jr. カクテル コンペティション 優勝を受賞。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_flipper-01_01.jpg
+71,ブリーズ・アンド・アイ,高い度数を感じさせないような、すっきりと軽い飲み口。長谷川清氏の創作。1973年 H.B.C. オリジナルカクテルコンペティション 優勝。,度数 約 31 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_breeze_and_eye_01.jpg
+72,ブルーラグーン,名前は青い湖の意味。1960年にフランス・パリの「ハリーズ・バー」のバーテンダーである、アンディ・マッケンホルン氏が考案。レモンの酸味が効いたさっぱりとした味わい。カクテル言葉は「誠実な恋」。,度数 約 25 %,8,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_blue_lagoon_01.jpg
+73,ソルト・リック,名前は動物の塩なめ場、動物になめさせる岩塩のこと。ソルティ・ドッグに、トニックウォーターを加えたレシピ。グレープフルーツジュースの酸味とトニックウォーターで割るため、爽やかでさっぱりとした味わい。,度数 約 10 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_salt_lick_01.jpg
+74,ウォッカ・トニック,ウォッカとトニックの爽やかな香りとほのかな甘みで、ジントニックよりもさらにスッキリとした味わい。さっぱりしているので、料理にも合わせやすい。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_vodka_tonic_01.jpg
+75,カルーア・コーヒー・クーラー,ウォッカのアルコールを感じつつも、甘みのある濃厚なコーヒーの味わい。,度数 普通 (9度〜24度),0,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kahlua_coffee_cooler_01.jpg
+76,ブラッディ・メアリー,トマトの香りとドロリとした口当たりで、塩と胡椒を加えると、ピリッと引き締められた味わいになる。ジンベースにすると「ブラッディ・サム」になる。1921年にパリの「ニューヨークズ・バー」(1923年に「ハリーズ・ニューヨーク・バー」に改名)で誕生したといわれている。イングランド女王およびアイルランド女王であったメアリー1世(1516-1558)に由来し、カトリック復興のためにプロテスタントを迫害したため、「血まみれメアリー」と呼ばれた。,度数 約 12 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bloody_mary_01.jpg
+77,チチ,ミルキー口当たりでトロピカルな味わい。トロピカルなハワイアンカクテルの定番。「チチ」の語源は、フランス語の「シシ」で、女性用ブラウスの胸元にあるフリルのこと。後にアメリカに渡り「粋な」「カッコイイ」などの俗語として使われるようになった。トロピカルグラスが無ければロックグラスでも合う。,度数 弱い (8度以下),9,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chi_chi-01_01.jpg
+78,ソルティ・ドッグ,名前は甲板の上で塩だらけになって働く甲板員を意味するイギリスのスラング。さっぱりとした口当たりで、グラスの縁の食塩との組み合わせが絶妙。グラスの縁に付ける食塩を省くと「ブルドッグ」になる。,度数 普通 (9度〜24度),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_salty_dog_01.jpg
+79,ブルドッグ,グレープフルーツの酸味を感じる爽やかですっきりとした飲み心地で、さっぱりとしていて飲みやすいカクテル。グラスの縁に塩がついていなければ「ブルドッグ」、塩がついていれば「ソルティ・ドッグ」となる。カクテル言葉は「守りたい」。,度数 普通 (9度〜24度),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bulldog_01.jpg
+80,カミカゼ,名前は太平洋戦争における日本海軍の神風特攻隊から。味の切れ味に鋭さがあり、程良いライムの酸味で、さっぱりとした味わい。,度数 約 25 %,2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kamikaze_01.jpg
+81,カミカゼ・ショット,「カミカゼ」をシューターにしたカクテル。柑橘の風味を感じ、さっぱりとした酸味があって飲みやすい。,度数 強い (25度以上),10,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kamikaze_shot_01.jpg
+82,レッドブル・ウォッカ,味わいはほぼレッドブルで、爽やかな飲みやすいカクテル。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_red_bull_vodka_01.jpg
+83,コザック,名前は帝政ロシア騎兵隊のコザック兵の強さに匹敵するようなアルコールの強さから。芳醇なブランデーとウォッカのアルコールの強さがあり、爽やかなライムの酸味によって、すっきりとした辛口。,度数 約 25 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cossack_01.jpg
+84,ウォッカ・ソーダ,さっぱりとした味わいで、料理にも合わせやすい。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_vodka_soda_01.jpg
+85,ネイキッド・マヤ,キリッとドライなテイストの中に、さっぱりとした柑橘系の爽やかな風味を感じる味わい。中に入れたオレンジをマドラーで潰しながら飲むことにより、好みの風味に調整することができる。,度数 約 33 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_naked_maja_01.jpg
+86,ロードランナー,名前は北アメリカ大陸に生息する地上を走る鳥の名前から。杏仁豆腐のような甘くて芳しい香り。甘みがあってココナッツミルクの風味が効いている一方、しっかりとアルコール感もある。1976年、アメリカで開かれたバーテンダー協会のコンペティション優勝作品。,度数 約 27 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_roadrunner_01.jpg
+87,スクリュードライバー,名前はネジ回しの意味。1940年代、喉の渇きを癒やしたいイランの油田で働くアメリカ人技が、工具のネジ回しを使ってウオツカとオレンジジュースを混ぜて作ったのが名前の由来とされる。すっきりとした飲み口で、オレンジジュースの甘味とフルーティーな酸味を、ウォッカが引締めたような味わいで飲みやすい。甘さと酸味のバランスが良い風味。,度数 約 12 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_screw_driver_01.jpg
+88,レディ・デイ,名前はサックス奏者のレスター・ヤングがアメリカ黒人の歌姫であるビリー・ホリデイに慈愛を込めてつけた名前から。ライチリキュールの香りが漂い、甘さは感じず、程良いフルーティーな酸味で、すっきりとした味わい。,度数 約 21 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_lady_day-02_01.jpg
+89,スカイ・ダイビング,1967年に開催された全日本バーテンダー協会によるカクテル・コンペティションの優勝作品。大阪の渡辺義之氏作。澄み切った青空を連想させる美しさに、甘味と酸味のバランスがほどよく調和。,度数 約 28 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sky_diving_01.jpg?v=1
+90,サンチャゴ,ラムの産地、サンチャゴに因んでつけられたカクテル。ほのかな甘みと酸味が加わることでラムの風味を引き立てている。グレナデンシロップの甘味がラムと相性が良く、ライムの酸味が全体を引き締めている味わい。,度数 約 34 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_santiago_01.jpg
+91,ピニャ・コラーダ,カリブ発祥のトロピカルカクテル。名前はスペイン語で「裏ごししたパイナップル」という意味。甘めでトロピカルな風味を感じ、ミルキーで口当たりが良い。,度数 弱い (8度以下),9,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_pina_colada_01.jpg
+92,ブルー・ハワイ,南海の楽園・ハワイの美しい海を想わせるカクテル。ハワイで考案されたと言われている。このカクテルが流行したのは、1980年代前半。,度数 約 14 %,5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_blue_hawaii_01.jpg
+93,ロンリコ・ローズ,,度数 約 25 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ronrico_rose_01.jpg
+94,ジャック・ター,横浜の老舗バー「ウィンドジャマー」(Windjammer) オリジナルカクテル。名前は「水夫」という意味。フルーティーでなめらかな口当たり。,度数 強い (25度以上),2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_jack_tar_01_01.jpg
+95,ジャック・ター,ジャック・ターとは「水夫(船乗り)」の意味。横浜の老舗バー「ウインドジャマー ジャズ カクテル ラウンジ」オリジナルカクテル。フルーティーでなめらかな口当たりとライムの香り。本来は、ロンリコ151プルーフ(75度)のダーク・ラムをベースにし、ピーチではなくサザンカンフォートを使用し、こちらは派生レシピ。,度数 約 30 %,2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_jack_tar_02_01.jpg
+96,ブルー・ハワイアン,クリーミーな甘さ。青い海、常夏の島ハワイをイメージしたカクテル。,度数 普通 (9度〜24度),5,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_blue_hawaiian_01.jpg
+97,XYZ,名前の意味は諸説あり、最後の文字ということから「これ以上はない」という究極のカクテルという意味の説、「もう後が無い」といった意説の説、「今夜はこれで終わり」といった意味の説がある。レモンの酸味とキュラソー甘みがラムと合わさり、スッキリとした甘さとほのかな苦味で優しい飲み口。ベースをラム酒からブランデーに変更するとサイドカー、ジンに変更するとホワイトレディ、ウォッカベースがバラライカ、テキーラベースがマルガリータになる。材料の比率を変えるとマイアミになる。,度数 約 25 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_xyz_01.jpg
+98,ジャマイカ・クーラー,シンプルにコーヒーとラムを味わえる冷たいカクテル。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_jamaica_cooler_01.jpg
+99,ホット・バタード・ラム,溶けたバターのコクのある香りとラムの香りが湯気にのって立ち上がり、体が芯から温まるカクテル。,度数 普通 (9度〜24度),7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_hot_buttered_rum_01.jpg
+100,ホット・バタード・ラム・カウ,溶けたバターのコクのある香りとラムの香りが湯気にのって立ち上がり、ミルキーで甘さも感じるカクテル。,度数 普通 (9度〜24度),7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_hot_buttered_rum_cow_01.jpg
+101,ダイキリ,1896年、キューバの「ダイキリ」という鉱山で技師として働いていたアメリカ人ジェニングス・コックスが、灼熱の地で清涼感を求めてキューバの特産物であるラムにライム、砂糖、氷を入れて作ったのが始まり。ラムの風味とライムの酸味をシュガーの甘さが優しく包む。,度数 約 25 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_daiquiri_01.jpg
+102,ピンク・ダイキリ,ライムの酸味が心地良く、ラムの風味が際立っている。バカルディ社のラムを使って作ったピンク・ダイキリはバカルディと呼ばれる。,度数 約 27 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_pink_daiquiri_01.jpg
+103,ラム・トディ・バタード,蜂蜜とバターの甘みとダーク・ラムの風味が合わさったホットドリンク。,,7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_rum_toddy_buttered_01.jpg
+104,トレーダー・ビックス・コーヒー・グロッグ,ダーク・ラムのアルコールの強さをバターと生クリームが優しく包み込み、クリーミーな口当たり。,,7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_trader_vics_coffee_grog_01.jpg
+105,ソル・クバーノ,名前は「キューバの太陽」という意味。フレッシュで、軽やかな飲み心地。さわやかな苦味と酸味となったトロピカルな味わい。 神戸市「サヴォイ北野坂」の木村義久氏が考案。1980年第1回トロピカルカクテルコンテストで1位を獲得。,度数 普通 (9度〜24度),5,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sol_cubano_01.jpg
+106,バターグロッグ,ラムに林檎のフルーティさとバターのコクが加わり、甘くて暖まるカクテル。,,7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_buttergrog_01.jpg
+107,プラチナ・ブロンド,名前は「銀白色の髪の女性」の意味。コアントローの甘みが特徴的で、上品なケーキのような味わいのデザート系カクテル。,度数 約 27 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_platinum_blonde_01.jpg?v=2
+108,ムーンライト・アカサカ,レモンとスミレの香りが漂い、程良い酸味と甘さを感じながら、さっぱりとした味わい。赤坂東急ホテルオリジナルカクテル。木原均氏の創作。1973年 第2回 H.B.A. 創作 カクテル コンペティション 第2位を受賞。,度数 約 27 %,3,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_moonlight_akasaka_01.jpg
+109,ティンカー・ベル,甘く華やかで、妖精をイメージしたもの。帝国ホテル開業100周年記念のカクテル。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tinker_bell_01.jpg
+110,ラム・バック,ラムにジンジャー・エールの甘さに爽快感が加わったカクテル。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_rum_buck_01.jpg
+111,ディアボロ,爽やかな香りで、甘さ控えめのさっぱりとした口当たり。,度数 約 31 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_diabolo_01.jpg
+112,フェアリー・ウィスパー,綺麗な色で、甘さがあって飲みやすい。君島孝司氏の創作。1985年 第14回 H.B.A. 創作 カクテル コンペティション 第1位を受賞。,度数 普通 (9度〜24度),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_fairy_whisper_01.jpg
+113,ピィティ '81,トロピカルでフルーティな味わい。1981年 サントリー トロピカルカクテルのコンテストでグランプリを受賞。中島明史氏の創作。ピィティとはタヒチ語で数字の2。,度数 普通 (9度〜24度),11,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_piti_81_01.jpg
+114,エル・プレジデンテ,スぺイン語で大統領/社長という意味。メキシコにある同じ名前のホテルのオリジナルカクテル。ドライ・ベルモットの香りが漂い、オレンジキュラソーの甘みを感じながらもドライな味わい。,度数 約 34 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_el_presidente_01.jpg
+115,ブラック・デビル,マティーニのレシピにあるジンを、ホワイト・ラムに替え、ブラック・オリーブを使ったカクテル。キレのある辛口で、食前酒にぴったり。,度数 約 32 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_black_devil_01.jpg
+116,ハバナ・ビーチ,名前はラムの産地として有名なキューバの首都、ハバナが由来。フルーティで、トロピカルな味と雰囲気のカクテル。ハバナの白い砂丘とエメラルドグリーンの海をイメージしたもの。,度数 約 15 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_havana_beach_01.jpg
+117,サード・レール,ラム版の「ブロンクス」カクテルといったもので、ラムをジンに変えると「ブロンクス」になる。ベルモットの豊かな香りと味わいを感じ、程良い甘みがあって、口当たりも優しい。,度数 約 23 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_third_rail_01.jpg
+118,マヤ,名前は中米のマヤ族が築いたマヤ文明から。フルーティーでトロピカルなカクテル。,,5,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_maya_01.jpg
+119,バカルディ・ホット・ココア,ラムの甘みとホットココアのビターさとミルキーさが良く合い、身体の芯から温まるホットカクテル。,,7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bacardi_hot_cocoa_01.jpg
+120,ゾンビ・カクテル,3種類のラムの風味が重なり、とても爽やさがあって、フルーティでトロピカル感たっぷりの飲みやすさがあるものの、ロングカクテルでアルコール度数が高いため、飲みきったときの総アルコール量が多く、ちょっと危険なカクテル。映画「ティファニーで朝食を」のパーティーシーンでオードリーヘップバーンが飲んでいるカクテル。ゾンビカクテルの原型は、ドン・ビーチが1934年に経営するレストラン「ドン・ザ・ビーチコマー」のために作られた。ドンは商談の前に二日酔いを治す手助けを必要としていた男性のためにこのドリンクを作ったと言われている。この二日酔いの客は、数日後にドンのバーに戻ってきて、このドリンクのせいで旅行中ずっと「ゾンビ」になってしまったと不満を漏らしたという。ドン・ザ・ビーチコーマーは、このドリンクを提供している他の多くのバーやレストランとともに、客を一人2本までに制限しており、ドンは、その目を疑うようなアルコール度数のために、このドリンクが人を「歩く死者のように」することができると説明している。,度数 約 22 %,4,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_zombie_cocktail_01.jpg
+121,コロンブス,名前はアメリカ大陸を発見したコロンブスの名前から。フルーティで甘酸っぱく、甘い香りが漂いながらも、さっぱりとして爽やかな味わい。,度数 約 26 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_columbus_01.jpg
+122,コロンブス・カクテル,最初にライムの酸っぱさを感じ、アプリコットの甘みを感じつつも、さっぱりとした味わい。,度数 約 21 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_columbus_cocktail_01.jpg
+123,ブレイブ・ブル,コクと甘さが特徴の甘口カクテル。ブレイブ・ブルは勇敢な雄牛という意味。,度数 約 30 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_brave_bull_01.jpg
+124,ピカドール,ミキシンググラスでステアして作り、カクテルグラスに注ぐ。濃厚な香りと甘みで、芳ばしい香りのドライテイスト。ピカドールは、馬にまたがって長槍をもった闘牛士のこと。,度数 約 28 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_picador_01.jpg?v=2
+125,ジェントル・ブル,コーヒーの香ばしい香りとまろやかなテイスト。,度数 約 17 %,11,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_gentle_bull_01.jpg?v=3
+126,テキーラ・バック,さっぱりとした飲み口の中に、旨味が溢れる。,度数 約 13 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tequila_buck_01.jpg?v=2
+127,テキーニ,マティーニのベースをテキーラに変えたもの。テキーラのマティーニだからテキーニ。,度数 約 35 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tequini_01.jpg
+128,カシス・ショット,クラブでも人気のリキュールショット。カシスの風味が飲みやすくしてくれている。,度数 約 24 %,10,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cassis_shot_01.jpg
+129,マルガリータ,名前はスペイン語の女性人名。ラテンを思わせるテキーラの濃厚な風味と柑橘の酸味で、程良い甘さと酸味を感じ、すっきり爽やかで飲み口が良い。1949年にロサンゼルスのバーテンダー、ジャン・デュレッサーが考案。1949年のUSAナショナル・カクテル・コンテストで3位に入選したことで広く知られるようになった。ジャン・デュレッサーの若き日の恋人マルガリータが、狩猟場で流れ弾にあたり亡くなったのを偲んでつけられたと言われている。,度数 約 30 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_margarita_01.jpg
+130,ブルー・マルガリータ,マルガリータのホワイトキュラソーをブルーキュラソーに変えたカクテル。テキーラとブルーキュラソーの甘みにライムの酸味が加わり、キリッとした飲み口。,度数 約 26 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_blue_margarita_01.jpg
+131,ロング・マルガリータ,マルガリータのロングカクテルバージョン。程良い甘みと酸味を感じ、さっぱりとして飲みやすい。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_long_margarita_01.jpg
+132,ロング・ブルー・マルガリータ,ブルー・マルガリータのロングカクテルバージョン。綺麗な青色で程良い甘みと酸味を感じ、さっぱりとして飲みやすい。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_long_blue_margarita_01.jpg
+133,テコニック,テコニックの名前を世に知らしめたのは、メキシコオリンピック。透明感があり涼しげで、テキーラの香りをシンプルに感じれるカクテル。スッキリとして、爽快で喉越しが良い。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tequonic_01.jpg
+134,テキーラ・ギムレット,ギムレットのジンをテキーラに変えたカクテル。テキーラの風味にライムの酸味が良く合う。,度数 強い (25度以上),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tequila_gimlet_01.jpg
+135,フロストバイト,名前は凍傷の意味。甘く飲みやすい。アレキサンダーシリーズのテキーラ版。,度数 約 21 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_frostbite_01.jpg
+136,シャンギロンゴ,テキーラ独特の匂いを抑え、テキーラが苦手な人でも飲みやすい。オレンジジュースの甘さも抑えられている。「スクリュードライバー」のベースをウォッカからテキーラに替えると、シャンギロンゴになる。グレナデンシロップを沈めると「テキーラ・サンライズ」になる。アロマチック・ビターズを沈めると「ティファナ・サンライズ」になる。ガリアーノを浮かべると「カクタス・バンガー」になる。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_changuirongo_01.jpg
+137,ティファナ・サンライズ,最後に注ぐアロマティック・ビターズにより、朝焼けのようなグラデーションのカクテル。テキーラの風味があって甘さは感じず、すっきりとした味わい。アロマティック・ビターズをグレナデンシロップに変えると、「テキーラ・サンライズ」になる。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tijuana_sunrise_01.jpg
+138,テキーラ・サンライズ,メキシコ発祥のカクテルで、昇りゆく太陽と朝焼けの空が創り出す空のようなグラデーションがとても素敵なカクテル。テキーラ独特の風味とオレンジジュースの果汁感がマッチし、さっぱりとした口当たり。テキーラの風味が強めたなめ、1対4の比率ぐらいにすると、フルーティになってテキーラが苦手な人でも飲みやすい。グラスの底が丸いと、グレナデンシロップシロップが綺麗に広がり、底の赤が美しくなる。ローリング・ストーンズのボーカリスト、ミック・ジャガーが1972年頃のメキシコ公演中このカクテルを飲んで大ファンとなり、世界中に広まった。カクテル言葉は「熱烈な恋」。,度数 普通 (9度〜24度),8,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tequila_sunrise_01.jpg
+139,ニューヨーク,ニューヨークの日の出を彷彿とさせるオレンジ色の色彩の鮮やかさ。味わいは、すっきりとした切れ味のある都会的な印象。,度数 約 25 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_new_york_01.jpg
+140,スコッチ・オーレ,カルーアミルクにバランタインの甘さとほろ苦さ、奥深さがプラスされている。まろやかな味わい。,度数 普通 (9度〜24度),4,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_scotch_ole_01.jpg
+141,カリフォルニア・レモネード,かなり酸味が強いカクテル。,度数 約 13.3 %,4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_california_lemonade_01.jpg
+142,ウイスキーコーク,コーラの甘さが感じやすいので、お酒が苦手な人でも飲みやすい。,度数 約 12 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_whisky_cola_01.jpg
+143,ハイボール,名前の由来は、スコットランドのゴルフ場で当時珍しかったウイスキーソーダ割りを試している所へ、高々と打ち上げられたボールが飛び込んできて、「これがハイボールだ！」と言ったという説が一番有名。ウイスキーをソーダで割っただけの簡単カクテル。ウイスキーとソーダの比率は、ウイスキー1に対してソーダを3～4倍ほど加えるのがおすすめ。,度数 約 12 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_highball_01.jpg
+144,ワード・エイト,1898年にアメリカのマサチューセッツ州ボストン市が区制の変更で8つの区(ward)になったのを記念して作られたショートドリンク。,度数 約 21 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ward_eight_01.jpg
+145,オールド・ファッションド,アメリカンウイスキーベースのカクテル。ウイスキーベースの古典的なカクテルのひとつ。誕生は19世紀半ば。アメリカ・ケンタッキーのルイビルのバー、ペンデニス・クラブに集う競馬ファンのためにバーテンダーが考案し、古風なドリンク「トディ」に似ていたことから、「オールド・ファッションド」と名づけた。甘味と苦味のコントラストが魅力。,度数 約 32 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_old_fashioned_01.jpg
+146,ジェントルマンズ・ショコラ,直訳すると紳士のチョコレート。ウイスキーとショコラのマリアージュによる独創的なスイートカクテル。2008 Suntoy The Cocktail Award フリー作品部門の最優秀賞。江森みずほ氏の作品。,度数 約 25 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_gentlemans_chocolat_01.jpg?v=2
+147,アフィニティ,アフィニティとは、親近感、好ましい関係などの意味。イギリスを代表するスコッチ、フランスのドライ・ベルモット、イタリアのスイート・ベルモットを使い、密接な関係（affinity）から名付けれたと言われているカクテル。,度数 強い (25度以上),1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_affinity_01.jpg
+148,コットン・フラワー,飲み口はコクを感じながらも飲んだ後の爽やかな香りが心地よいカクテル。1995 Suntory Cocktail Competiton 1995カクテル・オブ・ザ・イヤー。小森谷弘氏の作品。,度数 約 25 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cotton_flower_01.jpg?v=2
+149,バウンティ・ハンター,豆乳のコクがアルコールの強さをまろやかにしている。,度数 弱い (8度以下),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bounty_hunter_01.jpg
+150,ミント・クーラー,ミントの清涼感が程よく感じられるスッキリ爽やかなカクテル。さりげないミントの清涼感を楽しむことができる。甘みがないやや辛口なのも大人のクーラー・スタイル。,度数 約 10 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mint_cooler_01.jpg
+151,アイリッシュ・ローズ,名前は「アイルランドの薔薇」の意味。癖がなく、繊細な香り。甘酸っぱく癖がなく、爽やかで飲みやすい味わい。,度数 約 28 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_irish_rose_01.jpg
+152,ウイスキー・トニック,ハイボールよりもトニックの苦味や甘みが効いたさっぱりとした味わいで、爽やかな喉越し。,度数 約 12 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_whisky_tonic_01.jpg
+153,スコッチ・コリンズ,ロンドンの伝説のバー「ジョンコリンズ」が作ったカクテル。甘酸っぱくてすっきりした味わいのカクテル。,度数 普通 (9度〜24度),4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_scotch_collins_01.jpg
+154,エンジェリック,名前の意味は天使のような。甘さの中にバーボンの風味を感じる。,度数 約 24 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_angelic_01.jpg
+155,ウイスキー&ピーチ・ソーダ,ピーチの香りとウイスキーのハーモニーでフルーティな味わい。,度数 約 12 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_whisky_peach_soda_01.jpg
+156,ブルー・ハイボール,ハイボールにオレンジが香るブルキュラソーが加わり、爽やかな味わい。,度数 約 8 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_blue_highball_01.jpg
+157,マンハッタン,マティーニと対になり、「カクテルの女王」と呼ばれる。多層的で、華やかな味わい。1959年公開のマリリン・モンロー主演映画『お熱いのがお好き』は、このカクテルを有名にしたきっかけ。カクテル言葉は、「切ない恋心」。,度数 約 35 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_manhattan_01.jpg
+158,ドライ・マンハッタン,マンハッタンをより辛口へとアレンジしたカクテル。ピリッと辛い大人の味わい。,度数 約 36 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_dry_manhattan_01.jpg
+159,レッド・ブリック,バーボンの風味がバターでまろやかになっている。,,7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_red_brick_01.jpg
+160,コモドール,名前は海軍の提督、艦長の意味 。1920～1930年代にアメリカ合衆国アハイオ州南西端にある都市、シンナシティで登場。酸味と苦み、そこに酸味とほんのり甘みが感じられる。香りもとても豊かで、少し大人っぽい雰囲気でキリっとした味わい。カクテル言葉は「責任」。,度数 約 25 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_commodore_01.jpg?v=2
+161,クロンダイク・クーラー,名前はカナダの地域の名称であり、1890年代にゴールドラッシュがあったことで知られる。オレンジの香りが引き立ち、鮮やかに輝く黄金色が特徴的。オレンジとジンジャーエールがウイスキーとよく合い、爽やかで飲みやすいカクテル。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_klondike_cooler_01.jpg
+162,カルピス・ハイボール,炭酸でさっぱりとした中に、カルピスのまろやかな甘みとウイスキーのコクを感じる。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_calpis_highball_01.jpg
+163,ラ・プレイス,バーボンとスイートベルモットの甘みと香りが合わさって、マイルドな味わい。,度数 強い (25度以上),1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_la_place_01.jpg
+164,レナ,アルコール度数が高いながらも、バーボンとスイートベルモットの甘みを感じつつ、ドライベルモットとカンパリとガリアーノのハーブ感を感じる味わい。イタリアのアルバート・チリキ(A.Chirici)氏の創作。日本初の国際カクテル・コンペティションである1971年 第12回 I.C.C. (インターナショナル・カクテル・コンテスト) 東京大会 優勝作品。名前はチリキ氏の妻の名前に由来。,度数 強い (25度以上),1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_rena_01.jpg
+165,スノーマン,バーボンにクランベリージュースの酸味が加わり、さっぱりとして飲みやすい。,度数 約 17 %,4,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_snowman-02_01.jpg
+166,ジャック・コーラ,ジャックダニエルのスモーキーで甘みのある風味がコーラに良く合い、甘くて飲みやすい。味わいに奥深さがあり、ジャックダニエルの風味をしっかりと感じることができる。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_jack_cola_01.jpg
+167,ジャック・オレンジ,ジャックダニエルのスモーキーで甘みのある味わいとオレンジジュースのフルーティさが良く合い、まろやか。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_jack_orange_01.jpg
+168,ジャック・ミルク,ジャックダニエルのスモーキーさのある風味を感じながらもミルキーな味わいで、甘さは感じない。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_jack_milk_01.jpg
+169,ウイスキー・ウーロン,ウィスキーの味わいを残しながらもアルコールの刺激を和らげられて飲みやすい。糖質ゼロで、烏龍茶のポリフェノールは脂肪を減らす効果があるため、適量であれば健康に良い効果も。烏龍茶の香りに負けてしまわないよう、香りが強くて特徴的なウィスキーの方がおすすめ。ウイスキーの代わりに焼酎を使うと「ウーロンハイ」になる。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_whiskey_oolong_01.jpg
+170,ハンター,アメリカ発祥のカクテルで、名前の意味は「都会の夜を狩る」。ウイスキーとチェリーブランデーが程良く調和し、チェリーの芳香を優しく感じて少しだけ甘く感じる。,度数 強い (25度以上),1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_hunter_01.jpg
+171,ケイブルグラム,レモンと砂糖が入ったジンジャー・ハイボール。レモンの酸味とシェイクした効果によってウイスキーのアルコール感が和らぎ、ジンジャーの爽やかさとほのかな甘味がある味わいで、飲み口はすっきり。,度数 普通 (9度〜24度),4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cablegram_01.jpg
+172,アペタイザー・ナンバー3,食前酒にぴったりなドライなテイスト。ビターズが加わることで、味に深みが出ている。,度数 約 34 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_appetizer_no3_01.jpg
+173,ウイスキー・サワー,レモンの酸味がウイスキーの芳醇な風味を引き立て、甘味も加わって飲みやすくい。,度数 約 24 %,6,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_whisky_sour_01.jpg
+174,サイレント・サード,名前は、考案者の愛車のサードギアがとても静かで、スムースだったのを自慢していたことに由来。スコッチ・ウイスキーの濃厚な風味にコアントローの甘みとレモンジュースの酸味が合わさり、軽い酸味と軽い甘みで、すっきりとした味わい。「サイドカー」や「ホワイト・レディ」のベースをスコッチ・ウイスキーに変えたカクテル。ベースとなるウイスキーにバーボン・ウイスキーかライ・ウイスキーを使うと「チャペル・ヒル」、それ以外のウイスキーを使うと「ウイスキー・サイドカー」になる。1930年代前半に誕生。カクテル言葉は「人知れぬ恋」。,度数 約 29 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_silent_third_01.jpg
+175,ゴッドファーザー,名前の由来は、1972年に映画「ゴッドファーザー」が公開されてから、すぐに生まれたカクテルなことから。 映画の世界観から、ウイスキーはスコッチウイスキーが使われることが多い。アマレットのアーモンド風味の香りと甘味、ウイスキーの濃厚さが特徴的。国際バーテンダー協会(IBA)のレシピでは、ウイスキーとアマレットが1対1の等量になっている。ベースのウイスキーをウォッカに変えると「ゴッド・マザー」になり、ブランデーに変えると「フレンチ・コネクション」になる。9月11日の誕生酒。,度数 約 34 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_godfather_01.jpg
+176,サイドカー,ブランデーのコクとホワイトキュラソーの爽やかさが調和し、香り爽やかでフルーティな味わいのスタンダードカクテル。,度数 強い (25度以上),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sidecar_01.jpg
+177,ダーティー・マザー,ブランデーの芳醇な風味にカルーアの甘みが合わさった口当たりのいいカクテル。ブランデーの樽熟成由来の甘い香りと、カルーアのもつバニラの風味が絡み合い、芳醇な香り。名前はブランデーがコーヒーリキュールと混ざることで濁ったカクテルの色が汚れたような見た目で「ダーティー」なことから。,度数 約 30 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_dirty_mother_01.jpg
+178,ブランデー・トニック,,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_brandy_tonic_01.jpg
+179,ムーンライト・クーラー,アップル・ブランデーをベースとするカクテル。 ムーンライトとは月光、クーラーとはカクテルのスタイルの1つを意味する語。軽い飲み口で、甘みと酸味を同時に味わえる。,度数 普通 (9度〜24度),4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_moonlight_cooler_01.jpg
+180,オリンピック,パリの有名な高級ホテル「ホテル・リッツ」で誕生。1900年、パリで開かれたオリンピックを記念してできたという由緒あるカクテル。爽やかな香りと濃厚な果汁の旨味を感じる味わい。,度数 約 21.3 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_olympic_01.jpg
+181,アレキサンダー,甘めのカクテル。食後のデザートの感覚で飲まれることが多い。,度数 普通 (9度〜24度),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_alexander_01_01.jpg
+182,スティンガー,スティンガーとは針のこと。ミントの味わいが特徴的で、爽快感があって味わいに鋭さがある。甘くて度数が強めのカクテルで、デザート的な味わい。20世紀初めに、ニューヨークのレストラン「コロニーレストラン」で生まれたカクテル。,度数 約 30 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_stinger_01.jpg
+183,マリアンヌ,上田和男氏の創作。マリアンヌの中世風の美しさを表現したカクテル。甘さも気持ち控えめにした大人のデザートぶとう酒。,度数 強い (25度以上),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_marianne_01.jpg?v=2
+184,ズーム・カクテル,名前の「zoom」は「急上昇するときのブーンという音」の意味。ハチミツや生クリームの豊かで贅沢な甘さ。濃厚なな飲み口で甘くクリーミー。栄養もあり、疲労回復や美容効果にも優れている。蜂蜜や生クリームを使っているので、よく混ざるようにしっかりシェイクするのがポイント。カクテル言葉は「抱擁」。,度数 約 17 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_zoom_cocktail_01.jpg
+185,コーヒー・カクテル,オレンジのフルーティな甘みを感じるコーヒーカクテル。,度数 約 15 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_coffee_cocktail-02_01.jpg
+186,カフェ・アレキサンダー・フラッペ,口当たりのまろやかな冷たいタイプのカクテル。生クリームとナツメグの甘さがアクセントとなってスッキリとした味で、ブランデーの奥深い風味とコーヒーのコクを楽しめる。,度数 弱い (8度以下),12,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cafe_alexander_frappe_01.jpg
+187,カフェ・コーディアル,まろやかと爽やかさがマッチするカクテル。オレンジフレバーのコーヒードリンク。,度数 弱い (8度以下),7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cafe_cordial_01.jpg
+188,ソノラ,名前は、スペイン語で「響きがよい・音が出る」を意味で、カルターニャ語では「音」という意味。4種類の材料が絶妙なバランスで混じり合い、とても辛口で豊かな味わい。りんごとあんずのフルーティーで甘酸っぱい香りが特徴のカクテル。カクテル言葉は「第六感」。,度数 約 38 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sonora_01.jpg?v=2
+189,ドービル,名前はフランスのノルマンディー地方の海沿い、そこにあるリゾート地の名前から付けられた。レモン果汁の酸味とコアントローの甘さやビター感も加わることで、フルーティーでさわやかな味わい。,度数 約 28 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_deauville_01.jpg
+190,シカゴ,名前はアメリカの都市。ブランデー・カクテルにシャンパンを加えた形のカクテル。ブランデーの味を生かしたテイストで、すっきりとした仕上がり。,度数 約 25 %,8,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chicago_01.jpg
+191,ブランデー・コーラ,コーラの風味がブランデーによってグッと味わい深いものになったカクテル。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_brandy_cola_01.jpg
+192,デプス・ボム,名前は「対潜水艦爆弾」という意味。口当たりが良く、甘味と酸味を感じながらもアルコール度数が強烈なカクテルで、ハードドランカー向きのカクテル。カクテル言葉「口説き文句」。,度数 約 36 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_depth_bomb_01.jpg
+193,フレンチ・エメラルド,コニャックの香りにブルーキュラソーとトニックウォーターの苦味が合わさって爽快感があり、さっぱりとした味わい。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_french_emerald_01.jpg
+194,キャロル,名前は「讃美歌」という意味。芳醇な香りとやや甘めの味わいが特徴。ベルモットの香りが漂った後に、ブランデーの風味を感じる。,度数 約 33 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_carol_01.jpg
+195,ブランデー・ソニック,甘みが少なく、スッキリとした味わいのブランデーのソニック。ソニックはソーダとトニックウォーターを合わせたもので、トニックウォーターだけの場合よりも甘さを抑え、柔らかい口当たりになる。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_brandy_sonic_01.jpg
+196,ニコラシカ,ドイツのハンブルク生まれのカクテル。口の中でカクテル状に混ぜて完成させ、そのまま飲むのが特徴的なカクテル。飲み方は、まず、グラス上の砂糖が乗ったレモンを半分に折り、口にほおばって噛み締める。甘酸っぱい風味が口の中に広がったところでブランデーを口に流し込むと、口の中でブランデー・サワー状態になる。すっきりと飲み干すことができる。アルファベット表記はNikolaschka以外にも、Nikolaschika、Nicolashka、Nicolaski、Nicolaskarなどと表記されることもある。,度数 約 40 %,13,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_nikolaschka_01.jpg
+197,クイーン・エリザベス,名前は豪華客船のクイーン・エリザベス号から。香りが複雑に絡み合い、香りが豊かで程良い甘みがあり、優雅な印象のカクテル。,度数 約 28 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_queen_elizabeth_01.jpg
+198,ジャック・ローズ,アップルブランデーのカルバドスをベースにした、アメリカ生まれの真っ赤なカクテル。アメリカではカルバドスのことを「アップル・ジャック」と呼ぶことが多く、“アップルジャックで作ったバラ（ローズ）のような色合いカクテル”というのが名前の由来。口当たりがよくて甘味があり、飲みやすい。カクテル言葉は「恐れを知らない元気な冒険者」。,度数 約 20 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_jack_rose_01.jpg
+199,アップル・カー,世界的人気のカクテルであるサイドカーのベースを、コニャックからカルバドスに代えて作るカクテル。さっぱりとしていながらも、カルバドスの持つコクにインパクトがある。,度数 強い (25度以上),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_apple_car_01.jpg
+200,ノーベンバー・グリーン,深みのある緑色で、秋を感じるような色合いで、アップルブランデーがまろやかになったような風味を感じる。毛利隆雄氏の創作。,度数 約 28 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_november_green_01.jpg
+201,トーピード,名前は魚雷の意味。アルコールの強さがガツンと来る。アップルブランデーの風味をダイレクトに感じる味わい。,度数 強い (25度以上),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_torpedo_01.jpg
+202,ファーマーズ・ワイフ,名前は直訳すると農民の妻。アルコール度数は高いが、フルーティで飲みやすい。,度数 約 32 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_farmers_wife_01.jpg
+203,ホイスト,名前はカードゲームの「ホイスト」から名付けられたと言われている。スイートベルモットの甘い香りとアップルブランデーのフルーティな香りが調和したカクテル。,度数 約 30 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_whist_01.jpg
+204,マリブ・パイン,パイナップルとマリブの相性は抜群で、マリブを代表するカクテル。トロピカルな風味が好きな方にぴったり。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_malibu_pineapple_01.jpg
+205,マリブ・コーラ,コーラの爽快感の中に、ほんのりとマリブの特徴のココナッツの香りを感じられる、夏にぴったりのカクテル。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_malibu_cola_01.jpg
+206,マリブ・ピニャコラーダ,カリブ海生まれのカクテル「ピニャ・コラーダ」のココナッツミルクを、「マリブ」で作ったカクテル。,度数 弱い (8度以下),5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_malibu_pina_colada_01.jpg?v=2
+207,カルーア・コラーダ,フロリダ生まれのカクテル「ピニャ コラーダ」にカルーアを加えたもの。ココナッツのコクと香ばしいカルーアの香りの相性が良い。,度数 弱い (8度以下),5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kahlua_colada_01.jpg?v=2
+208,マリブサーフ,マリブが提案する、サーファーにお勧めな夏のカクテル。色鮮やかなブルーで、夏の海辺で飲みたい。爽やかな飲み口にココナッツの甘い香りとブルーキュラソーの酸味が絶妙にマッチした味わい。アルコールを感じない味で飲みやすい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_malibu_surf_01.jpg
+209,マリブ・オレンジ,ちょっと甘めのフルーツカクテルで、ココナッツの濃厚な香り。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_malibu_orange_01.jpg
+210,マリブ・アップル,ココナッツ風味のアップルジュースのような味わい。とても甘口でアルコールを感じさせず、飲みやすい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_malibu_apple_01.jpg
+211,スイート・ハート,Asmah Bte Haji Saman氏の創作。1991年 第2回 アジア パシフィック バーテンダー オブ ザ イヤー カクテル コンペティション 優勝を受賞。甘くクリーミーで、まるでデザートを食べているかのような気分になるカクテル。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sweet_heart_01.jpg
+212,バウンティ・ハンター,驚くほど繊細でバランスの取れた味わい。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bounty_hunter-02_01.jpg
+213,バウンティ・ハンター,マリブとカルーアとカカオリキュールの甘みが合わさったことで、とても甘口。ココナッツ・チョコ・コーヒーミルクのような味わい。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bounty_hunter-03_01.jpg
+214,マリブ・スノー,甘く飲みやすい。マリブが提案する夏のサーフィンカクテル。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_malibu_snow_01.jpg
+215,ミドリ・コラーダ,メロンの風味が豊かな、色合いの美しいカクテル。フロリダ生まれのカクテル「ピニャ・コラーダ」に一味加えたカラー･ピニャ・コラーダ。,度数 弱い (8度以下),5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_midori_colada_01.jpg?v=2
+216,チチ,ハワイアンカクテルの「チチ」でウォッカとココナッツミルクを使わずにマリブで代用したレシピ。トロピカルで甘くフルーティな味わい。,度数 弱い (8度以下),9,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chi_chi-02_01.jpg
+217,マリブ・ジンジャー,程良い甘さで、さっぱりとした味わい。,度数 約 weak %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_malibu_ginger_01.jpg
+218,マリブ・グリーンティー,マリブの風味を緑茶がスッキリとした味わいに仕上げたカクテル。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_malibu_green_tea_01.jpg
+219,ブルー・コラーダ,トロピカルな雰囲気を醸し出し、甘くフルーティーな味わい。,度数 弱い (8度以下),5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_blue_colada_01.jpg
+220,マリブ・マンゴー,マリブの甘さとマンゴージュースの甘さを感じ、トロリとした口当たりで甘くフルーティな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_malibu_mango_01.jpg
+221,カルーア・ミルク,1970年代頃からアメリカのボストンで、特に女性に受けて大ブレイクした甘いカクテル。コーヒーミルクのような味わい。スイーツ感覚で飲みやすい。カルーアの名前はアラビア語でコーヒーを意味する「カフワ(kahua)」が由来元。,度数 約 5 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kahlua_milk_01.jpg
+222,ビター・カルーアミルク,カルーアミルクの甘みから、よりコーヒー感を加えて味わい深くなっている。コーヒー好きにオススメの甘いカクテル。,度数 約 5 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bitter_kahlua_milk_01.jpg
+223,カルーア・ソーダ,濃厚なカルーアをソーダで割ると、甘口のカルーアがフレッシュなドリンクに変身。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kahlua_soda_01.jpg
+224,カラ・スポサ,名前は、イタリア語で親愛なる花嫁の意味。濃厚で甘くクリーミーな味わい。,度数 普通 (9度〜24度),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cara_sposa_01.jpg??v=2
+225,ホット・カルーア・ミルク,カルーアミルクはホットにすると、心温まる大人のカフェオレといった雰囲気で、甘さ引き立つ美味しさ。,度数 弱い (8度以下),7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_hot_kahlua_milk_01.jpg
+226,ホット・ビター・カルーアミルク,甘口で、カルーア・ミルクからコーヒーのビター感を増やしたような味わい。,度数 弱い (8度以下),7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_hot_bitter_kahlua_milk_01.jpg
+227,カルーア豆乳,カルーアを豆乳で割るとまろやかな味わい。,度数 約 5 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kahlua_soy_milk_01.jpg
+228,ティファナ・コーヒー,ウィンナー・コーヒーにカルーアを加えたカクテル。まろやかなコーヒーといった味わい。,度数 弱い (8度以下),7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tijuana_coffee_01.jpg
+229,カルーア・ジンジャーレモン,意外な組み合わせだが、よく合う。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kahlua_ginger_lemon_01.jpg
+230,カフェ・カルーア,カルーアとホイップクリームの甘みを感じるコーヒー。,度数 弱い (8度以下),7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cafe_kahlua_01.jpg
+231,ビター・カルピス・カルーア・ミルク,デザートのような甘くミルキーな味わいの中に、少しコーヒーのビターな風味を感じる。,度数 弱い (8度以下),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bitter_calpis_kahlua_milk_01.jpg
+232,カルーア・コーラ,コーラの甘みにカルーアの甘みが加わり、コーヒーの風味の甘みを感じる味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kahlua_cola_01.jpg
+233,サースティー・キャメル,名前を直訳すると「喉の渇いたラクダ」。食後のデザートにぴったりな甘みで、リッチな香りとまったりとしたまろやかな口当たりのカクテル。,度数 約 19 %,2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_thirsty_camel_01.jpg
+234,ニエベ・メヒカーナ,超甘口でミルキーな味わい。,度数 約 9 %,2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_nieve_mexicana_01.jpg
+235,カルーア・ウーロン,エスニック風の紅茶風味な味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kahlua_oolong_01.jpg
+236,カルーア・パイン,カルーアの甘みとパイナップルジュースのフルーティさが意外と良く合い、甘くフルーティな味わい。,度数 約 5 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kahlua_pineapple_01.jpg
+237,カルーア・トニック,カルーアの香ばしい甘さとトニックウォーターのさっぱり感の相性が良い。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kahlua_tonic_01.jpg
+238,カルーア・カフェラテ,ミルキーで甘みを感じつつもエスプレッソのビターな風味を感じる味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kahlua_cafe_latte_01.jpg
+239,チョコ・コラーダ,複雑に絡み合った甘みを感じながらも、ラムの風味もしっかりと感じる。甘くクリーミーな味わいで、デザートにぴったりなカクテル。1982年、チャールズ・シューマン氏の創作。,度数 約 15 %,5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chocolate_colada-04_01.jpg
+240,ブラック・パール,コーヒーリキュールの甘みにココナッツとパイナップルのフルーティーさを感じる味わい。1982年 サントリー トロピカルカクテルのコンテストでグランプリを受賞。岡田省三氏の創作。,,9,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_black_pearl-02_01.jpg
+241,タムタム,始めにココナッツとコーヒーリキュールの風味を強く感じ、フルーティーな味わいのカクテル。 1980年 サントリー トロピカルカクテルのコンテストでグランプリを受賞。杉浦俊介氏の創作。,,9,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tam_tam_01.jpg
+242,オーレ,テキーラの風味を感じつつも、コーヒーリキュールの甘みをしっかりと感じる甘いカクテル。,度数 約 22 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ole-02_01.jpg
+243,マンゴヤン・ミルク,フルーティでコクのあるカクテル。ミルキーな甘さが女性にも人気のカクテル。,度数 約 4 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mangoyan_milk_01.jpg?v=2
+244,マンゴヤン・ココパイン,パイナップルジュースとココナッツリキュールの奏でるハーモニーがトロピカルな雰囲気を盛り上げるカクテル。,度数 約 4 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mangoyan_cocopine_01.jpg
+245,マンゴヤン・オレンジ,オレンジの酸味にマンゴーの風味が加わって、更にジューシーでさわやかな味わいのカクテル。,度数 約 4 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mangoyan_orange_01.jpg
+246,マンゴヤン・トニック,喉越し爽やかな味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mangoyan_tonic_01.jpg
+247,チャイナブルー,"チャイナブルーは陶磁器を意味する ""China"" が語源。トニックウォーターを入れるレシピと入れないレシピがある。グレープフルーツだけのチャイナブルーはライチの甘みが前面に出る。",度数 約 5.5 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_china_blue_01.jpg
+248,チャイナブルー,"チャイナブルーは陶磁器を意味する ""China"" が語源。トニックウォーターを入れるレシピと入れないレシピがある。さっぱり系が好みならトニック入りの方がおすすめ。",度数 約 5.5 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_china_blue_02_01.jpg
+249,ライチ＆ブランデー・トニック,みずみずしいライチの香りが引き立つドライですっきりとした味わい。,度数 約 7 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_lychee_brandy_tonic_01.jpg
+250,ディタモーニ,ライチリキュールの代表的銘柄である「ディタ」を使い、カンパリを使ったカクテルのスプモーニをもじったカクテル。上品なライチの香り。グレープフルーツとトニックウォーターがライチの良さを引き立たせ、ほんのりと甘く爽やかな味わい。,度数 約 6 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ditamoni_01.jpg
+251,ディタ・サクラドロップ,ライチの香りが鼻に抜け、炭酸が入って甘くてカワイイ色合いのカクテル。,度数 弱い (8度以下),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_dita_sakura_drop_01.jpg
+252,ライチトニック,ライチの甘みとトニックウォーターの苦味が絶妙にマッチ。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_lychee_tonic_01.jpg
+253,ライチ・オレンジ,ライチの香りとオレンジジュースの酸味が合わさったフルーティな味わい。,度数 約 4 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_lychee_orange_01.jpg
+254,ライチ・コーラ,フルーティなライチの香りにコーラの風味が合わさり、爽快な味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_lychee_cola_01.jpg
+255,ディタ・エイジア,ディタのライチの風味と香りを感じるフレバーティーのようで、あっさりとした味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_dita_asia_01.jpg
+256,ライチ・マンゴー,ライチのフルーティな香りが漂い、ライチとオレンジの甘みを感じるフルーティな味わい。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_lychee_mango_01.jpg
+257,ライチ・クランベリー,ライチリキュールのスッキリとした香りが漂い、ライチとクランベリーの甘酸っぱさが良く合った甘くフルーティな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_lychee_cranberry_01.jpg
+258,カシスバック,"クレーム・ド・カシスの甘酸っぱさとジンジャーエールで甘味と酸味のバランスが良い。相性抜群。""バック"" とは、スピリッツにレモン ジュースとジンジャー・エールを加えて作るスタイルのこと。""Buck"" には ""Stag""（雄鹿）の意味があり、キックのある飲み物。",度数 約 5 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cassis_buck_01.jpg
+259,カシス・ウーロン,カシスのフルーティな甘味と、ウーロン茶のすっきりとした味わいで、食事に合わせても邪魔をしないカクテル。,度数 約 4 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cassis_oolong_01.jpg
+260,カシス・グレープフルーツ,甘口で果実味豊かなカシスに、酸味と果汁感のあるグレープフルーツジュースがマッチして、爽やかでフルーティな味わい。とても甘くて、まるでジュースそのもの。,度数 約 4 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cassis_grapefruit_01.jpg
+261,カシス・ミルク,カシスの果実味とミルクの組み合わせが優しい味わい。,度数 約 4 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cassis_milk_01.jpg
+262,カシス・オレンジ,カシスの豊かな香りとオレンジ果汁のナチュラルな味わいが絶妙にバランスした優しい味わいで、すっきりとした甘味が特徴。,度数 約 3.2 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cassis_orange_01.jpg
+263,カシス・スプライト,スプライトのレモンの風味が僅かに残っており、とても甘いカクテル。,度数 約 5 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cassis_sprite_01.jpg
+264,カシス・パイン,甘く濃厚でフルーティな味わい。女性に人気のカクテル。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cassis_pineapple_01.jpg
+265,アセロラ・カシス,アセロラの酸味とカシスの甘みが合わさり、甘くフルーティな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_acerola_cassis_01.jpg
+266,カシス・マンゴー,くすんだ色だが、カシスとマンゴーの甘みが良く合い、甘くフルーティな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cassis_mango_01.jpg
+267,生カシオレ・ソーダ,カシスの甘みと搾りたてのオレンジのフレッシュさで、とてもフルーティで甘みがある爽やかなカクテル。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_fresh_cassis_orange_soda_01.jpg
+268,カシス・ソーダ,カシスリキュールの甘酸っぱくてフルーティーな味わいを感じながら、すっきりとした爽快感がある。レモンスライスを添えて酸味が加わると爽やかさが増し、よりすっきりとした味わいになる。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cassis_soda_01.jpg
+269,カシス・クランベリー,カシスの風味がしっかりとしてクランベリーの後味が良く、フルーティで甘酸っぱい味わい。濃厚な甘さ。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cassis_cranberry_01.jpg
+270,家康,武将の「徳川家康」をイメージして作られたカクテル。底に沈んだカシスの深い赤紫色は、家康の中に隠された闇の心を表現。ジンの香りとライムの酸味でキレのあるまろやかさがあり、カシスのほのかな甘みが味を引き立てている。「ギムレット」をアレンジした「CAVA CAVA」のオリジナル・カクテル。,度数 約 30 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ieyasu_01.jpg
+271,ファジーネーブル,ピーチとオレンジをあわせた甘みと酸味が合わさったフルーティなカクテル。果汁のナチュラル感があり、飲みやすい味わい。ジュース感覚で飲める。,度数 約 5 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_fuzzy_navel_01.jpg?v=2
+272,トロピカル・ファジーネーブル,あっさりとした味わいがトロピカルで、食事との相性も良い。女性に人気の定番カクテル。,度数 約 4 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tropical_fuzzy_navel_01.jpg?v=2
+273,ピーチ＆カシス・トマト,ピーチとカシスの香りのハーモニー。レモンが味を引き締め、トマトジュースのトロリとした口当たりが加わったやや濃度感の高い味わい。,度数 約 5.2 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_peach_cassis_tomato_01.jpg
+274,レゲエパンチ,宮城県仙台市発祥とされるカクテル。様々な別称も見られる。烏龍茶の苦味の部分がピーチリキュールによってほとんど相殺され、すっきりとした味わいで飲みやすい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_reggae_punch_01.jpg
+275,ベイサイド・ピーチ,味は軽く爽やかで、くどくない甘さ。,度数 弱い (8度以下),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bayside_peach_01.jpg
+276,ピーチ・アイスティー,,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_peached_iced_iea_01.jpg
+277,ウーウー,名前は求愛する、口説く、支持を得ようとするなどの意味。アメリカでは80年代後半から流行しているカクテル。簡単に作れて、飲みやすい。甘酸っぱく、すっきりとした後味で一気に飲める飲みやすさ。,度数 普通 (9度〜24度),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_woo_woo_01_01.jpg
+278,ウーウー,ウーウーにはシェイクするタイプとビルドでクランベリージュースをFul upするタイプの2種類がある。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_woo_woo_02_01.jpg
+279,フローズン・ウーウー,甘くて飲みやすいカクテル・ウーウーが、フローズンカクテルにすることでフルーティさはそのままに、少しドライな味わい。夏のデザートカクテルにぴったり。,度数 普通 (9度〜24度),12,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_frozen_woo_woo_01.jpg
+280,ピーチ・パイン,甘くてとてもフルーティな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_peach_pineapple_01.jpg
+281,ピーチ・パイン豆乳,甘口でとてもフルーティかつミルキーな味わい。後味さっぱりでスムーズな飲み心地。,度数 約 3.4 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_peach_pine_soymilk_01.jpg
+282,ピーチ豆乳,ピーチリキュールの甘みが豆乳によく合う。,度数 約 3.4 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_peach_soymilk_01.jpg
+283,フラミンゴ・レディ,色彩や形態、味覚からフラミンゴを連想させるカクテル。ピーチの香りが漂い、フルーティーな風味。1994年 サントリー カクテル・コンペティション リキュール部門 準優勝。中村健太郎氏創作。カクテル言葉は魅惑。,度数 約 17 %,6,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_flamingo_lady_01.jpg
+284,ガルフ・ストリーム,名前はメキシコ湾流という世界最大級の温暖海流で、その鮮やかな海流を彷彿とさせる意味合いから名付けられた。フルーツの風味が合わさってトロピカルな味わい。とても飲みやすい。,度数 約 15 %,2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_gulf_stream_01.jpg
+285,プーケットスリング,グレープフルーツジュースとトニックウォーターを掛け合わせるモーニ系カクテルらしい味わい。甘ざっぱりとして美味しい。,度数 弱い (8度以下),4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_phuket_sling_01.jpg
+286,グランブルー,綺麗なブルーで、甘酸っぱくてトロピカルな風味。,度数 普通 (9度〜24度),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_grand_blue_02_01.jpg
+287,パルファム,ピーチとライチの甘みを感じ、ヨーグルトが入って口当たりが良い。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_parfum_01.jpg
+288,ファンタジア,名前は「幻想曲」という意味。メルシャン・カクテル・コンペティションの優勝作品。松本和浩氏の創作。白ワインとピーチリキュールの風味が引き立っている。見た目もかわいらしく、女性好みの仕上がり。,度数 約 14 %,5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_fantasia_01.jpg
+289,ブレイン・ヘモレージ,脳内出血という意味。ベイリーズとピーチリキュールが混ざりあうと特有の凝固が発生し、飲む際に独特の舌触りが生まれる。非常に濃厚で甘口。,度数 約 18 %,13,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_brain_hemorrhage_01.jpg
+290,ピーチ・グレープフルーツ,ピーチとグレープフルーツが合わさったフルーティな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_peach_grapefruit_01.jpg
+291,ピーチ・グリーンティー,ピーチリキュールのまろやかでフルーティな甘さを緑茶がすっきりとした味わいに仕上げたカクテル。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_peach_green_tea_01.jpg
+292,ピーチ・ジャスミン・カクテル,仄かに桃を感じるようなフレーバーティーの味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_peach_jasmine_cocktail_01.jpg
+293,ピーチ・アップル,甘くてフルーティで、アルコールを感じさせない。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_peach_apple_01.jpg
+294,ピーチ・ミルク,甘くミルキーな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_peach_milk_01.jpg
+295,ピーチ・カルピスソーダ,ピーチとカルピスの甘みで喉越し爽快。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_peach_calpis_01.jpg
+296,ヒッチビー,ピーチとスプライトの甘みを感じつつもドライな味わい。,,2,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_hitchbee_01.jpg
+297,フルーツ・ミックス,4種類それぞれの果実の甘みがに牛乳のミルキーさが合わさり、甘くフルーティな味わい。ミックスジュースのように飲みやすい。武縄裕介氏の創作。,度数 約 7 %,0,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_fruit_mix_01.jpg
+298,ピーチ・ジンジャー,ジンジャーエールの風味の中に、ほのかにピーチの風味が感じられ、アルコールが苦手な人でも飲みやすい味。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_peach_ginger_01.jpg
+299,ピーチ・コーラ,ピーチリキュールのフルーティな甘みとコーラの爽やかな甘みが良く合い、甘い味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_peach_cola_01.jpg
+300,コアントロー・オレンジ,スクリュー・ドライバーのバリエーションの1つで、ベースのウォッカをコアントローに替えたもの。甘いカクテル。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cointreau_orange_01.jpg
+301,コアントロー・ソーダ,オレンジの香りと、ほのかな甘酸っぱさ。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cointreau_soda_01.jpg?v=2
+302,コアントロー・フィズ,香り高いオレンジの芳香が存分に味わえるカクテル。ライムとレモンが甘みを引き締めていて、すっきり爽快。,度数 約 10 %,0,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cointreau_fizz_01.jpg
+303,コアントロー・フィズ ・オレンジ,コアントロー・フィズにさらにオレンジの風味をプラスし、よりフルーティーな味わい。,度数 約 8 %,5,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cointreau_fizz_orange_01.jpg
+304,コアントロー・トニック,コアントローの甘く爽やかなオレンジの香りと、トニックウォーターのほろ苦さが良く合う。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cointreau_tonic_01.jpg?v=3
+305,ベルベット・ハンマー,名前の「velvet」は「ビロード状のもの、滑らかさ、柔らかさ」の意味。なめらかな口当たり。オレンジ&コーヒー風味で、とても甘くてクリーミー。デザートにぴったり。映画「カクテル」にも登場したカクテル。カクテル言葉は「今宵もあなたを想う」。,度数 約 23 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_velvet_hammer_01.jpg
+306,カフェ・ア・ラ・ジュ・セ,オレンジ風味のコーヒーカクテル。フランスの南部、農村地帯でよく飲まれる。,度数 弱い (8度以下),7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cafe_a_la_jet_set_01.jpg
+307,カフェ・ブラックジャック,濃厚でフルーティなオレンジ系リキュールの香り。スノースタイルがおしゃれなカクテル。,度数 弱い (8度以下),0,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cafe_blackjack_01.jpg
+308,キュラソー・コーヒー,18世紀にマリー・アントワネットの母として有名なマリア・テレジアが愛したカクテル。コアントローの香りと甘みがコーヒーとよく合い、飲みやすい。,度数 弱い (8度以下),7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_curacao_coffee_01.jpg
+309,マリン・スノー,爽やかな口当たり。マリン・ブルーの海に白い雪が降り積もったようなイメージのカクテル。,度数 約 5.8 %,5,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_marine_snow_01.jpg
+310,ブルーテールフライ,名前を直訳すると碧い尾のハエ。ターコイズのような濁った濃い水色で、甘くてとても濃厚な味。,度数 約 16.2 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_blue_tale_fly_01.jpg
+311,ハーベスト・ムーン,フルーティで甘酸っぱく、女性におすすめ。鈴木健司氏の創作。1998年 第4回 パスティス クラブ カクテル コンペティション 第3位を受賞。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_harvest_moon_01.jpg
+312,ヨーグリート・ソーダ,グラスで楽しむおしゃれなヨーグルトで、女性に人気。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yogurito_soda_01.jpg
+313,ココラッシー,スッキリした味わいの白いカクテル。,度数 約 6 %,12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_coconut_lassi_01.jpg
+314,ココラッシー・オレンジ,トロピカルな味わい。,度数 約 6 %,12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_coconut_lassi_orange_01.jpg
+315,ココラッシー ・パイン,トロピカルな味わい。,度数 約 6 %,12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_coconut_lassi_pineapple_01.jpg
+316,ヨーグリート・ジンジャー,ヨーグリートとジンジャーエールの甘みがよく合い、飲みやすい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yogurito_ginger_01.jpg
+317,ヨーグリート・グレープフルーツ,甘くフルーティな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yogurito_grapefruit_01.jpg
+318,ヨーグリート・オレンジ,フルーティなオレンジヨーグルト風味。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yogurito_orange_01.jpg
+319,ヨーグリート・パイン,フルーティなパインヨーグルト風味。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yogurito_pineapple_01.jpg
+320,ヨーグリート・ミルク,リッチでミルキーな甘酸っぱい味わいのカクテル。,度数 弱い (8度以下),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yogurito_milk_01.jpg
+321,ヨーグリート・グリーンティー,緑茶のすっきりとした味わいが甘みを抑え、さっぱりとした飲みやすいヨーグルトカクテル。,度数 弱い (8度以下),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yogurito_green_tea_01.jpg
+322,ヨーグリート・アップル,ヨーグリートにアップルジュースが合わさり、甘くフルーティな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yogurito_apple_01.jpg
+323,ヨーグリート・グレープ,ヨーグリートの甘みと酸味がグレープジュースと合わさり、アルコールを感じさせない甘くフルーティな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yogurito_grape_01.jpg
+324,ヨーグリート・トマト,ヨーグルトとトマトの相性が良く、甘くてフルーティな味わい。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yogurito_tomato_01.jpg
+325,パッション・パラダイス,ヨーグルトの酸味にパッションフルーツとピーチとパイナップルの味が合わさり、甘くフルーティな味わい。山根圭介氏の創作。2002年 国分 ヤングバーメンズ カクテル コンペティション 優勝を受賞。,,8,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passion_paradise_01.jpg
+326,ヨーグリート・クランベリー,ヨーグリートとクランベリーの酸味が良く合い、甘くミルキーな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yogurito_cranberry_01.jpg
+327,スノーマン,仄かにヨーグルトリキュールとピーチリキュールの甘みを感じながらトニックウォーターの苦味を感じ、すっきりとした味わい。宮口英子氏の創作。2000年 第6回 関東 バー レディース カクテルコンクール ヘネシー部門 銀賞を受賞。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_snowman-03_01.jpg?v=2
+328,ヨーグリート・カシス・ソーダ,ヨーグルトリキュールとカシスリキュールの甘みと酸味が程良く合わさり、喉越しすっきり。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yogurito_cassis_soda_01.jpg
+329,ヨーグリート・マンゴー,ヨーグルトリキュールの酸味とマンゴージュースの甘みを感じ、甘くフルーティな味わい。マンゴーラッシーを飲んでいるかのような気分になる。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yogurito_mango_01.jpg
+330,アプリコット・フィズ,甘い香りで、さっぱりとした口当たりが特徴。飲みやすく、あとをひく味わい。,度数 約 7 %,0,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_apricot_fizz_01.jpg
+331,アプリコット・クーラー,まろやかな口当たりと、爽やかかつフルーティなテイストがゴクゴクと飲みやすい。アプリコットクーラーのカクテル言葉は、「素晴らしい」。,度数 約 7 %,4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_apricot_cooler_01.jpg
+332,アプリコット・ジンジャー,飲み始めは甘い香りがぐっとくるが、飲んでいると案外さっぱりとした味わい。,度数 約 8 %,12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_apricot_ginger_01.jpg
+333,バレンシア,甘い風味がグラスに溢れる、甘口のカクテル。お酒が苦手の人でも飲みやすい。名前はオレンジの産地で有名なスペイン南部の都市名。正式名称は、バレンシア・カクテル。氷なしでカクテルグラスに注ぐショートドリンクのスタイルもある。,度数 約 14 %,2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_valencia_01.jpg
+334,ピンク・スクァーレル,名前の「Squirrel」は、動物の「リス」の意味。アプリコットの香りとカカオの甘みに生クリームが加わり、甘くてデザート感覚で楽しめる。カクテル言葉は「見つめていたい」。,度数 約 17 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_pink_squirrel_01.jpg
+335,アプリコット・ジャスミン,アプリコット・ブランデーの甘みを感じるフレバーティーのようなカクテル。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_apricot_jasmine_01.jpg
+336,パラダイス,香り豊かで程良い酸味があり、フルーティな風味で、やや甘口のカクテル。,度数 普通 (9度〜24度),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_paradise_01.jpg
+337,レッド・クラウド,やや甘口で酸味があり、さっぱりとしながらも、まろやかで口当たりが良いカクテル。,度数 約 26 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_red_cloud_01.jpg
+338,アマレット・ジンジャー,アマレットの杏仁豆腐を想わせる爽やかな香りで、ジンジャエールの辛味ともマッチし、甘くフルーティな味わい。,度数 約 6 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_amaretto_ginger_ale_01.jpg
+339,アマレット・スプモーニ,アマレットの風味に酸味と苦味が良いバランスで混ざり合い、フルーティで飲みやすい味わい。カンパリを使うスプモーニをアマレットに変えたレシピ。,度数 約 8 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_amaretto_supumoni_01.jpg
+340,ディサローノ・スプラッシュ,フルーティーでフレッシュな味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_disaronno_splash_01.jpg
+341,ブラウン・スクァーレル,「Squirrel」は、動物の「リス」の意味。アマレットとカカオの甘みを生クリームが包み込む。甘くてデザート感覚で飲める。,度数 普通 (9度〜24度),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_brown_squirrel_01.jpg
+342,イタリアン・スクリュードライバー,本来ウォッカベースであるスクリュードライバーをイタリア産のリキュールであるアマレットベースにしたカクテル。甘くフルーティで飲みやすい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_italian_screwdriver_01.jpg
+343,ディサローノ・ミスト,「ミスト」とは、カクテルのスタイルのひとつで、ロック・グラスにクラッシュドアイスを敷き詰め、グラスの側面がミスト(霧)状になった状態。冷えたアマレットそのものの甘みがある味わいと香りを堪能できるカクテル。,度数 約 25 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_disaronno_mist_01.jpg
+344,ヴェルジーネ,アマレットの甘みと香りカシスの酸味とフルーティさが加わり、オレンジ・ビターズの苦味がアクセントとなり、程良いまとまりな甘口のカクテル。澤千絵子氏の創作。1994年 第1回 サントリー ザ カクテル コンペティション リキュール 部門 優勝を受賞。,度数 約 30 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_vergine_01.jpg
+345,アマレット豆乳,アマレットの甘みを感じるミルキーな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_amaretto_soy_milk_01.jpg
+346,スイートハート・シップ,アマレット甘さとパイナップルジュースのフルーティさを感じる味わい。,度数 約 9 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sweetheart_sip_01.jpg
+347,アマレット・クランベリー,甘くフルーティな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_amaretto_cranberry_01.jpg
+348,クランベリー・クーラー,アマレットの濃厚な香りが漂い、クランベリーとオレンジジュースの甘みが合わさって広がる甘くフルーティな味わい。,度数 約 7 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cranberry_cooler_01.jpg
+349,ホワイト・スワン,アルコールが入った杏仁豆腐のような味わいで、甘いデザートカクテル。,度数 約 9 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_white_swan_01.jpg
+350,スプモーニ,"ベースのカンパリの故郷、イタリアで誕生。「スプモーニ」とは、イタリア語で ""泡を立てる"" の意味。のど越しが爽やかなカクテル。サーモンピンクの色合いもかわいく、女性にとても人気。",度数 約 5 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_spumoni_01.jpg
+351,カンパリ・トニック,カンパリと同様、ほろ苦さとさわやかな風味をもつイギリス生まれのトニックウォーターが、カンパリの味わいをより一層引き立てている。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_campari_tonic_01.jpg?v=2
+352,カンパリ・オレンジ,カンパリの代表的なカクテル。カンパリのほろ苦い甘さと、オレンジジュースのフルーティな酸味の相性が抜群。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_campari_orange_01.jpg
+353,ミート,カンパリとチンザノを合わせたカクテルで、1870年頃にこのカクテルは誕生。ミートという音の響きが、イタリア語の「伝説」という言葉に似ている。,度数 普通 (9度〜24度),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mi_to_01.jpg
+354,ネグローニ,1919年にイタリアのネグローニ伯爵がロンドンへの最後の旅の記念として、アメリカーノにソーダではなく少量のジンを入れるようにオーダーしたことが始まりのカクテル。どれも香り付けにハーブが使われているお酒なので、相性は抜群。カンパリの苦味と甘味にスイート・ベルモットの甘みが更に加わり、香りが良くて甘くほろ苦い味わい。,度数 強い (25度以上),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_negroni_01.jpg?v=2
+355,ゼウス,名前はギリシャ神話の最高神(天空神)の意味。さっぱりとして、カンパリの独特の風味が楽しめる。,度数 約 27 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_zeus_01.jpg
+356,カンパリ・メアリー,口当たりがふんわりと柔らかく、飲んだ後にカンパリの苦みがさわやかに感じられるカクテル。パークホテル東京のバーマネジメントをしている鈴木隆行氏の創作。,度数 弱い (8度以下),14,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_campari_mary_01.jpg?v=2
+357,カンパリ・トマト,カンパリの苦味を感じつつもトマトジュースが加わったヘルシーなカクテル。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_campari_tomato_01.jpg
+358,カンパリ・トマト・オレンジ,カンパリのほろ苦さとオレンジの甘みがトマトジュースと良く合い、ヘルシーなカクテル。,度数 弱い (8度以下),5,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_campari_tomato_orange_01.jpg
+359,カンパリ・ジンジャー,カンパリの苦みとジンジャーエールの辛味で、パンチの効いた爽快さを感じる。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_campari_ginger_01.jpg
+360,オールド・パル,アメリカで禁酒法が敷かれる前から飲まれていたという古典的なカクテル。オールド・パルとは「古い仲間」「懐かしい仲間」という意味。ウイスキーの香りとカンパリのほろ苦さがマッチした味わい。カクテル言葉は「想いを叶えて」。,度数 約 23 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_old_pal_01.jpg
+361,カンパリ・グレープフルーツ,カンパリの苦味とグレープフルーツがよく合い、フルーティな味わい。カンパリの苦味が苦手な人でも飲みやすい味。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_campari_grapefruit_01.jpg
+362,ローマ・ウィズ・ア・ビュー,ニューヨークのバー「Attaboy」のマイケル・マキロイ考案。カンパリの苦味とドライベルモットの風味にライムの酸味が加わって飲みやすく、すっきりとした爽快な味わい。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_rome_with_a_view_01.jpg
+363,カンパリ・パイン,カンパリの苦味を感じながら甘すぎない味。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_campari_pineapple_01.jpg
+364,カンパリ・ウーロン,烏龍茶の風味によってカンパリの甘みが打ち消されて苦味だけが残ったような味わいで、さっぱりとしている。カンパリの苦味が好きな人にはおすすめ。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_campari_oolong_01.jpg
+365,クイーン・エリザベス・2世,客船クイーン・エリザベス２世号の船長が考案したレシピと言われている。ジンの風味にカンパリの香りと苦味、オレンジジュースのフルティーさ、そしてソーダの爽快感が合わさり、口当たりが良くて飲みやすいカクテル。,度数 約 13 %,4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_queen_elizabeth_second_01.jpg
+366,イエーガー・シューター,冷蔵庫でよく冷やしたイエーガーマイスターをあらかじめ冷やしたシューターグラスに注ぐ。キンキンに冷えた状態で、ほろ苦さがくせになる味わい。,度数 約 35 %,10,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_jager_shooter_01.jpg
+367,シルバー・ストリーク,ハーブの香りが特徴でキリっとした味わいのカクテル。,度数 約 38 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_silver_streak_01.jpg
+368,イエーガー・アップル,りんごの香りとイエーガーの薬草の香りが漂い、ハーブ風味を強く感じながらも甘くフルーティな味わい。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_jager_apple_01.jpg
+369,イエーガー・ボム,パーティードリンクとしてパリピ(パーティピープル)に人気。滋養強壮カクテルで、疲れた体にとても効きそうな味。レッドブルを注いだグラスにショットグラスを落として、一気に飲むスタイルが定番。レッドブル1本には約80mgのカフェインが含まれているので、飲み過ぎないように注意。,度数 弱い (8度以下),15,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_jager_bomb_01.jpg
+370,イエーガーマイスター・ルディ,イエーガーの甘み感じ、まろやかな味わい。,,10,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_jagermeister_rudi_01.jpg
+371,イエーガー・トニック,ほろ苦く爽やかな風味。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_jager_tonic_01.jpg
+372,イエーガーマイスター・アフター・ダーク,ステアはせず、ストローで下から飲む。ビターな甘さを楽しめる。,度数 約 26 %,10,6,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_jagermeister_after_dark_01.jpg
+373,レッド・ボムシェル・ショット,イエーガーのハーブ感を感じながらも甘くフルーティな味わい。,,10,7,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_red_bomshell_shot_01.jpg
+374,モーツァルト・ミルク,チョコレートリキュールを使った定番カクテル。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mozart_milk_01.jpg
+375,ホット・モーツァルト・ミルク,チョコレートリキュールのほどよいアルコールで、体の芯まで温まる。,度数 弱い (8度以下),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_hot_mozart_milk_01.jpg
+376,パパゲーナ,名前は、モーツァルトが作曲したオペラ、『魔笛』の登場人物。甘口のカクテルカクテル。,度数 約 15 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_papagena_01.jpg
+377,チョコティーニ,カクテルの王様「マティーニ」のアレンジ。甘すぎず、味に深みがあり、まろやかで飲みやすいカクテル。,度数 強い (25度以上),1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chocotini_01_01.jpg
+378,チョコティーニ,チョコレート・リキュールを使ったマティーニのバリエーション。チョコレートリキュールを使った、大人の味わいのマティーニ。,度数 約 28.5 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chocotini_02_01.jpg
+379,チョコレート・カルピスミルク,ミルキーでとても甘口な味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chocolate_calpis_milk_01.jpg
+380,チョコレート・サワー,ビターチョコレートリキュールのほろ苦さとフルーツの甘酸っぱい味わいが合わさったカクテル。,度数 約 6 %,2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chocolate_sour_01.jpg
+381,チョコレート・プランターズ・パンチ,チョコレート・リキュールを使ったプランターズ・パンチのカクテル。チョコレートとラムの甘みと、柑橘系ジュースの酸味を感じ、フルーティな味わい。,度数 約 8 %,5,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chocolate_planters_punch_01.jpg
+382,チョコ・カシス・ソーダ,チョコレートの風味とカシスの風味が合わさり、甘さは控えめで、すっきりとした味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chocolate_cassis_soda_01.jpg
+383,モーツァルト・アイスコーヒー,アルコールを感じさせず、カフェオレにチョコが香るような味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mozart_iced_coffee_01.jpg
+384,シトラス・ショコラ,チョコレートリキュールをジンジャーエールで割ったチョコレートカクテル。柑橘の香りが爽やか。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_citrus_chocolat_01.jpg?v=2
+385,モーツァルト豆乳,甘くミルキーな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mozart_soy_milk_01.jpg
+386,モーツァルト・ティー,ココア風味のミルクティーのような味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mozart_tea_01.jpg
+387,チョコレート・マルガリータ,テキーラベースのマルガリータにチョコレートリキュールの甘みが加わったカクテル。,度数 約 29 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chocolate_margarita_01.jpg?v=2
+388,チョコレート・カルーア・ミルク,甘くミルキーなチョコレートドリンクの味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chocolate_kahlua_milk_01.jpg
+389,ホット・チョコレート・カルーア・ミルク,甘くてミルキーなホット・チョコレートドリンクのような味わい。,度数 弱い (8度以下),7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_hot_chocolate_kahlua_milk_01.jpg
+390,カルーア・チョコレート・ミルク・シェイク,チョコレートとカルーアの甘みを包み込むミルキーな味わい。,度数 弱い (8度以下),0,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kahlua_chocolate_milk_shake_01.jpg
+391,モーツァルト・クランベリー,クランベリーの酸味がチョコレートの甘みと合わさり、フレーバーチョコレートを食べているような甘酸っぱい味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mozart_cranberry_01.jpg
+392,チョコレート・スプライト,チョコレートリキュールの甘みにスプライトのすっきりとした甘みが合わさり、甘く爽やかさな味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chocolate_sprite_01.jpg
+393,チョコレート・ハイボール,仄かにチョコレートリキュールの風味を感じるハイボール。,度数 約 8% %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chocolate_highball_01.jpg
+394,ホワイト・チョコ・ミルク,ホワイトチョコレートの甘みにミルキーさが加わり、甘くて食後にピッタリのデザートカクテル。,度数 普通 (9度〜24度),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_white_chocolate_milk_01.jpg
+395,ホワイト・モーツァルト・ミント,チョコミントを食べているかのように、ホワイトチョコレートの濃厚な甘みと仄かなミントの爽やかさを感じる甘くミルキーなカクテル。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_white_mozart_mint_01.jpg
+396,ホワイト・アレキサンダー,「アレキサンダー」のクレーム・ド・カカオブラウンをホワイトチョコレートリキュールに変えたカクテル。甘くクリーミーで食後にぴったり。,度数 普通 (9度〜24度),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_white_alexander-02_01.jpg
+397,アポロン,アポロチョコのような甘いストロベリーチョコレートの風味を感じるカクテル。甘くクリーミーで、デザートにぴったり。,,1,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_apollon_01.jpg
+398,チョコレート・グラスホッパー,「グラスホッパー」のクレーム・ド・カカオホワイトの代わりにホワイトチョコレートリキュールを使ったカクテル。ミントの爽やかさとホワイトチョコレートの甘みがマッチし、甘口で食後のデザートにぴったり。,度数 普通 (9度〜24度),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chocolate_grasshopper_01.jpg
+399,チョコ・コラーダ,トロピカルカクテルの「ピニャコラーダ」にホワイトチョコレートを加えたカクテル。ホワイトチョコレートが加わることにより、より甘くてクリーミーな味わいになる。,,5,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chocolate_colada-01_01.jpg
+400,チョコ・コラーダ,トロピカルカクテルの「ピニャコラーダ」でココナッツリキュールを使ったレシピに、ホワイトチョコレートを加えたカクテル。ホワイトチョコレートの風味が前面に出ており、ラムの甘みと調和してトロピカルで甘くフルーティーな味わい。,,5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chocolate_colada-02_01.jpg
+401,チョコ・コラーダ,トロピカルカクテルの「ピニャコラーダ」でココナッツシロップを使ったレシピに、ホワイトチョコレートを加えたカクテル。ピニャコラーダのトロピカルでフルーティーな風味にホワイトチョコレートのコクと濃厚さが加わった甘い味わい。,,5,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_chocolate_colada-03_01.jpg
+402,クレッチマ,カカオの風味が生きているおしゃれなカクテル。口当たりもよく甘酸っぱく仕上がり。チョコレート風味の味わいにレモンの酸味を合わせる珍しい組み合わせ。,度数 約 25.8 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kretchma_01.jpg
+403,カカオ・ミルク,とても甘口でミルキーな味わい。ケーキのクリームを食べているかのような感じ。,度数 約 8 %,2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cacao_milk_01_01.jpg
+404,カカオ・ミルク,甘くコクのある味わい。アルコールを感じさせず、ソフトドリンクのように飲める。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cacao_milk_02_01.jpg
+405,キング・アルフォンソ,スペイン国王アルフォンソ13世の名を冠したカクテル。まろやかで濃厚な味わい。カカオの濃厚な香りと生クリームのコクがマッチする非常に甘くて美味しい。人気の高いデザートカクテル。チョコ好きにおすすめ。,度数 約 18 %,13,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_king_alfonso_01.jpg
+406,エンジェル・キッス,遊び心満載のスタンダードカクテル。ピンに刺さっているチェリーを、グラスの中に入れてまっすぐ引き上げると、クリームの上に、ハートや唇や花の形が描かれていく。チョコレートミルクのように甘くてクリーミーな味わい。デザート感覚で味わえる。,度数 約 18 %,13,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_angel_kiss_01.jpg
+407,フィフス・アベニュー,名前はニューヨーク市5番街の意味。世界経済の中心と呼ばれる。各材料が混ざらないように、順番に積み上げていく、「プース・カフェ」スタイルのカクテル。クレーム・ド・カカオにアプリコット・ブランデーをフロートすることにより、一口毎に異なった甘口の濃厚なテイストを楽しむ事ができる。ひたすら甘いデザートカクテル。,度数 約 17 %,13,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_fifth_avenue_01.jpg
+408,ブラウン・ベルベット,まろやかな舌触りで、デザートにぴったりな甘口カクテル。,度数 約 13 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_brown_velvet_01.jpg
+409,カフェ・カカオ,カフェモカのような、コーヒーとチョコレートの風味が味わえる暖かいカクテル。,度数 弱い (8度以下),7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cafe_cacao_01.jpg
+410,カフェ・アレキサンダー,ブランデーベースのカクテル、アレキサンダーの派生レシピ。甘く香ばしいカカオリキュールとブランデーの華やかな香りがアイスコーヒーに溶け込み、リッチな味わいを醸し出す。口当たりのまろやか。チョコレートケーキのような、カカオリキュールの香りと甘さ、生クリームのまろやかさが味わえる。,度数 弱い (8度以下),5,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cafe_alexander_01_01.jpg
+411,カフェ・アレキサンダー,アレキサンダーをエスプレッソでアレンジしたカクテル。カカオとエスプレッソの風味が良く合い、アマレットの香りも加わっている。エスプレッソのビターな風味にカカオリキュールとアマレットの甘みを感じる味わい。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cafe_alexander-02_01.jpg
+412,とんねるず,毛利隆雄氏の創作。1986年「とんねるず」がベストテン2位になった記念に創作依頼されたもの。カカオリキュールの甘みで飲みやすい。,度数 約 10 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tunnels_01.jpg
+413,カカオ・フィズ,カカオの香りが口いっぱいに広がる反面、かすかな酸味が刺激を与えてくれる。アルコールの苦味をほとんど感じることない飲みやすいカクテル。,度数 約 8 %,0,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cacao_fizz_01_01.jpg
+414,パナマ,「アレキサンダー」のベースで使用しているブランデーをラムに変更したカクテル。まろやかで甘い味わいが食後にぴったり。,度数 強い (25度以上),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_panama_01.jpg
+415,グリーン・ホッパー,甘くミルキーで、ミント・チョコレートの味わい。3つの材料の比重の違いをいかしたプース・カフェ・スタイルのカクテル。,度数 約 16 %,13,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_green_hopper_01.jpg
+416,ギャツビー,非常に甘口で濃厚なカクテル。デザートにぴったり。,度数 約 13 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_gatsby_01.jpg
+417,ジャマイカ・ホップ,コーヒーとカカオのリキュールと生クリームの組み合わせが良く合い、とても甘口でデザートにおすすめ。ショコリキサーを飲んでるかのような気分。,度数 約 15 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_jamaica_hop_01.jpg
+418,ホワイトカカオ・ミルク,なめらかで、甘くコクのある味わい。,度数 約 6.8 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_whitecacao_milk_01.jpg
+419,イースター・エッグ,ホワイトチョコレートとヨーグルトのリキュール合わさった甘みが飲みやすい。,度数 普通 (9度〜24度),5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_easter_egg_01.jpg
+420,アイゼンハワー,名前は米国第34代大統領の「Eisenhower」とはスペルが異なるため、由来とは関係ない。チョコミントな味わい。,度数 約 6 %,3,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_eizenhower_01.jpg
+421,キング・ピーター,チェリーブランデーの甘酸っぱさをトニックウォーターが引き立たせて、爽やかでゴクゴク飲める味わい。,度数 約 4.5 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_king_peter_01.jpg
+422,チェリー・トニック,チェリーリキュールのフルーティーな香りとコクのある甘味をそのまま楽しむなら、トニックウォーターやソーダで割るのがおすすめ。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cherry_tonic_01.jpg
+423,チェリー・サワー,,度数 普通 (9度〜24度),6,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cherry_sour_01.jpg
+424,パイン＆チェリー・ソーダ,さくらんぼの香りとパイナップルジュースの酸味が合わさり、フルーティ＆ジューシーな味わい。,度数 約 6 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_pine_cherry_soda_01.jpg
+425,ドローレス,カクテル名は、メキシコの女優のDolores Del Rioに由来。甘くフルーティな味わい。,度数 約 29 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_dolores_01.jpg
+426,ボルガ・ボートマン,名前はボルガ河の船乗りという意味。甘く香りもよい。,度数 約 22 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_volga_boatman_01.jpg
+427,ヘミングウェイ・ダイキリ,ルクサルドの苦味があるすっきりとした香りと風味を感じ、程良い酸味と甘みがあり、甘酸っぱくてフルーティな味わい。ルクサルドのボトルに記載されているレシピ。,,1,7,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_hemingway_daiquiri_01.jpg
+428,サラトガ,名前は、アメリカのニューヨーク州にある町の名前。ニューヨーク・バーテンダーズ・ガイドによるレシピ。ほぼブランデーだが、果実の香りと風味に、すっきりとした後味のカクテル。サヴォイ・カクテル・ブックでは少量のソーダを加えシャンパングラスを使用。,度数 約 31 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_saratoga_01.jpg
+429,アイデアル,フルーティーで口当たりが良く、さっぱりとした味わい。マラスキーノのすっきりとした香りを感じる。,度数 約 22 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ideal_01.jpg
+430,メアリー・ピックフォード,「アメリカの恋人」といわれたカナダ出身の女優「メアリー・ピックフォード」にちなんで名付けられたカクテル。ソフトタイプの甘口でフルーティな味わい。,度数 約 19 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_merry_pickford_01.jpg
+431,ウィリー・スミス,名前はアメリカで活躍したアルトサックスの奏者が由来。マラスキーノリキュールとブランデーが合わさることによって程良い甘みがあり、香り高いカクテルになっている。,度数 約 32 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_willie_smith_01.jpg
+432,アビエイション,名前は「飛行」や「飛行機」などの意味。ほのかにマラスキーノの香りが漂い、酸味を感じるすっきりとした飲み口で、ほのかに残る甘みがある。アメリカ生まれのクラシックカクテル。1916年にニューヨークのホテルバーテンダーであるエンスリン氏が考案。,度数 約 26 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_aviation_01.jpg
+433,マラスキーノ・ソーダ,マラスキーノリキュールの独特のすっきりとした味わいをダイレクトに感じることができる。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_maraschino_soda_01.jpg
+434,カジノ,ジンのドライさにマラスキーノの豊かな香り。アルコール度数は高いが、ほのかな甘みと酸味もあり、すっきりと飲みやすい。,度数 約 27 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_casino_01.jpg
+435,クラシック,マラスキーノリキュールとブランデーが合わさった芳醇な香りで、酸味を感じる濃厚な味わい。,度数 約 24 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_classic_01.jpg
+436,フライング,マラスキーノリキュールのすっきりとした香りが漂い、甘酸っぱい味わい。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_flying_01.jpg
+437,ヴィト・コリンズ,ほのかにマラスキーノの香りと苦味を感じ、酸味があってさっぱりとした味わい。,度数 普通 (9度〜24度),4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_vito_collins_01.jpg
+438,ホワイト・ローズ,口当たりが良く、香りが華やかで、ふくよかなのど越し。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_white_rose_01-2.jpg
+439,オールド・クロック,マラスキーノリキュールのすっきりとした香りと味わいを感じる、甘いカクテル。ブルーキュラソーによる青色が綺麗な色合い。甘いがアルコール度数は高い。,,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_old_clock_01.jpg
+440,マラスキーノ・イージーミックス,マラスキーノリキュールの香りと甘みにトニックウォーターの苦味が加わった味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_maraschino_easy_mix_01.jpg
+441,アレン,マラスキーノの香りと風味を感じ、甘くてキリッとして、すっきりとした後味で口当たりが良いカクテル。,度数 約 30 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_allen_01.jpg
+442,コンカ・ドロ,名前はイタリア語で「黄金の谷」の意味。アルコール度数は高いが、マラスキーノの香りが漂い、甘みを感じるフルーティな味わい。1955年にオランダのアムステルダムで開催されたカクテルコンクールで優勝。,度数 強い (25度以上),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_conca_doro_01.jpg
+443,マラスキーノ＆クランベリー,マラスキーノのすっきりとした香りが漂い、クランベリーの甘酸っぱさとマラスキーノの甘みと苦味を感じる、さっぱりとした甘みのカクテル。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_maraschino_cranberry_01.jpg
+444,グリーン・ピース,ノスタルジーな味わいのカクテル。アルコールもほぼ感じず、スイーツ感覚。,度数 約 12.9 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_green_peace_01.jpg?v=2
+445,ミドリ・イリュージョン,オーストラリアで、「ミドリ」がブレイクするきっかけとなった「ミドリ・イリュージョン」。メロンとパイナップルのフレーバーが絶妙なマッチングのファンドリンク。程良い酸味を感じる。,度数 約 5 %,0,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_midori_illusion_01.jpg
+446,ミドリ・スプライス,トロピカルな味わい。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_midori_splice_01.jpg?v=2
+447,ミドリ・スプライト,甘口でジュース感覚で飲め、非常に飲みやすいカクテル。,度数 約 5 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_midori_sprite_01.jpg
+448,グリーン・カルピス,メロンの甘みとカルピスの甘みで非常に飲みやすい。メロンソーダを思わせるような味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_green_calpis_01.jpg
+449,メロン・ボール,メロンの甘い香りとやさしい口当たりでフルーティ。優しい味わいで、甘くて色の美しいカクテル。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_melon_ball_01_01.jpg?v=2
+450,メロン・ボール,メロンの甘い香りとやさしい口当たり。優しい味わいで、甘くて色の美しいカクテル。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_melon_ball-02_01.jpg
+451,メロン・ボール,メロンの甘い香りとやさしい口当たり。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_melon_ball_03_01.jpg
+452,ミドリ・スプモーニ,グレープフルーツの程よい酸味を感じ、フルーティでさっぱりした味わい。カンパリで作る「スプモーニ」のベースを、ミドリに代えたカクテル。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_midori_spumoni_01.jpg
+453,ミドリ・オレンジ・マティーニ,ソフト・マティーニ・スタイルで、程良い酸味を感じ、甘くフルーティな味わい。お酒に慣れていない人でも飲みやすい。５月15日のバースデーカクテル。カクテル言葉は「慈愛に満ちた華麗な人」。,度数 約 5 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_midori_orange_martini_01.jpg
+454,ニンジャ・タートル,忍者をモチーフにした亀のヒーローで1990年に公開されたアニメ「ミュータント・タートルズ」の色合いを表したカクテル。甘口でトロピカルな味わい。,度数 約 11 %,2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ninja_turtle-02_01.jpg
+455,ミドリ・ジンジャー,喉越しさっぱりで、甘酸っぱくて爽やかな印象を受けるカクテル。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_midori_ginger_01.jpg
+456,フランボワーズ・グレープフルーツ,フルーティなカクテル。キイチゴのやさしい甘酸っぱさがグレープフルーツジュースの酸味にマッチ。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_framboise_grapefruit_01.jpg
+457,カルーア・ベリー,「カルーア・ミルク」に、木いちごのリキュールのクレーム・ド・フランボワーズを加えたもの。さらに甘酸っぱさが加わり、甘さの中にもさっぱりとして酸味がある味わい。,度数 約 5 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kahlua_berry_01.jpg
+458,フランボワーズ・ミルク,フランボワーズの酸味とコクが強さがミルクとマッチ。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_framboise_milk_01.jpg
+459,フランボワーズ・リッキー,フランボワーズの落ち着いた香り。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_framboise_ricky_01.jpg
+460,夢一夜,フルーティで飲みやすく、アルコールをあまり感じる事無くするする飲めるカクテル。しっかりと甘味を感じられる。賞味期限が15分に設定されたカクテル。中村健二氏の創作。,度数 約 18 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yumehitoyo_01.jpg?v=2
+461,フランボワーズ・ピーチ・カルピス,とても甘口で飲みやすく、アルコールを感じさせない。,,12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_framboise_peach_calpis_01.jpg
+462,フランボワーズ・フィズ,甘さを少し抑えて、スッキリとした味わい。,度数 約 3 %,4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_framboise_fizz_01.jpg
+463,フランボワーズ・ライチ・トニック,ラズベリーとライチの酸味が合わさったフルーティな味わい。,度数 普通 (9度〜24度),5,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_framboise_lychee_tonic_01.jpg
+464,ピュア・ラブ,甘酸っぱい味わいのカクテル。上田和男氏の創作。1980年 A.N.B.A. カクテル コンペティション 全国大会 初出場で初優勝を受賞。,,4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_pure_love_01.jpg
+465,フランボワーズ・トニック,トニックウォーターの苦味により、フランボワーズリキュールの甘みが抑えられ、仄かな甘味と苦味でさっぱりとした味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_framboise_tonic_01.jpg
+466,ソコ・ライムショット,乾杯の際の一杯として人気のカクテル。フルーティで陽気な味わい。,度数 普通 (9度〜24度),10,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_soco_lime_shot_01.jpg
+467,ダブル・レインボー,色々なフルーツと合わせたレシピで、酸味が適度に効きつつ、コクもあってバランスのいい味わい。,度数 約 18.7 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_double_rainbow_01.jpg
+468,スカーレット・オハラ,アメリカ映画、「風と共に去りぬ」のヒロインであるスカーレットオハラをイメージしたカクテル。やや甘口ながら、フルーツの酸味でスッキリとした味わい。,度数 約 15 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_scarlett_ohara_01.jpg
+469,シシリアン・キッス,甘くて濃厚な風味で、食後酒にピッタリ。,度数 約 28 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sicilian_kiss_01.jpg
+470,ソコ・オレンジ,フルーティでマイルドな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_soco_orange_01.jpg
+471,カンフォート・マンハッタン,ウイスキーとスイートベルモットを使って作る、「マンハッタン」のカクテルをサザンカンフォートでアレンジしたもの。シナモンやピーチのフレーバーで、甘くフルーティで上品な味わい。,度数 約 20 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_comfort_manhattan_01.jpg
+472,ボール・パーク,神戸で生まれたカクテル。サザンカンフォートの風味が前面に出ており、すっきりとした独特の風味がある。ウイスキーに抵抗のある人でも気軽に楽しめる。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ball_park_01.jpg
+473,ソコ・クランベリー,サザンカンフォートの風味でクランベリーの酸味が抑えられ、フルーティな味わい。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_soco_cranberry_01.jpg
+474,パッソア・オレンジ,甘くフルーティで、軽やかな飲み心地。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passoa_orange_01.jpg
+475,オーガスタ・セブン,酸味が効いたトロピカルな味わい。漫画「レモンハート」にも出てきた大阪のバー、Augustaの品野氏創作。名前は品野氏通算7番目の創作カクテルという意味。,度数 約 5.6 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_augusta_7_01.jpg
+476,パッソア・レディキラー,フレッシュでフルーティな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passoa_lady_killer_01.jpg
+477,パッソア・パイン,トロピカルフルーツ同士の組み合わせで、南国気分が味わえる甘口のフルーティさ。マジ旨い。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passoa_pineapple_01.jpg
+478,パッション・サマー,トロピカルでフルーティな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passion_summer_01.jpg
+479,アミーズ・リスキー・パッション,トロピカルな味わいで、気軽にスイスイ飲める。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_amys_risky_passion_01.jpg
+480,パッソアモーニ,スプモーニのバリエーション。甘くフルーティな味。トロピカルな感じを漂わせながら、さっぱりとしてとても飲みやすい。パッソアをパッシモに変えるとパッシモーニ。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passimoni_01.jpg
+481,パッソア・サングリア,スペインのイビザ島をイメージしたカクテル。甘くてフルーティな味わい。リゾート気分に浸れる。齋藤久平氏の創作。,度数 弱い (8度以下),5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passoa_sangria_01.jpg
+482,ピンク・パッション,甘くフルーティで、フレッシュな風味にあふれる一杯。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_pink_passion_01.jpg
+483,パッソア・グレープフルーツ,鮮やかパッションフルーツリキュールとさっぱりグレープフルーツのパーフェクトコンビネーション。フルーティーで飲みやすいカクテル。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passoa_grapefruit_01.jpg
+484,パッション・ブリーズ,シー・ブリーズの亜種。トロピカルな味わいで、さっぱりとして飲みやすい。,,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passion_breeze_01.jpg
+485,パッション・ストローク,パッソアと相性抜群のライムを使ったショートカクテルで、爽やかな飲み心地。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passion_stroke_01.jpg
+486,パッソア・コーラ,甘口でフルーティ。揚げ物などのジャンキーな食べ物との相性は最高。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passoa_cola_01.jpg
+487,パッソア・ジンジャー,ジンジャーエールの甘口で作るとさっぱり、ジンジャーエールの辛口で作ると刺激的な味わい。パンチのある味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passoa_ginger_01.jpg
+488,プロポーズ,香りが優雅で、フルーティさもあり、甘口な味わい。甘口のデザートカクテル。鈴木克昌氏創作。,度数 約 12 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_propose_01.jpg
+489,ドュロン,とてもフルーティな味わいで飲みやすい。毛利隆雄氏の創作。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_duron_01.jpg
+490,パッション・ドライバー,とてもトロピカルでフルーティな味わい。ジュースのようで飲みやすい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passion_driver_01.jpg
+491,サマー・ドリーム,ライムの風味とパッソアの相性が良く、フルーティーな味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_summer_dream_01.jpg
+492,パッソア・アップル,色合いもよく、柔らかな甘さでまろやかな口当たりで、トロピカルな気分を醸し出すカクテル。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passoa_apple_01.jpg
+493,パッソア・アセロラ,レモンたっぷりの酸味と塩味がアクセント。フルーティで甘酸っぱい味わい。齋藤久平(Kyuhei Saito)氏の創作。,度数 弱い (8度以下),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passoa_acerola_01.jpg
+494,パッソア・トニック,ほろ苦い大人の味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passoa_tonic_01.jpg
+495,ムーラン・ルージュ,フランス語で「赤い風車」という意味。名前の由来は、有名なパリにある同名のキャバレーから取ったとも言われている。ほんのり甘酸っぱくて、まろやかな味わい。さわやかな香りも良く、見た目も綺麗な赤で、まとまりの良いカクテル。,度数 約 20 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_moulin_rouge_01_01.jpg
+496,ミリオネーア,名前は百万ドルの大富豪(億万長者)という意味。甘みと酸味が絶妙なバランスで混ざりあった、フルーティーで香り高い贅沢な味わいで、とても飲みやすい。,度数 約 19 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_millionaire_01.jpg
+497,ピンポン,濃厚な甘口の食後酒。,度数 強い (25度以上),3,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_pingpong_01.jpg
+498,チャーリー・チャップリン,西洋すももと杏子のお酒にレモンが合わさり、甘すぎずにさっぱりとした口当たりで、酸味がたっぷりな味わい。,度数 約 19 %,2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_charlie_chaplin_01.jpg
+499,スロージン・カクテル,スロージンの甘酸っぱいフルーティさにベルモットの香りが加わって飲みやすい。,度数 約 21 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sloe_gin_cocktail_01.jpg
+500,スローベリー・カクテル,スローベリー(西洋すもも)の風味をダイレクトに感じることができる。,度数 強い (25度以上),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sloeberry_cocktail_01.jpg
+501,スロージン・サワー,7月の誕生石カクテル。誕生石はルビー。悪魔を払うと言われる赤。甘酸っぱさが加わって爽やかな味わい。,度数 約 14 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sloe_gin_sour_01.jpg
+502,スロージン・フィズ,爽快な酸味を楽しめる。1月の誕生石ガーネットに色が似ていることから、1月の誕生カクテルとも言われる。,度数 普通 (9度〜24度),4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sloe_gin_fizz_01.jpg?v=2
+503,スロー・テキーラ,テキーラにスロージンの甘酸っぱさが相性抜群なカクテル。テキーラの独特な味わいをスロージンの甘酸っぱさが絶妙に調整してくれ、テキーラ特有の癖がまろやかになって飲みやすい。テキーラベースの中でも人気なカクテル。,度数 約 27 %,2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sloe_tequila_01.jpg
+504,グラスホッパー,名前はバッタの意味で、カクテルの色合いから名付けられたもの。生クリームのまろやかさが、ほどよくミックスされており、ペパーミントのさわやかさとカカオの香ばしさが、調和された香りのよいカクテル。甘口で食後のデザート代わりにも最適。チョコミント好きにはたまらない味。,度数 約 16 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_grasshopper_01.jpg
+505,ミント&ホワイトソーダ,爽やかな味わい。,度数 約 6 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mint_white_soda_01.jpg
+506,アルパイン・スプライト,ミント風味にスプライトのレモンとライムが合わさった味。,度数 約 3.4 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_alpine_sprite_01.jpg
+507,ポート・アンド・スターボード,色合いを、赤いランプがつけられている船の左舷(ポート)と緑のランプがつけられている右舷(スターボード)に見立てた、色鮮やかなカクテル。まろやかな甘さで、すっきりとした飲みやすいテイスト。,度数 約 10 %,13,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_port_and_starboard_01.jpg
+508,メキシカン・フラッグ,3層に重なった色合いが、まるでメキシコの旗のよう。甘い口当たりで、ミントの爽やかさが口の中いっぱいに広がる味わい。,度数 普通 (9度〜24度),13,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mexican_flag_01.jpg
+509,メキシカン・フラッグ,3層に重なった色合いが、まるでメキシコの旗のよう。甘い口当たりで、ミントの爽やかさとベイリーズの甘みが口の中いっぱいに広がる味わい。,度数 約 11 %,13,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mexican_flag_02-01.jpg
+510,アイリッシュ・フラッグ・シューター,三層がアイルランド国旗の色合い。爽やかなミントにオレンジキュラソーとベイリーズの甘みが合わさったシュータースタイルのカクテル。,,10,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_irish_flag_shooter_01.jpg
+511,サンタ・クリスマス・ショット,三層の色合いがクリスマスで、見て楽しめる。ミントの風味が強くて甘い、シュータースタイルのカクテル。,,10,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_santa_christmas_shot_01.jpg
+512,デビル,綺麗な緑色で、ミントの爽やかな香りと甘み。スタンダードカクテルの「スティンガー」のホワイトミントリキュールをグリーンミントリキュールに替えたカクテル。,度数 約 27 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_devil_01.jpg
+513,ティー・ミルク,ロイヤルミルクティーのような深い味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tea_milk_01.jpg
+514,ホット・ティー・ミルク,甘くミルキーな味わい。,度数 弱い (8度以下),7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_hot_tea_milk_01.jpg
+515,ダージリン・クーラー,甘さも控えめで上品で爽やかな風味。味わいはレモンティーのようにサッパリで、爽やかな口当たり。ドイツのアントン・リーマーシュミット社が考えたカクテル。,度数 弱い (8度以下),4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_darjeeling_cooler_01.jpg
+516,ティフィン・ロイヤルミルク,生クリームを使うことで濃厚なミルクティーのような味わいになり、そこにブランデーのコクが加わって、ラグジュアリーなミルクティーを感じさせるカクテル。,度数 普通 (9度〜24度),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tiffin_royal_milk_01.jpg
+517,ティー・グレープフルーツ,紅茶の風味が微かに感じられてフルーティな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tea_grapefruit_01.jpg
+518,ティー・アップル,甘口のアップルティーのような味わい。アルコールを感じさせない飲み心地。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tea_apple_01.jpg
+519,ティー・ソーダ,紅茶の濃厚な香りを清涼感のある炭酸で割った爽やかなカクテル。さっぱりとした甘みで、とても飲みやすい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tea_soda_01.jpg
+520,ティー豆乳,紅茶リキュールの甘みと豆乳のミルキーさを感じる味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tea_soy_milk_01.jpg
+521,ティー・スプモーニ,「スプモーニ」のカンパリを紅茶リキュールに換えたカクテル。すっきりとした甘口で飲みやすい。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tea_spumoni_01.jpg
+522,ティー・アイランド・アイスティー,紅茶リキュールの香りが漂い、程良い酸味に紅茶リキュールとコーラの甘みで飲みやすい。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tea_island_iced_tea_01.jpg
+523,ベイリーズ・ミルク,とてもクリーミーで甘くて飲みやすい。,度数 弱い (8度以下),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_baileys_milk_01.jpg?v=2
+524,ベイリーズ・オン・ザ・ロック,ベイリーズそのままの美味しさを楽しめる。氷が少し溶けるぐらいが飲み頃。とても甘口でクリーミーな味わい。,度数 約 17 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_baileys_on_the_rock_01.jpg
+525,ドルチェ・アンド・バナーナ,ドルチェとは、イタリア語で「甘い」「デザート」という意味。チョコバナナのような風味で、甘くフルーティな味わい。,度数 約 26 %,3,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_dolce_banana_01.jpg
+526,アフター・エイト,甘いチョコレートミントカクテル。ミントの切れ味が素晴らしい。,度数 約 20 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_after_eight_01.jpg?v=2
+527,ベイリーズ・アイスティー,香り立つ紅茶にクリームのまろやかさが加わり、甘くリッチな味わい。,度数 弱い (8度以下),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_baileys_Iced_tea_01.jpg
+528,ビー・フィフティーツー,名前はアメリカのボーイング社が開発した爆撃機の名前「B-52」が由来。比重の重いお酒から順番に重ねるプースカフェスタイルのカクテル。シェイクするして仕上げる作り方もある。香りが良く、甘くて飲みやすい味わい。国によっては、最後のグランマルニエに火を点けた状態で提供され、長いストローで素早く飲む。ストローをゆっくり入れてしまうと火で溶けてしまうため。最後に注ぐグランマルニエはベイリーズと混ざりやすいので注意。,度数 約 30 %,10,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_b-52_01.jpg
+529,アフター・ファイブ・シューター,名前は、午後5時以降で仕事が終わったあとの時間、という意味。三層の綺麗な見た目で甘いシュータースタイルのカクテル。,度数 約 19 %,10,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_after_five_shooter_01.jpg?v=2
+530,ベイリーズ豆乳,とてもクリーミーで甘くて飲みやすい。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_baileys_soy_milk_01.jpg
+531,ホット・ベイリーズ豆乳,ホットで飲むとクリーミーさ甘さが際立つ。,,7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_hot_baileys_soy_milk_01.jpg
+532,バイオレット・フィズ,パルフェタムールの定番ロングカクテル。レモンの風味がきいたさわやかな口当たりで、甘さっぱりとした味わい。美しいスミレの色合いと香りが楽しめる。,度数 弱い (8度以下),4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_violet_fizz_01.jpg
+533,ダブル・パーフェクト,オレンジの風味と甘みを感じ、さっぱりとした味わい。,度数 普通 (9度〜24度),8,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_double_perfect_01.jpg
+534,夢一夜,カクテル自体の賞味期限は15分程度と短い。甘酸っぱい味わい。,度数 約 18 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yumehitoyo_02_01.jpg
+535,マリー・アムール,マリーブリザールのパルフェタムールを使った公式カクテル。優しくて甘い味。,度数 普通 (9度〜24度),14,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_marie_amour_01.jpg
+536,エンジェルズ・デライト,名前は「天使の喜び」の意味。美しいプース・カフェ・スタイルで、目を楽しませてくれる美しいカクテル。それぞれの材料が混ざり合っていく過程を楽しみながら味わえる。甘く、まろやかな口当たりで、デザートにぴったり。,度数 約 17 %,13,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_angels_delight_01.jpg
+537,アズール,名前はフランス語で青という意味。パルフェタムールの香りと甘さを味わうことができる。,度数 約 31 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_azur_01.jpg
+538,ジュテーム,名前はフランス語の je t'aime（愛してる）とjus（ジュース）をかけ合わせたもの。果実のみずみずしい甘み。控えめな甘さで上品な味わい。,度数 約 17 %,14,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_je_taime_01.jpg
+539,エイジアン・ウェイ,名前は「アジアの道」という意味。バイオレット・リキュールの甘みや風味をダイレクトに感じることができ、アジアンテイストな妖艶な雰囲気を醸し出す。,度数 約 30 %,5,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_asian_way_01.jpg
+540,ミスティア・オン・ザ・ロック,ミスティアのみずみずい味わいと爽やかな酸味がそのまま楽しめる、定番の飲み方。,度数 約 15 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mistia_on_the_rock_01.jpg
+541,ミスティア・ロワイヤル,ミスティアとシャンパンの華やかな香りが合わさったカクテル。,度数 普通 (9度〜24度),8,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mistia_royal_01.jpg
+542,ミスティア・オレンジ,マスカットとオレンジが合わさり、フルーティな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mistia_orange_01.jpg
+543,ミスティア・サンライズ,テキーラ・サンライズのベースをミスティアにしたカクテル。アルコール度数が低く、フルーティーで飲みやすい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mistia_sunrise_01.jpg
+544,ミスティア・コーラ,フルーティなマスカットの香りのコーラ。甘くフルーティでジュースのように飲みやすい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mistia_cola_01.jpg
+545,ミスティア・グレープフルーツ,グレープフルーツの爽やかな酸味がマスカットと良く合う。ジュースのように飲みやすいカクテル。,度数 弱い (8度以下),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mistia_grapefruit_01.jpg
+546,ミスティア・ストリーム,ガルフストリームのベースをミスティアにしたカクテル。フルーティーな香りが漂い、トロピカルな味わい。,,2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mistia_stream_01.jpg
+547,ミスティア・スプモーニ,ミスティアで作るスプモーニタイプのレシピ。さっぱりとした喉越しでフルーティーな味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mistia_spumoni_01.jpg
+548,ミスティア・トニック,甘さと爽やかさが絶妙なバランスで、とても飲みやすい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mistia_tonic_01.jpg
+549,ミスティア・アップル,甘くてとてもフルーティで、ジュースのようにアルコールを感じさせず、飲みやすい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mistia_apple_01.jpg
+550,ミスティア・ジンジャー,マスカット風味と、ジンジャーエールの風味が同時に味わえる。,度数 約 4 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mistia_ginger_01.jpg
+551,ミスティア・ダイキリ,酸味と共にミスティアのマスカット風味を感じ、さっぱりとした味わい。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mistia_daiquiri_01.jpg
+552,翠煎,意外とマスカットと緑茶の相性が良い。甘くフルーティな味わい。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_suisen_01.jpg
+553,翠煎,甘くフルーティな味わいの中に、少しだけビターなテイストを感じる。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_suisen_02-01.jpg
+554,ミスティア・ホワイト,ミスティアのフルーティさとヨーグルトの風味が合わさって仄かな甘みを感じ、すっきりとした飲み心地。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mistia_white_01.jpg
+555,ミスティア・カルピス,甘くてフルーティな味わい。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mistia_calpis_01.jpg
+556,ミスティア・ソーダ,喉越しスッキリでマスカットの風味。甘くてフルーティな味わい。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mistia_soda_01.jpg
+557,エメラルド・スプリッツァー,上品で軽やかな飲み心地。フルーティな味わい。,度数 約 10 %,8,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_emerald_spritzer_01.jpg
+558,ミスティ・ブルー,美しい青色がオシャレなカクテル。甘すぎず、ミスティアのフルーティさとルクサルドのすっきりとした風味を感じる味わい。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_misty_blue_01.jpg
+559,ゴールデン・キャデラック,カカオの風味があり、濃いめの甘口なカクテルで、まろやかな味わいが特徴的。食後のデザートにピッタリ。名前には、車のキャデラックにひっかけて、「最上級」という意味が込められている。「グラス・ホッパー」のクレーム・ド・ミントをガリアーノに変えたカクテル。,度数 普通 (9度〜24度),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_golden_cadillac_01.jpg
+560,ハーベイ・ウォールバンガー,ガリアーノの定番カクテル。スクリュードライバーにガリアーノを足したレシピ。ガリアーノがアクセントの役割をして、ちょっと違ったスクリュードライバーの味わい。飲みやすくて口当たりが良い。ハーヴェイという男性が酔った勢い頭をぶつけたことから命名されたといわれている。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_harvey_wallbanger_01.jpg
+561,エバー・グリーン,名前は常緑樹の意味。青々しい香りとガリアーノの香草の風味にミントの香りがよくマッチした、甘口のカクテル。ミントの爽快感とトロピカルな風味。カクテル言葉は「晴れやかな心で」。,度数 約 11 %,5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ever_green_01.jpg?v=2
+562,シエスタ,ふんわりとした優しい口当たりに心地よい甘さを感じる味わい。さまざまなカクテルコンペで優勝経験を持つ銀座のバーテンダー、保志雄一氏の創作。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_shesta_01.jpg
+563,ゴールデン・ドリーム,少しさっぱりとし、フルーティで甘く濃厚で、口当たりがクリミーなカクテル。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_golden_dream_01.jpg
+564,アンジェロ,名前はイタリア語で「天使」の意味。色々なフルーツやハーブの風味が溶け込み、複雑で飲みごたえのある味わい。,度数 約 12 %,5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_angelo_01.jpg
+565,ホワイト・サテン,上品で大人なミルクコーヒーを飲んでいるような味わい。クリーミーで甘い味の中に、ガリアーノのハーブの風味を感じる。カクテル言葉は「程よい関係」。,度数 約 17 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_white_satin_01.jpg
+566,イタリアン・スクリュードライバー,ガリアーノのハーブの風味がオレンジジュースの甘みを和らげている。,度数 約 9 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_italian_screwdriver-02_01.jpg
+567,フロンティア・スピリッツ,甘くフルーティな味わい。池田敏幸氏の創作。2002年 H.B.A. 東京支部 創作 カクテル コンペティション ショート ウィスキー 部門 竹鶴賞を受賞。,度数 約 23 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_frontier_spirit_01.jpg
+568,エル・フラミンゴ,カカオリキュールの甘みとガリアーノのハーブ感に牛乳が加わり、甘くてミルキーな味わいでトロピカルな気分を味わえる。池田勇治氏の創作。1981年 サントリー トロピカルカクテル コンテスト グランプリを受賞。,度数 約 13 %,14,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_el_flamingo_01.jpg
+569,ガリアーノ・ソーダ,ガリアーノのハーブの風味を爽快な喉越しで味わえる。,度数 約 9 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_galliano_soda_01.jpg
+570,サンライズ,仄かにバナナの香りが漂い、テキーラのドライな味にハーブとバナナと生クリームの甘みが合わさった複雑な味わい。R. Clancy氏の創作。1965年 オーストラリアン カクテル コンペティション 優勝を受賞。,度数 約 23 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sunrise_01.jpg
+571,アルクディア,ガリアーノのハーブ感とバナナの甘みを香りと味で感じることができる。ハーブの風味が強くて甘いカクテル。1972年 デンマーク 優勝を受賞。,度数 約 23 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_alcudia_01.jpg
+572,スイート・ラバーズ,ピーチとグレープフルーツの甘みを感じつつも、さっぱりとした酸味も感じる味わい。2005 横浜市長杯 カクテル コンペティション 準優勝獲得作品。埼玉県さいたま市 BAR SAKAMOTO 柿沼辰弥氏の創作。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sweet_lovers_01.jpg
+573,ビバ・コウベ,ほんのりと苦甘い、スッキリとした仕上がりで、飲みやすい味わい。神戸の老舗バー「SAVOY」のオーナーバーテンダー、木村義久氏の創作。,,5,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_viva_kobe_01.jpg
+574,ヴィヴァ・レオ,名前は「レオ万歳」と1979年西武ライオンズ優勝に因んで命名されたもの。ハーブ感のある甘い香りとペパーミントの香りが程良くマッチし、ウイスキーのアルコールを感じながらも甘い味わい。プリンスホテルの今泉康治氏の創作。第8回H.B.A (日本ホテルバーメンズ協会) 創作 カクテル コンペティション優勝作品。,度数 約 32 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_viva_leo_01.jpg
+575,新緑,ガリアーノのハーブ感と程よい酸味を感じ、すっきりとした味わいのカクテル。住友厚司氏の創作。1965年 カクテル コンペティション 優勝を受賞。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_shin_ryoku_01.jpg
+576,カフェ・ガリアーノ,イタリアから渡った移民によってアメリカに伝えられ、20世紀初頭にニューヨークで流行した。ガリアーノのハーブの風味を感じるコーヒーカクテル。,度数 約 6 %,7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cafe_galliano_01.jpg
+577,ゲバラ,ガリアーノのハーブの風味を感じながらも柑橘系のフルーティな味わい。 1973年 第2回 H.B.A. 創作カクテルコンペティション第3位を受賞。,度数 約 22 %,2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_gebara_01.jpg
+578,ミラノ,後味にガリアーノのハーブ感を感じる。程良い甘みと酸味で、さっぱりとしながらも甘酸っぱい味わい。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_milano_01.jpg
+579,バラクーダ,すっきりとした甘みで、後からガリアーノのハーブの風味を感じる。,度数 普通 (9度〜24度),5,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_barracuda_01.jpg
+580,リモート・コントロール,甘くてクリーミーな口当たりで、ガリアーノのハーブの風味をしっかりと感じる味わい。,,3,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_remote_control_01.jpg
+581,カクタス・バンガー,ほのかにガリアーノのハーブの香りが漂い、テキーラがオレンジジュースの甘みを抑え、まろやかな口当たり。「ハーベイ・ウォールバンガー」のベースをテキーラに替えたカクテル。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cactus_banger_01.jpg
+582,メキシカン・バナナ,テキーラとバナナリキュールの相性が良く、やさしい甘さでまろやかな口当たりのカクテル。,度数 約 35 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mexican_banana_01.jpg
+583,ビヨンド・ザ・リーフ,甘口のデザートカクテル。まろやかな舌触りの甘い濃厚な味わい。,度数 約 13 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_beyond_the_reef_01.jpg
+584,ボストン・ゴールド,バナナの風味が漂い、さっぱりした口当たり。フルーツのトロピカルさがあってジューシーな味わい。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_boston_gold_01.jpg
+585,レディ・デイ,名前はサックス奏者のレスター・ヤングがアメリカ黒人の歌姫であるビリー・ホリデイに慈愛を込めてつけた名前から。ウィスキーの風味の中に、薄っすらと感じるバナナの香りとフルティーさと仄かな酸味があり、爽やかな風味とまろやかな口当たりで、程良いバランスのカクテル。,度数 強い (25度以上),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_lady_day_01.jpg
+586,サマー・ファン,フルーツジュースをたっぷり使ってブランデーの癖を大幅に和らげていることから、トロピカルドリンクを飲んでいるような口当たり。アルコールをあまり感じず、ジュース感覚で飲めてしまうカクテル。,度数 弱い (8度以下),0,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_summer_fun_01.jpg?v=2
+587,オーレ,テキーラがバナナリキュールの甘みを程良く抑えている。Frank McDermott氏の創作。1987年 第18回 I.C.C. ローマ(イタリア)大会 プレディナー部門 第1位を受賞。,,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ole-01_01.jpg
+588,バナナ・チョコ,バナナとチョコに生クリームのまろやかな口当たりと合わさり、甘くて飲みやすいデザートカクテル。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_banana_chocolate_01.jpg
+589,ル・ロワイヤル,バナナチョコの味わいを忠実に再現しつつもアルコール感がある、甘い大人のカクテル。,度数 約 15 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_le_royal_01.jpg
+590,バナナ・ブリス,名前の「bliss」は「至福、無上の喜び」の意味。ブランデーの芳醇な香りとバナナの甘い香りが相性抜群で、甘い飲み口。,度数 約 27 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_banana_bliss_01.jpg
+591,イエロー・バード,明るい色合いで、フルーツ系の素材をたっぷり使った甘酸っぱくてトロピカルな味わいのカクテル。,,5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yellow_bird_01.jpg
+592,バナナ・フィズ,バナナの甘みを感じる甘酸っぱい味わい。,度数 普通 (9度〜24度),4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_banana_fizz_01.jpg
+593,カリビアン・ナイト,ダーク・ラムのビターな風味のバナナリキュールの甘みが合わさり、甘く複雑な味わい。橋光四郎氏の創作。1981年 サントリー トロピカルカクテル コンテスト グランプリを受賞。,,14,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_caribbean_night_01.jpg
+594,モンキー・ミックス,バナナリキュールの甘さの中にオレンジジュースの仄かな酸味が合わさって、爽やかでフルーティな味わい。,度数 弱い (8度以下),2,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_monkey_mix_01.jpg
+595,バナナ・ミルク,甘くミルキーな味わい。バナナの芳醇な香りがよく引き立たせられており、ミルクのまろやかなコクが魅力。バナナリキュールを代表する定番のカクテル。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_banana_milk_01.jpg
+596,シルバー・ジュビリー,名前はカトリックで25周年祭の意味。バナナと生クリームの甘さをジンが爽やかに仕上げている。,度数 約 21 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_silver_jubilee_01.jpg
+597,ビジョン,甘くフルーティな味わい。長谷川信介氏の創作。1995年 第2回 サントリー ザ カクテル コンペティション ショート部門 優秀賞を受賞。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_vision_01.jpg
+598,バナナ・オレンジ,オレンジの味にバナナの甘みを感じるフルーティな味わい。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_banana_orange_01.jpg
+599,ロベルタ,チェリーブランデーの甘みにドライベルモットのハーブ感とカンパリの苦味が合わさり、チェリーの芳醇さを感じながらも複雑な味わいで、飲みやすいカクテル。Pietro Cuccoli氏の創作。1963年 第7回 I.C.C. セントビンセント大会 第1位を受賞。,度数 約 24 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_roberta_01.jpg
+600,バナナ・アイスティー,バナナと紅茶は意外と相性が良く、さっぱりとした飲み口。紅茶のさっぱりとした香りと、バナナの芳醇な香りがマッチしたカクテル。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_banana_iced_tea_01.jpg
+601,バンシー,上品なお菓子のようにクリーミーなバナナチョコのようで、甘口の味わいのデザートカクテル。,度数 約 10 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_banshee_01.jpg
+602,バナナ・カルーア・ミルク,バナナの甘みを感じるコーヒー牛乳のよう甘くミルキーな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_banana_kahlua_milk_01.jpg
+603,バナナ・トニック,バナナリキュールの甘みをトニックウォーターの苦味が和やらげており、あっさりとした味わい。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_banana_tonic_01.jpg
+604,バナナ・ミルク・シェイク,とろける甘さのカクテルで、ふわふわとした仕上がり。,度数 弱い (8度以下),2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_banana_milk_shake_01.jpg
+605,クイーンズ・ボルス,デザートのようなバナナチョコの味で、甘くクリーミーな味わい。亀井康臣氏の創作。1992年 第1回 ボルス カクテル コンペティションでグランプリを受賞。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_queens_bols_01.jpg
+606,カリビアン・マーメイド,程良い甘みと酸味を感じ、トロピカルな味わい。澤千絵子氏の創作。1998年 第21回 H.B.A. 創作 カクテル コンペティション ロング部門 第2位を受賞。,度数 約 15 %,5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_caribbean_mermaid_01.jpg
+607,バナナ・ラム・フラッペ,フルーティーでとろけるような味わいで、さっぱりとした口当たり。,度数 約 20 %,3,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_banana_rum_frappe_01.jpg
+608,アコーダンス,名前は「一致」という意味。甘くフルーティな味わい。中村健太郎氏の創作。1995年 第2回 サントリー ザ カクテル コンペティション ショート部門 最優秀賞を受賞。,度数 約 20 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_accordance_01.jpg
+609,グリーン・バナナ・ミルク,甘いバナナの香りで、甘くミルキーな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_green_banana_milk_01.jpg
+610,ジャングル・ファンタジー,バナナの甘みにパイナップルの酸味が加わり、甘くフルーティな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_jungle_fantasy_01.jpg
+611,エメラーダ,程よい甘みと酸味がある、甘酸っぱい味わい。宮内誠氏の創作。,度数 約 18 %,4,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_emerada_01.jpg
+612,グリーンバナナ・オレンジ,バナナとオレンジの風味が合わさり、甘くフルーティな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_green_banana_orange_01.jpg
+613,エトレーヌ/贈り物,名前はフランス語で「贈り物」の意味。クリーミーなバナナミント味で、甘くてデザートにぴったりなカクテル。酒向明浩氏の創作。1991年 第18回 N.B.A. 全国 バーテンダー 技能競技大会で総合優勝、創作部門で優勝を受賞。,度数 約 12 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_etrenne_01.jpg
+614,グレープフルーツ・コリンズ,甘酸っぱく、さっぱりとした飲み心地。,度数 普通 (9度〜24度),4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_grapefruit_collins_01.jpg
+615,ピンク・ソーダ,甘すぎずさっぱりとした口当たりで、食事にもよく合う。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_pink_soda_01.jpg
+616,ピンク＆ホワイト,甘酸っぱさが印象的なカクテル。カルピスの酸味、ピンクグレープフルーツの豊かな香りがマッチし、奥深い味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_pink_white_01.jpg
+617,ベラーノ,グレープフルーツリキュールの甘みととライムの酸味が良く合い、甘酸っぱくてフルーティな味わい。,度数 普通 (9度〜24度),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_verano_01.jpg
+618,ピンク・コーラ,コーラの後味にピンクグレープフルーツリキュールの風味を感じ、甘くフルーティな味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_pink_grapefruit_cola_01.jpg
+619,ピンクグレープフルーツ・イージーミックス,ピンクグレープフルーツとトニックウォーターの苦味がよく合う。甘く爽やかな香りとキュンとする酸味があり、さっぱりとしてフルーティな味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_pink_easy_mix_01.jpg
+620,ストロベリー・ミルク,やさしい甘味とミルキーな口当たり。ストロベリーリキュールの定番カクテル。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_strawberry_milk_01.jpg
+621,ストロベリー・コラーダ,「ピニャ・コラーダ」にストロベリーリキュールと牛乳が加わったカクテル。南国気分を味わえるような、甘くフルーティな味わい。,度数 弱い (8度以下),5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_strawberry_colada_01.jpg
+622,ストロベリー・レモネード,甘酸っぱくて喉越し爽快。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_strawberry_lemonade_01.jpg
+623,ストロベリー・ソーダ,ストロベリーリキュールの味わいを直に感じることができる。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_strawberry_soda_01.jpg
+624,バルーション,名前は「旅立ち」の意味。ウォッカのアルコールを感じながらも、甘くフルーティな味わい。,度数 約 15 %,8,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_balluchone_01.jpg
+625,ストロベリー・ウォッカ・マティーニ,ウォッカのアルコールを感じながらも苺の甘みがたっぷりの甘いカクテル。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_strawberry_vodka_martini_01.jpg
+626,ファンタジア,オレンジの良い香りで、コニャックの風味にベイリーズのクリーミーな甘みが加わり、チョコレートと苺の程良い甘みを感じる味わい。宮崎優子氏の創作。,,3,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_fantasia-02_01.jpg
+627,ストロベリー・フィールド,果物の甘みと酸味が合わさって味が引き締まり、程よい甘さ。山本雄二氏の創作。1988年 ジャーディン W&S カクテル コンペティション タンカレー部門 第2位を受賞。,度数 約 22 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_strawberry_field_01.jpg
+628,ストロベリー・ヨーグルト,ストロベリーリキュールの甘みがカルピスの酸味にマッチし、乳酸菌がたっぷりで健康的なカクテル。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_strawberry_yogurt_01.jpg
+629,メキシカーノ,ジンのドライな味にアマレットとストロベリーリキュールの甘みとオレンジジュースが合わさり、甘くてとてもフルーティな味わい。エロス・デル・プリ・オーレ氏の創作。1990年 第19回 I.C.C. メキシコシティ(メキシコ)大会 ロング部門 第1位を受賞。,度数 普通 (9度〜24度),0,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mexicano_01.jpg
+630,ホワイト・ダック,南国気分を味わっているかのようなトロピカル風味で、甘くフルーティな味わい。友利靖氏の創作。1983年 サントリー トロピカルカクテル コンテスト グランプリを受賞。,,9,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_white_duck_01.jpg
+631,ヨーグリート・ストロベリー・ミルク,ヨーグリートの甘い酸味とストロベリーリキュールのフルーティな甘さが牛乳と合わさり、仄かな酸味で甘くミルキーな味わい。,度数 弱い (8度以下),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yogurito_strawberry_milk_01.jpg
+632,サザン・ストロベリー・フラッペ,甘くフルーティな香りで、さっぱりとした甘口と冷たい口当たりのカクテル。,度数 約 30 %,3,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_southern_strawberry_frappe_01.jpg
+633,ストロベリー・アップル,苺と林檎の甘みが合わさり、やさしい甘さでフルーティな味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_strawberry_apple_01.jpg
+634,ホット・ストロベリー・ミルク,身体を温めながら甘くミルキーな味わいを楽しめる。,度数 弱い (8度以下),7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_hot_strawberry_milk_01.jpg
+635,ピュア・ラブ,ストロベリーの甘みとライムの酸味にジンジャーエールの刺激的な後味が加わり、甘酸っぱい味わいのカクテル。和名は「ときめきの恋」。オリジナルレシピからフランボワーズリキュールの代わりにストロベリーリキュールを使ったカクテル。,,4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_pure_love-02_01.jpg
+636,フローズン・ストロベリー・マルガリータ,「フローズン・マルガリータ」のホワイトキュラソーをストロベリーリキュールに変えたカクテル。酸味を強く感じ、甘酸っぱくてフルーティな味わい。,,3,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_frozen_strawberry_margarita_01.jpg
+637,オープニング・ナイト,ストロベリーリキュールのフルーティな香りが漂い、後味にドライベルモットの風味を感じる。ほのかな甘味がありながらもアルコール感をしっかりと感じ、すっきりとした味わい。,度数 約 32 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_opening_nite_01.jpg
+638,アポロ,まるで苺チョコレートのアポロチョコを食べているかのような甘い味わい。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_apollo-03_01.jpg
+639,アポロ,苺チョコレートのアポロチョコのような甘みを感じるミルキーな味わい。,,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_apollo-04_01.jpg
+640,ロシアン・レディー,優しくまろやかな口当たりで甘酸っぱく、さっぱりとした味わい。ラッシーを飲んでいるかのような気分にもなる。,度数 約 12 %,14,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_russian_lady_01.jpg
+641,トロピカル・ファンタジー,酸味があってサッパリと飲みやすく、甘酸っぱい味わい。伊藤路郎氏の創作。1980年 サントリー トロピカルカクテル コンテスト グランプリを受賞。,,5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tropical_fantasy_01.jpg
+642,スイーティー,コニャックの風味に程良い甘みが加わった味わい。ロガノ・マーク氏の創作。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sweety_01.jpg
+643,アマレッティー,アマレットとストロベリーの甘みを感じ、甘いフレーバーティーのような味わい。1995年サントリーカクテルコンペ・ロング部門 佳作。恒吉正彦氏の創作。,度数 約 10 %,4,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_amarettea_01.jpg
+644,レディー・バグ,名前の「Lady Bug」は「てんとう虫」。クリーミーな口当たりで、イチゴのチョコレートアイスのように甘い味わいのデザートカクテル。,度数 弱い (8度以下),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_lady_bug_01.jpg
+645,イエロー・フィンガーズ,苺とバナナの甘くフルーティな風味を感じ、まろやかな口当たり。,度数 約 26 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yellow_fingers_01.jpg
+646,マリポーザ,甘酸っぱくてフルーティな味わいで、トロピカルな気分を味わえるカクテル。飯沼宏氏の創作。1992年 第3回 アジア パシフィック バーテンダー オブ ザ イヤー カクテル コンペティション 準優勝を受賞。,,5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_maripoza_01.jpg
+647,アブサン・ドリップ,アブサンの伝統的な飲み方。アブサン・ドリップには、穴の開いた「アブサンスプーン」という専用アイテムを使う。アブサンに含まれるハーブの精油が水と反応して白濁し、とても神秘的な色合いに変わる変化が大きな魅力。薬草特有の苦味が緩和されて飲みやすい。アブサン本来の味や香りを楽しめる飲み方。アブサンスプーンが手元にない場合はフォークで代用。,度数 約 11 %,16,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_absinthe_drip_01.jpg
+648,アブサン・グレープフルーツ,グレープフルーツの苦味あるフルーティさがアブサンの苦味を抑え、爽やかなフルーティさで飲みやすい。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_absinthe_grapefruit_01.jpg
+649,アースクエイク,名前は、このカクテルを飲むと地震のように体を揺さぶられたような衝撃を受けることから。アルコール度数がとてつもなく高く、アブサンのハーブ感があり、ドライで衝撃的な味わい。カクテル言葉は「衝動」。,度数 約 40 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_earthquake_01.jpg
+650,アブサン・バック,ジンジャーエールの甘さとレモンの酸味がアブサンに合っている。独特な苦味も弱まるので飲みやすい。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_absinthe_buck_01.jpg
+651,アブサン・コーラ,コーラの甘みがアブサンの苦味を和らげて飲みやすい。とても良い組み合わせ。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_absinthe_cola_01.jpg
+652,アブサン・グラスホッパー,「グラス・ホッパー」にアブサンを合わせたカクテル。アブサンをかなりマイルドにした感じで、ミントリキュールとアブサンの薬草感がよく合うチョコミントの味わい。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_absinthe_grasshopper_01.jpg
+653,アブサン・ソーダ,アブサンの薬草の風味と発泡の刺激で、爽やかな味わい。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_absinthe_soda_01.jpg?v=2
+654,デス・イン・ジ・アフタヌーン,小説家であるヘミングウェイが考案し、自身の短編の名を取って名づけたとされる。カクテルアルコールの高さからヘミングウェイでも午後からしか飲まなかったと言われている。華やかな香り飲みやすい口当たりだが、アルコールが後からしっかり効いてくる。当初はシャンパンと黒色火薬が使われていたが、現代では黒色火薬は使われておらず、アブサンやペルノーが使われている。,度数 約 33 %,8,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_death_in_the_afternoon_01.jpg
+655,アブサン・ビア,アブサンのハーブ感とビール風味が合わさり、ドライでビターな味わい。,,17,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_absinthe_beer_01.jpg
+656,ナイン・ピック,名前はビリヤードのナイン・ボールで９番ボールを落とすことで、勝ちを意味する。キリッとドライな味わいと華やかで爽やかな香り。ガツンとインパクトのある飲み口。,度数 約 52 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_nine_pick_01.jpg
+657,コンチネンタル・ハイボール,アブサンのハーブの風味を感じながらも、アブサン・ソーダにシュガーシロップの甘みが加わり、更に飲みやすくしたカクテル。,,4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_continental_highball_01.jpg
+658,アブサン・ボヘミアン・スタイル,1990年代後半に、チェコのアブサンメーカーの営業マンが流行らせたスタイル。砂糖が溶けながらグラスの中に落ちていく様子が楽しめる、神秘的でロマンティックな飲み方。穴の開いた「アブサンスプーン」という専用スプーンの上に、アブサンを染み込ませた角砂糖を置いて火を点け、焦げ付かない程度に燃やしたら水を一滴づつゆっくりと垂らして加水。着火するとアブサンの香りと風味が飛んでしまうことから、伝統的なスイスやフランスのスタイルでは火を点けない。あくまでパフォーマンス的なもので、質の良い美味しいアブサンではやらない方が良さそう。甘みを加えて加水したことにより特有の苦味が緩和され、飲みやすい。,度数 約 11 %,16,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_absinthe_bohemian_style_01.jpg
+659,アブサン水割り,アブサンを水割りにすることで、薬草特有の苦味が緩和されて飲みやすい。アブサンに含まれるハーブの精油が水と反応して白濁し、とても神秘的な色合いに変わる。アブサンと水を1対5の割合で合わせるのがおすすめ。,度数 約 11 %,16,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_absinthe_with_water_01.jpg
+660,ピカデリー,名前はイギリス・ロンドン市内の繁華街の名前から。豊かな風味とキリッとしたドライな口当たり。,度数 約 34 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_piccadilly_01.jpg
+661,アブサン・トニック,トニックの甘さと苦味がアブサンとよく合い、水割りよりも飲みやすい。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_absinthe_tonic_01.jpg
+662,アブ・ジン・トニック,アブサンのハーブ感を感じるジントニック。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ab-gin_tonic_01.jpg
+663,ヨット・クラブ・パンチ,やや甘酸っぱい口当たりで、さっぱりとした味わい。僅かに入っているアブサンの風味がアクセントになっている。,度数 約 9 %,4,8,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_yacht_club_punch_01.jpg
+664,アドヴォカート・エッグノッグ,ほのかに甘くミルキーで、ブランデーや卵のコクがある風味。ミルクセーキに似た味わいで、なめらかな舌触り。アルコール版のミルクセーキ。デザート感覚で飲める。,度数 約 6 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_advocaat_eggnog_01.jpg
+665,スノーボール,甘くて爽やかな柑橘系の酸味があり、ヨーグルトのような味わい。さっぱりとした飲み口。10月29日の誕生日カクテル。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_snowball_01.jpg
+666,ディスカバリー,アドヴォカートの甘さとクリミーさがある濃厚な風味がジンジャーエールの風味とよく合い、味わい深い。さっぱりとした飲み口で口当たりが良く、甘いお菓子のような味わいで、後味は濃厚。8月2日の誕生日カクテル。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_discovery_01.jpg
+667,ヴィブラート,程良い甘みにミントの風味を感じるミルキーな味わい。,度数 約 9 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_vibrato_01.jpg
+668,カサブランカ・コリンズ,程良い酸味と甘みで爽快感を感じ、すっきりとした味わい。藤本鉄二氏の創作。1976年 A.N.B.A. カクテル コンペティション 優勝を受賞。,,4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_casablanca_collins_01.jpg
+669,クラス・アクト,甘くフルーティで濃厚な味わい。,度数 約 7 %,2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_class_act_01.jpg
+670,ソレイユ・ドール,アマレットとアドヴォカートの甘みがブランデーの風味と良く合っている。半田信生氏の創作。1995年 第2回 サントリー ザ カクテル コンペティション ショート部門 佳作を受賞。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_soleil_dor_01.jpg
+671,アドヴォカート・エッグ・ビア,アドヴォカートを使った甘い卵ビール。,度数 約 8 %,17,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_advocaat_egg_beer_01.jpg
+672,アドヴォカート・コーラ,アドヴォカートとコーラの甘みがよく合い、まったりとした甘口のカクテル。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_advocaat_cola_01.jpg
+673,ジャマイカ・ジョー,名前はジャマイカのコーヒーの意味。ナツメグの香りが漂っており、コーヒーリキュールの甘みとアドヴォカートのまろやかさが合わさった、デザートにぴったりな甘口のカクテル。,度数 約 25 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_jamaica_joe_01.jpg
+674,コーラル・リーフ,名前はサンゴ礁のこと。フルーティで甘酸っぱい味わい。,度数 約 4 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_coral_reef_01.jpg
+675,イースター・エッグ,チョコレートリキュールの風味を最初に感じ、アドヴォカートの濃厚な風味で奥深い甘さのカクテル。,度数 約 12 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_easter_egg-02_01.jpg
+676,バタフライ,最初にチェリーの風味を感じ、アドヴォカートの濃厚さがありながらも爽快な喉越しの甘いカクテル。,度数 普通 (9度〜24度),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_butterfly_01.jpg
+677,アルティシア,アドヴォカートの濃厚な甘みにライムの酸味とジンジャーエールの風味をそれぞれ感じ、甘酸っぱい味わいのカクテル。,度数 約 2 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_artesia_01.jpg
+678,パレ・ロワイヤル,アドヴォカートと生クリームの甘さクリーミーさを感じながらも、ガリアーノとハーブ感とブランデーの風味でアルコール感をしっかりと感じる味わい。日暮圭貴氏の創作。2000年 第6回 YOKOHAMAカクテル倶楽部 カクテルコンペティション銀賞を受賞。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_palais_royal-01_01.jpg
+679,アドヴォカート・プリン,アドヴォカートで再現した大人のプリン。味わいはプリンそのもので、飲むプリンのようなもの。,,3,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_advocaat_pudding_01.jpg
+680,アドヴォカート・緑茶エッグノック,和のプリンのようで、口当たりが良く、甘くてまろやかなカクテル。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_advocaat_green_tea_eggnog_01.jpg
+681,フェアリー・ランド,メロンとココナッツの甘くフルーティな味わいで、アドヴォカートによって味に深みがある。トロピカルな気分を味わえるカクテル。山本功二氏の創作。2000年 第7回 サントリー ザ カクテル コンペティション カクテル オブ ザ イヤーを受賞。,度数 約 14 %,5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_fairy_land-01_01.jpg
+682,ワニンクス・クリーム・エッグ・シューター,それぞれの甘みが合わさることによって、とても甘くてデザートにぴったりな味わい。,度数 約 19 %,10,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_warninks_creme_egg_shooter_01.jpg
+683,フラッフィー・ダック,オレンジの柑橘系の風味とアドヴォカートの濃厚さを感じる味わい。ジンの風味が甘みを抑え、すっきりとして飲みやすい。,度数 普通 (9度〜24度),4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_fluffy_duck-01_01.jpg
+684,フラッフィー・ダック,アドヴォカートとカカオの甘みに程良いすっきりとした酸味を感じる味わい。,,6,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_fluffy_duck-02_01.jpg
+685,フラッフィー・ダック,とてもクリーミーで、アドヴォカートと生クリームの甘みを感じる味わい。,,5,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_fluffy_duck-03_01.jpg
+686,ココナッツ・ムーン,ココナッツの甘くてフルーティーな風味とアドヴォカートのまろやかさにテキーラの風味が加わり、柔らかい口当たりで、すっきりとしたカクテル。蒲谷重則氏の創作。メキシコの夜空に輝く大きな満月をイメージ作られたカクテル。1999年 第6回 サントリー ザ カクテルコンペティション スイート部門 最優秀賞。,度数 約 20 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_coconut_moon_01.jpg
+687,プルシア・ロック,プルシアの甘酸っぱくフルーティーで芳醇な味わいが、そのまま味わえる。,度数 普通 (9度〜24度),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_prucia_rock_01.jpg
+688,プルシア・ソーダ,甘みが若干抑えられ、さっぱりとしいる。甘く爽やかな飲み口で、すっきりと飲むことができる。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_prucia_soda_01.jpg
+689,プルシア・アルモニ,プルシアにソーダだけではなくウイスキーも加えることで、よりすっきりとした味わいのカクテル。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_prucia_harmonie_01.jpg
+690,プルシア・ポム,「ポム」はフランス語で林檎の意味。プルシアとアップルジュースとの相性が良く、口当たりがまろやか。プラムとレモンの酸味や紅茶リキュールの風味を感じ、甘酸っぱくフルーティーなカクテル。,度数 約 7 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_prucia_pomme_01.jpg
+691,プルシア・アップル,プルシアとアップルジュースとの相性が良く、甘酸っぱくてフルーティーな味わい。,度数 約 6 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_prucia_apple_01.jpg
+692,プルシア・オレンジ,プラムリキュールの甘みとオレンジの甘みがとても良く合い、甘くフルーティーな味わい。,度数 約 6 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_prucia_orange_01.jpg
+693,ミスティア・ゴールド・スパーク,ミスティアの瑞々しくて爽やかな酸味とプルシアの芳醇な甘みがマッチし、すっきりとしたのどごしに程よい甘さとフルーティさを感じるカクテル。,度数 約 3 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mistia_gold_spark_01.jpg
+694,プルシア・メゾン,プルシアとブランデーの相性が良く、甘酸っぱくてフルーティさがある深い味わい。,度数 約 11 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_prucia_maison_01.jpg
+695,プルシア・マンゴー,プルシアの甘酸っぱさとマンゴーの濃厚な甘みを感じる、甘くフルーティな味わい。,度数 約 6 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_prucia_mango_01.jpg
+696,プルシア・ジンジャー,酸味と甘味が合わさって飲みやすく、甘酸っぱくて爽快な喉越しが良いカクテル。,度数 約 4 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_prucia_ginger_01.jpg
+697,プルシア・トニック,プルシアの甘酸っぱさがトニックウォーターの苦味と合わさることで、程よい甘みを感じながらもさっぱりとした味わい。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_prucia_and_tonic_01.jpg
+698,プラム・バック,プラムの甘酸っぱさとレモンの酸味にジンジャーエールが加わることで、さっぱりとした甘酸っぱさがある味わい。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_plum_buck_01.jpg
+699,フランジェリコ・ミルク,ヘーゼルナッツリキュールと牛乳が絶妙にマッチして、甘くミルキーでコク深い味わい。ヘーゼルナッツの風味をしっかりと感じることができる。,度数 約 6 %,2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_frangelico_milk_01.jpg
+700,フランジェリコ・トニック,フランジェリコの甘みとトニックウォーターの苦味が程良く合い、さっぱりとした味わい。,度数 約 4.6 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_frangelico_tonic_01.jpg
+701,フランジェリコ・オレンジ,ヘーゼルナッツとオレンジの甘みが合わさり、複雑な甘さとフルーティさを感じる味わい。食中酒にもぴったり。,度数 約 6 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_frangelico_orange_01.jpg
+702,フランジェリコ・オン・ザ・ロック,フランジェリコの甘みがあるヘーゼルナッツ風味をダイレクトに感じることができる。,度数 約 17 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_frangelico_on_the_rock_01.jpg
+703,プレシャス・ダンス,しっかりとした甘さを感じつつも、ウォッカのアルコール感はしっかりとある。食後のデザートに合いそうなクリーミーで甘いカクテル。渡辺直人氏の創作。2002年 H.B.A. 東京支部 創作カクテル コンペティション ショートスピリッツ部門の優勝を受賞。,度数 約 25 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_precious_dance_01.jpg
+704,キャッスル・オブ・スワン,ヘーゼルナッツの甘い香りが漂い、フランジェリコとホワイトカカオリキュールの甘みと生クリームのクリーミーさにより、アーモンドチョコケーキを味わっているかのような甘い味わいで、食後のデザートにぴったり。,度数 約 11 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_castle_of_swan_01.jpg
+705,アルディラ,名前は、イタリア語で「全てを超えて」。美しく鮮やかな青色で、酸味と甘みのバランスが取れており、さっぱりとした味わいのカクテル。ラムとヘーゼルナッツの芳ばしい香り。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_aldila_01.jpg
+706,ウィンター・パレス・ウエーター,コーヒーリキュールとヘーゼルナッツリキュールの香りが漂い、甘みがあってスイーツのようなコーヒーの味わい。アルコールは感じ無い。,度数 約 4 %,5,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_winter_palace_water_01.jpg
+707,ブランド・アヴェニュー,程良い甘さの中に少しビターさも感じる味わい。コーヒーリキュールとフランジェリコがウィスキーの独特な香りとアルコール感を抑えており、ウイスキーが苦手な人でも飲みやすい。2002年 H.B.A. 東京支部 創作カクテルコンペティションのショートウィスキー部門で準優勝。片岡寛展氏の創作。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_brand_avenue_01.jpg
+708,ブラウン・スイーツ,甘いリキュールを同士を合わせたカクテル。ナッツ感のあるコーヒー風味で、とても甘みがあってクリーミーな味わい。まさにスイーツのような甘みで、食後のデザートにぴったり。,度数 約 18 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_brown_sweets_01.jpg
+709,ラスティ・ネイル,名前は「錆びた釘」という意味。または、イギリスの俗語である「古めかしいもの」という意味から。第二次世界大戦後に考案されたカクテル。ドランブイのハーブ感のある甘みとウィスキーが良く合い、やさしい口当たりで、甘くて飲みやすくい。ウイスキーとドランブイの比率を同量にすると甘いため、辛口に仕上げたいときはウイスキーとドランブイの比率を3対1ぐらいに。ウイスキーの指定は特に無いが、一般的にはドランブイとの相性が良いスコッチウイスキーを用いられることが多い。10月22日の誕生酒。カクテル言葉は「私の苦痛を和らげる」。ウイスキーをウォッカに変更すると「ルシアン・ネイル」になる。,度数 強い (25度以上),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_rusty_nail_01.jpg
+710,ルシアン・ネイル,「ラスティ・ネイル」のウイスキーをウォッカに変更したカクテル。ウォッカの本場「ロシア」の名前が付いている。ラスティ・ネイルよりは軽く、ドランブイの味わいがはっきりと分かる甘い味わい。,度数 強い (25度以上),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_russian_nail_01.jpg
+711,スコッチ・キルト,オレンジ・ビターズの香りが漂い、アルコール度数は高いが優しい口当たりで、甘くて飲みやすくい。材料は「ラスティ・ネイル」に近く、ステアしてショートスタイルで飲む点が異なる。,度数 強い (25度以上),1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_scotch_kilt_01.jpg
+712,ドランブイ・トニック,ドランブイのハーブの香りが漂い、ドランブイの濃厚な味がトニックウォーターでさっぱりとした味わいになっている。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_drambuie_tonic_01.jpg
+713,ドランブイ・オン・ザ・ロック,ドランブイのスパイス感やハーブ感がある甘みと深い味わいをダイレクトに感じることができる。食後酒として単独で味わったり、クリーミーなデザートと組み合わせたりするのにぴったり。,度数 強い (25度以上),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_drambuie_on_the_rock_01.jpg
+714,ドランブイ・フレスコ,名前の「フラスコ」はイタリア語で「新鮮」。ドランブイのハーブの香りが漂い、すっきりとしたフルーティな味わい。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_drambuie_fresco_01.jpg
+715,ドランブイ・ジンジャー,蜂蜜の甘い口当たりで、ハーブ感とジンジャーエールの炭酸がよく合い、アルコール感もしっかりある。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_drambuie_ginger_01.jpg
+716,ドランブイ・コーラ,ドランブイのベースとなるスコッチウイスキーのコク感じながらも、蜂蜜とコーラの濃厚な甘みを感じる。甘口コークハイに蜂蜜が加わったかのような味わい。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_drambuie_cola_01.jpg
+717,ウィドゥズ・ドリーム,名前の意味は未亡人の夢。濃厚で深いコクがあり、まろやか。飲むカクテルプリンのような甘みのある味わい。食後のデザートにぴったりのカクテル。,度数 約 20 %,3,9,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_widows_dream_01.jpg
+718,サイレント・モンク,甘くクリーミーな味わいで、デザートにぴったり。,度数 約 24 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_silent_monk_01.jpg
+719,ベネディクティン・トニック,トニックウォーターがベネディクティンの甘みを程良く抑え、ベネディクティンの甘みがあるハーブ感を感じつつも、すっきりとした味わい。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_benedictine_tonic_01.jpg
+720,アビー・ローズ,名前の意味は「寺院の薔薇」。ハーブ感のある甘みがあり、デザートにぴったりな甘くクリーミーな味わい。オリジナルレシピはバンブーグラス(笹)も飾っている。藤谷寛子氏の創作。2001年 第28回 N.B.A. 全国 バーテンダー 技能競技大会 創作部門 第3位を受賞。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_abbey_rose_01.jpg
+721,ベネディクティン・ジンジャー,ベネディクティンのハーブ感のあるの甘みがジンジャーエールの風味がよく合い、爽快な喉越しの甘い味わい。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_benedictine_ginger_01.jpg
+722,エンジェル・リップ,ベネディクティンと生クリームの甘みが良く合い、甘くクリーミーな味わい。,度数 約 21 %,13,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_angels_lips_01.jpg
+723,ベネディクティン・コーラ,ベネディクティンの独特な甘みとコーラが良く合う。ハーブ感のある濃厚な甘さ。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_benedictine_cola_01.jpg
+724,モンクス・コーヒー,名前の「Monk」は、「修道士」や「修行僧」の意味。ベネディクティンを使った「アイリッシュ・コーヒー」のバリエーションカクテル。ベネディクティンのハーブ感のある甘みを感じ、クリーミーで甘くまろやかな味わいのコーヒー。,度数 約 6% %,7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_monks_coffee_01.jpg
+725,ハネムーン,はちみつレモンのような甘酸っぱい味わいで、口当たりは爽やか。カクテル言葉は「幸せはいつもあなたと」。,度数 約 24 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_honeymoon_01.jpg
+726,ホノルル,マラスキーノのすっきりとした香りが漂い、マラスキーノの苦味とベネディクティンのハーブ感が合わさった複雑な味わい。,度数 強い (25度以上),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_honolulu-02_01.jpg
+727,コカボム,コカレロとエナジードリンク混ざらないようにショットと同様に一気に飲み干すことで、コカレロ特有の香りの後から炭酸の効いたエナジードリンクのさっぱりとした風味が流れてきて、ハーブの香りと甘さが広がる爽快な味わい。ボムグラスの中で混ぜずに2色に別れ、見た目もオシャレ。ボムグラスは、下段に40ml、上段に30ml入るグラス。コカボムの割材としては、レッドブルを使われることが多い。,度数 約 12.4 %,18,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cocabomb_energy_drink_01.jpg
+728,コカ・エナジー,甘くて飲みやすく、お酒の味が苦手な方でも飲みやすい。ナイトライフの定番カクテル。,度数 約 5.4 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_coca_energy_01.jpg
+729,ハイ・ジャック,アルコール感が強めのシューターカクテル。一気に飲み干すことで、最初にジャックダニエルのスモーキーな風味を感じ、後からコカレロの甘みがあるハーブ感を感じる。,度数 約 32 %,10,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_high_jack_01.jpg
+730,アマゾン・マルガリータ,テキーラの風味にコカレロのハーブ感とライムの酸味が合わさることによって爽やかさを感じ、すっきりした味わい。,度数 約 27 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_amazon_margarita_01.jpg
+731,グリーン・ヘイズ,アブサンと水が合わさることで白濁した色合いに、コカレロの緑色が合わさって緑色の霧がかったような見た目。アブサンの独特なハーブ感を最初に感じ、コカレロのハーブ感が合わったことによって、ハーブ感をしっかりと感じる大人のシューター。,度数 約 32 %,10,5,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_green_haze_01.jpg
+732,キール,ワイン・ベース・カクテルとして世界一の人気を誇る。有名なワインの産地、フランスのブルゴーニュ地方にあるディジョン市の市長であったフェリックス・キール (Felix Kir) によって考案。キール市長はこのカクテルのPR活動に力を入れ、やがて広く普及することで、特産品のカシスとワイン共に売り上げを伸ばすことに成功。,度数 普通 (9度〜24度),14,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kir_01.jpg
+733,白ワイン・クーラー,サングリアに近い感覚。ブドウのお酒とフルーツとの相性はいいので、とても飲みやすい。使用するワインは、赤ワイン、白ワイン、ロゼワインのどれとも相性が良い。,度数 約 10 %,14,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_white_wine_cooler_01.jpg
+734,シンフォニー,ピーチリキュールのみずみずしい味わいで果実感が強く、白ワインのすっきりした酸味に溶け込んみ、甘くフルーティな味わい。日本人のバーテンダーの中村圭三氏が1988年に行われたブラッシュワインのカクテルコンペティションで第1位を獲得した作品。,度数 約 12 %,6,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_symphony_01.jpg
+735,マルキ,キールのフランボアーズ版。軽い口当たりと酸味で、さっぱりした飲み心地。,,14,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_marquis_01.jpg
+736,カリモーチョ,スペインの植民地であったメキシコで生まれたカクテル。スペインのワインと、アメリカからメキシコへ流入してきたコーラが出会ってこの「カリモーチョ」が誕生。赤ワインの芳醇な香りと、コーラの甘みと炭酸が重なり合い、不思議なハーモニーが生まれる。,度数 約 5 %,14,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_calimocho_01.jpg
+737,キティ,名前のKittyは、子猫を可愛く呼ぶときに使う単語。甘い口当たりでアルコールも低く、「子猫が舐めるほど美味しい」という意味。酸味と渋みが抑えられて、ジュースのような味わいで、さわやかな甘み。赤ワインを白ワインに替えると「オペレーター」となる。ジンジャー・エールをコーラに替えると「カリモーチョ」となる。,度数 約 6 %,5,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kitty_01.jpg
+738,ビショップ,名前は「主教、司教」の意味。赤ワインにフルーティーな甘酸っぱさをプラスした酸味の効いた味わい。飲み易く温まるカクテル。,度数 約 11 %,7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bishop_01.jpg
+739,カーディナル,名前は「枢機卿」という意味。カクテルの赤い色を、カトリックの高位聖職者が身にまとう赤いケープを見立ててつ名付けられた。カシスの甘い味わいが飲みやすく、深みのある赤ワインの味わいとカシスの甘さが香る。「キール」のベースの白ワインを赤ワインに代えたカクテル。ベースの赤ワインをスパークリング・ワインにかえると、「キール・ロワイヤル」になる。カクテル言葉は「優しい嘘」。,度数 普通 (9度〜24度),14,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cardinal_01.jpg
+740,トマト・赤ワイン・サングリア,口当たりが良く、トマトのフルーティさを感じる赤ワインのサングリア。,,14,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tomato_red_wine_sangria_01.jpg
+741,ロマンチック・ハーモニー,カルピスから先に入れて、静かに赤ワインを注ぐことで、カルピスの層と赤ワインの層が2つに分かれるカクテル。赤ワインの風味がしっかり生きており、カルピスが加わったことで飲みやすくて優しい味わい。,,14,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_romantic_harmony_01.jpg
+742,ローザ・ロッサ,名前はイタリア語で「赤い坂」の意味。アマレットの柔らかい甘みが、意外に赤ワインと相性が良いカクテル。,度数 約 10 %,14,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_rosa_rossa_01.jpg
+743,ポート・フィリップ,非常に奥深い味わいで、濃厚で甘さがあり、飲みやすくて非常に大人びた印象のカクテル。カクテル言葉は「恩恵」。,度数 約 8 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_port_flip_01.jpg
+744,アメリカン・ビューティ,深みのある甘みがあり、味も香りもバラの花のように美しいカクテル。,度数 約 18 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_american_beauty_01.jpg
+745,コーヒー・カクテル,コーヒーを使わずにコーヒーのような雰囲気を出したカクテルで、ポートワインの甘さとブランデーの強さを感じる。,度数 普通 (9度〜24度),14,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_coffee_cocktail_01.jpg?v=2
+746,ポート・コリンズ,ポートワインの甘みを感じながらも甘酸っぱい味わいで、喉越しがすっきり。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_porto_collins_01.jpg
+747,パラダイス・ガイア,爽快さの中にほのかな甘さが加わり、まるでジュースのような感覚で飲める味わい。,度数 弱い (8度以下),14,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_paradise_gaia_01.jpg
+748,コスモ・ポート,ポートワインとホワイトキュラソーの甘みにクランベリージュースの甘酸っぱさが合わさり、深みのある甘さを感じる味わい。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cosmo_porto_01.jpg
+749,ベッツィー・ロス,名前は女性の名前からつけられたもの。レモンジュースとアンゴスチュラビターズによって、ポートワインの量が多くても中口のさっぱりとした味わいになっている。,度数 強い (25度以上),2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_betsy_ross_01.jpg?v=2
+750,ウエディング・ベル・スイート,華やかな赤い色が注がれたグラスが、まさにベルのよう。フルーティな香りで、ジューシーだか甘さが控えめな味わい。,度数 約 21 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_wedding_bells_sweet_01.jpg?v=2
+751,ポートワイン・サンガリー,ソーダを入れてもポートトワインの風味が薄れることがなく、ポートワインの甘さをナツメグが引き立ててくれる。甘くフルーティーな味わい。,度数 約 16 %,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_port_wine_sangaree_01.jpg?v=2
+752,デビルズ,まろやかな口当たりとリッチなフレーバーで、スッキリとした味わい。,度数 約 16 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_devils_01.jpg?v=2
+753,アイアン・レディ,名前は「鉄の女」の異名を持つ「マーガレット・サッチャー」が由来。すっきりとした味わい。フルーティーでありながらスッキリとドライな口当たり。オレンジ・ビターズによる爽やかなオレンジの香りとビターなテイストがアクセント。,,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_iron_lady_01.jpg?v=2
+754,ポート・スプラッシュ,口当たりが良く、ポートワインの甘みとトニックウォーターの苦味が合わさることで、すっきりとしたキレのある味わい。,度数 約 8 %,8,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_port_splash_01.jpg
+755,ラベロ・ポート,名前の「ラベロ」は、かつてワインを積んで運んでいた小型帆船のこと。ポートワインの酸味を感じながらパイナップルの甘酸っぱさが活き、フルーティで飲みやすい。,,8,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_labelo_port_01.jpg?v=2
+756,ディアブロ,すっきりとした香りで、豊かな風味とすっきりとしたドライな風味を感じるカクテル。,度数 約 12 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_diablo_01.jpg?v=2
+757,アフロディーテ,ギリシャ神話のオリンポス十二神の一であるアフロディーテの名を冠すに恥じない品のあるカクテル。フルーティでジュシーでまろやか。1986年全日本バーテンダー協会主催カクテルコンペティション優勝作品。高山裕仁氏創作。,度数 約 14 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_aphrodite_01.jpg
+758,ロゼ・マルガリータ,ロゼワインを使ったクラシックな定番カクテル。さっぱりした味わい。,,12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_rose_margarita_01.jpg
+759,ロゼワイン・クーラー,サングリアに近い感覚。オレンジの風味がさわやかで、コーラルピンクの色合いがかわいらしい、フルーティなカクテル。使用するワインは、赤ワイン、白ワイン、ロゼワインのどれとも相性が良い。,度数 約 10 %,14,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_rose_wine_cooler_01.jpg
+760,ロゼワイン・ダイキリ,ダイキリのラムをラムをロゼワインを変えたもの。ロゼワインを使うことで、より女性的でエレガントな印象になっている。レモンの風味が爽やかで、さっぱりとして甘酸っぱい味わい。,度数 約 8 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_rose_wine_daiquiri_01.jpg
+761,ターキッシュ・ハーレム・クーラー,さっぱりとした味わいで、喉越しスッキリのカクテル。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_turkish_harem_cooler_01.jpg
+762,キール・ロワイヤル,キールに使われる白ワインを、シャンパンに変えたもの。グラスの中ではじける泡が、キールにさわやかさをプラスし、「ロワイヤル（＝王家風）のキール」と名づけられた。カシスの優しい果実味とキリッとしたシャンパンの酸味が合わさって飲みやすい。クレーム・ド・カシスをクレーム・ド・フランボワーズに替えると「キール・アンペリアル」になる。,度数 普通 (9度〜24度),8,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kir_royal_01.jpg
+763,キール・アンペリアル,名前の「アンペリアル（＝皇帝）」は「ロワイヤル（＝王様）」の上をいくという意味。ラズベリーの甘酸っぱさを上品に味わえる。クレーム・ド・フランボワーズをクレーム・ド・カシスに替えると「キール・ロワイヤル」になる。,度数 約 14% %,8,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kir_imperial_01.jpg
+764,ベリーニ,スパークリングワインの爽やかさと桃の甘い香りが絶妙に調和し、フルーティで飲みやすい。,度数 弱い (8度以下),8,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bellini-01_01.jpg
+765,ベリーニ,桃の香りと甘味、そしてスパークリングワインの爽やかさが口いっぱいに広がる味わい。,度数 普通 (9度〜24度),8,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bellini-02_01.jpg
+766,スパークリング・パープル,ワインが醸し出すフルーティな風味と、グレープフルーツジュースの爽やかさがパルフェタムールによく合う。,度数 約 13 %,8,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sparkling_purple_01.jpg
+767,プルシア・ロワイヤル,プルシアの甘酸っぱいフルーティーな味わいを感じながらも、シャンパンの華やかな香りが漂うカクテル。,,8,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_prucia_royal_01.jpg
+768,ロッソ・オン・ザ・ロック,食前酒にロックで飲まれることが多く、ややほろ苦く重めで、甘口のベルモット。,度数 普通 (9度〜24度),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cinzano_on_the_rock_01.jpg
+769,チンザノ・ロッソ＆ソーダ,,度数 普通 (9度〜24度),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cinzano_rosso_soda_01.jpg
+770,ベルモット・ハーフ＆ハーフ,白ワインに甘味や香草の風味が薫り、飲みやすい味わい。,度数 普通 (9度〜24度),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_vermouth_half_half_01.jpg
+771,チンザノ・カシス,カシスの甘酸っぱさと、ドライベルモット（チンザノドライ）の辛口さが程よく溶け合った、さっぱりしたカクテル。,度数 約 7.3 %,0,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cinzano_cassis_01.jpg
+772,ライ・アンド・ドライ,ドライ・ベルモットのすっきりとした味わいの中にライウイスキーのほろ苦さを感じる味わい。,度数 約 24 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_rye_and_dry-01_01.jpg
+773,ドライベルモット・ジンジャー,ドライベルモットのハーブの香りが漂い、さっぱりとした味わい。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_dry_vermouth_ginger_01.jpg
+774,ビター・オレンジ,オレンジジュースの甘みと共に、ビールのほろ苦さが感じられる。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bitter_orange_01.jpg
+775,カシスビア,カシスの甘味と香りがビールと絶妙にマッチし、シュワシュワッとして爽やかでフルーティな味わい。ビールの苦味が抑えられているので、独特の苦味が苦手な人でも飲みやすい。,度数 約 6.7 %,5,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cassis_beer_01.jpg
+776,パッションフルーツ・ビア,トロピカルな味わいが加わったビール。,,12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_passion_fruit_beer_01.jpg
+777,ミント・ビア,白い泡に緑が映え、ビールのほろ苦さとの組み合わせの味わい。,度数 約 7 %,12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mint_beer_01.jpg
+778,ドッグズ・ノーズ,名前は犬の鼻の意味。ジンの味を強く感じ、ビールの苦味が合わさった味わい。,度数 約 16 %,12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_dogs_nose_01.jpg
+779,ラズベリー・ビア,酸味の効いた果実感のある木苺リキュールに、ビールの風味がマッチしたフルーティな味わい。,度数 約 6 %,5,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_raspberry_beer_01.jpg
+780,ラズベリー・スネークバイト,高濃度な果実の味わいを楽しめるフルーツビール。,度数 弱い (8度以下),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_raspberry_snake_bite_01.jpg
+781,レッドアイ,トマトの栄養素がたっぷりでヘルシーなビアカクテル。トマトジュースがビールの苦味をマイルドにしてくれ、ビールが苦手な人でも飲みやすい。,度数 弱い (8度以下),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_red_eye_01.jpg
+782,ビター・グレープ,ビールのビターな味に葡萄の果汁が加わってフルーティな味わい。,度数 弱い (8度以下),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bitter_grape_01.jpg
+783,パナシェ,ビールとレモネードのような炭酸飲料を同量で混ぜ合わせたビアカクテル。スペインでは「クララ」と呼ばれている。「パナシェ」はフランス語で「混ぜ合わせた」という意味。苦味と甘さのバランスが絶妙な爽やかなテイスト。,度数 弱い (8度以下),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_panache_01.jpg
+784,パナシェ,スペインでは「クララ」と呼ばれている。「パナシェ」はフランス語で「混ぜ合わせた」という意味。ビールの苦味と爽快感の中に甘酸っぱさを感じるビアカクテル。,度数 弱い (8度以下),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_panache_01.jpg
+785,モナコ,フランスのビール(アンバーエール)ベースのカクテル。軽い口当たりとフルーティーさで、甘く飲みやすい味わい。,度数 弱い (8度以下),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_monaco-01_01.jpg
+786,モナコ,フランスのビール(アンバーエール)ベースのカクテル。軽い口当たりとフルーティーさで、甘く飲みやすい味わい。,度数 弱い (8度以下),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_monaco-02_01.jpg
+787,ミント＆ビア・カクテル,清々しいミントの香りとビールの香りがマッチした個性的な味わい。,度数 約 8 %,12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_mint_beer_cocktail_01.jpg
+788,ピーチ・ビア,さわやかな甘さが広がるフルーティーな味わいで、ビールが苦手な人にも飲みやすい。,度数 弱い (8度以下),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_peach_beer_01.jpg
+789,ビア・コーヒー・カクテル,すっきりとした飲み心地の中に、スモーキーさとコクがあって味わい深い。,度数 弱い (8度以下),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_beer_coffee_cocktail_01.jpg
+790,ブラック・アンド・ホワイト,カルーアミルクよりもリキュール感が薄いデザートカクテルで、ビールが好きな人にとっては意外性も楽しめる。,度数 弱い (8度以下),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_black_and_white_01.jpg
+791,ブラック・ベルベット,ヨーロッパでは19世紀末から広く飲まれていたと言われる伝統的なビアカクテル。さっぱりとして、強いコクとのど越しが味わえる大人の味。カクテル言葉は「忘れないで」。,度数 約 9 %,17,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_black_velvet_01.jpg
+792,ビア・アセロラ,アセロラの酸味とフルーティさを感じるフレーバービール。,度数 弱い (8度以下),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_beer_acerola_01.jpg
+793,ハイジ,甘酸っぱく、とても滑らかな口当たりで飲みやすい。ヨーグルトの酸味とビールの苦味がマッチし、ほんのりとビールの味がする大人の乳酸飲料。,度数 弱い (8度以下),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_heidi_01.jpg
+794,ブルー・ビア,ビールの風味にマラスキーノの独特なすっきりとした香り&苦味のある甘さとブルーキュラソーの甘みを感じる、甘いビアカクテル。,,12,8,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_blue_bear_01.jpg
+795,シャンディ・ガフ,ビール特有のホップの苦味にジンジャエールの刺激的な後味と仄かな甘味が良く合う。さっぱりとした味わいで爽快な喉越し。古くから、イギリスのパブで飲まれているビアカクテル。,度数 約 3 %,17,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_shandy_gaff_01.jpg
+796,赤ワイン・シャンディ・ガフ,「シャンディ・ガフ」に赤ワインを加えたビアカクテル。芳醇な赤ワインの風味が加わることで、甘みを抑えられ、さっぱりとした味わいに深みがある。,度数 約 6 %,17,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_red_wine_shandy_gaff_01.jpg
+797,ボイラー・メーカー,アメリカ生まれのカクテル。アルコール度数が高く、あっという間にボイラーのように熱くなって手っ取り早く酔える。ビールの苦味を引き立てながらもバーボンの甘みを感じる味わい。テキーラを沈めれば「サブマリノ」というカクテルになる。バーボンだけショットグラスに注ぎ、ショットグラスをビールを注いだグラスに沈めて飲み干す飲み方以外には、全ての材料をグラスに注いで軽くかき混ぜる一般的な飲み方もある。,度数 普通 (9度〜24度),15,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_boiler_maker_01.jpg
+798,サムライ,日本酒本来のコクとキレはそのままで、柑きつ系のさわやかなのど越し。,度数 約 11 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_samurai_01.jpg
+799,サムライ・ロック,ジンライムの日本酒版。ライムの酸味で、日本酒がさっぱりと飲みやすくなるカクテル。,度数 普通 (9度〜24度),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_samurai_rock_01.jpg
+800,サケ・ハイボール,日本酒で作ったハイボール。日本酒の風味をダイレクトに感じることができ、喉越しすっきり。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sake_highball_01.jpg
+801,マリン・デライト,名前は海の喜びという意味。日本が世界に誇る客船、新日本丸の進水を記念して上田和男氏が創作したカクテル。海をイメージした水色に、日本の客船ということで日本酒を使用し、デッキで風に吹かれながら楽しめるように、アルコールは弱めに作られている。,度数 約 11 %,8,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_marine_delight_01.jpg
+802,スカイブルー,スカイダイビングのアレンジカクテルの1つで、ベースにラムの代わりに焼酎を使用。1983年 ジャパン・バーテンダー・アソシエイション第10回全国技能競技大会の創作部門優勝作品。田中幹男氏が考案。,度数 普通 (9度〜24度),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sky_blue_01_01.jpg
+803,スカイブルー,色合いが綺麗で、日本酒の風味が後から来て爽やかな味わい。日本酒らしさは余り無く、カクテルっぽさが強い。,度数 約 15 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sky_blue_02_01.jpg
+804,ファンタスティック・レマン,スイスの幻想の湖、レマン湖をイメージしたカクテル。グラスの底にブルーのグラデーションが美しい。世界各種のカクテルコンクールで何度も優勝に輝いた経歴を持つ、上田和男氏の創作。世界カクテルコンクールで銀賞を受賞。甘さとすっきりさが絶妙なぐあいに混ざりあった味わい。,度数 普通 (9度〜24度),4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_fantastic_leman_01.jpg
+805,サケティーニ,名前はマティーニをもじって付けられたもの。マティーニに入れるドライベルモットを日本酒に変えた日本酒カクテル。オリーブの代わりに梅干しを使用するとより和テイストに仕上がる。,度数 強い (25度以上),1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_saketini_01.jpg
+806,ブラック・ナダ,日本酒の味をあまり感じず、甘いコーヒー風味の味わい。,度数 約 15 %,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_black_nada_01.jpg
+807,清流,ちょっと酸っぱい日本酒の風味をしっかり活かした味わいの日本酒カクテル。ほのかな日本酒の風味に、しっかりとした酸味が加わったさっぱりとしている。,度数 普通 (9度〜24度),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_seiryu_01.jpg
+808,キク・キール・ロワイヤル,カシスの甘さが程よく、苦みと日本酒の甘みのバランスが取れているカクテル。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kiku_kir_royal_01.jpg
+809,スノーマン,酸味が合って飲みやすい、ヨーグルトベースのカクテル。島田律子氏の考案。,,3,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_snowman_01_01.jpg
+810,ブルー・ヨーグルト,ヨーグルトに少し苦みがある感じ。ヨーグルトが入ることで、まろやかになって飲みやすい。,,0,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_blue_yoghurt_01.jpg?v=2
+811,サケ・コーラ,コークハイの日本酒版。コーラの甘みに日本酒の風味が合わさった味わい。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sake_cola_01.jpg
+812,フローズン・キク・ライム,さっぱりしていて爽やかな香り。,,0,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_frozen_kiku_lime_01.jpg
+813,ギンザ・ストリート,銀座で生まれたカクテル。日本酒にカカオそして生クリームを加えた驚きのレシピ。甘くまろやかな味わい。,度数 約 14 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ginza_street_01.jpg
+814,キク・フィズ,ほんのりと甘く、クリーミーで口当たり滑らか。,度数 普通 (9度〜24度),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kiku_fizz_01.jpg
+815,サケ・ジンジャー,日本酒とジンジャーエールが合わさった甘みで、爽やかな喉越し。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sake_ginger_01.jpg
+816,涼,ミントの清涼感あふれる中に、ほのかにピーチの甘みと香りが漂っている。,度数 約 16 %,1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ryou_01.jpg
+817,サケ・カルーア・フィズ,爽やかで飲みやすい。,度数 約 8 %,4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sake_kahlua_fizz_01.jpg
+818,レッド・サン,ビールをベースにして作るトマトカクテルのレッド・アイを日本酒ベースにしたカクテル。,,5,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_red_sun_01.jpg
+819,サンセット・キク,トマトジュースが入ってヘルシーな日本酒カクテル。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sunset_kiku_01.jpg
+820,サクラヒルズ,見た目にも桜の花びらを思わせる、淡いピンク色のカクテル。,,8,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sakura_hills_01.jpg
+821,なごみ,日本酒と抹茶の風味を感じ、しっかりながらも飽きのこないコクがある。クリーミーな味わいの日本酒と抹茶のカクテル。,,5,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_nagomi_01.jpg
+822,キク・ライチ,ライチの香りが良く、甘くてとろりとした感じ。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kiku_lychee_01.jpg
+823,サケ・サワー,日本酒のサワー。甘口な発泡清酒のような味わいで、さっぱりとした風味。,,4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sake_sour_01.jpg
+824,シルバー・シャドウ,スタンダードカクテルのドライマティーニに近い、かなりアルコール度数が強いカクテル。日本酒が入る分マティーニより香りの複雑味が増しており、じっくりと楽しむのにぴったり。,度数 強い (25度以上),1,2,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_silver_shadow_01.jpg
+825,枯れ葉,日本酒の奥深いコクのある味わいが、ビターな風味のココアパウダーにも牛乳のミルキーさにも絶妙にマッチしているホット日本酒カクテル。,,7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kareha_01.jpg
+826,スウォッカ,味にも香りにも日本酒らしさが出ており、キリッとした酸味があって、すっきりとした飲み口で甘さ控えめなカクテル。,度数 約 25 %,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_svadka_01.jpg
+827,キク・ドリーム,日本酒の風味に酸味が加わり、甘酸っぱさがありながらも、あと味がスッキリ。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kiku_dream_01.jpg
+828,焼酎モヒート,モヒートを和風にアレンジしたもの。ラムの代わりに焼酎を使うだけ。,度数 普通 (9度〜24度),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_shochu_mojito_01.jpg
+829,焼酎ソルティドッグ,ソルティドッグのウォッカを焼酎に変えたもの。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_shochu_salty_dog_01.jpg
+830,スカイブルー,焼酎の風味を感じるが強くはないので、焼酎が苦手でも楽しめるカクテル。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sky_blue_03_01.jpg
+831,忘れな草,フルーティな甘さを感じる。1979年、毛利隆雄氏の創作。,度数 約 16 %,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_wasurenagusa_01.jpg
+832,焼酎ブラッディメアリー,焼酎の風味を感じつつも、トマトジュースによって甘みが加わることで後味がマイルドになり、飲みやすいカクテル。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_shochu_bloody_mary_01.jpg
+833,冬桜,チェリーブランデーの程よい甘さと、焼酎のお湯割りがうまく混ざり合った、ホットカクテル。,,7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_fuyuzakura_01.jpg
+834,舞乙女,倉吉浩二氏の創作。1984年 第13回 H.B.A. 創作カクテル・コンペティション第1位を受賞。創作には上氏の地元の焼酎、紅乙女が使われた。木苺の香りに可憐な色合いと甘い口当たり。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_maiotome_01.jpg
+835,ウーロンハイ,糖質ゼロでカロリー控えめ。焼酎と烏龍茶の風味を共に感じ、甘みは無く、すっきりとした味わい。人によって好みが分かれる味。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_oolong_tea_highball_01.jpg
+836,焼酎ソーダ,焼酎の風味を感じながらも、独特の癖が弱まり、ソーダの爽快感で飲みやすい。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_shochu_soda_01.jpg
+837,梅酒ソーダ,梅酒とソーダの割合は梅酒のメーカーによって推奨割合が異なる。2対1、または1対1、または1対2の割合。,度数 弱い (8度以下),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_umeshu_soda_01.jpg
+838,カルーア梅酒,梅酒とカルーアの甘みで超甘口。2006年カルーアオリジナルカクテル部門入賞作品。,度数 普通 (9度〜24度),2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kahlua_umeshu_01.jpg
+839,黄金池,深い緑色が印象的なカクテル。甘口でバランスが取れた味わい。京都の西芳寺にある、「黄金池 (おうごんち)」をイメージしてつくられたカクテル。,,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ougon-chi_01.jpg
+840,ブラッディ梅酒,口当たりがよく、野菜ジュースという感覚は無くなり、梅酒特有の甘さが後味を良くしてくれる。フルーツジュースのような感覚で飲める健康志向のカクテル。,,2,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_bloody_umeshu_01.jpg
+841,梅ホワイト,梅酒の風味が生きており、さっぱりとした味わい。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ume-white_01.jpg
+842,吉祥天女,桃の甘みが加わって梅酒の甘みが引き立つ甘いカクテル。,,1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_kichijo_tennyo_01.jpg
+843,アセロラ梅酒,梅酒の甘さにアセロラの酸味が加わり、甘酸っぱい味わい。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_acerola_umeshu_01.jpg
+844,梅ごこち,ほんのり梅味で日本酒の甘みが加わり、梅酒好きにはピッタリのカクテル。,,4,8,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ume_gokochi_01.jpg
+845,梅酒パイン,梅酒の風味を感じ、甘くフルーティな味わい。,,0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_umeshu_pineapple_01.jpg
+846,梅酒トニック,トニックウォーターの苦味が梅酒の甘みを程良く抑え、すっきりとした味わい。,,4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_umeshu_tonic_01.jpg
+847,カシス・ジャスミン,カシスの甘みを感じるフレーバーティーのような味わい。,度数 弱い (8度以下),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cassis_jasmine_tea_01.jpg
+848,シャーリーテンプル,甘い口当たりとのピリッとくる後味で、爽快な味わい。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_shirley_temple_01_01.jpg
+849,シャーリーテンプル,地域によってレシピが大きく違う面白いカクテル。甘くてフルーティで、とても飲みやすい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_shirley_temple_02_01.jpg?v=2
+850,シンデレラ,カクテルの名前の由来は、童話「シンデレラ」。魔法で舞踏会に行くことが出来たシンデレラのように、お酒が飲めない人でも、魔法をかけられてバーなどのお酒を飲む場へ行けるようになる、という意味。シンデレラのカクテル言葉は「夢見る少女」。フルーティで酸味を強く感じる味わい。,ノンアルコール (0%),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cinderella_01.jpg?v=3
+851,サマー・ディライト,名前の由来は英語で「夏の喜び」。甘酸っぱく、さっぱりとした飲み口で、暑い夏にピッタリな爽快感が満ち溢れた一杯。,ノンアルコール (0%),5,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_summer_delight_01.jpg?v=2
+852,ミルクセーキ,ミルクのまろやかな口当たりと卵黄のコクのある味わい。卵と牛乳が入っているので栄養価が高く、滋養ドリンクとしても知られている。,ノンアルコール (0%),5,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_milk_shake_01.jpg?v=2
+853,フロリダ,フロリダ州を名前に付けたカクテル。1920年代のアメリカの禁酒法時代に誕生したと言われている。アルコール度数1％未満のカクテルとして知られノンアルコールカクテルに分類される。フルーティな味わいのカクテル。,ノンアルコール (0%),12,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_florida_01.jpg?v=2
+854,プッシーフット,名前は「ネコのようにこっそり歩く」という意味。アメリカの禁酒運動家として知られる『ウィリアム・E・ジョンソン』のあだ名に由来。程好い酸味と卵黄の微妙な味わい。,ノンアルコール (0%),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_pussyfoot_01.jpg
+855,プッシー・キャット,名前は「カワイイ子猫ちゃん」という意味。柑橘系の香りと味が特徴で、さっぱりとした口当たり。トロピカルな風味が印象的。,ノンアルコール (0%),6,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_pussy_cat_01.jpg?v=2
+856,サラトガ・クーラー,サラトガとは、アメリカのニューヨーク州に存在する町の名前。非常に飲みやすく、爽やかな味わいが愉しめるカクテル。酸味がきつ過ぎず甘すぎずの絶妙な味わい。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_saratoga_cooler_01.jpg?v=2
+857,アリス,トロピカルフルーツのようなミックスジュース。,ノンアルコール (0%),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_alice_01.jpg?v=2
+858,フルーツ・パンチ,酸味があってフルーティな味わい。,ノンアルコール (0%),5,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_fruit_punch_01.jpg
+859,レモネード,爽快な甘酸っぱい味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_lemonade_01.jpg
+860,炭酸レモネード,レモンの爽やかな香りと爽やかな喉越し。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_lemonade_soda_01.jpg
+861,ジョニー・ジュレップ,程良い酸味とさっぱりとした喉越し。アルコール度数1％未満のカクテルでノンアルコールカクテルに分類される。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_johnny_julep_01.jpg
+862,バージン・チチ,トロピカル・カクテルで有名な「チチ」のノンアルコール版。トロピカルでフルーティーな味わい。お酒が飲めない方でも南国気分を味わえる。,ノンアルコール (0%),9,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_virgin_chi_chi_01.jpg?v=2
+863,ロシアン・ハート,フルーティで爽やかな酸味があり、喉越しもスッキリ。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_russian_heart_01.jpg
+864,蜂蜜&コーヒーミルク,芳ばしいコーヒーの香り。ミルクのまろやかさと蜂蜜の甘味がマッチ。ミルキーでまろやかな味わい。,ノンアルコール (0%),2,4,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_honey_coffee_milk_01.jpg
+865,ホワイトミルク＆クランベリー,まったりとしたミルクの旨味と、クランベリーの甘酸っぱさがマッチ。まるでスイーツのような味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_white_milk_cranberry_01.jpg
+866,パイナップル・クーラー,若干のアルコールが大丈夫であれば、アロマティック・ビターズを入れると、華やかな香りが付き、味にアクセントが付く。キレがあって爽快感のある喉越し。,ノンアルコール (0%),4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_pineapple_cooler_01.jpg?v=2
+867,コーラオレンジ,コーラの甘さをみかんの味で包み込んだ味で、ジュース感が少ない爽やかな味わい。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_cola_orange_01.jpg
+868,豆乳パイン,ほのかな酸味と甘みでミルキーな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_soy_milk_pineapple_01.jpg
+869,ノンアル・タンサン・ピニャコラーダ,ココナッツミルクがパイナップルの酸味にマッチしてフルーティな味わいで、炭酸の刺激でさっぱりとした後口。,ノンアルコール (0%),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_tansan_pina_colada_01.jpg
+870,ノンアル・グレープフルーツ・トニック,グレープフルーツの酸味と甘味、トニックウォーターの苦味と炭酸が合わさり、爽やかで瑞々しく、さっぱりとした味わい。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_grapefruit_tonic_01.jpg
+871,オレンジ・フラワー・クーラー,オレンジの爽やかな甘さにトニックのほろ苦さが加わり、フルーティな味わいで飲みやすいノンアルコールのカクテル。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_orange_flower_cooler_01.jpg
+872,グレープ・アップ,葡萄とグレープフルーツの果汁が合わさったフルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_grape_up_01.jpg
+873,ブラック＆コーラ,コーヒーのほろ苦さがコーラに絶妙にマッチ。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_black_cola_01.jpg
+874,ラッシー,ヨーグルトの酸味と牛乳のミルキーさが合わさり、甘く爽やかな味わい。果物を混ぜても美味しい。,ノンアルコール (0%),0,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_lassi_01.jpg
+875,カルピス・ラッシー,ミルキーさの中に酸味を感じるラッシー。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_calpis_lassi_01.jpg
+876,ラバーズ・ドリーム,甘酸っぱくて滑らかな口当たりのノンアルコールカクテル。,ノンアルコール (0%),4,3,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_lovers_dream_01.jpg
+877,スローワルツ,甘酸っぱいテイストがオシャレ。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_slow_waltz_01.jpg
+878,アンファジー・ネーブル,ファジー・ネーブルのピーチリキュールをピーチ・ネクターに変えたノンアルコールカクテル。ピーチとオレンジの味が程良く合わさり、甘くフルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_unfuzzy_navel_01.jpg
+879,ノンアル・トマト豆乳,トマトと豆乳が合わさり、甘くてヘルシーな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_tomato_soy_milk_01.jpg
+880,バージン・ブリーズ,「シーブリーズ」のレシピからウォッカを抜いたノンアルコールバージョン。程良い酸味と苦味が心地良く、甘さ控えめで後味はすっきりした味わい。フルーティで爽やかなカクテル。,ノンアルコール (0%),2,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_virgin_breeze_01.jpg
+881,オレンジ・ソニック,さっぱりとした味わい。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_orange_sonic_01.jpg
+882,サンセット・ピーチ,レナデン・シロップの赤色でグラデーションを作り夕日を表したカクテル。ピーチネクターの甘みを感じながら、烏龍茶によるスッキリとした味わい。ピーチのフレバーティーのような風味。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sunset_peach_01.jpg
+883,ノンアル・クランベリー・クーラー,濃厚で甘酸っぱくてフルーティな味わい。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_cranberry_cooler-01_01.jpg
+884,ノンアル・クランベリー・クーラー,クランベリーの味をほのかに感じ、さっぱりとした味わい。甘くないので、食事に合いそう。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_cranberry_cooler-02_01.jpg
+885,ノンアル・フルーツ・ミックス,フルーツ・ミックスのノンアルコール版。4種類それぞれの果実の甘みを感じ、甘くフルーティな味わいのミックスジュース。,ノンアルコール (0%),12,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_fruit_mix_01.jpg
+886,レモンスカッシュ,甘酸っぱく、すっきり爽やかで飲みやすい。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_lemon_squash_01.jpg
+887,ノンアル・ライチ・クランベリー,「ディタ・クランベリー・ルージュ」のノンアルコール版。ライチの甘みとクランベリーの風味が良く合った甘酸っぱい味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_lychee_cranberry_01.jpg
+888,ノンアル・トマト・オレンジ,ヘルシーなトマトの味の中にオレンジのフルーティさを感じる味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_tomato_orange_01.jpg
+889,ノンアル・カシスオレンジ,カシスオレンジのノンアルコール版。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_cassis_orange_01.jpg?v=2
+890,ノンアル・カシスパイン,カシスパインのノンアルコール版。甘くフルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_cassis_pineapple_01.jpg?v=2
+891,ノンアル・カシスジャスミン,カシスジャスミンのノンアルコール版。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_cassis_jasmine_tea.jpg
+892,ノンアル・カシストニック,カシスの甘みを仄かに感じ、さっぱりとした爽やかな喉越し。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_casiss_tonic_01.jpg
+893,ノンアル・カシス豆乳,カシスの甘みを感じ、豆乳のミルキーさを感じる味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_cassis_soy_milk_01.jpg
+894,ノンアル・カシスグレープフルーツ,カシスの甘みがグレープフルーツの苦味を和らげ、甘くフルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_cassis_grapefruit_01.jpg
+895,ノンアル・カシスミルク,カシスの甘みを感じるミルキーな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_cassis_milk_01.jpg
+896,ノンアル・カシスウーロン,カシスシロップに烏龍茶の風味が合わさることにより、カシス風味を感じつつも甘さが程良く抑えられて飲みやすい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_cassis_oolong_01.jpg
+897,ノンアル・マンゴーオレンジ,マンゴーとオレンジの甘みがよく合い、甘くフルーティな味わい。マンゴーオレンジ (マンゴヤンオレンジ) のノンアルコール版。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_mango_orange_01.jpg
+898,ノンアル・マンゴーパイン,マンゴーとパイナップルの甘みがとても良く合い、甘くフルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_mango_pineapple_01.jpg
+899,巨峰パイン,グレープとパイナップルの組み合わせが甘さを引き立てるフルーティさ。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_grape_pineapple_01.jpg
+900,ノンアル・ライチオレンジ,ライチオレンジのノンアルコール版。ライチとオレンジの甘みが良く合い、フルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_lychee_orange_01.jpg?v=4
+901,ノンアル・ライチパイン,ライチパインのノンアルコール版。ライチの甘みがパイナップルの甘みを引き立て、フルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_lychee_pineapple_01.jpg?v=3
+902,ノンアル・ライチジャスミン,ライチジャスミンのノンアルコール版。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_lychee_jasmine_tea_01.jpg
+903,ノンアル・ライチグレープフルーツ,グレープフルーツの苦味とライチの甘みが良く合い、甘くフルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_lychee_grapefruit_01.jpg
+904,ノンアル・ファジーネーブル,オレンジの味にほのかにピーチの味が加わり、甘くフルーティな味。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_fuzzy_navel_01.jpg
+905,ノンアル・トロピカル・ファジーネーブル,トロピカルでフルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_tropical_fuzzy_navel_01.jpg
+906,ノンアル・レゲエパンチ,フレバーティーのような味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tea_oolong_01.jpg
+907,ノンアル・ピーチティー,ピーチの甘みを感じる紅茶。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_peach_tea_01.jpg
+908,ノンアル・ピーチレモネード,ほのかにピーチ風味のレモネード。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_peach_lemonade_01.jpg
+909,ノンアル・ピーチトニック,さっぱりとした味わいで喉越し爽快。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_peach_tonic_01.jpg
+910,ココナッツミルク,ココナッツミルクが手元にないときの代用に。ココナッツの甘さを感じるミルキーな味わい。,ノンアルコール (0%),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_coconut_milk_01.jpg
+911,バージン・ピニャコラーダ,ココナッツとパイナップルの甘みにミルキーさが加わり、南国気分を味わえるフルーティな味わい。,ノンアルコール (0%),12,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_virgin_pina_colada_01.jpg
+912,ノンアル・ココナッツ・オレンジ,オレンジにココナッツの風味が加わり、甘くてとてもフルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_coconut_orange_01.jpg
+913,ノンアル・ココナッツ・グレープフルーツ,グレープの苦味とココナッツの甘みが合わさり、フルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_coconut_grapefruit_01.jpg
+914,ノンアル・ココナッツ豆乳,ココナッツの甘みを感じ、甘くミルキーな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_coconut_soy_milk_01.jpg
+915,ノンアル・ココナッツ・パイン,ココナッツとパイナップルとのトロピカルな組み合わせで、甘くフルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_coconut_pineapple_01.jpg
+916,ノンアル・ココナッツ・スプライト,ココナッツの甘みがスプライトに加わり、甘くすっきりした味わい。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_coconut_sprite_01.jpg
+917,ノンアル・チョコレートミルク,甘くミルキーなミルクチョコレートの味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_chocolate_milk_01.jpg
+918,ノンアル・チョコレートソーダ,チョコレートの味わいを感じながら、爽やかな喉越し。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_chocolate_soda_01.jpg
+919,ノンアル・チョコレート・コーヒー,チョコレート風味のコーヒードリンク。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_chocolate_coffee_01.jpg
+920,ノンアル・チョコレート・ウーロン,チョコレートの風味を感じる烏龍茶。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_chocolate_oolong_01.jpg
+921,ノンアル・チョコレート・スプライト,スプライトにチョコレートの甘みが加わり、甘くて喉越しすっきり。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_chocolate_sprite_01.jpg
+922,ノンアル・チョコレート・コーラ,チョコレートとコーラが合わさった甘みで飲みやすい。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_chocolate_cola_01.jpg
+923,ノンアル・チョコレートクランベリー,クランベリーの甘酸っぱさの中にチョコレートの甘みを感じる味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_chocolate_cranberry_01.jpg
+924,ノンアル・チョコレート豆乳,ミルクチョコレートのような甘くミルキーな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_chocolate_soy_milk_01.jpg
+925,ブルーレモネード,綺麗な青色で、爽やか飲み心地。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_blue_lemonade_01.jpg
+926,ノンアル・ブルーラグーン・ソーダ,名前は青い湖の意味。レモンの酸味が効いたさっぱりとした味わい。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_blue_lagoon_soda_01.jpg?v=2
+927,バージン・チャイナブルー,綺麗な青色で、ライチとグレープフルーツの甘さを感じるフルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_virgin_china_blue_01.jpg
+928,ノンアル・ブルーハワイ,海をイメージしたノンアルコールカクテル。フルーティさと爽やかな喉越し。,ノンアルコール (0%),5,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_blue_hawaii_01.jpg?v=2
+929,アクアマリン,海のように綺麗な青色で、甘くすっきりとした喉越し。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_aquamarine_01.jpg
+930,ノンアル・グリーンアップル・レモネード,グリーンアップルの甘みにレモンの酸味が合わさり、爽やかな飲み心地。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_green_apple_lemonade_01.jpg
+931,ノンアル・グリーンアップル・ソーダ,青リンゴの甘みを感じ、爽やかな喉越し。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_green_apple_soda_01.jpg
+932,ノンアル・グリーンアップル・パイン,パイナップルジュースとグリーンアップルの甘みを感じるフルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_green_apple_pineapple_01.jpg
+933,ノンアル・グリーンアップル・グレープフルーツ,グリーアップルの甘みでグレープフルーツの苦味が和らぎ、甘くフルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_green_apple_grapefruit_01.jpg
+934,ノンアル・グリーンアップル・オレンジ,グリーンアップルの甘みでオレンジジュースの酸味を抑え、甘みが増してフルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_green_apple_orange_01.jpg
+935,ノンアル・キャラメルコーヒー,コーヒーのビターな風味にキャラメルシロップの程良い甘みを感じる味わい。,ノンアルコール (0%),7,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_caramel_coffee_01.jpg
+936,ノンアル・イタリアン・アイスティー,アマレットの甘いフレバーを感じるフレバーティー。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_italian_iced_tea_01.jpg
+937,ノンアル・アマレット・パイン,パイナップルジュースの後味にアマレットシロップの味を感じ、甘くフルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_amaretto_pineapple_01.jpg
+938,ノンアル・アマレット・ソーダ,アマレットシロップの甘みを感じながら喉越し爽快。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_amaretto_soda_01.jpg
+939,ノンアル・アマレット・スプライト,アマレットシロップの甘みがスプライトに加わり、甘くすっきりとした味わい。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_amaretto_sprite_01.jpg
+940,ノンアル・アマレット・ミルク,甘くミルキーで、まるで杏仁豆腐を食べているかのような味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_amaretto_milk_01.jpg
+941,カルピスパイン,カルピスとパイナップルジュースの組み合わせは、甘みを引き立てるフルーティさ。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_calpis_pineapple_01.jpg?v=2
+942,カルピス豆乳,乳酸菌と豆乳の栄養素を含み、甘くてヘルシー。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_calpis_soy_milk_01.jpg
+943,カルピス・ティー,カルピスの甘みを感じるアイスティー。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_calpis_tea_01.jpg
+944,トマトカルピス,カルピスの甘みで野菜ジュース感が無くて飲みやすい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_tomato_calpis_01.jpg
+945,ジンジャー・トニック,さっぱりとした味わいで、爽快な喉越し。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ginger_tonic_01.jpg
+946,ジンジャー・コーラ,ジンジャーエールとコーラが合わさって、甘さを感じながら喉越しが爽快。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ginger_cola_01.jpg
+947,ジンジャー・パイン,パイナップルのフルーティさをジンジャーエールの爽やかさが和らげ、さっぱりとした味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_ginger_pineapple_01.jpg
+948,スイート＆サワーミックス・ソーダ,甘酸っぱくて喉越し爽快。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sweet_and_sour_mix_soda_01.jpg
+949,スイート＆サワーミックス・オレンジ,甘酸っぱくてフルーティな味わい。,ノンアルコール (0%),0,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sweet_and_sour_mix_orange_01.jpg
+950,ノンアル・ライチ＆クランベリー・ソーダ,ライチ＆クランベリー・ソーダのノンアルコール版。フルーティで甘酸っぱい味わい。,ノンアルコール (0%),4,0,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_lychee_cranberry_soda_01.jpg
+951,ノンアル・ベイサイド・ピーチ,ベイサイド・ピーチのノンアルコール版。甘酸っぱくてフルーティな味わい。,ノンアルコール (0%),1,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_non-alcoholic_bayside_peach_01.jpg
+952,スイート＆サワーミックス,欧米では非常によく使われる割り材。甘酸っぱくゆるいシロップのようなもの。味やレシピは様々。基本的な材料構成は、水と砂糖とレモンやライムのシトラス果汁。卵白を加える場合もある。,ノンアルコール (0%),12,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sweet_and_sour_mix_01.jpg
+953,スイート＆サワーミックス,欧米では非常によく使われる割り材。甘酸っぱくゆるいシロップのようなもの。基本的な材料構成は、水と砂糖とレモンやライムのシトラス果汁で、こちらはシトラス果汁をレモンだけにしたレシピ。,ノンアルコール (0%),12,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sweet_and_sour_mix_02.jpg
+954,スイート＆サワーミックス,欧米では非常によく使われる割り材。甘酸っぱくゆるいシロップのようなもの。基本的な材料構成は、水と砂糖とレモンやライムのシトラス果汁で、こちらはシトラス果汁をライムだけにしたレシピ。,ノンアルコール (0%),12,1,https://cocktaillog.com/ja/assets/images/cocktail-w120/cocktail_sweet_and_sour_mix_03.jpg
