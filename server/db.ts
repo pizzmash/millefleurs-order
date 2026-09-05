@@ -6,9 +6,11 @@ export function openDb(path = process.env.DB_PATH || '.runtime/bar.sqlite') {
   if (path !== ':memory:') mkdirSync(dirname(path), { recursive: true });
   const db = new DatabaseSync(path);
   db.exec('PRAGMA foreign_keys = ON; PRAGMA journal_mode = WAL; PRAGMA busy_timeout = 5000;');
-  const version = (db.prepare('PRAGMA user_version').get() as { user_version: number }).user_version;
+  const version = (db.prepare('PRAGMA user_version').get() as { user_version: number })
+    .user_version;
   if (version > 1) throw new Error('Database version is newer than this application');
-  if (version === 0) db.exec(`
+  if (version === 0)
+    db.exec(`
     BEGIN;
     CREATE TABLE kinds (id INTEGER PRIMARY KEY, name TEXT NOT NULL, alcoholic INTEGER NOT NULL CHECK(alcoholic IN (0,1)));
     CREATE TABLE techniques (id INTEGER PRIMARY KEY, name TEXT NOT NULL);
@@ -29,6 +31,12 @@ export function openDb(path = process.env.DB_PATH || '.runtime/bar.sqlite') {
 }
 export function transaction<T>(db: DatabaseSync, fn: () => T): T {
   db.exec('BEGIN IMMEDIATE');
-  try { const result = fn(); db.exec('COMMIT'); return result; }
-  catch (error) { db.exec('ROLLBACK'); throw error; }
+  try {
+    const result = fn();
+    db.exec('COMMIT');
+    return result;
+  } catch (error) {
+    db.exec('ROLLBACK');
+    throw error;
+  }
 }
