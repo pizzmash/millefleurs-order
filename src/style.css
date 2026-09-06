@@ -929,10 +929,41 @@ small {
   padding: 25px;
   min-height: 300px;
 }
-.qr-panel img {
-  width: min(280px, 100%);
+.invite-card {
+  width: min(320px, 100%);
+  padding: 22px 18px 20px;
+  text-align: center;
+  border: 1px solid #786442;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #29372e, #18251f);
+  box-shadow: 0 16px 36px #0003;
+}
+.invite-card-heading {
+  color: var(--accent);
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.03em;
+}
+.invite-card-heading span,
+.invite-card-caption span {
+  display: block;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.625rem;
+  letter-spacing: 0.24em;
+  margin-top: 5px;
+  color: var(--accent);
+}
+.invite-qr {
+  display: block;
+  width: 100%;
   height: auto;
-  border-radius: 6px;
+  margin: 20px auto;
+  border-radius: 12px;
+}
+.invite-card-caption {
+  color: #eeede5;
+  font-size: 0.8125rem;
+  line-height: 1.8;
 }
 .qr-placeholder {
   text-align: center;

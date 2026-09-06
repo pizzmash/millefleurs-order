@@ -28,6 +28,7 @@ import {
   X,
 } from 'lucide-react';
 import QRCode from 'qrcode';
+import { BrandIcon, InviteQr } from './InviteQr';
 import { api, ApiError, requestKey, usePoll } from './api';
 import type { Cocktail, Drink, Guest, Menu, Order } from '../shared/types';
 import './style.css';
@@ -147,7 +148,7 @@ function Header({
         aria-label="ホームへ"
       >
         <span className="brand-mark">
-          <Martini size={22} strokeWidth={1.3} />
+          <BrandIcon size={22} />
         </span>
         <span>
           Milleflewrs<small>HOME BAR</small>
@@ -890,7 +891,7 @@ function Inventory() {
 function Invite() {
   const { data, error } = usePoll<{ publicUrl: string | null }>('/api/host/connection');
   const [url, setUrl] = useState(''),
-    [qr, setQr] = useState(''),
+    [qr, setQr] = useState<QRCode.QRCode | null>(null),
     [message, setMessage] = useState('');
   useEffect(() => {
     if (data?.publicUrl) setUrl(data.publicUrl);
@@ -909,23 +910,14 @@ function Invite() {
     /* user may be typing */
   }
   useEffect(() => {
-    let active = true;
-    setQr('');
-    if (valid)
-      QRCode.toDataURL(new URL('/', url).href, {
-        width: 280,
-        margin: 3,
-        color: { dark: '#18201c', light: '#ffffff' },
-      })
-        .then((value) => {
-          if (active) setQr(value);
-        })
-        .catch(() => {
-          if (active) setMessage('QRコードを作成できませんでした。');
-        });
-    return () => {
-      active = false;
-    };
+    setQr(null);
+    setMessage('');
+    if (!valid) return;
+    try {
+      setQr(QRCode.create(new URL('/', url).href, { errorCorrectionLevel: 'H' }));
+    } catch {
+      setMessage('QRコードを作成できませんでした。');
+    }
   }, [url, valid]);
   return (
     <main className="content narrow">
@@ -943,7 +935,15 @@ function Invite() {
       {error && <Notice>{error}</Notice>}
       <div className="qr-panel">
         {qr ? (
-          <img src={qr} width="280" height="280" alt="客人の参加用QRコード" />
+          <div className="invite-card">
+            <div className="invite-card-heading">
+              Milleflewrs<span>HOME BAR</span>
+            </div>
+            <InviteQr code={qr} />
+            <div className="invite-card-caption">
+              <span>SCAN TO JOIN</span>
+            </div>
+          </div>
         ) : (
           <div className="qr-placeholder">
             <QrCode size={56} strokeWidth={1} />
@@ -965,9 +965,6 @@ function Invite() {
           spellCheck={false}
         />
       </label>
-      <p className="hint">
-        スマホから開けるPCのアドレスを入力してください。localhostは参加用には使えません。
-      </p>
       {url && !valid && <Notice>PCのIPアドレスを含むURLを確認してください。</Notice>}
       {message && <Notice>{message}</Notice>}
     </main>
