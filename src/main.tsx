@@ -1,6 +1,7 @@
 import {
   useCallback,
   useEffect,
+  useLayoutEffect,
   useState,
   type CSSProperties,
   type FormEvent,
@@ -458,6 +459,10 @@ function CocktailDetail({ id, navigate }: { id: string; navigate: (path: string)
     [message, setMessage] = useState(''),
     [key, setKey] = useState(requestKey),
     [ordered, setOrdered] = useState(false);
+  useLayoutEffect(() => {
+    // Completion replaces the detail without navigation; reset after the DOM update.
+    if (ordered) window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [ordered]);
   async function order() {
     if (!cocktail) return;
     setBusy(true);
