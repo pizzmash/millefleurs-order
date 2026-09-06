@@ -951,7 +951,7 @@ function Invite() {
         <input
           value={url}
           onChange={(e) => setUrl(e.target.value)}
-          placeholder="例：http://192.168.1.10:3001"
+          placeholder="http://<PCのLANアドレス>:3001"
           inputMode="url"
           spellCheck={false}
         />

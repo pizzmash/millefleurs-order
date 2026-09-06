@@ -4,8 +4,10 @@
 
 ## 初回セットアップ（WSL2）
 
+クローン先の親ディレクトリから、プロジェクトへ移動します。
+
 ```bash
-cd /home/daxubar/ts/milleflewrs-order
+cd milleflewrs-order
 ./scripts/setup.sh
 ```
 
@@ -17,10 +19,10 @@ cd /home/daxubar/ts/milleflewrs-order
 HOST=0.0.0.0
 PORT=3001
 DB_PATH=.runtime/bar.sqlite
-PUBLIC_URL=http://192.168.2.154:3001
+# PUBLIC_URL=http://<PCのLANアドレス>:3001
 ```
 
-このIPアドレスは実装時に確認した値です。PCのアドレスが変わったら更新してください。
+`<PCのLANアドレス>` は利用するPCの値に置き換え、PUBLIC_URL行のコメントを外してください。PUBLIC_URLを省略した場合は、家主画面の「お迎え」で参加用URLを入力できます。
 
 ## 起動・停止
 
@@ -39,24 +41,43 @@ PUBLIC_URL=http://192.168.2.154:3001
 
 スマホの `localhost` はスマホ自身を指すため、PCのLANアドレスを使います。PCからWSLへ接続できても、別端末からの接続は別途確認が必要です。
 
-今回 `wslinfo --networking-mode` は `nat` を返しました。`.wslconfig` の指定は `mirrored` ですが実稼働にまだ反映されていません。またWindowsの3000番には既存の転送設定があるため、このアプリには3001番を使用します。
+まずWSL側で実際のネットワーク方式を確認します。このアプリの標準ポートは3001番です。
 
-アプリをWSL2で起動した状態で、Windowsの**管理者PowerShell**から次を実行してください。
-
-```powershell
-& '\\wsl.localhost\Ubuntu\home\daxubar\ts\milleflewrs-order\scripts\Enable-Lan.ps1' -Distro Ubuntu -Port 3001 -LanAddress 192.168.2.154
+```bash
+wslinfo --networking-mode
 ```
 
-このスクリプトはNATモードを確認し、Windowsの指定LANアドレスの3001番から、実行時に取得したWSLの3001番へ転送します。さらに、そのアドレス・ポートに対するローカルサブネットからの通信をWindowsファイアウォールで許可します。既存の異なる転送設定は上書きしません。通常権限では実行できません。
+`nat` の場合は、プロジェクトのルートでスクリプトのWindows側パスとディストリビューション名を確認してください。
+
+```bash
+wslpath -w "$(pwd)/scripts/Enable-Lan.ps1"
+printenv WSL_DISTRO_NAME
+```
+
+アプリをWSL2で起動した状態で、Windowsの**管理者PowerShell**から次を実行します。山括弧の値は直前に取得した値に置き換えてください。
+
+```powershell
+$ScriptPath = '<スクリプトのWindows側パス>'
+$Distro = '<WSLディストリビューション名>'
+& $ScriptPath -Distro $Distro -Port 3001
+```
+
+このスクリプトはNATモードを確認し、WindowsのLANアドレスとWSLのアドレスを実行時に取得して3001番を転送します。さらに、そのアドレス・ポートに対するローカルサブネットからの通信をWindowsファイアウォールで許可します。既存の異なる転送設定は上書きしません。通常権限では実行できません。
+
+複数のLANアドレスがある場合は、利用するネットワークの値を指定します。
+
+```powershell
+& $ScriptPath -Distro $Distro -Port 3001 -LanAddress '<PCのLANアドレス>'
+```
 
 PowerShellの実行ポリシーでスクリプトが許可されない場合は、組織・端末の方針に従ってください。ファイルを確認して必要な設定を手動で行うこともできます。
 
-その後、スマホから `http://192.168.2.154:3001` を開き、QR参加→注文→家主の提供完了→客人の表示更新を確認します。ゲストWi-Fiの端末間通信遮断が有効な場合は、PCに到達できるネットワークが必要です。
+その後、スクリプトが表示した `Guest URL` をスマホから開き、QR参加→注文→家主の提供完了→客人の表示更新を確認します。このURLを `.env` のPUBLIC_URLにも設定する場合は、アプリを再起動してください。ゲストWi-Fiの端末間通信遮断が有効な場合は、PCに到達できるネットワークが必要です。
 
-WSL再起動で内部IPが変わった場合、専用の古いルールを管理者PowerShellで削除してからスクリプトを再実行します（他のアプリのルールは削除しないでください）。
+WSL再起動で内部IPが変わった場合、専用の古いルールを管理者PowerShellで削除してからスクリプトを再実行します。`<設定時のPCのLANアドレス>` には削除対象のルールに使った値を指定してください。他のアプリのルールは削除しないでください。
 
 ```powershell
-netsh interface portproxy delete v4tov4 listenaddress=192.168.2.154 listenport=3001
+netsh interface portproxy delete v4tov4 listenaddress='<設定時のPCのLANアドレス>' listenport=3001
 ```
 
 本アプリ用のファイアウォールルールも不要になった場合は、次で削除できます。

@@ -1,5 +1,6 @@
 param(
-    [string]$Distro = 'Ubuntu',
+    [Parameter(Mandatory = $true)]
+    [string]$Distro,
     [int]$Port = 3001,
     [string]$LanAddress = ''
 )

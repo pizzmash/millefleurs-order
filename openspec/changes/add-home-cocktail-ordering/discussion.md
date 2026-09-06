@@ -11,7 +11,7 @@
 | technique.csv | 10 | id, name |
 | glass.csv | 19 | id, name |
 
-- データ元: `/home/daxubar/python/cocktaillog_crawler/data`
+- データ元: `data/raw/`（取得元からコピーしたCSV）
 - 同じkind_idの例: ドライ・ジン／タンカレー／スロージン、ホワイト・ラム／ダーク・ラム。
 - 指定どおり同一kind_idで代用可能とするが、味や度数の変化を伴い得る。表示度数は原レシピの参考値として扱う案。
 - kind_idが空欄の材料にはクラッシュドアイスや好みのリキュールなどがある。空欄同士を同種扱いしない。

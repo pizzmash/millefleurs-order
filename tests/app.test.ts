@@ -386,9 +386,11 @@ test('QR設定はlocalhostを公開しない', async () => {
     ).json();
     assert.equal(local.publicUrl, null);
     const lan = await (
-      await createApp(db, { publicUrl: 'http://192.168.1.10:3000' }).request('/api/host/connection')
+      await createApp(db, { publicUrl: 'http://bar.example.test:3000' }).request(
+        '/api/host/connection',
+      )
     ).json();
-    assert.equal(lan.publicUrl, 'http://192.168.1.10:3000');
+    assert.equal(lan.publicUrl, 'http://bar.example.test:3000');
   } finally {
     db.close();
   }

@@ -1,5 +1,5 @@
 {
-  "source_directory": "/home/daxubar/python/cocktaillog_crawler/data",
+  "source_directory": "data/raw",
   "files": {
     "cocktail.csv": {
       "rows": 955,
