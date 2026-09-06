@@ -89,14 +89,7 @@ function Photo({ src, name, className = '' }: { src: string; name: string; class
   const [failed, setFailed] = useState(false);
   useEffect(() => setFailed(false), [src]);
   return (
-    <div
-      className={`photo ${className}`}
-      style={
-        src && !failed
-          ? ({ '--photo-image': `url("${src.replaceAll('"', '%22')}")` } as CSSProperties)
-          : undefined
-      }
-    >
+    <div className={`photo ${className}`}>
       {src && !failed ? (
         <img src={src} alt={name} loading="lazy" onError={() => setFailed(true)} />
       ) : (
