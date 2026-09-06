@@ -41,7 +41,22 @@ DB_PATH=.runtime/bar.sqlite
 
 スマホの `localhost` はスマホ自身を指すため、PCのLANアドレスを使います。PCからWSLへ接続できても、別端末からの接続は別途確認が必要です。
 
-まずWSL側で実際のネットワーク方式を確認します。このアプリの標準ポートは3001番です。
+作業するターミナルを区別してください。
+
+| 作業 | 実行する場所 |
+| --- | --- |
+| アプリ起動・`wslinfo`・`wslpath` | WSLのターミナル |
+| `Enable-Lan.ps1`による設定 | Windowsの管理者PowerShell |
+
+WindowsのPowerShellで`wslinfo`だけを実行すると、コマンドが見つかりません。PowerShellから確認する場合は、`wsl`を経由します。この確認自体に管理者権限は不要です。
+
+```powershell
+wsl -- wslinfo --networking-mode
+```
+
+これは既定のディストリビューションで実行します。アプリを置いたディストリビューションが別の場合は、`wsl -l -v`で名前を確認し、`wsl -d <ディストリビューション名> -- wslinfo --networking-mode`を使ってください。
+
+WSLのターミナルを開いている場合は、次のように直接実行できます。このアプリの標準ポートは3001番です。
 
 ```bash
 wslinfo --networking-mode
