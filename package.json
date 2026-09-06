@@ -15,7 +15,8 @@
     "db:backup": "tsx server/backup.ts",
     "spec:validate": "openspec validate add-home-cocktail-ordering --strict",
     "format": "prettier --write src server shared tests vite.config.ts",
-    "format:check": "prettier --check src server shared tests vite.config.ts"
+    "format:check": "prettier --check src server shared tests vite.config.ts",
+    "data:update-images": "tsx server/update-image-urls.ts"
   },
   "dependencies": {
     "@hono/node-server": "2.1.1",

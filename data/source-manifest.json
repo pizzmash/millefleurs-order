@@ -3,7 +3,8 @@
   "files": {
     "cocktail.csv": {
       "rows": 955,
-      "sha256": "70ac3d7e0ca68de16978a554351064109fefc0a567fca0c4cac9ea9477ff8e77"
+      "sha256": "25e9ff6b96776c7999dd0cfc3255c277e31b64f92bb83f26c5b06ca8feda7473",
+      "original_sha256": "70ac3d7e0ca68de16978a554351064109fefc0a567fca0c4cac9ea9477ff8e77"
     },
     "cocktail_drink.csv": {
       "rows": 2922,

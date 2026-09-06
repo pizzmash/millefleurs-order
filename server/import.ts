@@ -86,7 +86,14 @@ export function importCatalog(db: DatabaseSync, directory = 'data/raw') {
     const c = db.prepare(
       'INSERT INTO cocktails VALUES(?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET name=excluded.name,description=excluded.description,alcohol=excluded.alcohol,alcohol_low=excluded.alcohol_low,alcohol_high=excluded.alcohol_high,image=excluded.image,glass_id=excluded.glass_id,technique_id=excluded.technique_id',
     );
-    for (const r of data.cocktail)
+    const previousImage = db.prepare('SELECT image FROM cocktails WHERE id=?');
+    const updateOrderImage = db.prepare(
+      'UPDATE orders SET image=? WHERE cocktail_id=? AND image=?',
+    );
+    for (const r of data.cocktail) {
+      const previous = previousImage.get(id(r.id)) as { image: string } | undefined;
+      if (previous && previous.image !== r.image)
+        updateOrderImage.run(r.image, id(r.id), previous.image);
       c.run(
         id(r.id),
         r.name,
@@ -97,6 +104,7 @@ export function importCatalog(db: DatabaseSync, directory = 'data/raw') {
         r.glass_id ? id(r.glass_id) : null,
         r.technique_id ? id(r.technique_id) : null,
       );
+    }
     db.exec('DELETE FROM recipes');
     const recipe = db.prepare('INSERT INTO recipes VALUES(?,?,?,?)');
     for (const r of data.cocktail_drink)

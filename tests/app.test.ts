@@ -41,7 +41,7 @@ function fixture(path = ':memory:') {
   return { db, app, stock, request, guest };
 }
 
-test('CSVコピーのハッシュと955種類の取り込み・再取り込み', () => {
+test('CSVマスターのハッシュと955種類の取り込み・再取り込み', () => {
   const manifest = JSON.parse(readFileSync('data/source-manifest.json', 'utf8'));
   for (const [file, info] of Object.entries(manifest.files))
     assert.equal(

@@ -138,8 +138,8 @@ Remove-NetFirewallRule -Name Milleflewrs-HomeBar-3001
 
 ## データ・正規化・バックアップ
 
-- コピー済みマスター: `data/raw/*.csv`（原本と同一。Git管理）
-- コピー時の件数とSHA-256: `data/source-manifest.json`
+- コピー済みマスター: `data/raw/*.csv`（画像URLは取得確認後に更新。Git管理）
+- 現在の件数・SHA-256と画像URL更新前のハッシュ: `data/source-manifest.json`
 - DB: `.runtime/bar.sqlite`（在庫・客人識別・注文履歴。Git対象外）
 - 正規化: 空欄kind_id→null、度数→数値または範囲。表示名・分量は原表記を維持。
 - 度数フィルターは原レシピの数値／範囲全体が指定条件に含まれるカクテルを表示し、不明を除外します。「8度以下」は0〜8の範囲であり、0%と確定したデータとは区別します。
@@ -152,6 +152,17 @@ Remove-NetFirewallRule -Name Milleflewrs-HomeBar-3001
 ```
 
 SQLiteのバックアップAPIで `.runtime/backups/` に整合したコピーを作ります。復元はアプリを停止した状態で行い、現在のDBと付随するWAL/SHMファイルを退避してからバックアップをDBパスへ置いて再起動します。
+
+## 画像URLの更新（WSLのターミナル）
+
+画像の配信先が変わった場合は、プロジェクトのルートで実行します。
+
+```bash
+./scripts/npm.sh run data:update-images
+./scripts/npm.sh run data:import
+```
+
+取得できた画像URLだけをCSVへ書き戻します。通常名と番号付きの候補を試し、失敗した行のURLは維持します。結果は `data/image-url-update-report.json` に保存します。詳しくは `data/README.md` を参照してください。
 
 ## 実装範囲
 
