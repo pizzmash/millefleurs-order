@@ -31,6 +31,7 @@ import QRCode from 'qrcode';
 import { api, ApiError, requestKey, usePoll } from './api';
 import type { Cocktail, Drink, Guest, Menu, Order } from '../shared/types';
 import './style.css';
+import { PurchaseSuggestions } from './PurchaseSuggestions';
 
 function useNavigation() {
   const [path, setPath] = useState(location.pathname);
@@ -814,6 +815,7 @@ function Inventory() {
           </strong>
         </div>
       </div>
+      <PurchaseSuggestions drinks={data?.drinks} updating={busy !== null} />
       <div className="search-input">
         <Search size={19} />
         <input

@@ -5,6 +5,9 @@ import { randomUUID } from 'node:crypto';
 import type { DatabaseSync } from 'node:sqlite';
 import { candidates, getCatalog, getDrinks, getMenu, STAPLES } from './catalog.ts';
 import { transaction } from './db.ts';
+import { inventorySignature } from '../shared/inventory.ts';
+import { recommendPurchases } from './purchase-recommendations.ts';
+import { PurchaseTimeout } from './purchase-search.ts';
 import type { Guest, Order, OrderIngredient } from '../shared/types.ts';
 type Env = { Variables: { guest: Guest | null } };
 type DbOrder = {
@@ -58,6 +61,7 @@ const pageNumber = (value: string | undefined) => {
 };
 export function createApp(db: DatabaseSync, options: { publicUrl?: string } = {}) {
   const app = new Hono<Env>();
+  let purchaseCalculationRunning = false;
   app.use(
     '/api/*',
     bodyLimit({
@@ -169,6 +173,34 @@ export function createApp(db: DatabaseSync, options: { publicUrl?: string } = {}
       availableCount: getCatalog(db).filter((row) => row.available).length,
     }),
   );
+  app.get('/api/host/purchase-recommendations', async (c) => {
+    const rawLimit = c.req.query('limit');
+    if (!rawLimit || !/^(?:[1-9]|10)$/.test(rawLimit))
+      return fail(400, '購入種類数は1〜10の整数で指定してください。');
+    if (purchaseCalculationRunning)
+      return c.json({ error: '購入提案を計算中です。少し待ってから再度お試しください。' }, 429);
+    purchaseCalculationRunning = true;
+    try {
+      const drinks = getDrinks(db);
+      const result = await recommendPurchases(drinks, getCatalog(db), Number(rawLimit));
+      if (inventorySignature(getDrinks(db)) !== result.inventorySignature)
+        return fail(409, '計算中に在庫が変わりました。もう一度計算してください。');
+      c.header('Cache-Control', 'no-store');
+      return c.json(result);
+    } catch (error) {
+      if (error instanceof PurchaseTimeout)
+        return c.json(
+          {
+            error:
+              '時間内に最適な組み合わせを確定できませんでした。購入種類数を減らしてお試しください。',
+          },
+          503,
+        );
+      throw error;
+    } finally {
+      purchaseCalculationRunning = false;
+    }
+  });
   app.put('/api/host/inventory/:id', async (c) => {
     const drinkId = integer(Number(c.req.param('id')));
     const { available } = await parseBody(c.req.raw);

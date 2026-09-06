@@ -1127,3 +1127,136 @@ small {
     transition: none !important;
   }
 }
+
+.purchase-panel {
+  margin: 0 0 24px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+.purchase-panel > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px;
+  color: var(--accent);
+  cursor: pointer;
+  list-style: none;
+}
+.purchase-panel > summary::-webkit-details-marker {
+  display: none;
+}
+.purchase-panel > summary::after {
+  content: '+';
+  margin-left: auto;
+  font-size: 1.25rem;
+}
+.purchase-panel[open] > summary::after {
+  content: '−';
+}
+.purchase-panel summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.purchase-body {
+  padding: 0 18px 20px;
+}
+.purchase-intro {
+  margin-top: 0;
+  font-size: 0.875rem;
+}
+.purchase-controls {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.purchase-controls label {
+  flex: 1 1 180px;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+.purchase-controls select {
+  display: block;
+  margin-top: 8px;
+}
+.purchase-controls button {
+  flex: 1 1 160px;
+  min-height: 50px;
+}
+.purchase-note {
+  font-size: 0.75rem;
+  line-height: 1.8;
+}
+.purchase-wait {
+  font-size: 0.875rem;
+  color: var(--accent);
+}
+.purchase-result {
+  border-top: 1px solid var(--line);
+  margin-top: 20px;
+  padding-top: 16px;
+}
+.purchase-gain {
+  margin: 0;
+  color: var(--accent);
+}
+.purchase-gain strong {
+  font-size: 2rem;
+  margin-right: 6px;
+}
+.purchase-count {
+  margin-top: 0;
+  font-size: 0.875rem;
+}
+.purchase-result h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 24px;
+}
+.purchase-list,
+.purchase-cocktails ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.purchase-list li {
+  display: grid;
+  gap: 6px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.purchase-list strong {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+.purchase-list span {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.8;
+}
+.purchase-cocktails {
+  margin-top: 18px;
+}
+.purchase-cocktails summary {
+  padding: 14px 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  cursor: pointer;
+}
+.purchase-cocktails > ul > li {
+  border-top: 1px solid var(--line);
+}
+.purchase-cocktails .purchase-recipe {
+  padding: 0 0 12px 12px;
+}
+.purchase-recipe li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  overflow-wrap: anywhere;
+}

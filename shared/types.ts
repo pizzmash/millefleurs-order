@@ -63,3 +63,21 @@ export type Menu = {
   kinds: { id: number; name: string }[];
 };
 export type Guest = { id: string; nickname: string };
+
+export type PurchaseRecommendation = {
+  limit: number;
+  inventorySignature: string;
+  currentCount: number;
+  addedCount: number;
+  totalCount: number;
+  purchases: {
+    key: string;
+    name: string;
+    options: { id: number; name: string }[];
+  }[];
+  cocktails: {
+    id: number;
+    name: string;
+    ingredients: { name: string; quantity: string }[];
+  }[];
+};
