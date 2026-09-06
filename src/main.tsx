@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useState, type FormEvent, type ReactNode } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useState,
+  type CSSProperties,
+  type FormEvent,
+  type ReactNode,
+} from 'react';
 import { createRoot } from 'react-dom/client';
 import { flushSync } from 'react-dom';
 import {
@@ -82,7 +89,14 @@ function Photo({ src, name, className = '' }: { src: string; name: string; class
   const [failed, setFailed] = useState(false);
   useEffect(() => setFailed(false), [src]);
   return (
-    <div className={`photo ${className}`}>
+    <div
+      className={`photo ${className}`}
+      style={
+        src && !failed
+          ? ({ '--photo-image': `url("${src.replaceAll('"', '%22')}")` } as CSSProperties)
+          : undefined
+      }
+    >
       {src && !failed ? (
         <img src={src} alt={name} loading="lazy" onError={() => setFailed(true)} />
       ) : (
