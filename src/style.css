@@ -348,7 +348,7 @@ small {
   background-image: var(--photo-image);
   background-position: center;
   background-size: cover;
-  filter: blur(24px) brightness(1.22) saturate(0.58);
+  filter: blur(20px) brightness(1.08) saturate(0.86);
   transform: scale(1.08);
 }
 .photo img {
