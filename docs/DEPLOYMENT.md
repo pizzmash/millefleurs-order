@@ -66,6 +66,14 @@ npm run cloud:deploy -- production
 
 CLIはビルド→D1マイグレーション→カタログ投入→有効version切替→API Worker配備→Pages配備の順に実行し、途中失敗で停止します。デプロイはクラウドへ実際に書き込みます。既存のユーザー在庫や注文は初期化しません。
 
+Pagesは任意パスの`--config`に対応していないため、配備CLIは一時ディレクトリに標準名の`wrangler.jsonc`と`functions/`を配置して実行します。ルートのAPI Worker設定は変更しません。
+
+API Workerまで配備済みでPagesだけ失敗した場合は、同じ環境のビルド済み`dist`と生成済み設定を保持した状態で、Pagesのみ再実行できます（再ビルド・DB更新は行いません）。
+
+```sh
+npm run cloud:deploy:pages -- production
+```
+
 カタログ更新だけなら`npm run cloud:catalog`でSQLを生成し、対象Worker設定を指定してcatalog.sqlをD1に適用し、成功後にactivate-catalog.sqlを適用します。途中投入では旧versionを維持します。バージョンごとの古いカタログは復旧用に保持し、削除は別の管理作業として行います。
 
 PRプレビューにはAPI Service bindingを設定しません。APIを使う動作検証は固定stagingで行います。PagesのGit自動配備を別途使う場合も、previewへ本番bindingを追加しないでください。

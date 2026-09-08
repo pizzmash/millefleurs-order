@@ -20,6 +20,7 @@
     "cloud:catalog": "tsx scripts/cloud/catalog.ts",
     "cloud:setup:local": "wrangler d1 migrations apply DB --local && npm run cloud:catalog && wrangler d1 execute DB --local --file .runtime/cloud/catalog.sql && wrangler d1 execute DB --local --file .runtime/cloud/activate-catalog.sql",
     "cloud:configure": "tsx scripts/cloud/configure.ts",
+    "cloud:deploy:pages": "tsx scripts/cloud/deploy-pages.ts",
     "cloud:deploy": "tsx scripts/cloud/deploy.ts",
     "cloud:migrate-legacy": "tsx scripts/cloud/migrate-legacy.ts",
     "test:browser": "npm run build && tsx tests/browser.e2e.ts",
