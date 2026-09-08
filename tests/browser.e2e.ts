@@ -62,7 +62,14 @@ try {
     await page.getByLabel('ニックネーム').fill('スマホの客人');
     await page.getByRole('button', { name: 'メニューを開く' }).click();
     await page.waitForURL(`**/b/${a.id}`);
+
+    await page.locator('.page-context').waitFor();
+    assert.equal(await page.getByText('スマホの客人', { exact: true }).count(), 0);
+    assert.equal(await page.locator('.account-strip').count(), 0);
+    await page.getByRole('button', { name: '自分の注文', exact: true }).click();
+    await page.getByText('スマホの客人 さんのご注文', { exact: true }).waitFor();
     await page.goto(`${origin}/b/${a.id}/cocktails/1`);
+    assert.equal(await page.locator('.guest-identity').count(), 0);
     await page.getByRole('button', { name: 'このカクテルを1杯注文' }).click();
     await page.getByRole('heading', { name: 'ご注文を承りました' }).waitFor();
     await page.getByRole('button', { name: '注文状況を見る' }).click();
@@ -88,6 +95,38 @@ try {
     await page.getByText('カクテル1', { exact: true }).waitFor();
     mkdirSync('.runtime/screenshots', { recursive: true });
     await page.screenshot({ path: '.runtime/screenshots/guest-orders.png', fullPage: true });
+
+    // Long participant information and the stopped-service notice remain usable on every guest route.
+    await page.route('**/session', async (route) => {
+      const response = await route.fetch();
+      const session = await response.json();
+      await route.fulfill({
+        json: {
+          ...session,
+          bar: { ...session.bar, name: '長いバーの名前'.repeat(8), acceptingOrders: false },
+          guest: { ...session.guest, nickname: '長い客人の名前'.repeat(3) },
+        },
+      });
+    });
+    for (const width of [320, 390, 768, 1280]) {
+      await page.setViewportSize({ width, height: 844 });
+      for (const suffix of ['', '/orders', '/cocktails/1']) {
+        await page.goto(`${origin}/b/${a.id}${suffix}`);
+        await page.getByText('新しい注文の受付を停止しています。', { exact: true }).waitFor();
+        assert.equal(
+          await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
+          true,
+        );
+      }
+      await page.goto(`${origin}/b/${a.id}/orders`);
+      await page.locator('.guest-identity').waitFor();
+      await page.screenshot({
+        path: `.runtime/screenshots/guest-identity-${width}.png`,
+        fullPage: true,
+      });
+    }
+    await page.unroute('**/session');
+    await page.setViewportSize({ width: 390, height: 844 });
     await s.request('/api/host/invitation/rotate', {
       uid: 'alice',
       method: 'POST',
@@ -260,6 +299,38 @@ try {
       jsQR(new Uint8ClampedArray(invitePng.data), invitePng.width, invitePng.height)?.data,
       await hostPage.getByLabel('参加用URL').inputValue(),
     );
+
+    assert.equal(
+      await hostPage.getByRole('button', { name: 'ログアウト', exact: true }).count(),
+      0,
+    );
+    await hostPage.getByRole('button', { name: 'アカウント', exact: true }).click();
+    await hostPage.getByRole('heading', { name: 'アカウント', exact: true }).waitFor();
+    await hostPage.getByRole('heading', { name: 'alice', exact: true }).waitFor();
+    await hostPage.getByText('alice@example.com', { exact: true }).waitFor();
+    assert.equal(
+      await hostPage
+        .getByRole('button', { name: 'アカウント', exact: true })
+        .getAttribute('aria-current'),
+      'page',
+    );
+    await hostPage.reload();
+    await hostPage.getByRole('heading', { name: 'alice', exact: true }).waitFor();
+    await hostPage.screenshot({ path: '.runtime/screenshots/host-account.png', fullPage: true });
+    for (const width of [320, 390, 768, 1280]) {
+      await hostPage.setViewportSize({ width, height: 844 });
+      await hostPage.locator('.account-details h2').evaluate((el) => {
+        el.textContent = '長い家主の名前'.repeat(12);
+      });
+      assert.equal(
+        await hostPage.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
+        true,
+      );
+      await hostPage.screenshot({
+        path: `.runtime/screenshots/host-account-${width}.png`,
+        fullPage: true,
+      });
+    }
     await hostPage.getByRole('button', { name: 'ログアウト', exact: true }).click();
     await hostPage.getByRole('button', { name: 'Googleで登録・ログイン' }).waitFor();
     await restore('bob');

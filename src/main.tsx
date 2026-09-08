@@ -20,6 +20,8 @@ import {
   ClipboardList,
   GlassWater,
   ListFilter,
+  LogOut,
+  UserRound,
   Martini,
   Package,
   QrCode,
@@ -136,15 +138,7 @@ function Pager({
     </div>
   );
 }
-function Header({
-  host,
-  nickname,
-  navigate,
-}: {
-  host: boolean;
-  nickname?: string;
-  navigate: (path: string) => void;
-}) {
+function Header({ host, navigate }: { host: boolean; navigate: (path: string) => void }) {
   return (
     <header className="site-header">
       <button
@@ -159,9 +153,7 @@ function Header({
           Milleflewrs<small>HOME BAR</small>
         </span>
       </button>
-      <span className="header-label">
-        {host ? 'HOST COUNTER' : nickname ? `${nickname} さん` : 'WELCOME'}
-      </span>
+      <span className="header-label">{host ? 'HOST COUNTER' : 'WELCOME'}</span>
     </header>
   );
 }
@@ -224,7 +216,7 @@ function Join({
     </main>
   );
 }
-function GuestMenu({ navigate }: { navigate: (path: string) => void }) {
+function GuestMenu({ navigate, barName }: { navigate: (path: string) => void; barName: string }) {
   const [q, setQ] = useState(''),
     [kind, setKind] = useState(''),
     [strength, setStrength] = useState(''),
@@ -309,6 +301,7 @@ function GuestMenu({ navigate }: { navigate: (path: string) => void }) {
         <div>
           <div className="eyebrow">THE MENU</div>
           <h1>今夜のメニュー</h1>
+          <p className="page-context">{barName}</p>
         </div>
         <div className="menu-count">
           <strong>{data?.availableTotal ?? '—'}</strong>
@@ -580,7 +573,13 @@ function CocktailDetail({ id, navigate }: { id: string; navigate: (path: string)
     </main>
   );
 }
-function OrderList({ host }: { host: boolean }) {
+function OrderList({
+  host,
+  guestIdentity,
+}: {
+  host: boolean;
+  guestIdentity?: { nickname: string; barName: string };
+}) {
   const [status, setStatus] = useState('pending'),
     [page, setPage] = useState(1),
     [expanded, setExpanded] = useState<string | null>(null),
@@ -615,6 +614,15 @@ function OrderList({ host }: { host: boolean }) {
           自動更新
         </span>
       </section>
+      {guestIdentity && (
+        <div className="guest-identity">
+          <UserRound size={20} aria-hidden="true" />
+          <div>
+            <strong>{guestIdentity.nickname} さんのご注文</strong>
+            <span>{guestIdentity.barName}</span>
+          </div>
+        </div>
+      )}
       {host && (
         <div className="segment">
           <button
@@ -1117,35 +1125,96 @@ function HostArea() {
     );
   if (registered !== user.uid) return <Loading />;
   return (
-    <>
-      <div className="content account-strip">
-        <span>{user.displayName}</span>
-        <button className="text-button" onClick={() => logout()}>
-          ログアウト
-        </button>
-      </div>
-      <HostContent key={user.uid} />
-    </>
+    <HostContent
+      key={user.uid}
+      displayName={user.displayName || user.email || '家主'}
+      email={user.email}
+    />
   );
 }
-function HostContent() {
+function HostAccount({ displayName, email }: { displayName: string; email: string | null }) {
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState('');
+  return (
+    <main className="content narrow">
+      <div className="eyebrow">YOUR ACCOUNT</div>
+      <h1>アカウント</h1>
+      <section className="account-card" aria-label="ログイン中のアカウント">
+        <span className="account-avatar">
+          <UserRound size={28} aria-hidden="true" />
+        </span>
+        <div className="account-details">
+          <span className="eyebrow">HOST</span>
+          <h2>{displayName}</h2>
+          {email && email !== displayName && <p>{email}</p>}
+          <span className="account-provider">Googleでログイン中</span>
+        </div>
+      </section>
+      {error && <Notice>{error}</Notice>}
+      <button
+        className="secondary account-logout"
+        disabled={busy}
+        onClick={async () => {
+          setBusy(true);
+          setError('');
+          try {
+            await logout();
+          } catch {
+            setError('ログアウトできませんでした。もう一度お試しください。');
+          } finally {
+            setBusy(false);
+          }
+        }}
+      >
+        <LogOut size={18} aria-hidden="true" />
+        {busy ? 'ログアウト中…' : 'ログアウト'}
+      </button>
+    </main>
+  );
+}
+function HostContent({ displayName, email }: { displayName: string; email: string | null }) {
   const { path, navigate } = useNavigation();
-  const tab = path.includes('inventory')
-    ? 'inventory'
-    : path.includes('invite')
-      ? 'invite'
-      : 'orders';
+  const tab =
+    path === '/host/account'
+      ? 'account'
+      : path.includes('inventory')
+        ? 'inventory'
+        : path.includes('invite')
+          ? 'invite'
+          : 'orders';
   return (
     <>
-      {tab === 'inventory' ? <Inventory /> : tab === 'invite' ? <Invite /> : <OrderList host />}
+      {tab === 'account' ? (
+        <HostAccount displayName={displayName} email={email} />
+      ) : tab === 'inventory' ? (
+        <Inventory />
+      ) : tab === 'invite' ? (
+        <Invite />
+      ) : (
+        <OrderList host />
+      )}
       <nav className="bottom-nav" aria-label="家主メニュー">
         {[
           ['orders', '/host', '注文'],
           ['inventory', '/host/inventory', '在庫'],
           ['invite', '/host/invite', 'お迎え'],
+          ['account', '/host/account', 'アカウント'],
         ].map(([key, path, label]) => (
-          <button className={tab === key ? 'current' : ''} key={key} onClick={() => navigate(path)}>
-            {key === 'orders' ? <ClipboardList /> : key === 'inventory' ? <Package /> : <QrCode />}
+          <button
+            aria-current={tab === key ? 'page' : undefined}
+            className={tab === key ? 'current' : ''}
+            key={key}
+            onClick={() => navigate(path)}
+          >
+            {key === 'orders' ? (
+              <ClipboardList />
+            ) : key === 'inventory' ? (
+              <Package />
+            ) : key === 'account' ? (
+              <UserRound />
+            ) : (
+              <QrCode />
+            )}
             <span>{label}</span>
           </button>
         ))}
@@ -1220,18 +1289,20 @@ function GuestArea({ barId }: { barId: string }) {
   const detail = relative.match(/^\/cocktails\/(\d+)$/)?.[1];
   return (
     <>
-      <div className="content account-strip">
-        <span>
-          {data.bar.name} · {data.guest.nickname} さん
-        </span>
-        {!data.bar.acceptingOrders && <Notice>新しい注文の受付を停止しています。</Notice>}
-      </div>
+      {!data.bar.acceptingOrders && (
+        <div className="content service-notice">
+          <Notice>新しい注文の受付を停止しています。</Notice>
+        </div>
+      )}
       {detail ? (
         <CocktailDetail key={detail} id={detail} navigate={navigate} />
       ) : relative === '/orders' ? (
-        <OrderList host={false} />
+        <OrderList
+          host={false}
+          guestIdentity={{ nickname: data.guest.nickname, barName: data.bar.name }}
+        />
       ) : (
-        <GuestMenu navigate={navigate} />
+        <GuestMenu navigate={navigate} barName={data.bar.name} />
       )}
       <nav className="bottom-nav" aria-label="客人メニュー">
         <button className={relative !== '/orders' ? 'current' : ''} onClick={() => navigate('/')}>

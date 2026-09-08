@@ -1302,10 +1302,84 @@ small {
   overflow-wrap: anywhere;
 }
 
-.account-strip {
+.page-context {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+  overflow-wrap: anywhere;
+}
+.page-heading > div:first-child {
+  min-width: 0;
+}
+.guest-identity {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  gap: 12px;
+  margin: 24px 0;
+  padding: 16px 18px;
+  border-left: 2px solid var(--accent);
+  background: var(--panel);
+  color: var(--accent);
+}
+.guest-identity > div {
+  min-width: 0;
+}
+.guest-identity strong,
+.guest-identity span {
+  display: block;
+  overflow-wrap: anywhere;
+}
+.guest-identity strong {
+  color: var(--text);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.guest-identity span {
+  color: var(--muted);
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+.account-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 28px 0 20px;
+  padding: 24px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+.account-avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--nav-bg);
+  color: var(--accent);
+  border: 1px solid var(--line);
+}
+.account-details {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.account-details h2 {
+  margin: 6px 0;
+  font-size: 1.125rem;
+}
+.account-details p {
+  margin: 4px 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+.account-provider {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+.account-logout {
+  width: 100%;
+}
+.service-notice {
   padding-bottom: 0;
 }
