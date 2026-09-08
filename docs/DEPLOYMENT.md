@@ -78,6 +78,43 @@ npm run cloud:deploy:pages -- production
 
 PRプレビューにはAPI Service bindingを設定しません。APIを使う動作検証は固定stagingで行います。PagesのGit自動配備を別途使う場合も、previewへ本番bindingを追加しないでください。
 
+## GitHub Actionsで本番へ自動デプロイ
+
+`.github/workflows/check.yml`はmainへのpush（PRマージを含む）で検証ジョブを実行し、成功した同じコミットを本番へ配備します。PRや他ブランチは検証のみです。本番のみで運用でき、stagingの作成は不要です。
+
+初回だけ、GitHubリポジトリの **Settings → Environments → New environment** で`production`を作成し、以下を登録してください。EnvironmentのDeployment branches and tagsはmainのみに制限します。完全自動で配備する場合、Required reviewersや待機時間は設定しません。
+
+### Environment secret
+
+| 名前 | 値 |
+| --- | --- |
+| CLOUDFLARE_API_TOKEN | 本番Cloudflareアカウントへ配備するAPIトークン |
+
+CloudflareのMy Profile → API Tokensでカスタムトークンを作成します。対象アカウントだけを指定し、Account権限のCloudflare Pages: Edit、Workers Scripts: Edit、D1: Editを付与します。公開Worker routeを作らないためZoneの権限は不要です。トークンはGitHubのSecretへ直接入力し、リポジトリへコミットしません。
+
+参考: [PagesのCI配備](https://developers.cloudflare.com/pages/how-to/use-direct-upload-with-continuous-integration/)、[WorkersのGitHub Actions配備](https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/)。
+
+### Environment variables
+
+| 名前 | 値 |
+| --- | --- |
+| CLOUDFLARE_ACCOUNT_ID | 現在配備している本番のAccount ID |
+| CLOUDFLARE_D1_ID | 既存の本番D1のdatabase_id |
+| CLOUDFLARE_PAGES_PROJECT | 既存の本番Pagesプロジェクト名 |
+| PUBLIC_APP_URL | 本番の正規URL（例: https://milleflewrs-order.pages.dev） |
+| FIREBASE_PROJECT_ID | 本番FirebaseのprojectId |
+| VITE_FIREBASE_API_KEY | 同じFirebase WebアプリのapiKey |
+| VITE_FIREBASE_AUTH_DOMAIN | 同じWebアプリのauthDomain |
+| VITE_FIREBASE_APP_ID | 同じWebアプリのappId |
+
+`CLOUD_ENV=production`と`VITE_FIREBASE_PROJECT_ID`はワークフローが設定するため、登録不要です。Firebase Webアプリの設定値はブラウザーに公開される値です。Firebaseサービスアカウントの秘密鍵は使用しません。
+
+既存の`.runtime/cloud/production.worker.json`からAccount ID・D1 ID・Firebase project ID・公開URLを確認できます。Pages名は`production.pages.json`にあります。新しいリソースを作らず、現在公開中の環境と同じ値を登録してください。
+
+登録後、このワークフローをmainへマージすると自動配備が始まります。マージ後に設定を登録した場合や再配備する場合は **Actions → Check → Run workflow → main** を実行します。ローカルでのexportやWranglerログインはCIには不要です。設定不足はクラウド更新前に項目名だけ表示して失敗します。
+
+mainの検証と配備は直列実行し、後続のpushで実行中の配備をキャンセルしません。短時間に複数pushした場合は待機中の古い実行が最新の実行に置き換わることがあります。配備はDBマイグレーション・カタログ投入・API・Pagesの順で進み、途中失敗時の自動ロールバックはしません。Actionsの失敗ステップを確認して再実行してください。Cloudflare側のGit自動ビルドを併用すると二重配備になるため、この運用ではGitHub Actionsへ統一します。
+
 ## 公開後の確認
 
 - `/api/health`が200、未知のAPIがJSONの404、`/host/invite`などの直リンクが表示される。
