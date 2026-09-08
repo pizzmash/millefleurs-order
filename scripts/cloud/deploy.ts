@@ -51,5 +51,5 @@ run('wrangler/bin/wrangler.js', [
   '.runtime/cloud/activate-catalog.sql',
 ]);
 run('wrangler/bin/wrangler.js', ['deploy', '--config', worker]);
-run('wrangler/bin/wrangler.js', ['pages', 'deploy', 'dist', '--config', pages, '--branch', 'main']);
+run('tsx/dist/cli.mjs', ['scripts/cloud/deploy-pages.ts', environment]);
 console.log('Deployment commands completed. Perform the smoke checks in docs/DEPLOYMENT.md.');
