@@ -66,7 +66,7 @@ npm run cloud:deploy -- production
 
 CLIはビルド→D1マイグレーション→カタログ投入→有効version切替→API Worker配備→Pages配備の順に実行し、途中失敗で停止します。デプロイはクラウドへ実際に書き込みます。既存のユーザー在庫や注文は初期化しません。
 
-Pagesは任意パスの`--config`に対応していないため、配備CLIは一時ディレクトリに標準名の`wrangler.jsonc`と`functions/`を配置して実行します。ルートのAPI Worker設定は変更しません。
+Pagesは任意パスの`--config`に対応していないため、配備CLIは一時ディレクトリに標準名の`wrangler.jsonc`と`functions/`を配置して実行します。ルートのAPI Worker設定は変更しません。Pages設定には`account_id`を含めず、対応するWorker設定のアカウントIDを配備プロセスの`CLOUDFLARE_ACCOUNT_ID`へ渡します。旧生成設定に残る`account_id`も配備時に取り除くため、既存設定の再生成は不要です。
 
 API Workerまで配備済みでPagesだけ失敗した場合は、同じ環境のビルド済み`dist`と生成済み設定を保持した状態で、Pagesのみ再実行できます（再ビルド・DB更新は行いません）。
 

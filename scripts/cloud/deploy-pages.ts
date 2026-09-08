@@ -16,6 +16,18 @@ if (!['staging', 'production'].includes(environment))
 const source = resolve(`.runtime/cloud/${environment}.pages.json`);
 if (!existsSync(source)) throw new Error('Run cloud:configure first');
 const config = JSON.parse(readFileSync(source, 'utf8'));
+// Older generated Pages configs included account_id, which Pages rejects.
+// Use the matching Worker config as the account source for new configs.
+const workerSource = resolve(`.runtime/cloud/${environment}.worker.json`);
+const workerAccount = existsSync(workerSource)
+  ? JSON.parse(readFileSync(workerSource, 'utf8')).account_id
+  : undefined;
+if (workerAccount && config.account_id && workerAccount !== config.account_id)
+  throw new Error('Worker and Pages account IDs do not match; run cloud:configure again');
+const account = workerAccount || config.account_id;
+if (typeof account !== 'string' || !/^[a-f0-9]{32}$/.test(account))
+  throw new Error('Missing valid deployment account; run cloud:configure first');
+delete config.account_id;
 const output = config.pages_build_output_dir;
 if (!output || !existsSync(resolve(output, 'index.html')))
   throw new Error('Build the target environment before deploying Pages');
@@ -38,7 +50,7 @@ try {
       '--branch',
       'main',
     ],
-    { cwd: directory, stdio: 'inherit' },
+    { cwd: directory, stdio: 'inherit', env: { ...process.env, CLOUDFLARE_ACCOUNT_ID: account } },
   );
 } finally {
   rmSync(directory, { recursive: true, force: true });

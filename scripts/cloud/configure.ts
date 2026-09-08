@@ -50,7 +50,6 @@ writeFileSync(
   JSON.stringify(
     {
       name: pages,
-      account_id: account,
       pages_build_output_dir: resolve('dist'),
       compatibility_date: '2026-09-07',
       services: [{ binding: 'API', service: worker }],
