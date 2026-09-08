@@ -1,3 +1,4 @@
+import { auth } from './auth';
 import { useCallback, useEffect, useRef, useState } from 'react';
 export class ApiError extends Error {
   constructor(
@@ -7,27 +8,59 @@ export class ApiError extends Error {
     super(message);
   }
 }
+export function guestApi(path: string) {
+  const barId = location.pathname.match(/^\/b\/([^/]+)/)?.[1];
+  if (!barId) throw new ApiError('招待QRから参加してください。', 401);
+  return `/api/b/${barId}${path}`;
+}
 export async function api<T>(path: string, options: RequestInit = {}): Promise<T> {
-  let response: Response;
+  const host = path.startsWith('/api/host/');
+  const user = auth?.currentUser;
+  const controller = new AbortController();
+  const abort = () => controller.abort();
+  options.signal?.addEventListener('abort', abort, { once: true });
+  if (options.signal?.aborted) controller.abort();
+  const timer = setTimeout(abort, 30000);
   try {
-    response = await fetch(path, {
-      ...options,
-      headers: {
-        ...(options.body ? { 'Content-Type': 'application/json' } : {}),
-        ...options.headers,
-      },
-    });
-  } catch (error) {
-    if (error instanceof DOMException && error.name === 'AbortError') throw error;
-    throw new ApiError('接続できませんでした。Wi-Fiとサーバーを確認してください。', 0);
+    for (let attempt = 0; attempt < 2; attempt++) {
+      const headers = new Headers(options.headers);
+      if (options.body) headers.set('Content-Type', 'application/json');
+      if (host) {
+        if (!user) throw new ApiError('Googleでログインしてください。', 401);
+        try {
+          headers.set('Authorization', `Bearer ${await user.getIdToken(attempt === 1)}`);
+        } catch (error) {
+          const code = (error as { code?: string }).code;
+          if (code === 'auth/network-request-failed')
+            throw new ApiError('ログインを確認できませんでした。通信環境を確認してください。', 0);
+          if (auth?.currentUser?.uid === user.uid)
+            window.dispatchEvent(new Event('host-session-expired'));
+          throw new ApiError('Googleでログインし直してください。', 401);
+        }
+      }
+      const response = await fetch(path, { ...options, headers, signal: controller.signal });
+      if (host && auth?.currentUser?.uid !== user?.uid)
+        throw new DOMException('Account changed', 'AbortError');
+      if (response.status === 401 && host && attempt === 0) continue;
+      const body = await response.json().catch(() => null);
+      if (!response.ok) {
+        if (response.status === 401)
+          window.dispatchEvent(new Event(host ? 'host-session-expired' : 'guest-session-expired'));
+        throw new ApiError(
+          body?.error || '処理できませんでした。もう一度お試しください。',
+          response.status,
+        );
+      }
+      return body as T;
+    }
+    throw new ApiError('再ログインしてください。', 401);
+  } catch (e) {
+    if (e instanceof ApiError || (e instanceof DOMException && e.name === 'AbortError')) throw e;
+    throw new ApiError('接続できませんでした。通信環境を確認してください。', 0);
+  } finally {
+    clearTimeout(timer);
+    options.signal?.removeEventListener('abort', abort);
   }
-  const body = await response.json().catch(() => null);
-  if (!response.ok)
-    throw new ApiError(
-      body?.error || '処理できませんでした。もう一度お試しください。',
-      response.status,
-    );
-  return body as T;
 }
 export function usePoll<T>(url: string | null) {
   const [data, setData] = useState<T | null>(null);
@@ -58,10 +91,16 @@ export function usePoll<T>(url: string | null) {
         if (!active || request.signal.aborted) return;
         setError((e as Error).message);
         failures++;
+        if (e instanceof ApiError && (e.status === 401 || e.status === 403)) active = false;
       } finally {
         if (active && !request.signal.aborted) {
           setLoading(false);
-          timer = setTimeout(fetchData, Math.min(15000, 3000 * (failures + 1)));
+          timer = setTimeout(
+            fetchData,
+            failures
+              ? Math.min(60000, 3000 * 2 ** Math.min(failures, 5)) + Math.random() * 1000
+              : 3000,
+          );
         }
       }
     }

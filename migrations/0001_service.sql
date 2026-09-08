@@ -1,0 +1,17 @@
+CREATE TABLE users (firebase_uid TEXT PRIMARY KEY, display_name TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'active' CHECK(status IN ('active','disabled')), created_at TEXT NOT NULL);
+CREATE TABLE bars (id TEXT PRIMARY KEY, owner_uid TEXT NOT NULL UNIQUE REFERENCES users(firebase_uid), name TEXT NOT NULL DEFAULT 'マイバー', accepting_orders INTEGER NOT NULL DEFAULT 0 CHECK(accepting_orders IN (0,1)), inventory_version INTEGER NOT NULL DEFAULT 0, invite_version INTEGER NOT NULL DEFAULT 1, invite_token TEXT NOT NULL UNIQUE);
+CREATE TABLE drinks (id INTEGER PRIMARY KEY);
+CREATE TABLE catalog_versions (id TEXT PRIMARY KEY, created_at TEXT NOT NULL);
+CREATE TABLE catalog_state (id INTEGER PRIMARY KEY CHECK(id=1), version TEXT NOT NULL REFERENCES catalog_versions(id));
+CREATE TABLE catalog_drinks (version TEXT NOT NULL REFERENCES catalog_versions(id), drink_id INTEGER NOT NULL REFERENCES drinks(id), payload TEXT NOT NULL CHECK(json_valid(payload)), PRIMARY KEY(version, drink_id));
+CREATE TABLE catalog_entries (version TEXT NOT NULL REFERENCES catalog_versions(id), cocktail_id INTEGER NOT NULL, payload TEXT NOT NULL CHECK(json_valid(payload)), PRIMARY KEY(version, cocktail_id));
+CREATE TABLE catalog_kinds (version TEXT NOT NULL REFERENCES catalog_versions(id), kind_id INTEGER NOT NULL, name TEXT NOT NULL, PRIMARY KEY(version, kind_id));
+CREATE TABLE inventory (bar_id TEXT NOT NULL REFERENCES bars(id), drink_id INTEGER NOT NULL REFERENCES drinks(id), available INTEGER NOT NULL CHECK(available IN (0,1)), PRIMARY KEY(bar_id, drink_id));
+CREATE TABLE guests (id TEXT PRIMARY KEY, bar_id TEXT NOT NULL REFERENCES bars(id), nickname TEXT NOT NULL, created_at TEXT NOT NULL, UNIQUE(bar_id,id));
+CREATE TABLE guest_sessions (token_hash TEXT PRIMARY KEY, bar_id TEXT NOT NULL, guest_id TEXT NOT NULL, invite_version INTEGER NOT NULL, expires_at INTEGER NOT NULL, FOREIGN KEY(bar_id,guest_id) REFERENCES guests(bar_id,id));
+CREATE INDEX idx_session_expiry ON guest_sessions(expires_at);
+CREATE TABLE orders (id TEXT PRIMARY KEY, bar_id TEXT NOT NULL, guest_id TEXT NOT NULL, nickname TEXT NOT NULL, cocktail_id INTEGER NOT NULL, cocktail_name TEXT NOT NULL, image TEXT NOT NULL, technique TEXT NOT NULL, glass TEXT NOT NULL, status TEXT NOT NULL CHECK(status IN ('pending','completed')), created_at TEXT NOT NULL, completed_at TEXT, request_key TEXT NOT NULL, ingredients TEXT NOT NULL CHECK(json_valid(ingredients)), revision INTEGER NOT NULL DEFAULT 0, FOREIGN KEY(bar_id,guest_id) REFERENCES guests(bar_id,id), UNIQUE(bar_id,guest_id,request_key));
+CREATE INDEX idx_orders_status ON orders(bar_id,status,created_at,id);
+CREATE INDEX idx_orders_guest ON orders(bar_id,guest_id,created_at,id);
+CREATE TABLE rate_limits (key TEXT PRIMARY KEY, window INTEGER NOT NULL, count INTEGER NOT NULL);
+CREATE TABLE legacy_imports (id TEXT PRIMARY KEY, bar_id TEXT NOT NULL REFERENCES bars(id), source_hash TEXT NOT NULL, imported_at TEXT NOT NULL);

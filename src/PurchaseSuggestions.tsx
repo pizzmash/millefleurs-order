@@ -1,15 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
 import { Sparkles } from 'lucide-react';
-import { api } from './api';
+import { calculatePurchases } from './purchases';
 import { inventorySignature } from '../shared/inventory';
 import type { Drink, PurchaseRecommendation } from '../shared/types';
 
 export function PurchaseSuggestions({
   drinks,
   updating,
+  catalogVersion,
 }: {
   drinks: Drink[] | undefined;
   updating: boolean;
+  catalogVersion?: string;
 }) {
   const [limit, setLimit] = useState(5);
   const [result, setResult] = useState<PurchaseRecommendation | null>(null);
@@ -17,8 +19,17 @@ export function PurchaseSuggestions({
   const [error, setError] = useState('');
   const request = useRef<AbortController | null>(null);
   useEffect(() => () => request.current?.abort(), []);
+  useEffect(() => {
+    request.current?.abort();
+    setCalculating(false);
+    setResult(null);
+  }, [catalogVersion]);
   const signature = drinks ? inventorySignature(drinks) : null;
   const stale = !!result && result.inventorySignature !== signature;
+  useEffect(() => {
+    request.current?.abort();
+    setCalculating(false);
+  }, [signature, updating]);
 
   async function calculate() {
     const controller = new AbortController();
@@ -28,10 +39,7 @@ export function PurchaseSuggestions({
     setResult(null);
     setError('');
     try {
-      const next = await api<PurchaseRecommendation>(
-        `/api/host/purchase-recommendations?limit=${limit}`,
-        { signal: controller.signal },
-      );
+      const next = await calculatePurchases(limit, controller.signal);
       if (!controller.signal.aborted) setResult(next);
     } catch (e) {
       if (!controller.signal.aborted) setError((e as Error).message);

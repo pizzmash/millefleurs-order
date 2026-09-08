@@ -1,0 +1,8 @@
+/*
+  Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+/join/*
+  Cache-Control: no-store
+/host/*
+  Cache-Control: no-store
