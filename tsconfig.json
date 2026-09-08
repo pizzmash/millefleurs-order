@@ -24,6 +24,9 @@
     "server",
     "shared",
     "tests",
-    "vite.config.ts"
+    "vite.config.ts",
+    "worker",
+    "functions",
+    "scripts/cloud"
   ]
 }

@@ -30,9 +30,12 @@ import {
 } from 'lucide-react';
 import QRCode from 'qrcode';
 import { BrandIcon, InviteQr } from './InviteQr';
-import { api, ApiError, requestKey, usePoll } from './api';
+import { api, ApiError, guestApi, requestKey, usePoll } from './api';
 import type { Cocktail, Drink, Guest, Menu, Order } from '../shared/types';
+import '@fontsource-variable/noto-sans-jp';
+import '@fontsource-variable/noto-serif-jp';
 import './style.css';
+import { auth, login, logout, useIdentity } from './auth';
 import { PurchaseSuggestions } from './PurchaseSuggestions';
 
 function useNavigation() {
@@ -45,6 +48,7 @@ function useNavigation() {
   const navigate = useCallback((next: string) => {
     history.pushState({}, '', next);
     setPath(next);
+    window.dispatchEvent(new PopStateEvent('popstate'));
     window.scrollTo(0, 0);
   }, []);
   return { path, navigate };
@@ -161,7 +165,15 @@ function Header({
     </header>
   );
 }
-function Join({ onJoin }: { onJoin: (guest: Guest) => void }) {
+function Join({
+  onJoin,
+  token,
+  barId,
+}: {
+  onJoin: (guest: Guest) => void;
+  token: string;
+  barId: string;
+}) {
   const [nickname, setNickname] = useState(''),
     [error, setError] = useState(''),
     [busy, setBusy] = useState(false);
@@ -170,9 +182,9 @@ function Join({ onJoin }: { onJoin: (guest: Guest) => void }) {
     setBusy(true);
     setError('');
     try {
-      const result = await api<{ guest: Guest }>('/api/join', {
+      const result = await api<{ guest: Guest }>(`/api/b/${barId}/join`, {
         method: 'POST',
-        body: JSON.stringify({ nickname }),
+        body: JSON.stringify({ nickname, token }),
       });
       onJoin(result.guest);
     } catch (e) {
@@ -229,7 +241,7 @@ function GuestMenu({ navigate }: { navigate: (path: string) => void }) {
     query.set('min', min);
     query.set('max', max);
   }
-  const { data, error, loading } = usePoll<Menu>(`/api/menu?${query}`);
+  const { data, error, loading } = usePoll<Menu>(guestApi(`/menu?${query}`));
   useEffect(() => {
     const context = (
       document as Document & {
@@ -262,7 +274,7 @@ function GuestMenu({ navigate }: { navigate: (path: string) => void }) {
         )
           throw new Error('検索キーワードを100文字以内で指定してください。');
         const keyword = input.keyword;
-        const result = await api<Menu>(`/api/menu?q=${encodeURIComponent(keyword)}`);
+        const result = await api<Menu>(guestApi(`/menu?q=${encodeURIComponent(keyword)}`));
         flushSync(() => {
           setQ(keyword);
           setDebounced(keyword);
@@ -454,7 +466,7 @@ function GuestMenu({ navigate }: { navigate: (path: string) => void }) {
   );
 }
 function CocktailDetail({ id, navigate }: { id: string; navigate: (path: string) => void }) {
-  const { data: cocktail, error } = usePoll<Cocktail>(`/api/cocktails/${id}`);
+  const { data: cocktail, error } = usePoll<Cocktail>(guestApi(`/cocktails/${id}`));
   const [busy, setBusy] = useState(false),
     [message, setMessage] = useState(''),
     [key, setKey] = useState(requestKey),
@@ -468,7 +480,7 @@ function CocktailDetail({ id, navigate }: { id: string; navigate: (path: string)
     setBusy(true);
     setMessage('');
     try {
-      await api('/api/orders', {
+      await api(guestApi('/orders'), {
         method: 'POST',
         body: JSON.stringify({ cocktailId: cocktail.id, requestKey: key }),
       });
@@ -578,7 +590,7 @@ function OrderList({ host }: { host: boolean }) {
     orders: Order[];
     more: boolean;
     pendingCount?: number;
-  }>(host ? `/api/host/orders?status=${status}&page=${page}` : `/api/orders?page=${page}`);
+  }>(host ? `/api/host/orders?status=${status}&page=${page}` : guestApi(`/orders?page=${page}`));
   async function action(id: string, route: string, body: unknown, method = 'POST') {
     setBusy(id);
     setMessage('');
@@ -765,9 +777,11 @@ function OrderList({ host }: { host: boolean }) {
   );
 }
 function Inventory() {
-  const { data, error, loading, refresh } = usePoll<{ drinks: Drink[]; availableCount: number }>(
-    '/api/host/inventory',
-  );
+  const { data, error, loading, refresh } = usePoll<{
+    drinks: Drink[];
+    availableCount: number;
+    catalogVersion: string;
+  }>('/api/host/inventory');
   const [q, setQ] = useState(''),
     [filter, setFilter] = useState('all'),
     [busy, setBusy] = useState<number | null>(null),
@@ -821,7 +835,11 @@ function Inventory() {
           </strong>
         </div>
       </div>
-      <PurchaseSuggestions drinks={data?.drinks} updating={busy !== null} />
+      <PurchaseSuggestions
+        drinks={data?.drinks}
+        updating={busy !== null}
+        catalogVersion={data?.catalogVersion}
+      />
       <div className="search-input">
         <Search size={19} />
         <input
@@ -893,37 +911,38 @@ function Inventory() {
     </main>
   );
 }
+type PublicBar = { id: string; name: string; acceptingOrders: boolean; inventoryVersion: number };
 function Invite() {
-  const { data, error } = usePoll<{ publicUrl: string | null }>('/api/host/connection');
-  const [url, setUrl] = useState(''),
-    [qr, setQr] = useState<QRCode.QRCode | null>(null),
-    [message, setMessage] = useState('');
+  const { data, error, refresh } = usePoll<PublicBar & { inviteUrl: string }>(
+    '/api/host/invitation',
+  );
+  const [name, setName] = useState(''),
+    [message, setMessage] = useState(''),
+    [busy, setBusy] = useState(false),
+    [confirmRotate, setConfirmRotate] = useState(false);
   useEffect(() => {
-    if (data?.publicUrl) setUrl(data.publicUrl);
-    else if (!['localhost', '127.0.0.1', '[::1]'].includes(location.hostname))
-      setUrl(location.origin);
-  }, [data?.publicUrl]);
-  let valid = false;
+    if (data) setName(data.name);
+  }, [data?.name]);
+  let qr: QRCode.QRCode | null = null;
   try {
-    const parsed = new URL(url);
-    valid =
-      ['http:', 'https:'].includes(parsed.protocol) &&
-      !['localhost', '127.0.0.1', '[::1]', '0.0.0.0'].includes(parsed.hostname) &&
-      !parsed.username &&
-      !parsed.password;
+    if (data?.inviteUrl && !error)
+      qr = QRCode.create(data.inviteUrl, { errorCorrectionLevel: 'H' });
   } catch {
-    /* user may be typing */
+    /* visible fallback below */
   }
-  useEffect(() => {
-    setQr(null);
+  async function update(path: string, method: string, value: unknown) {
+    setBusy(true);
     setMessage('');
-    if (!valid) return;
     try {
-      setQr(QRCode.create(new URL('/', url).href, { errorCorrectionLevel: 'H' }));
-    } catch {
-      setMessage('QRコードを作成できませんでした。');
+      await api(path, { method, body: JSON.stringify(value) });
+      await refresh();
+      setConfirmRotate(false);
+    } catch (e) {
+      setMessage((e as Error).message);
+    } finally {
+      setBusy(false);
     }
-  }, [url, valid]);
+  }
   return (
     <main className="content narrow">
       <section className="page-heading">
@@ -932,147 +951,326 @@ function Invite() {
           <h1>客人をお迎えする</h1>
         </div>
       </section>
-      <p>
-        同じ家のWi-Fiにつないでから、
-        <br />
-        このQRコードを読み取ってもらってください。
-      </p>
+      <p>このQRコードを読み取って参加してもらってください。</p>
       {error && <Notice>{error}</Notice>}
-      <div className="qr-panel">
-        {qr ? (
-          <div className="invite-card">
-            <div className="invite-card-heading">
-              Milleflewrs<span>HOME BAR</span>
-            </div>
-            <InviteQr code={qr} />
-            <div className="invite-card-caption">
-              <span>SCAN TO JOIN</span>
-            </div>
-          </div>
-        ) : (
-          <div className="qr-placeholder">
-            <QrCode size={56} strokeWidth={1} />
-            <p>
-              参加用URLを設定すると
-              <br />
-              QRコードが表示されます。
-            </p>
-          </div>
-        )}
-      </div>
-      <label className="field-label">
-        参加用URL
-        <input
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-          placeholder="http://<PCのLANアドレス>:3001"
-          inputMode="url"
-          spellCheck={false}
-        />
-      </label>
-      {url && !valid && <Notice>PCのIPアドレスを含むURLを確認してください。</Notice>}
       {message && <Notice>{message}</Notice>}
+      {data && !error && (
+        <>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              void update('/api/host/bar', 'PATCH', { name });
+            }}
+          >
+            <label className="field-label">
+              バーの名前
+              <input
+                value={name}
+                maxLength={60}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </label>
+            <button disabled={busy || !name.trim()}>名前を保存</button>
+          </form>
+          <p>注文受付：{data.acceptingOrders ? '受付中' : '停止中'}</p>
+          <button
+            className="secondary"
+            disabled={busy}
+            onClick={() =>
+              update('/api/host/bar', 'PATCH', { acceptingOrders: !data.acceptingOrders })
+            }
+          >
+            {data.acceptingOrders ? '受付を停止する' : '受付を開始する'}
+          </button>
+          <div className="qr-panel">
+            {qr ? (
+              <div className="invite-card">
+                <div className="invite-card-heading">
+                  Milleflewrs<span>{data.name}</span>
+                </div>
+                <InviteQr code={qr} />
+                <div className="invite-card-caption">
+                  <span>SCAN TO JOIN</span>
+                </div>
+              </div>
+            ) : (
+              <Notice>QRコードを生成できませんでした。</Notice>
+            )}
+          </div>
+          <label className="field-label">
+            参加用URL
+            <input readOnly value={data.inviteUrl} onFocus={(e) => e.target.select()} />
+          </label>
+          <button
+            className="secondary"
+            onClick={async () => {
+              try {
+                await navigator.clipboard.writeText(data.inviteUrl);
+                setMessage('参加用URLをコピーしました。');
+              } catch {
+                setMessage('参加用URLを選択してコピーしてください。');
+              }
+            }}
+          >
+            URLをコピー
+          </button>
+          <p>
+            リンクを再発行すると、以前のQRと客人の参加状態が無効になります。注文履歴は残ります。
+          </p>
+          {confirmRotate ? (
+            <>
+              <button
+                disabled={busy}
+                onClick={() => update('/api/host/invitation/rotate', 'POST', {})}
+              >
+                再発行して以前の招待を無効にする
+              </button>
+              <button className="text-button" onClick={() => setConfirmRotate(false)}>
+                戻る
+              </button>
+            </>
+          ) : (
+            <button className="secondary" onClick={() => setConfirmRotate(true)}>
+              招待リンクを再発行
+            </button>
+          )}
+        </>
+      )}
     </main>
   );
 }
-function App() {
-  const { path, navigate } = useNavigation();
-  const [guest, setGuest] = useState<Guest | null>(null),
-    [ready, setReady] = useState(false),
+function Landing({ host = false }: { host?: boolean }) {
+  const [error, setError] = useState(''),
+    [busy, setBusy] = useState(false);
+  return (
+    <main className="welcome">
+      <div className="eyebrow">YOUR OWN HOME BAR</div>
+      <h1>自宅を、あなたのバーに。</h1>
+      <p>
+        手元の材料を登録して、客人をQRでお迎え。
+        <br />
+        届いた注文を確認し、一杯ずつ提供できます。
+      </p>
+      {error && <Notice>{error}</Notice>}
+      {!auth && <Notice>Googleログインの設定がまだ完了していません。</Notice>}
+      <button
+        disabled={busy || !auth}
+        onClick={async () => {
+          setBusy(true);
+          setError('');
+          try {
+            await login();
+            location.assign('/host');
+          } catch {
+            setError('ログインできませんでした。ポップアップを許可して再試行してください。');
+          } finally {
+            setBusy(false);
+          }
+        }}
+      >
+        {busy ? 'ログイン中…' : 'Googleで登録・ログイン'}
+      </button>
+      <p>客人の方は、家主から届いた招待QRを読み取ってください。</p>
+      {host && <a href="/">サービス案内へ</a>}
+    </main>
+  );
+}
+function HostArea() {
+  const { user, ready } = useIdentity();
+  const [registered, setRegistered] = useState(''),
     [error, setError] = useState('');
   useEffect(() => {
-    api<{ guest: Guest | null }>('/api/session')
-      .then((data) => setGuest(data.guest))
-      .catch((e) => setError(e.message))
-      .finally(() => setReady(true));
+    let active = true;
+    setRegistered('');
+    setError('');
+    if (user)
+      api('/api/host/bootstrap', { method: 'POST', body: '{}' })
+        .then(() => {
+          if (active) setRegistered(user.uid);
+        })
+        .catch((e) => {
+          if (active) setError(e.message);
+        });
+    return () => {
+      active = false;
+    };
+  }, [user?.uid]);
+  useEffect(() => {
+    const expired = () => {
+      void logout();
+    };
+    window.addEventListener('host-session-expired', expired);
+    return () => window.removeEventListener('host-session-expired', expired);
   }, []);
-  const host = path.startsWith('/host');
-  const detailId = path.match(/^\/cocktails\/(\d+)$/)?.[1];
-  const hostTab = path.includes('inventory')
+  if (!ready) return <Loading />;
+  if (!user) return <Landing host />;
+  if (error)
+    return (
+      <main className="content">
+        <Notice>{error}</Notice>
+        <button onClick={() => location.reload()}>再試行</button>
+        <button className="secondary" onClick={() => logout()}>
+          ログアウト
+        </button>
+      </main>
+    );
+  if (registered !== user.uid) return <Loading />;
+  return (
+    <>
+      <div className="content account-strip">
+        <span>{user.displayName}</span>
+        <button className="text-button" onClick={() => logout()}>
+          ログアウト
+        </button>
+      </div>
+      <HostContent key={user.uid} />
+    </>
+  );
+}
+function HostContent() {
+  const { path, navigate } = useNavigation();
+  const tab = path.includes('inventory')
     ? 'inventory'
     : path.includes('invite')
       ? 'invite'
       : 'orders';
   return (
     <>
-      <Header host={host} nickname={guest?.nickname} navigate={navigate} />
-      {host ? (
-        hostTab === 'inventory' ? (
-          <Inventory />
-        ) : hostTab === 'invite' ? (
-          <Invite />
-        ) : (
-          <OrderList host />
-        )
-      ) : !ready ? (
-        <Loading />
-      ) : !guest ? (
-        <>
-          {error && (
-            <div className="content">
-              <Notice>{error}</Notice>
-            </div>
-          )}
-          <Join
-            onJoin={(g) => {
-              setGuest(g);
-              setError('');
-              navigate('/');
-            }}
-          />
-          <div className="host-link">
-            <button className="text-button" onClick={() => navigate('/host')}>
-              家主のカウンターへ
-            </button>
-          </div>
-        </>
-      ) : detailId ? (
-        <CocktailDetail key={detailId} id={detailId} navigate={navigate} />
-      ) : path === '/orders' ? (
+      {tab === 'inventory' ? <Inventory /> : tab === 'invite' ? <Invite /> : <OrderList host />}
+      <nav className="bottom-nav" aria-label="家主メニュー">
+        {[
+          ['orders', '/host', '注文'],
+          ['inventory', '/host/inventory', '在庫'],
+          ['invite', '/host/invite', 'お迎え'],
+        ].map(([key, path, label]) => (
+          <button className={tab === key ? 'current' : ''} key={key} onClick={() => navigate(path)}>
+            {key === 'orders' ? <ClipboardList /> : key === 'inventory' ? <Package /> : <QrCode />}
+            <span>{label}</span>
+          </button>
+        ))}
+      </nav>
+    </>
+  );
+}
+function Invitation({ token }: { token: string }) {
+  const [bar, setBar] = useState<PublicBar | null>(null),
+    [error, setError] = useState('');
+  useEffect(() => {
+    let active = true;
+    api<{ bar: PublicBar }>('/api/invitations/resolve', {
+      method: 'POST',
+      body: JSON.stringify({ token }),
+    })
+      .then((d) => {
+        if (active) setBar(d.bar);
+      })
+      .catch((e) => {
+        if (active) setError(e.message);
+      });
+    return () => {
+      active = false;
+    };
+  }, [token]);
+  if (error)
+    return (
+      <main className="content">
+        <Notice>{error}</Notice>
+        <p>家主に新しい招待リンクを確認してください。</p>
+      </main>
+    );
+  if (!bar) return <Loading />;
+  if (!bar.acceptingOrders)
+    return (
+      <main className="content">
+        <h1>{bar.name}</h1>
+        <Notice>ただいま注文の受付を停止しています。</Notice>
+      </main>
+    );
+  return (
+    <>
+      <div className="content">
+        <h2>{bar.name}へようこそ</h2>
+      </div>
+      <Join token={token} barId={bar.id} onJoin={() => location.replace(`/b/${bar.id}`)} />
+    </>
+  );
+}
+function GuestArea({ barId }: { barId: string }) {
+  const { path, navigate: go } = useNavigation();
+  const base = `/b/${barId}`;
+  const navigate = (next: string) => go(base + (next === '/' ? '' : next));
+  const { data, error } = usePoll<{ guest: Guest; bar: PublicBar }>(`/api/b/${barId}/session`);
+  const [expired, setExpired] = useState(false);
+  useEffect(() => {
+    const end = () => setExpired(true);
+    window.addEventListener('guest-session-expired', end);
+    return () => window.removeEventListener('guest-session-expired', end);
+  }, []);
+  if (error || expired)
+    return (
+      <main className="content">
+        <Notice>
+          {error || '参加の有効期限が切れました。家主の招待QRから参加し直してください。'}
+        </Notice>
+      </main>
+    );
+  if (!data) return <Loading />;
+  const relative = path.slice(base.length) || '/';
+  const detail = relative.match(/^\/cocktails\/(\d+)$/)?.[1];
+  return (
+    <>
+      <div className="content account-strip">
+        <span>
+          {data.bar.name} · {data.guest.nickname} さん
+        </span>
+        {!data.bar.acceptingOrders && <Notice>新しい注文の受付を停止しています。</Notice>}
+      </div>
+      {detail ? (
+        <CocktailDetail key={detail} id={detail} navigate={navigate} />
+      ) : relative === '/orders' ? (
         <OrderList host={false} />
       ) : (
         <GuestMenu navigate={navigate} />
       )}
-      <nav className="bottom-nav" aria-label={host ? '家主メニュー' : '客人メニュー'}>
-        {host ? (
-          <>
-            {[
-              ['orders', '/host', <ClipboardList size={21} />, '注文'],
-              ['inventory', '/host/inventory', <Package size={21} />, '在庫'],
-              ['invite', '/host/invite', <QrCode size={21} />, 'お迎え'],
-            ].map(([tab, href, icon, label]) => (
-              <button
-                key={tab as string}
-                className={hostTab === tab ? 'current' : ''}
-                onClick={() => navigate(href as string)}
-              >
-                {icon}
-                <span>{label}</span>
-              </button>
-            ))}
-            <button onClick={() => navigate('/')}>
-              <Martini size={21} />
-              <span>客人画面</span>
-            </button>
-          </>
-        ) : guest ? (
-          <>
-            <button className={path !== '/orders' ? 'current' : ''} onClick={() => navigate('/')}>
-              <Martini size={21} />
-              <span>メニュー</span>
-            </button>
-            <button
-              className={path === '/orders' ? 'current' : ''}
-              onClick={() => navigate('/orders')}
-            >
-              <ClipboardList size={21} />
-              <span>自分の注文</span>
-            </button>
-          </>
-        ) : (
-          <span className="nav-welcome">MILLEFLEWRS · HOME BAR</span>
-        )}
+      <nav className="bottom-nav" aria-label="客人メニュー">
+        <button className={relative !== '/orders' ? 'current' : ''} onClick={() => navigate('/')}>
+          <Martini />
+          <span>メニュー</span>
+        </button>
+        <button
+          className={relative === '/orders' ? 'current' : ''}
+          onClick={() => navigate('/orders')}
+        >
+          <ClipboardList />
+          <span>自分の注文</span>
+        </button>
       </nav>
+    </>
+  );
+}
+function App() {
+  const { path, navigate } = useNavigation();
+  const token = path.match(/^\/join\/([a-f0-9]{48})$/)?.[1],
+    barId = path.match(/^\/b\/([^/]+)/)?.[1];
+  return (
+    <>
+      <Header
+        host={path.startsWith('/host')}
+        navigate={(next) => {
+          if (barId && !path.startsWith('/host')) navigate(`/b/${barId}`);
+          else navigate(next);
+        }}
+      />
+      {path.startsWith('/host') ? (
+        <HostArea />
+      ) : token ? (
+        <Invitation key={token} token={token} />
+      ) : barId ? (
+        <GuestArea key={barId} barId={barId} />
+      ) : (
+        <Landing />
+      )}
     </>
   );
 }

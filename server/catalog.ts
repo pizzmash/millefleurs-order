@@ -1,5 +1,7 @@
 import type { DatabaseSync } from 'node:sqlite';
 import type { Cocktail, Drink, Ingredient, Menu } from '../shared/types.ts';
+import { candidates } from '../shared/catalog';
+export { candidates } from '../shared/catalog';
 export const STAPLES = new Set([67, 90]);
 export const normalize = (text: string) => text.normalize('NFKC').toLocaleLowerCase('ja');
 export function getDrinks(db: DatabaseSync): Drink[] {
@@ -14,15 +16,6 @@ export function getDrinks(db: DatabaseSync): Drink[] {
     available: !!d.available || STAPLES.has(d.id),
     staple: STAPLES.has(d.id),
   }));
-}
-export function candidates(drinkId: number, kindId: number | null, drinks: Drink[]) {
-  const exact = drinks.find((d) => d.id === drinkId && d.available);
-  if (exact) return [{ id: exact.id, name: exact.name }];
-  return kindId === null
-    ? []
-    : drinks
-        .filter((d) => d.available && d.kindId === kindId)
-        .map((d) => ({ id: d.id, name: d.name }));
 }
 export function getCatalog(db: DatabaseSync): Cocktail[] {
   const drinks = getDrinks(db);
