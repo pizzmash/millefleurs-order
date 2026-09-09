@@ -14,3 +14,9 @@
 - OpenSpec strict検証21件成功。
 - 変更TSXのPrettier確認とgit diff --check成功。
 - ブラウザー表示確認は未実施。
+
+## 3. PR CIの環境修正
+
+- [x] 3.1 Playwright準備中のGoogle Chrome APTハッシュ不一致をログと再実行で確認する。
+- [x] 3.2 CIで不要なGoogle Chrome APT配布元を無効にし、ハッシュ検証とブラウザーテストを維持する。
+- [ ] 3.3 修正後のGitHub Actions成功を確認する。

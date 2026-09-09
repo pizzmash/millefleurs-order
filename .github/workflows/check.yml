@@ -23,6 +23,12 @@ jobs:
       - run: npm test
       - run: npm run spec:validate
       - run: npm run test:runtime
+      - name: Disable unused Google Chrome APT repository
+        # Playwright downloads its own Chromium; Chrome's APT index can be inconsistent.
+        run: |
+          if [[ -f /etc/apt/sources.list.d/google-chrome.list ]]; then
+            sudo mv /etc/apt/sources.list.d/google-chrome.list /etc/apt/sources.list.d/google-chrome.list.disabled
+          fi
       - run: npx playwright install --with-deps chromium
       - run: npm run test:browser
 
