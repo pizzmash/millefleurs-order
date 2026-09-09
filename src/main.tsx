@@ -823,14 +823,22 @@ function Inventory() {
     }
   }
   const normalized = q.normalize('NFKC').toLowerCase();
-  const drinks = data?.drinks.filter(
-    (d) =>
-      `${d.name} ${d.kindName}`.normalize('NFKC').toLowerCase().includes(normalized) &&
-      (filter === 'all' ||
-        (filter === 'available' && d.available) ||
-        (filter === 'alcohol' && d.kindId !== null && d.kindId <= 57) ||
-        (filter === 'mixer' && (d.kindId === null || d.kindId > 57))),
-  );
+  const drinks = data?.drinks
+    .filter(
+      (d) =>
+        !d.staple &&
+        `${d.name} ${d.kindName}`.normalize('NFKC').toLowerCase().includes(normalized) &&
+        (filter === 'all' ||
+          (filter === 'available' && d.available) ||
+          (filter === 'alcohol' && d.kindId !== null && d.kindId <= 57) ||
+          (filter === 'mixer' && (d.kindId === null || d.kindId > 57))),
+    )
+    .sort(
+      (a, b) =>
+        (a.kindId ?? Infinity) - (b.kindId ?? Infinity) ||
+        a.name.localeCompare(b.name, 'ja') ||
+        a.id - b.id,
+    );
   return (
     <main className="content">
       <section className="page-heading">
@@ -838,7 +846,6 @@ function Inventory() {
           <div className="eyebrow">ON THE SHELF</div>
           <h1>家にある材料</h1>
         </div>
-        <span className="small-summary">水・氷は常備</span>
       </section>
       <div className="inventory-stats">
         <div>
@@ -904,24 +911,17 @@ function Inventory() {
                 <span>{d.name}</span>
                 <small>{d.kindName}</small>
               </div>
-              {d.staple ? (
-                <span className="staple-label">
-                  <Check size={15} />
-                  常備
-                </span>
-              ) : (
-                <button
-                  className={`switch ${d.available ? 'on' : ''}`}
-                  role="switch"
-                  aria-checked={d.available}
-                  aria-label={`${d.name}の在庫`}
-                  disabled={busy !== null}
-                  onClick={() => toggle(d)}
-                >
-                  <span />
-                  <small>{busy === d.id ? '…' : d.available ? 'ある' : 'ない'}</small>
-                </button>
-              )}
+              <button
+                className={`switch ${d.available ? 'on' : ''}`}
+                role="switch"
+                aria-checked={d.available}
+                aria-label={`${d.name}の在庫`}
+                disabled={busy !== null}
+                onClick={() => toggle(d)}
+              >
+                <span />
+                <small>{busy === d.id ? '…' : d.available ? 'ある' : 'ない'}</small>
+              </button>
             </div>
           ))}
         </div>
