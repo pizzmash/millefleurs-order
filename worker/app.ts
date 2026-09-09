@@ -6,7 +6,7 @@ import type { Context } from 'hono';
 import type { Bar, Env, Identity, Session } from './types';
 import type { Drink, Order, OrderIngredient } from '../shared/types';
 import { candidates } from '../shared/catalog';
-import { catalog, menu } from './catalog';
+import { catalog, catalogDrinks, catalogCocktail, catalogSource, menu } from './catalog';
 import { publicOrigin, randomToken, tokenHash, verifyIdentity } from './auth';
 
 type DbOrder = {
@@ -235,7 +235,7 @@ export function createCloudApp(
     const id = integer(Number(c.req.param('id')));
     const v = await body(c);
     if (typeof v.available !== 'boolean') return fail(400, '在庫の指定を確認してください。');
-    const d = (await catalog(c.env.DB, c.get('bar').id)).drinks.find((d) => d.id === id);
+    const d = (await catalogDrinks(c.env.DB, c.get('bar').id)).drinks.find((d) => d.id === id);
     if (!d) return fail(404, '材料が見つかりません。');
     if (d.staple) return fail(400, '水と氷は常備品です。');
     await c.env.DB.batch([
@@ -251,6 +251,11 @@ export function createCloudApp(
   app.get('/api/host/purchase-input', async (c) => {
     const b = c.get('bar');
     const d = await catalog(c.env.DB, b.id);
+    return c.json({ ...d, inventoryVersion: b.inventory_version });
+  });
+  app.get('/api/host/purchase-source', async (c) => {
+    const b = c.get('bar');
+    const d = await catalogSource(c.env.DB, b.id);
     return c.json({ ...d, inventoryVersion: b.inventory_version });
   });
   app.get('/api/host/versions', async (c) => {
@@ -273,9 +278,11 @@ export function createCloudApp(
     )
       .bind(c.get('bar').id)
       .first<{ n: number }>();
-    const d = await catalog(c.env.DB, c.get('bar').id);
+    const drinks = rows.results.length
+      ? (await catalogDrinks(c.env.DB, c.get('bar').id)).drinks
+      : [];
     return c.json({
-      orders: rows.results.slice(0, 30).map((o) => present(o, d.drinks)),
+      orders: rows.results.slice(0, 30).map((o) => present(o, drinks)),
       more: rows.results.length > 30,
       pendingCount: count!.n,
     });
@@ -288,7 +295,7 @@ export function createCloudApp(
     const ingredients = JSON.parse(o.ingredients) as OrderIngredient[];
     const i = ingredients.find((i) => i.recipeId === Number(c.req.param('recipeId')));
     if (!i) return fail(404, '材料が見つかりません。');
-    const d = await catalog(c.env.DB, c.get('bar').id);
+    const d = await catalogDrinks(c.env.DB, c.get('bar').id);
     const selected = candidates(
       i.drinkId,
       d.drinks.find((x) => x.id === i.drinkId)?.kindId ?? i.kindId,
@@ -327,7 +334,9 @@ export function createCloudApp(
         .run();
       if (!r.meta.changes) return fail(409, '注文が変わりました。再読み込みしてください。');
     }
-    return c.json(present((await order(c, o.id))!, (await catalog(c.env.DB, o.bar_id)).drinks));
+    return c.json(
+      present((await order(c, o.id))!, (await catalogDrinks(c.env.DB, o.bar_id)).drinks),
+    );
   });
   async function invitation(c: Context<Env>, token: unknown) {
     await rate(c, `invite-ip:${c.req.header('CF-Connecting-IP') || 'local'}`, 120);
@@ -412,9 +421,8 @@ export function createCloudApp(
     return c.json(menu(await catalog(c.env.DB, c.get('bar').id), q));
   });
   app.get('/api/b/:barId/cocktails/:id', async (c) => {
-    const cocktail = (await catalog(c.env.DB, c.get('bar').id)).cocktails.find(
-      (x) => x.id === Number(c.req.param('id')),
-    );
+    const id = integer(Number(c.req.param('id')));
+    const { cocktail } = await catalogCocktail(c.env.DB, c.get('bar').id, id);
     if (!cocktail) return fail(404, 'カクテルが見つかりません。');
     return c.json(cocktail);
   });
@@ -426,9 +434,11 @@ export function createCloudApp(
     )
       .bind(c.get('bar').id, c.get('guest').guest_id, (page - 1) * 30)
       .all<DbOrder>();
-    const d = await catalog(c.env.DB, c.get('bar').id);
+    const drinks = rows.results.length
+      ? (await catalogDrinks(c.env.DB, c.get('bar').id)).drinks
+      : [];
     return c.json({
-      orders: rows.results.slice(0, 30).map((o) => present(o, d.drinks)),
+      orders: rows.results.slice(0, 30).map((o) => present(o, drinks)),
       more: rows.results.length > 30,
     });
   });
@@ -445,14 +455,14 @@ export function createCloudApp(
         .bind(b.id, g.guest_id, v.requestKey as string)
         .first<DbOrder>();
     const prior = await previous();
-    const d = await catalog(c.env.DB, b.id);
     if (prior) {
       if (prior.cocktail_id !== cocktailId)
         return fail(409, '別の注文としてもう一度操作してください。');
-      return c.json(present(prior, d.drinks));
+      return c.json(present(prior, (await catalogDrinks(c.env.DB, b.id)).drinks));
     }
     if (!b.accepting_orders) return fail(409, 'ただいま注文の受付を停止しています。');
-    const cocktail = d.cocktails.find((x) => x.id === cocktailId);
+    const d = await catalogCocktail(c.env.DB, b.id, cocktailId);
+    const cocktail = d.cocktail;
     if (!cocktail) return fail(404, 'カクテルが見つかりません。');
     if (!cocktail.available)
       return fail(409, '在庫が変わったため、現在このカクテルは注文できません。');

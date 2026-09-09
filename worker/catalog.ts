@@ -1,51 +1,117 @@
 import type { D1Database } from '@cloudflare/workers-types';
 import type { Cocktail, Drink, Menu } from '../shared/types';
-import { candidates } from '../shared/catalog';
-export async function catalog(db: D1Database, barId: string) {
+import { resolveCocktail } from '../shared/catalog';
+type CatalogSnapshot = {
+  version: string;
+  drinks?: Drink[];
+  individual?: Map<number, Cocktail>;
+  recipes?: { cocktails: Cocktail[]; kinds: { id: number; name: string }[] };
+};
+// Catalog versions are content hashes and are immutable after publication.
+// Keep only one version per binding; never cache inventory or in-flight D1 I/O.
+const snapshots = new WeakMap<D1Database, CatalogSnapshot>();
+
+async function snapshot(db: D1Database) {
   const state = await db
     .prepare('SELECT version FROM catalog_state WHERE id=1')
     .first<{ version: string }>();
   if (!state) throw new Error('Catalog has not been deployed');
-  const version = state.version;
-  const [ds, cs, ks] = await db.batch([
-    db
-      .prepare(
-        'SELECT d.payload, COALESCE(i.available,0) AS available FROM catalog_drinks d LEFT JOIN inventory i ON i.drink_id=d.drink_id AND i.bar_id=? WHERE d.version=? ORDER BY d.drink_id',
-      )
-      .bind(barId, version),
+  let cached = snapshots.get(db);
+  if (!cached || cached.version !== state.version) {
+    cached = { version: state.version };
+    snapshots.set(db, cached);
+  }
+  return cached;
+}
+
+async function drinksForBar(db: D1Database, barId: string, data: CatalogSnapshot) {
+  if (!data.drinks) {
+    const rows = await db
+      .prepare('SELECT payload FROM catalog_drinks WHERE version=? ORDER BY drink_id')
+      .bind(data.version)
+      .all<{ payload: string }>();
+    data.drinks = rows.results.map((row) => JSON.parse(row.payload) as Drink);
+  }
+  const inventory = await db
+    .prepare('SELECT drink_id, available FROM inventory WHERE bar_id=?')
+    .bind(barId)
+    .all<{ drink_id: number; available: number }>();
+  const available = new Set(
+    inventory.results.filter((row) => row.available).map((row) => row.drink_id),
+  );
+  return data.drinks.map((d) => ({ ...d, available: d.staple || available.has(d.id) }));
+}
+
+export async function catalogDrinks(db: D1Database, barId: string) {
+  const data = await snapshot(db);
+  return { drinks: await drinksForBar(db, barId, data), catalogVersion: data.version };
+}
+
+async function recipes(db: D1Database, data: CatalogSnapshot) {
+  if (data.recipes) return data.recipes;
+  const [cs, ks] = await db.batch([
     db
       .prepare('SELECT payload FROM catalog_entries WHERE version=? ORDER BY cocktail_id')
-      .bind(version),
+      .bind(data.version),
     db
       .prepare('SELECT kind_id AS id,name FROM catalog_kinds WHERE version=? ORDER BY kind_id')
-      .bind(version),
+      .bind(data.version),
   ]);
-  const drinks = (ds.results as { payload: string; available: number }[]).map((row) => {
-    const d = JSON.parse(row.payload) as Drink;
-    return { ...d, available: d.staple || !!row.available };
-  });
-  const cocktails = (cs.results as { payload: string }[]).map((row) => {
-    const c = JSON.parse(row.payload) as Cocktail;
-    const ingredients = c.ingredients.map((i) => {
-      const options = candidates(i.drinkId, i.kindId, drinks);
-      return {
-        ...i,
-        candidates: options,
-        substitute: !!options.length && options[0].id !== i.drinkId,
-      };
-    });
-    return {
-      ...c,
-      ingredients,
-      available: ingredients.length > 0 && ingredients.every((i) => i.candidates.length),
-      substitution: ingredients.some((i) => i.substitute),
-    };
-  });
+  data.recipes = {
+    cocktails: (cs.results as { payload: string }[]).map(
+      (row) => JSON.parse(row.payload) as Cocktail,
+    ),
+    kinds: ks.results as { id: number; name: string }[],
+  };
+  return data.recipes;
+}
+
+export async function catalogSource(db: D1Database, barId: string) {
+  const data = await snapshot(db);
+  const [drinks, source] = await Promise.all([drinksForBar(db, barId, data), recipes(db, data)]);
   return {
     drinks,
-    cocktails,
-    kinds: ks.results as { id: number; name: string }[],
-    catalogVersion: version,
+    cocktails: structuredClone(source.cocktails),
+    kinds: source.kinds.map((kind) => ({ ...kind })),
+    catalogVersion: data.version,
+  };
+}
+
+export async function catalog(db: D1Database, barId: string) {
+  const data = await snapshot(db);
+  const [drinks, source] = await Promise.all([drinksForBar(db, barId, data), recipes(db, data)]);
+  return {
+    drinks,
+    cocktails: source.cocktails.map((c) => resolveCocktail(c, drinks)),
+    kinds: source.kinds.map((kind) => ({ ...kind })),
+    catalogVersion: data.version,
+  };
+}
+
+async function recipe(db: D1Database, data: CatalogSnapshot, id: number) {
+  if (data.recipes) return data.recipes.cocktails.find((c) => c.id === id);
+  const cached = data.individual?.get(id);
+  if (cached) return cached;
+  const row = await db
+    .prepare('SELECT payload FROM catalog_entries WHERE version=? AND cocktail_id=?')
+    .bind(data.version, id)
+    .first<{ payload: string }>();
+  if (!row) return undefined;
+  const cocktail = JSON.parse(row.payload) as Cocktail;
+  const individual = (data.individual ??= new Map());
+  // Bound point-lookup storage until the full catalog is requested.
+  if (individual.size >= 64) individual.delete(individual.keys().next().value!);
+  individual.set(id, cocktail);
+  return cocktail;
+}
+
+export async function catalogCocktail(db: D1Database, barId: string, id: number) {
+  const data = await snapshot(db);
+  const [drinks, source] = await Promise.all([drinksForBar(db, barId, data), recipe(db, data, id)]);
+  return {
+    drinks,
+    cocktail: source ? resolveCocktail(source, drinks) : undefined,
+    catalogVersion: data.version,
   };
 }
 export function menu(data: Awaited<ReturnType<typeof catalog>>, q: URLSearchParams): Menu {

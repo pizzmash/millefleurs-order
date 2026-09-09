@@ -12,6 +12,11 @@ import { PNG } from 'pngjs';
 import { InviteQr } from '../src/InviteQr';
 import { build } from 'vite';
 import { setup } from './cloud-fixture';
+import {
+  verifyGuestPolling,
+  verifyHostPolling,
+  verifyGuestCompletedPolling,
+} from './polling-browser';
 // Only this separate test build uses synthetic Firebase settings.
 const testDist = '.runtime/browser-build';
 await build({
@@ -64,6 +69,7 @@ try {
     await page.waitForURL(`**/b/${a.id}`);
 
     await page.locator('.page-context').waitFor();
+    await verifyGuestPolling(page, s, a.id, origin);
     assert.equal(await page.getByText('スマホの客人', { exact: true }).count(), 0);
     assert.equal(await page.locator('.account-strip').count(), 0);
     await page.getByRole('button', { name: '自分の注文', exact: true }).click();
@@ -84,6 +90,7 @@ try {
       customOrigin: origin,
     });
     await page.getByText('提供完了', { exact: true }).first().waitFor({ timeout: 15000 });
+    await verifyGuestCompletedPolling(page, a.id);
     const second = await context.newPage();
     await second.goto(`${origin}/join/${bt}`);
     await second.getByLabel('ニックネーム').fill('同じ端末');
@@ -277,6 +284,9 @@ try {
       await hostPage.getByRole('switch', { name: '材料1の在庫' }).waitFor();
     };
     await restore('alice');
+    await verifyHostPolling(hostPage, origin);
+    await hostPage.getByRole('button', { name: '在庫', exact: true }).click();
+    await hostPage.getByRole('switch', { name: '材料1の在庫' }).waitFor();
     assert.equal(
       await hostPage.getByRole('switch', { name: '材料1の在庫' }).getAttribute('aria-checked'),
       'true',

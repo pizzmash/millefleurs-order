@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { Miniflare, convertV4MiniflareOptions, Response as MfResponse } from 'miniflare';
 import { generateKeyPair, exportJWK, SignJWT } from 'jose';
+import { catalogSql } from '../scripts/cloud/catalog';
 const origin = 'https://bar.example.com';
 const pair = await generateKeyPair('RS256', { extractable: true });
 const jwk = { ...(await exportJWK(pair.publicKey)), kid: 'runtime-test', alg: 'RS256' };
@@ -90,6 +91,29 @@ try {
   });
   assert.equal(session.status, 200);
   assert.equal(session.headers.get('Cache-Control'), 'no-store');
+  const catalog = catalogSql();
+  for (let i = 0; i < catalog.rows.length; i += 50)
+    await db.batch(catalog.rows.slice(i, i + 50).map((sql) => db.prepare(sql)));
+  await db.prepare(catalog.activate).run();
+  // Exercise module-level cached data across separate workerd request contexts.
+  for (const available of [true, false, true]) {
+    const update = await mf.dispatchFetch(origin + '/api/host/inventory/1', {
+      method: 'PUT',
+      headers,
+      body: JSON.stringify({ available }),
+    });
+    assert.equal(update.status, 200, await update.clone().text());
+    const inventory = await mf.dispatchFetch(origin + '/api/host/inventory', { headers });
+    assert.equal(inventory.status, 200, await inventory.clone().text());
+    assert.equal(
+      ((await inventory.json()) as any).drinks.find((d: any) => d.id === 1).available,
+      available,
+    );
+    const menu = await mf.dispatchFetch(origin + `/api/b/${b.id}/menu`, {
+      headers: { Cookie: cookie.split(';')[0] },
+    });
+    assert.equal(menu.status, 200, await menu.clone().text());
+  }
   console.log(
     'Built Pages → Service binding → built Worker → D1: signed Firebase token, bootstrap, invitation, cookie round trip passed.',
   );
