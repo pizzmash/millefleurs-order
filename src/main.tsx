@@ -233,7 +233,7 @@ function GuestMenu({ navigate, barName }: { navigate: (path: string) => void; ba
     query.set('min', min);
     query.set('max', max);
   }
-  const { data, error, loading, refresh } = usePoll<Menu>(guestApi(`/menu?${query}`), false);
+  const { data, error, loading } = usePoll<Menu>(guestApi(`/menu?${query}`), false);
   useEffect(() => {
     const context = (
       document as Document & {
@@ -308,9 +308,6 @@ function GuestMenu({ navigate, barName }: { navigate: (path: string) => void; ba
           <span>種類のカクテル</span>
         </div>
       </section>
-      <button className="text-button" onClick={() => void refresh()}>
-        メニューを更新
-      </button>
       <div className="search-row">
         <div className="search-input">
           <Search size={19} />
@@ -522,9 +519,6 @@ function CocktailDetail({ id, navigate }: { id: string; navigate: (path: string)
       <button className="back-button" onClick={() => navigate('/')}>
         <ArrowLeft size={18} />
         メニュー
-      </button>
-      <button className="text-button" onClick={() => void refresh()}>
-        最新の在庫を確認
       </button>
       {error && <Notice>{error}</Notice>}
       {!cocktail ? (
@@ -846,9 +840,6 @@ function Inventory() {
         </div>
         <span className="small-summary">水・氷は常備</span>
       </section>
-      <button className="text-button" onClick={() => void refresh()}>
-        在庫を更新
-      </button>
       <div className="inventory-stats">
         <div>
           <span>ある材料</span>
@@ -980,9 +971,6 @@ function Invite() {
         <div>
           <div className="eyebrow">INVITE YOUR GUESTS</div>
           <h1>客人をお迎えする</h1>
-          <button className="text-button" onClick={() => void refresh()}>
-            設定を更新
-          </button>
         </div>
       </section>
       <p>このQRコードを読み取って参加してもらってください。</p>

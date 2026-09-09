@@ -27,24 +27,20 @@ export async function verifyGuestPolling(
   await page.clock.runFor(7000);
   assert.equal(count(menuPath), 0, 'menu must not poll');
   assert.equal(count(sessionPath), 0, 'session must not poll every 3 seconds');
-  const manual = page.waitForResponse((r) => new URL(r.url()).pathname === menuPath);
-  await page.getByRole('button', { name: 'メニューを更新', exact: true }).click();
-  await manual;
-  assert.equal(count(menuPath), 1);
   // Focus restoration refreshes once; periodic polling stays disabled.
   await page.clock.runFor(2000);
   const focus = page.waitForResponse((r) => new URL(r.url()).pathname === menuPath);
   await page.evaluate(() => window.dispatchEvent(new Event('focus')));
   await focus;
-  assert.equal(count(menuPath), 2);
+  assert.equal(count(menuPath), 1);
   await page.clock.runFor(7000);
-  assert.equal(count(menuPath), 2);
+  assert.equal(count(menuPath), 1);
   const sessionCount = count(sessionPath);
   const session = page.waitForResponse((r) => new URL(r.url()).pathname === sessionPath);
   await page.clock.runFor(61000);
   await session;
   assert.ok(count(sessionPath) > sessionCount);
-  assert.equal(count(menuPath), 2);
+  assert.equal(count(menuPath), 1);
 
   // A stale detail must reject the order and refresh its availability.
   await page.goto(`${origin}/b/${barId}/cocktails/1`);
@@ -64,7 +60,8 @@ export async function verifyGuestPolling(
   await page.getByRole('button', { name: 'このカクテルを1杯注文' }).click();
   await expect(page.getByRole('button', { name: '現在、材料が不足しています' })).toBeDisabled();
   assert.equal((await inventory(true)).status, 200);
-  await page.getByRole('button', { name: '最新の在庫を確認' }).click();
+  await page.clock.runFor(2000);
+  await page.evaluate(() => window.dispatchEvent(new Event('focus')));
   await expect(page.getByRole('button', { name: 'このカクテルを1杯注文' })).toBeEnabled();
   await page.clock.resume();
   await page.goto(`${origin}/b/${barId}`);
@@ -79,7 +76,7 @@ export async function verifyHostPolling(page: Page, origin: string) {
   assert.equal(count('/api/host/inventory'), 0, 'inventory must not poll');
   await page.setViewportSize({ width: 320, height: 844 });
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
-  await page.screenshot({ path: '.runtime/screenshots/inventory-refresh-320.png', fullPage: true });
+  await page.screenshot({ path: '.runtime/screenshots/inventory-320.png', fullPage: true });
   await page.setViewportSize({ width: 390, height: 844 });
   // Mutation still refreshes immediately and updates the switch.
   const toggle = page.getByRole('switch', { name: '材料1の在庫' });
