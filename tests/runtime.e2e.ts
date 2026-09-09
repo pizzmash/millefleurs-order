@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { Miniflare, convertV4MiniflareOptions, Response as MfResponse } from 'miniflare';
 import { generateKeyPair, exportJWK, SignJWT } from 'jose';
 import { catalogSql } from '../scripts/cloud/catalog';
@@ -42,7 +42,10 @@ const mf = new Miniflare(
 );
 try {
   const db = await mf.getD1Database('DB', 'api');
-  await db.exec(readFileSync('migrations/0001_service.sql', 'utf8').replaceAll('\n', ' '));
+  for (const file of readdirSync('migrations')
+    .filter((f) => f.endsWith('.sql'))
+    .sort())
+    await db.exec(readFileSync(`migrations/${file}`, 'utf8').replaceAll('\n', ' '));
   assert.equal((await mf.dispatchFetch(origin + '/api/health')).status, 200);
   assert.equal((await mf.dispatchFetch(origin + '/api/host/bar')).status, 401);
   const now = Math.floor(Date.now() / 1000);

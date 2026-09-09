@@ -5,6 +5,7 @@ import { getCookie, setCookie } from 'hono/cookie';
 import type { Context } from 'hono';
 import type { Bar, Env, Identity, Session } from './types';
 import type { Drink, Order, OrderIngredient } from '../shared/types';
+import { byPopularity, orderCounts } from './popularity';
 import { candidates } from '../shared/catalog';
 import { catalog, catalogDrinks, catalogCocktail, catalogSource, menu } from './catalog';
 import { publicOrigin, randomToken, tokenHash, verifyIdentity } from './auth';
@@ -264,6 +265,41 @@ export function createCloudApp(
     }>();
     return c.json({ inventoryVersion: c.get('bar').inventory_version, catalogVersion: s?.version });
   });
+  app.get('/api/host/order-counts', async (c) => {
+    const page = integer(Number(c.req.query('page') || 1));
+    if (page < 1 || page > 1000000) return fail(400, 'ページ番号を確認してください。');
+    const b = c.get('bar');
+    const [counts, catalogRows] = await Promise.all([
+      orderCounts(c.env.DB, b.id),
+      c.env.DB.prepare(
+        "SELECT cocktail_id AS id,json_extract(payload,'$.name') AS name FROM catalog_entries WHERE version=(SELECT version FROM catalog_state WHERE id=1)",
+      ).all<{ id: number; name: string }>(),
+    ]);
+    const all = new Map(counts.map((row) => [row.id, row]));
+    for (const row of catalogRows.results)
+      all.set(row.id, { ...row, orderCount: all.get(row.id)?.orderCount ?? 0 });
+    const norm = (s: string) => s.normalize('NFKC').toLocaleLowerCase('ja');
+    const keyword = norm((c.req.query('q') || '').trim());
+    const items = [...all.values()]
+      .filter((row) => norm(row.name).includes(keyword))
+      .sort(byPopularity);
+    const pages = Math.max(1, Math.ceil(items.length / 30));
+    const current = Math.min(page, pages);
+    return c.json({
+      items: items.slice((current - 1) * 30, current * 30),
+      totalCount: counts.reduce((sum, row) => sum + row.orderCount, 0),
+      total: items.length,
+      page: current,
+      pages,
+    });
+  });
+  app.post('/api/host/order-counts/reset', async (c) => {
+    await body(c);
+    await c.env.DB.prepare('UPDATE cocktail_order_counts SET order_count=0 WHERE bar_id=?')
+      .bind(c.get('bar').id)
+      .run();
+    return c.json({ ok: true });
+  });
   app.get('/api/host/orders', async (c) => {
     const status = c.req.query('status') === 'completed' ? 'completed' : 'pending';
     const page = integer(Number(c.req.query('page') || 1));
@@ -418,7 +454,11 @@ export function createCloudApp(
     }
     if (q.get('min') && q.get('max') && Number(q.get('min')) > Number(q.get('max')))
       return fail(400, '度数の下限は上限以下にしてください。');
-    return c.json(menu(await catalog(c.env.DB, c.get('bar').id), q));
+    const [data, counts] = await Promise.all([
+      catalog(c.env.DB, c.get('bar').id),
+      orderCounts(c.env.DB, c.get('bar').id),
+    ]);
+    return c.json(menu(data, q, new Map(counts.map((row) => [row.id, row.orderCount]))));
   });
   app.get('/api/b/:barId/cocktails/:id', async (c) => {
     const id = integer(Number(c.req.param('id')));

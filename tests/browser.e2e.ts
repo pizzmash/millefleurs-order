@@ -285,6 +285,47 @@ try {
     };
     await restore('alice');
     await verifyHostPolling(hostPage, origin);
+    await hostPage.getByRole('button', { name: '注文', exact: true }).click();
+    await hostPage.getByRole('button', { name: '注文数', exact: true }).click();
+    await hostPage.getByRole('heading', { name: 'この家の注文数' }).waitFor();
+    await hostPage.locator('.popularity-list li').first().waitFor();
+    const countBefore = await hostPage.locator('.popularity-summary > strong').textContent();
+    assert.notEqual(countBefore, '合計 0 杯');
+    await hostPage.getByLabel('注文数をカクテル名で検索').fill('見つからない名前');
+    await hostPage.getByText('該当するカクテルはありません。').waitFor();
+    await hostPage.getByLabel('注文数をカクテル名で検索').fill('');
+    await hostPage.locator('.popularity-list li').first().waitFor();
+    await hostPage.getByRole('button', { name: '注文数をリセット', exact: true }).click();
+    await hostPage.getByRole('button', { name: 'キャンセル', exact: true }).click();
+    assert.equal(await hostPage.locator('.popularity-summary > strong').textContent(), countBefore);
+    for (const width of [320, 390, 768, 1280]) {
+      await hostPage.setViewportSize({ width, height: 844 });
+      assert.ok(await hostPage.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+      await hostPage.screenshot({
+        path: `.runtime/screenshots/host-popularity-${width}.png`,
+        fullPage: true,
+      });
+    }
+    await hostPage.setViewportSize({ width: 390, height: 844 });
+    await hostPage.route('**/api/host/order-counts/reset', (route) =>
+      route.fulfill({
+        status: 503,
+        contentType: 'application/json',
+        body: JSON.stringify({ error: 'リセット失敗のテスト' }),
+      }),
+    );
+    await hostPage.getByRole('button', { name: '注文数をリセット', exact: true }).click();
+    await hostPage.getByRole('button', { name: '全注文数を0にする', exact: true }).click();
+    await hostPage.getByText('リセット失敗のテスト').waitFor();
+    assert.equal(await hostPage.locator('.popularity-summary > strong').textContent(), countBefore);
+    await hostPage.unroute('**/api/host/order-counts/reset');
+    await hostPage.getByRole('button', { name: '注文数をリセット', exact: true }).click();
+    await hostPage.getByRole('button', { name: '全注文数を0にする', exact: true }).click();
+    await hostPage.getByText('合計 0 杯', { exact: true }).waitFor();
+    await hostPage.getByText('注文数をリセットしました。').waitFor();
+    await hostPage.getByRole('button', { name: '提供完了の履歴', exact: true }).click();
+    await hostPage.locator('.order-card').first().waitFor();
+
     await hostPage.getByRole('button', { name: '在庫', exact: true }).click();
     await hostPage.getByRole('switch', { name: '材料1の在庫' }).waitFor();
     assert.equal(

@@ -81,3 +81,12 @@ export type PurchaseRecommendation = {
     ingredients: { name: string; quantity: string }[];
   }[];
 };
+
+export type CocktailOrderCount = { id: number; name: string; orderCount: number };
+export type OrderCounts = {
+  items: CocktailOrderCount[];
+  totalCount: number;
+  total: number;
+  page: number;
+  pages: number;
+};
