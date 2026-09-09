@@ -82,9 +82,7 @@ export function PurchaseSuggestions({
             {calculating ? '計算中…' : 'おすすめを計算'}
           </button>
         </div>
-        <p className="purchase-note">
-          同じ種類で代用できる材料は1種類として数えます。水・氷は常備品です。
-        </p>
+        <p className="purchase-note">同じ種類で代用できる材料は1種類として数えます。</p>
         <div role="status" aria-live="polite">
           {calculating && (
             <p className="purchase-wait">組み合わせを調べています。最大20秒ほどかかります。</p>
