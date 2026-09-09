@@ -33,7 +33,7 @@ import {
 import QRCode from 'qrcode';
 import { BrandIcon, InviteQr } from './InviteQr';
 import { api, ApiError, guestApi, requestKey, usePoll } from './api';
-import type { Cocktail, Drink, Guest, Menu, Order } from '../shared/types';
+import type { Cocktail, Drink, Guest, Menu, Order, OrderCounts } from '../shared/types';
 import '@fontsource-variable/noto-sans-jp';
 import '@fontsource-variable/noto-serif-jp';
 import './style.css';
@@ -301,7 +301,7 @@ function GuestMenu({ navigate, barName }: { navigate: (path: string) => void; ba
         <div>
           <div className="eyebrow">THE MENU</div>
           <h1>今夜のメニュー</h1>
-          <p className="page-context">{barName}</p>
+          <p className="page-context">{barName} · 人気順</p>
         </div>
         <div className="menu-count">
           <strong>{data?.availableTotal ?? '—'}</strong>
@@ -595,7 +595,11 @@ function OrderList({
     more: boolean;
     pendingCount?: number;
   }>(
-    host ? `/api/host/orders?status=${status}&page=${page}` : guestApi(`/orders?page=${page}`),
+    host
+      ? status === 'counts'
+        ? null
+        : `/api/host/orders?status=${status}&page=${page}`
+      : guestApi(`/orders?page=${page}`),
     host
       ? status === 'pending'
         ? 3000
@@ -656,10 +660,21 @@ function OrderList({
           >
             提供完了の履歴
           </button>
+          <button
+            className={status === 'counts' ? 'selected' : ''}
+            onClick={() => {
+              setStatus('counts');
+              setMessage('');
+            }}
+          >
+            注文数
+          </button>
         </div>
       )}
       {(error || message) && <Notice>{message || error}</Notice>}
-      {loading && !data ? (
+      {host && status === 'counts' ? (
+        <HostOrderCounts />
+      ) : loading && !data ? (
         <Loading />
       ) : data?.orders.length ? (
         <>
@@ -795,6 +810,107 @@ function OrderList({
         )
       )}
     </main>
+  );
+}
+function HostOrderCounts() {
+  const [keyword, setKeyword] = useState('');
+  const [page, setPage] = useState(1);
+  const [confirming, setConfirming] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [message, setMessage] = useState('');
+  const { data, error, loading, refresh } = usePoll<OrderCounts>(
+    `/api/host/order-counts?q=${encodeURIComponent(keyword)}&page=${page}`,
+    30000,
+  );
+  async function reset() {
+    setBusy(true);
+    setMessage('');
+    try {
+      await api('/api/host/order-counts/reset', { method: 'POST', body: '{}' });
+      setConfirming(false);
+      setMessage('注文数をリセットしました。');
+    } catch (e) {
+      setConfirming(false);
+      setMessage((e as Error).message);
+    } finally {
+      await refresh();
+      setBusy(false);
+    }
+  }
+  return (
+    <section aria-label="カクテル別の注文数" className="popularity">
+      <div className="popularity-summary">
+        <div>
+          <h2>この家の注文数</h2>
+          <p>受付が成立した杯数です。リセット後は0から集計します。</p>
+        </div>
+        <strong>合計 {data?.totalCount ?? '—'} 杯</strong>
+      </div>
+      <div className="search-input">
+        <Search size={19} aria-hidden="true" />
+        <input
+          aria-label="注文数をカクテル名で検索"
+          placeholder="カクテル名で検索"
+          value={keyword}
+          onChange={(e) => {
+            setKeyword(e.target.value);
+            setPage(1);
+          }}
+        />
+      </div>
+      {(error || message) && <Notice>{message || error}</Notice>}
+      {loading && !data ? (
+        <Loading />
+      ) : (
+        data && (
+          <>
+            <p className="page-context">人気順 · {data.total} 種類（在庫なし・未注文も表示）</p>
+            {data.items.length ? (
+              <ol className="popularity-list">
+                {data.items.map((item) => (
+                  <li key={item.id}>
+                    <span>{item.name}</span>
+                    <strong>{item.orderCount} 杯</strong>
+                  </li>
+                ))}
+              </ol>
+            ) : (
+              <p>該当するカクテルはありません。</p>
+            )}
+            {data.pages > 1 && (
+              <Pager page={data.page} more={data.page < data.pages} onPage={setPage} />
+            )}
+          </>
+        )
+      )}
+      <div className="popularity-reset">
+        {confirming ? (
+          <div role="group" aria-label="注文数リセットの確認">
+            <p>
+              この家の全カクテルの注文数を0に戻します。元に戻せません。注文履歴・受付中の注文は残ります。
+            </p>
+            <div className="popularity-actions">
+              <button disabled={busy} onClick={() => setConfirming(false)}>
+                キャンセル
+              </button>
+              <button disabled={busy} onClick={reset}>
+                {busy ? 'リセット中…' : '全注文数を0にする'}
+              </button>
+            </div>
+          </div>
+        ) : (
+          <button
+            disabled={busy || !data}
+            onClick={() => {
+              setMessage('');
+              setConfirming(true);
+            }}
+          >
+            注文数をリセット
+          </button>
+        )}
+      </div>
+    </section>
   );
 }
 function Inventory() {

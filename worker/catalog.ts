@@ -1,5 +1,6 @@
 import type { D1Database } from '@cloudflare/workers-types';
 import type { Cocktail, Drink, Menu } from '../shared/types';
+import { byPopularity } from './popularity';
 import { resolveCocktail } from '../shared/catalog';
 type CatalogSnapshot = {
   version: string;
@@ -114,7 +115,11 @@ export async function catalogCocktail(db: D1Database, barId: string, id: number)
     catalogVersion: data.version,
   };
 }
-export function menu(data: Awaited<ReturnType<typeof catalog>>, q: URLSearchParams): Menu {
+export function menu(
+  data: Awaited<ReturnType<typeof catalog>>,
+  q: URLSearchParams,
+  counts: Map<number, number> = new Map(),
+): Menu {
   const norm = (s: string) => s.normalize('NFKC').toLocaleLowerCase('ja');
   const available = data.cocktails.filter((c) => c.available);
   const keyword = norm((q.get('q') || '').trim());
@@ -130,6 +135,12 @@ export function menu(data: Awaited<ReturnType<typeof catalog>>, q: URLSearchPara
       (!q.get('kind') || c.ingredients.some((i) => i.kindId === Number(q.get('kind')))) &&
       (!q.get('min') || (c.alcoholLow !== null && c.alcoholLow >= Number(q.get('min')))) &&
       (!q.get('max') || (c.alcoholHigh !== null && c.alcoholHigh <= Number(q.get('max')))),
+  );
+  items.sort((a, b) =>
+    byPopularity(
+      { ...a, orderCount: counts.get(a.id) ?? 0 },
+      { ...b, orderCount: counts.get(b.id) ?? 0 },
+    ),
   );
   const pages = Math.max(1, Math.ceil(items.length / 24));
   const page = Math.min(pages, Math.max(1, Number(q.get('page')) || 1));

@@ -1,12 +1,12 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { Miniflare, convertV4MiniflareOptions } from 'miniflare';
 import type { D1Database } from '@cloudflare/workers-types';
 import { createCloudApp } from '../worker/app';
 import type { Bindings } from '../worker/types';
 
 const origin = 'https://bar.example.com';
-export async function setup() {
+export async function setup({ popularity = true } = {}) {
   const mf = new Miniflare(
     convertV4MiniflareOptions({
       modules: true,
@@ -17,8 +17,12 @@ export async function setup() {
   );
   try {
     const db = (await mf.getD1Database('DB')) as unknown as D1Database;
-    const sql = readFileSync('migrations/0001_service.sql', 'utf8');
-    await db.exec(sql.replaceAll('\n', ' '));
+    for (const file of readdirSync('migrations')
+      .filter((f) => f.endsWith('.sql'))
+      .sort()) {
+      if (!popularity && file === '0002_cocktail_popularity.sql') continue;
+      await db.exec(readFileSync(`migrations/${file}`, 'utf8').replaceAll('\n', ' '));
+    }
     const drink = (id: number, kindId: number | null) => ({
       id,
       name: `材料${id}`,
