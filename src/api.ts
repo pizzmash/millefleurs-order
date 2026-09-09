@@ -62,7 +62,10 @@ export async function api<T>(path: string, options: RequestInit = {}): Promise<T
     options.signal?.removeEventListener('abort', abort);
   }
 }
-export function usePoll<T>(url: string | null) {
+type PollInterval<T> = number | false | ((data: T | null) => number | false);
+export function usePoll<T>(url: string | null, interval: PollInterval<T> = 3000) {
+  const intervalRef = useRef(interval);
+  intervalRef.current = interval;
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
@@ -71,7 +74,9 @@ export function usePoll<T>(url: string | null) {
     let active = true,
       timer: ReturnType<typeof setTimeout>,
       controller: AbortController | null = null,
-      failures = 0;
+      failures = 0,
+      lastResult: T | null = null,
+      lastStarted = -Infinity;
     setData(null);
     setError('');
     setLoading(!!url);
@@ -79,11 +84,13 @@ export function usePoll<T>(url: string | null) {
       clearTimeout(timer);
       controller?.abort();
       if (!url || !active || document.hidden) return;
+      lastStarted = Date.now();
       const request = new AbortController();
       controller = request;
       try {
         const result = await api<T>(url, { signal: request.signal });
         if (!active || request.signal.aborted) return;
+        lastResult = result;
         setData(result);
         setError('');
         failures = 0;
@@ -95,12 +102,13 @@ export function usePoll<T>(url: string | null) {
       } finally {
         if (active && !request.signal.aborted) {
           setLoading(false);
-          timer = setTimeout(
-            fetchData,
-            failures
-              ? Math.min(60000, 3000 * 2 ** Math.min(failures, 5)) + Math.random() * 1000
-              : 3000,
-          );
+          const configured = intervalRef.current;
+          const delay = failures
+            ? Math.min(60000, 3000 * 2 ** Math.min(failures, 5)) + Math.random() * 1000
+            : typeof configured === 'function'
+              ? configured(lastResult)
+              : configured;
+          if (delay !== false) timer = setTimeout(fetchData, delay);
         }
       }
     }
@@ -112,12 +120,18 @@ export function usePoll<T>(url: string | null) {
         controller?.abort();
       } else void fetchData();
     };
+    // Visibility and focus often fire together. Avoid an immediate duplicate fetch.
+    const focus = () => {
+      if (!document.hidden && Date.now() - lastStarted > 1000) void fetchData();
+    };
     document.addEventListener('visibilitychange', visibility);
+    window.addEventListener('focus', focus);
     return () => {
       active = false;
       clearTimeout(timer);
       controller?.abort();
       document.removeEventListener('visibilitychange', visibility);
+      window.removeEventListener('focus', focus);
     };
   }, [url]);
   const refresh = useCallback(() => reload.current(), []);

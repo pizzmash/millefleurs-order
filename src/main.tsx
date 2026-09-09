@@ -233,7 +233,7 @@ function GuestMenu({ navigate, barName }: { navigate: (path: string) => void; ba
     query.set('min', min);
     query.set('max', max);
   }
-  const { data, error, loading } = usePoll<Menu>(guestApi(`/menu?${query}`));
+  const { data, error, loading, refresh } = usePoll<Menu>(guestApi(`/menu?${query}`), false);
   useEffect(() => {
     const context = (
       document as Document & {
@@ -308,6 +308,9 @@ function GuestMenu({ navigate, barName }: { navigate: (path: string) => void; ba
           <span>種類のカクテル</span>
         </div>
       </section>
+      <button className="text-button" onClick={() => void refresh()}>
+        メニューを更新
+      </button>
       <div className="search-row">
         <div className="search-input">
           <Search size={19} />
@@ -459,11 +462,15 @@ function GuestMenu({ navigate, barName }: { navigate: (path: string) => void; ba
   );
 }
 function CocktailDetail({ id, navigate }: { id: string; navigate: (path: string) => void }) {
-  const { data: cocktail, error } = usePoll<Cocktail>(guestApi(`/cocktails/${id}`));
   const [busy, setBusy] = useState(false),
     [message, setMessage] = useState(''),
     [key, setKey] = useState(requestKey),
     [ordered, setOrdered] = useState(false);
+  const {
+    data: cocktail,
+    error,
+    refresh,
+  } = usePoll<Cocktail>(ordered ? null : guestApi(`/cocktails/${id}`), false);
   useLayoutEffect(() => {
     // Completion replaces the detail without navigation; reset after the DOM update.
     if (ordered) window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
@@ -481,6 +488,7 @@ function CocktailDetail({ id, navigate }: { id: string; navigate: (path: string)
     } catch (e) {
       setMessage((e as Error).message);
       if (e instanceof ApiError && e.status !== 0 && e.status < 500) setKey(requestKey());
+      if (e instanceof ApiError && e.status === 409) await refresh();
     } finally {
       setBusy(false);
     }
@@ -514,6 +522,9 @@ function CocktailDetail({ id, navigate }: { id: string; navigate: (path: string)
       <button className="back-button" onClick={() => navigate('/')}>
         <ArrowLeft size={18} />
         メニュー
+      </button>
+      <button className="text-button" onClick={() => void refresh()}>
+        最新の在庫を確認
       </button>
       {error && <Notice>{error}</Notice>}
       {!cocktail ? (
@@ -589,7 +600,15 @@ function OrderList({
     orders: Order[];
     more: boolean;
     pendingCount?: number;
-  }>(host ? `/api/host/orders?status=${status}&page=${page}` : guestApi(`/orders?page=${page}`));
+  }>(
+    host ? `/api/host/orders?status=${status}&page=${page}` : guestApi(`/orders?page=${page}`),
+    host
+      ? status === 'pending'
+        ? 3000
+        : 30000
+      : (result) =>
+          result?.orders.some((o) => o.status === 'pending') || result?.more ? 3000 : 30000,
+  );
   async function action(id: string, route: string, body: unknown, method = 'POST') {
     setBusy(id);
     setMessage('');
@@ -789,7 +808,7 @@ function Inventory() {
     drinks: Drink[];
     availableCount: number;
     catalogVersion: string;
-  }>('/api/host/inventory');
+  }>('/api/host/inventory', false);
   const [q, setQ] = useState(''),
     [filter, setFilter] = useState('all'),
     [busy, setBusy] = useState<number | null>(null),
@@ -827,6 +846,9 @@ function Inventory() {
         </div>
         <span className="small-summary">水・氷は常備</span>
       </section>
+      <button className="text-button" onClick={() => void refresh()}>
+        在庫を更新
+      </button>
       <div className="inventory-stats">
         <div>
           <span>ある材料</span>
@@ -923,6 +945,7 @@ type PublicBar = { id: string; name: string; acceptingOrders: boolean; inventory
 function Invite() {
   const { data, error, refresh } = usePoll<PublicBar & { inviteUrl: string }>(
     '/api/host/invitation',
+    false,
   );
   const [name, setName] = useState(''),
     [message, setMessage] = useState(''),
@@ -957,6 +980,9 @@ function Invite() {
         <div>
           <div className="eyebrow">INVITE YOUR GUESTS</div>
           <h1>客人をお迎えする</h1>
+          <button className="text-button" onClick={() => void refresh()}>
+            設定を更新
+          </button>
         </div>
       </section>
       <p>このQRコードを読み取って参加してもらってください。</p>
@@ -1269,7 +1295,10 @@ function GuestArea({ barId }: { barId: string }) {
   const { path, navigate: go } = useNavigation();
   const base = `/b/${barId}`;
   const navigate = (next: string) => go(base + (next === '/' ? '' : next));
-  const { data, error } = usePoll<{ guest: Guest; bar: PublicBar }>(`/api/b/${barId}/session`);
+  const { data, error } = usePoll<{ guest: Guest; bar: PublicBar }>(
+    `/api/b/${barId}/session`,
+    60000,
+  );
   const [expired, setExpired] = useState(false);
   useEffect(() => {
     const end = () => setExpired(true);

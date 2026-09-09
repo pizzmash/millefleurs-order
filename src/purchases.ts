@@ -6,7 +6,7 @@ export async function calculatePurchases(
   signal: AbortSignal,
 ): Promise<PurchaseRecommendation> {
   const input = await api<Versions & { drinks: Drink[]; cocktails: Cocktail[] }>(
-    '/api/host/purchase-input',
+    '/api/host/purchase-source',
     { signal },
   );
   if (signal.aborted) throw new DOMException('Aborted', 'AbortError');
