@@ -31,10 +31,10 @@ if (-not $conflict) {
     & netsh interface portproxy add v4tov4 listenaddress=$LanAddress listenport=$Port connectaddress=$WslAddress connectport=$Port
     if ($LASTEXITCODE -ne 0) { throw 'Failed to add port forwarding.' }
 }
-$ruleName = "Milleflewrs-HomeBar-$Port"
+$ruleName = "Millefleurs-HomeBar-$Port"
 $rule = Get-NetFirewallRule -Name $ruleName -ErrorAction SilentlyContinue
 if (-not $rule) {
-    New-NetFirewallRule -Name $ruleName -DisplayName "Milleflewrs Home Bar ($Port)" -Direction Inbound -Action Allow -Protocol TCP -LocalPort $Port -LocalAddress $LanAddress -RemoteAddress LocalSubnet -Profile Any | Out-Null
+    New-NetFirewallRule -Name $ruleName -DisplayName "Millefleurs Home Bar ($Port)" -Direction Inbound -Action Allow -Protocol TCP -LocalPort $Port -LocalAddress $LanAddress -RemoteAddress LocalSubnet -Profile Any | Out-Null
 } else {
     Write-Host "Firewall rule $ruleName already exists; its settings were preserved."
 }

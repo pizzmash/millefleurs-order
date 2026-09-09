@@ -27,8 +27,10 @@ LANのスマホから開発確認する場合はAPI側の`PUBLIC_APP_URL`をそ�
 
 各環境は別のPagesプロジェクト・API Worker・D1・Firebaseプロジェクトにします。
 
+本番のPagesとD1は`millefleurs-order`、API Workerは`millefleurs-order-api`を使います。設定生成はPages名をD1名に、Pages名に`-api`を付けた名前をWorker名に使い、環境名を自動追加しません。stagingを作る場合はPagesとD1に同じ別名（例: `millefleurs-order-staging`）を指定してください。`CLOUD_ENV`、`APP_ENV`、GitHub Environmentの`production`は配備先の識別と本番動作のため維持します。
+
 1. CloudflareへWranglerでログインするか、CIにデプロイ権限を限定したAPIトークンを設定します。
-2. `npx wrangler d1 create <環境別DB名>`でD1を作成し、返されたdatabase_idを控えます。
+2. `npx wrangler d1 create <環境別Pages名>`でPagesと同名のD1を作成し、返されたdatabase_idを控えます。
 3. `npx wrangler pages project create <環境別Pages名> --production-branch main`でPagesを作成します。
 4. FirebaseへWebアプリを登録し、Googleプロバイダーを有効にします。Authorized domainsに公開画面のドメインを登録します。popup方式なので通常はFirebase標準のauthDomainをそのまま使います。
 5. 以下を環境変数として設定し`npm run cloud:configure`を実行します。
@@ -101,7 +103,7 @@ CloudflareのMy Profile → API Tokensでカスタムトークンを作成しま
 | CLOUDFLARE_ACCOUNT_ID | 現在配備している本番のAccount ID |
 | CLOUDFLARE_D1_ID | 既存の本番D1のdatabase_id |
 | CLOUDFLARE_PAGES_PROJECT | 既存の本番Pagesプロジェクト名 |
-| PUBLIC_APP_URL | 本番の正規URL（例: https://milleflewrs-order.pages.dev） |
+| PUBLIC_APP_URL | 本番の正規URL（例: https://millefleurs-order.pages.dev） |
 | FIREBASE_PROJECT_ID | 本番FirebaseのprojectId |
 | VITE_FIREBASE_API_KEY | 同じFirebase WebアプリのapiKey |
 | VITE_FIREBASE_AUTH_DOMAIN | 同じWebアプリのauthDomain |

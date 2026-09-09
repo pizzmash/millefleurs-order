@@ -1,8 +1,8 @@
-# Milleflewrs — Home Bar
+# Millefleurs — Home Bar
 
 **自宅の在庫を、客人が注文できるカクテルメニューに。**
 
-Milleflewrsは、ホームバーでの「何が作れる？」「何を飲む？」をつなぐWebアプリです。家主が手持ちの材料を登録すると、客人は招待QRから参加し、作れるカクテルを選んで注文できます。家主はGoogleアカウントでログインし、客人はニックネームだけで参加します。
+Millefleursは、ホームバーでの「何が作れる？」「何を飲む？」をつなぐWebアプリです。家主が手持ちの材料を登録すると、客人は招待QRから参加し、作れるカクテルを選んで注文できます。家主はGoogleアカウントでログインし、客人はニックネームだけで参加します。
 
 React / TypeScriptで画面を構築し、Cloudflare Pages・Workers・D1とFirebase Authenticationで動作します。
 
@@ -76,8 +76,8 @@ Pagesが画面を配信し、Pages FunctionsからService bindingでAPI Worker�
 ### 1. 取得と依存関係の導入
 
 ```sh
-git clone https://github.com/pizzmash/milleflewrs-order.git
-cd milleflewrs-order
+git clone https://github.com/pizzmash/millefleurs-order.git
+cd millefleurs-order
 npm ci
 ```
 
@@ -217,7 +217,7 @@ docs/                公開運用手順・旧LAN版の記録
 
 ## コントリビューション
 
-不具合報告・改善提案は[Issues](https://github.com/pizzmash/milleflewrs-order/issues)へお願いします。不具合には再現手順、期待する動作と実際の結果、OS・ブラウザー・Node.jsのバージョンを添えてください。ログや画像から、認証トークン、Cookie、招待URL、個人情報を取り除いてください。
+不具合報告・改善提案は[Issues](https://github.com/pizzmash/millefleurs-order/issues)へお願いします。不具合には再現手順、期待する動作と実際の結果、OS・ブラウザー・Node.jsのバージョンを添えてください。ログや画像から、認証トークン、Cookie、招待URL、個人情報を取り除いてください。
 
 変更を提案する場合は、次の流れでPRを作成してください。
 

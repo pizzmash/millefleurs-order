@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "milleflewrs-local",
+  "name": "millefleurs-local",
   "pages_build_output_dir": "dist",
   "compatibility_date": "2026-09-07",
-  "services": [{ "binding": "API", "service": "milleflewrs-api-local" }]
+  "services": [{ "binding": "API", "service": "millefleurs-api-local" }]
 }

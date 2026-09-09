@@ -146,7 +146,7 @@ try {
     const qrPage = await context.newPage();
     for (const inviteUrl of [
       `${origin}/join/${at}`,
-      `https://milleflewrs-staging.example.com/join/${at}`,
+      `https://millefleurs-staging.example.com/join/${at}`,
     ]) {
       const svg = renderToStaticMarkup(
         createElement(InviteQr, { code: QRCode.create(inviteUrl, { errorCorrectionLevel: 'H' }) }),

@@ -10,7 +10,7 @@ import { setup } from './cloud-fixture';
 
 test('legacy migration: dry run, consistent backup, wrong-owner rejection and partial retry', async () => {
   const s = await setup();
-  const directory = mkdtempSync(join(tmpdir(), 'milleflewrs-migration-'));
+  const directory = mkdtempSync(join(tmpdir(), 'millefleurs-migration-'));
   try {
     const a = await s.bootstrap('alice');
     const source = join(directory, 'source.sqlite');

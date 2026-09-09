@@ -57,7 +57,7 @@ export function isImage(bytes: Uint8Array, type: string): boolean {
 export async function probeImage(url: string): Promise<ProbeResult> {
   try {
     const response = await fetch(url, {
-      headers: { 'User-Agent': 'MilleflewrsImageUrlChecker/1.0', Accept: 'image/*' },
+      headers: { 'User-Agent': 'MillefleursImageUrlChecker/1.0', Accept: 'image/*' },
       redirect: 'error',
       signal: AbortSignal.timeout(12000),
     });
