@@ -26,9 +26,12 @@ jobs:
       - name: Disable unused Google Chrome APT repository
         # Playwright downloads its own Chromium; Chrome's APT index can be inconsistent.
         run: |
-          if [[ -f /etc/apt/sources.list.d/google-chrome.list ]]; then
-            sudo mv /etc/apt/sources.list.d/google-chrome.list /etc/apt/sources.list.d/google-chrome.list.disabled
-          fi
+          for source in /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/*.sources; do
+            if [[ -f "$source" ]] && grep -Eq 'https?://dl\.google\.com/linux/chrome(-stable)?/deb' "$source"; then
+              echo "Disabling Chrome APT source: $source"
+              sudo mv "$source" "$source.disabled"
+            fi
+          done
       - run: npx playwright install --with-deps chromium
       - run: npm run test:browser
 
