@@ -47,6 +47,16 @@ test('generated and legacy Pages configs pass real deploy validation before auth
     const path = resolve(directory, '.runtime/cloud/production.pages.json');
     const config = JSON.parse(readFileSync(path, 'utf8'));
     assert.equal(config.account_id, undefined);
+    const worker = JSON.parse(
+      readFileSync(resolve(directory, '.runtime/cloud/production.worker.json'), 'utf8'),
+    );
+    assert.equal(config.name, env.CLOUDFLARE_PAGES_PROJECT);
+    assert.equal(worker.name, `${env.CLOUDFLARE_PAGES_PROJECT}-api`);
+    assert.equal(worker.d1_databases[0].database_name, env.CLOUDFLARE_PAGES_PROJECT);
+    assert.equal(worker.d1_databases[0].database_id, env.CLOUDFLARE_D1_ID);
+    assert.deepEqual(config.services, [{ binding: 'API', service: worker.name }]);
+    assert.deepEqual(config.env.preview.services, []);
+    assert.equal(worker.vars.APP_ENV, 'production');
     for (const legacy of [false, true]) {
       if (legacy)
         writeFileSync(path, JSON.stringify({ ...config, account_id: env.CLOUDFLARE_ACCOUNT_ID }));

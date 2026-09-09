@@ -150,7 +150,7 @@ function Header({ host, navigate }: { host: boolean; navigate: (path: string) =>
           <BrandIcon size={22} />
         </span>
         <span>
-          Milleflewrs<small>HOME BAR</small>
+          Millefleurs<small>HOME BAR</small>
         </span>
       </button>
       <span className="header-label">{host ? 'HOST COUNTER' : 'WELCOME'}</span>
@@ -191,7 +191,7 @@ function Join({
       <div className="eyebrow">MAKE YOURSELF AT HOME</div>
       <h1>今夜の一杯を。</h1>
       <p>
-        ようこそ、Milleflewrsへ。
+        ようこそ、Millefleursへ。
         <br />
         お名前を添えて、カクテルをお選びください。
       </p>
@@ -1021,7 +1021,7 @@ function Invite() {
             {qr ? (
               <div className="invite-card">
                 <div className="invite-card-heading">
-                  Milleflewrs<span>{data.name}</span>
+                  Millefleurs<span>{data.name}</span>
                 </div>
                 <InviteQr code={qr} />
                 <div className="invite-card-caption">

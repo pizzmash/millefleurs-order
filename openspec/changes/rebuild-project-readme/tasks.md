@@ -29,5 +29,5 @@
 
 ## 提出先
 
-- PR: https://github.com/pizzmash/milleflewrs-order/pull/6
+- PR: https://github.com/pizzmash/millefleurs-order/pull/6
 - ブランチ: `codex/readme-overhaul` → `main`

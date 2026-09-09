@@ -7,7 +7,7 @@
 クローン先の親ディレクトリから、プロジェクトへ移動します。
 
 ```bash
-cd milleflewrs-order
+cd millefleurs-order
 ./scripts/setup.sh
 ```
 
@@ -128,7 +128,7 @@ netsh interface portproxy delete v4tov4 listenaddress='<設定時のPCのLANア�
 不要になった場合のみ、**Windowsの管理者PowerShell**で実行します。
 
 ```powershell
-Remove-NetFirewallRule -Name Milleflewrs-HomeBar-3001
+Remove-NetFirewallRule -Name Millefleurs-HomeBar-3001
 ```
 
 ## 開発と検証

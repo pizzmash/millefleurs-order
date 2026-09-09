@@ -16,7 +16,7 @@ const account = required('CLOUDFLARE_ACCOUNT_ID'),
 if (!/^[a-z0-9-]+$/.test(pages) || !/^[a-f0-9]{32}$/.test(account) || !/^[a-f0-9-]{36}$/.test(db))
   throw new Error('Check Cloudflare resource identifiers');
 const origin = publicOrigin(required('PUBLIC_APP_URL'));
-const worker = `${pages}-api-${environment}`;
+const worker = `${pages}-api`;
 const directory = resolve('.runtime/cloud');
 mkdirSync(directory, { recursive: true });
 writeFileSync(
@@ -33,7 +33,7 @@ writeFileSync(
       d1_databases: [
         {
           binding: 'DB',
-          database_name: `${pages}-${environment}`,
+          database_name: pages,
           database_id: db,
           migrations_dir: resolve('migrations'),
         },
