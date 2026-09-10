@@ -1399,8 +1399,7 @@ small {
   margin: 0 0 8px;
   font-size: 20px;
 }
-.popularity-summary p,
-.popularity-reset p {
+.popularity-summary p {
   line-height: 1.8;
   margin: 0 0 12px;
 }
@@ -1427,12 +1426,94 @@ small {
 .popularity-list li strong {
   white-space: nowrap;
 }
-.popularity-reset {
+/* Secondary maintenance actions and their shared confirmation. */
+.maintenance-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px 24px;
   border-top: 1px solid var(--line);
   padding-top: 24px;
 }
-.popularity-actions {
+.maintenance-action h3 {
+  margin: 0 0 6px;
+  font-size: 0.9375rem;
+}
+.maintenance-action p {
+  margin: 0;
+  font-size: 0.8125rem;
+}
+.invitation-renew {
+  margin-top: 32px;
+}
+.confirm-dialog {
+  width: calc(100% - 32px);
+  max-width: 440px;
+  max-height: calc(100svh - 32px);
+  margin: auto;
+  padding: 28px;
+  overflow-y: auto;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid #4b4539;
+  border-radius: 20px;
+  box-shadow: 0 24px 80px #0008;
+}
+.confirm-dialog::backdrop {
+  background: #080c0bcc;
+}
+.confirm-dialog-icon {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 20px;
+  color: var(--accent);
+  background: #d9b97a12;
+  border: 1px solid #d9b97a30;
+  border-radius: 50%;
+}
+.confirm-dialog h2 {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+.confirm-dialog-description p {
+  margin: 0 0 12px;
+  font-size: 0.875rem;
+}
+.confirm-dialog-note {
+  margin: 20px 0 0;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: var(--bg);
+  font-size: 0.8125rem;
+}
+.confirm-dialog-error {
+  color: #f1b5ab;
+  font-size: 0.875rem;
+}
+.confirm-dialog-actions {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
   gap: 12px;
-  flex-wrap: wrap;
+  margin-top: 28px;
+}
+.confirm-dialog-actions button {
+  padding: 12px;
+  font-size: 0.875rem;
+}
+.confirm-dialog-submit {
+  background: #e3b8a6;
+  color: #291b15;
+}
+@media (max-width: 380px) {
+  .confirm-dialog {
+    padding: 24px 20px;
+  }
+  .confirm-dialog-actions {
+    grid-template-columns: 1fr;
+  }
 }

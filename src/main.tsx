@@ -32,6 +32,7 @@ import {
 } from 'lucide-react';
 import QRCode from 'qrcode';
 import { BrandIcon, InviteQr } from './InviteQr';
+import { ConfirmDialog } from './ConfirmDialog';
 import { api, ApiError, guestApi, requestKey, usePoll } from './api';
 import type { Cocktail, Drink, Guest, Menu, Order, OrderCounts } from '../shared/types';
 import '@fontsource-variable/noto-sans-jp';
@@ -816,6 +817,7 @@ function HostOrderCounts() {
   const [keyword, setKeyword] = useState('');
   const [page, setPage] = useState(1);
   const [confirming, setConfirming] = useState(false);
+  const [resetError, setResetError] = useState('');
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState('');
   const { data, error, loading, refresh } = usePoll<OrderCounts>(
@@ -824,17 +826,21 @@ function HostOrderCounts() {
   );
   async function reset() {
     setBusy(true);
+    setResetError('');
     setMessage('');
+    let succeeded = false;
     try {
       await api('/api/host/order-counts/reset', { method: 'POST', body: '{}' });
-      setConfirming(false);
-      setMessage('注文数をリセットしました。');
+      succeeded = true;
     } catch (e) {
-      setConfirming(false);
-      setMessage((e as Error).message);
+      setResetError((e as Error).message);
     } finally {
       await refresh();
       setBusy(false);
+      if (succeeded) {
+        setConfirming(false);
+        setMessage('注文数をリセットしました。');
+      }
     }
   }
   return (
@@ -842,7 +848,7 @@ function HostOrderCounts() {
       <div className="popularity-summary">
         <div>
           <h2>この家の注文数</h2>
-          <p>受付が成立した杯数です。リセット後は0から集計します。</p>
+          <p>受付が成立した杯数です。</p>
         </div>
         <strong>合計 {data?.totalCount ?? '—'} 杯</strong>
       </div>
@@ -883,33 +889,38 @@ function HostOrderCounts() {
           </>
         )
       )}
-      <div className="popularity-reset">
-        {confirming ? (
-          <div role="group" aria-label="注文数リセットの確認">
-            <p>
-              この家の全カクテルの注文数を0に戻します。元に戻せません。注文履歴・受付中の注文は残ります。
-            </p>
-            <div className="popularity-actions">
-              <button disabled={busy} onClick={() => setConfirming(false)}>
-                キャンセル
-              </button>
-              <button disabled={busy} onClick={reset}>
-                {busy ? 'リセット中…' : '全注文数を0にする'}
-              </button>
-            </div>
-          </div>
-        ) : (
-          <button
-            disabled={busy || !data}
-            onClick={() => {
-              setMessage('');
-              setConfirming(true);
-            }}
-          >
-            注文数をリセット
-          </button>
-        )}
+      <div className="maintenance-action popularity-reset">
+        <div>
+          <h3>注文数のリセット</h3>
+          <p id="reset-description">リセット後は0から集計します。</p>
+        </div>
+        <button
+          className="secondary"
+          aria-describedby="reset-description"
+          disabled={busy || !data}
+          onClick={() => {
+            setMessage('');
+            setResetError('');
+            setConfirming(true);
+          }}
+        >
+          注文数をリセット
+        </button>
       </div>
+      {confirming && (
+        <ConfirmDialog
+          title="注文数をリセットしますか？"
+          note="注文履歴・受付中の注文は残ります。"
+          confirmLabel="全注文数を0にする"
+          pendingLabel="リセット中…"
+          busy={busy}
+          error={resetError}
+          onCancel={() => setConfirming(false)}
+          onConfirm={reset}
+        >
+          <p>この家の全カクテルの注文数を0に戻します。この操作は元に戻せません。</p>
+        </ConfirmDialog>
+      )}
     </section>
   );
 }
@@ -1057,7 +1068,8 @@ function Invite() {
   const [name, setName] = useState(''),
     [message, setMessage] = useState(''),
     [busy, setBusy] = useState(false),
-    [confirmRotate, setConfirmRotate] = useState(false);
+    [confirmRotate, setConfirmRotate] = useState(false),
+    [rotateError, setRotateError] = useState('');
   useEffect(() => {
     if (data) setName(data.name);
   }, [data?.name]);
@@ -1069,14 +1081,18 @@ function Invite() {
     /* visible fallback below */
   }
   async function update(path: string, method: string, value: unknown) {
+    const rotating = path === '/api/host/invitation/rotate';
     setBusy(true);
+    setRotateError('');
     setMessage('');
     try {
       await api(path, { method, body: JSON.stringify(value) });
       await refresh();
       setConfirmRotate(false);
+      if (rotating) setMessage('招待リンクを再発行しました。');
     } catch (e) {
-      setMessage((e as Error).message);
+      if (rotating) setRotateError((e as Error).message);
+      else setMessage((e as Error).message);
     } finally {
       setBusy(false);
     }
@@ -1153,25 +1169,38 @@ function Invite() {
           >
             URLをコピー
           </button>
-          <p>
-            リンクを再発行すると、以前のQRと客人の参加状態が無効になります。注文履歴は残ります。
-          </p>
-          {confirmRotate ? (
-            <>
-              <button
-                disabled={busy}
-                onClick={() => update('/api/host/invitation/rotate', 'POST', {})}
-              >
-                再発行して以前の招待を無効にする
-              </button>
-              <button className="text-button" onClick={() => setConfirmRotate(false)}>
-                戻る
-              </button>
-            </>
-          ) : (
-            <button className="secondary" onClick={() => setConfirmRotate(true)}>
+          <div className="maintenance-action invitation-renew">
+            <div>
+              <h3>招待リンクの更新</h3>
+              <p id="renew-description">招待し直したいときに、新しいリンクを発行できます。</p>
+            </div>
+            <button
+              className="secondary"
+              aria-describedby="renew-description"
+              disabled={busy}
+              onClick={() => {
+                setMessage('');
+                setRotateError('');
+                setConfirmRotate(true);
+              }}
+            >
               招待リンクを再発行
             </button>
+          </div>
+          {confirmRotate && (
+            <ConfirmDialog
+              title="招待リンクを再発行しますか？"
+              note="注文履歴・受付中の注文は残ります。"
+              confirmLabel="再発行する"
+              pendingLabel="再発行中…"
+              busy={busy}
+              error={rotateError}
+              onCancel={() => setConfirmRotate(false)}
+              onConfirm={() => update('/api/host/invitation/rotate', 'POST', {})}
+            >
+              <p>以前のリンク・QRコードは使えなくなります。</p>
+              <p>参加中の客人には、新しいリンクから参加し直してもらってください。</p>
+            </ConfirmDialog>
           )}
         </>
       )}
