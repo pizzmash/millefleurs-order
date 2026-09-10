@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
-import { chromium } from '@playwright/test';
+import { chromium, expect } from '@playwright/test';
+import { verifyConfirmation } from './confirmation-browser';
 import { mkdirSync, readdirSync } from 'node:fs';
 import { Hono } from 'hono';
 import { serve } from '@hono/node-server';
@@ -295,8 +296,18 @@ try {
     await hostPage.getByText('該当するカクテルはありません。').waitFor();
     await hostPage.getByLabel('注文数をカクテル名で検索').fill('');
     await hostPage.locator('.popularity-list li').first().waitFor();
-    await hostPage.getByRole('button', { name: '注文数をリセット', exact: true }).click();
-    await hostPage.getByRole('button', { name: 'キャンセル', exact: true }).click();
+    await expect(hostPage.locator('.popularity-reset')).toContainText(
+      'リセット後は0から集計します。',
+    );
+    await expect(hostPage.locator('.popularity-summary')).not.toContainText('リセット後');
+    await verifyConfirmation(hostPage, {
+      trigger: '注文数をリセット',
+      title: '注文数をリセットしますか？',
+      confirm: '全注文数を0にする',
+      pending: 'リセット中…',
+      endpoint: '**/api/host/order-counts/reset',
+      screenshot: 'confirm-reset',
+    });
     assert.equal(await hostPage.locator('.popularity-summary > strong').textContent(), countBefore);
     for (const width of [320, 390, 768, 1280]) {
       await hostPage.setViewportSize({ width, height: 844 });
@@ -307,22 +318,14 @@ try {
       });
     }
     await hostPage.setViewportSize({ width: 390, height: 844 });
-    await hostPage.route('**/api/host/order-counts/reset', (route) =>
-      route.fulfill({
-        status: 503,
-        contentType: 'application/json',
-        body: JSON.stringify({ error: 'リセット失敗のテスト' }),
-      }),
-    );
-    await hostPage.getByRole('button', { name: '注文数をリセット', exact: true }).click();
-    await hostPage.getByRole('button', { name: '全注文数を0にする', exact: true }).click();
-    await hostPage.getByText('リセット失敗のテスト').waitFor();
-    assert.equal(await hostPage.locator('.popularity-summary > strong').textContent(), countBefore);
-    await hostPage.unroute('**/api/host/order-counts/reset');
     await hostPage.getByRole('button', { name: '注文数をリセット', exact: true }).click();
     await hostPage.getByRole('button', { name: '全注文数を0にする', exact: true }).click();
     await hostPage.getByText('合計 0 杯', { exact: true }).waitFor();
     await hostPage.getByText('注文数をリセットしました。').waitFor();
+    await expect(hostPage.getByRole('dialog')).toHaveCount(0);
+    await expect(
+      hostPage.getByRole('button', { name: '注文数をリセット', exact: true }),
+    ).toBeFocused();
     await hostPage.getByRole('button', { name: '提供完了の履歴', exact: true }).click();
     await hostPage.locator('.order-card').first().waitFor();
 
@@ -350,6 +353,28 @@ try {
       jsQR(new Uint8ClampedArray(invitePng.data), invitePng.width, invitePng.height)?.data,
       await hostPage.getByLabel('参加用URL').inputValue(),
     );
+
+    const invitationBefore = await hostPage.getByLabel('参加用URL').inputValue();
+    await verifyConfirmation(hostPage, {
+      trigger: '招待リンクを再発行',
+      title: '招待リンクを再発行しますか？',
+      confirm: '再発行する',
+      pending: '再発行中…',
+      endpoint: '**/api/host/invitation/rotate',
+      screenshot: 'confirm-invitation',
+    });
+    assert.equal(await hostPage.getByLabel('参加用URL').inputValue(), invitationBefore);
+    await hostPage.getByRole('button', { name: '招待リンクを再発行', exact: true }).click();
+    await hostPage
+      .getByRole('dialog')
+      .getByRole('button', { name: '再発行する', exact: true })
+      .click();
+    await hostPage.getByText('招待リンクを再発行しました。').waitFor();
+    await expect(hostPage.getByLabel('参加用URL')).not.toHaveValue(invitationBefore);
+    await expect(hostPage.getByRole('dialog')).toHaveCount(0);
+    await expect(
+      hostPage.getByRole('button', { name: '招待リンクを再発行', exact: true }),
+    ).toBeFocused();
 
     assert.equal(
       await hostPage.getByRole('button', { name: 'ログアウト', exact: true }).count(),
