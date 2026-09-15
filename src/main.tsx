@@ -17,6 +17,9 @@ import {
   ChevronLeft,
   ChevronRight,
   CircleAlert,
+  CircleCheck,
+  CircleX,
+  ArrowLeftRight,
   ClipboardList,
   GlassWater,
   ListFilter,
@@ -26,6 +29,7 @@ import {
   Package,
   QrCode,
   Search,
+  Settings,
   Sparkles,
   Wine,
   X,
@@ -38,6 +42,7 @@ import '@fontsource-variable/noto-sans-jp';
 import '@fontsource-variable/noto-serif-jp';
 import './style.css';
 import { auth, login, logout, useIdentity } from './auth';
+import { loginErrorMessage } from './login-error';
 import { PurchaseSuggestions } from './PurchaseSuggestions';
 
 function useNavigation() {
@@ -216,7 +221,15 @@ function Join({
     </main>
   );
 }
-function GuestMenu({ navigate, barName }: { navigate: (path: string) => void; barName: string }) {
+function GuestMenu({
+  navigate,
+  barName,
+  host = false,
+}: {
+  navigate: (path: string) => void;
+  barName: string;
+  host?: boolean;
+}) {
   const [q, setQ] = useState(''),
     [kind, setKind] = useState(''),
     [strength, setStrength] = useState(''),
@@ -233,8 +246,12 @@ function GuestMenu({ navigate, barName }: { navigate: (path: string) => void; ba
     query.set('min', min);
     query.set('max', max);
   }
-  const { data, error, loading } = usePoll<Menu>(guestApi(`/menu?${query}`), false);
+  const { data, error, loading } = usePoll<Menu>(
+    host ? `/api/host/menu?${query}` : guestApi(`/menu?${query}`),
+    false,
+  );
   useEffect(() => {
+    if (host) return;
     const context = (
       document as Document & {
         modelContext?: {
@@ -300,12 +317,12 @@ function GuestMenu({ navigate, barName }: { navigate: (path: string) => void; ba
       <section className="page-heading">
         <div>
           <div className="eyebrow">THE MENU</div>
-          <h1>今夜のメニュー</h1>
-          <p className="page-context">{barName} · 人気順</p>
+          <h1>{host ? 'カクテル一覧' : '今夜のメニュー'}</h1>
+          <p className="page-context">{host ? '作れる順 · 注文数順' : `${barName} · 人気順`}</p>
         </div>
         <div className="menu-count">
           <strong>{data?.availableTotal ?? '—'}</strong>
-          <span>種類のカクテル</span>
+          <span>{host ? '種類が作れます' : '種類のカクテル'}</span>
         </div>
       </section>
       <div className="search-row">
@@ -381,7 +398,11 @@ function GuestMenu({ navigate, barName }: { navigate: (path: string) => void; ba
       )}
       <div className="menu-toolbar">
         <span>
-          {kind || strength || q ? `${data?.total ?? '—'} 件の検索結果` : 'いま作れるカクテル'}
+          {kind || strength || q
+            ? `${data?.total ?? '—'} 件の検索結果`
+            : host
+              ? 'すべてのカクテル'
+              : 'いま作れるカクテル'}
           {(kind || strength) && (
             <button className="text-button" onClick={reset}>
               条件をクリア
@@ -403,23 +424,40 @@ function GuestMenu({ navigate, barName }: { navigate: (path: string) => void; ba
               <button
                 key={c.id}
                 className="cocktail-card"
-                onClick={() => navigate(`/cocktails/${c.id}`)}
+                onClick={() => navigate(`${host ? '/host' : ''}/cocktails/${c.id}`)}
               >
                 <Photo src={c.image} name={c.name} />
                 <div className="card-body">
                   <span className="card-technique">{c.technique}</span>
                   <h2>{c.name}</h2>
-                  <p className="card-ingredients">
-                    {c.ingredients
-                      .slice(0, 3)
-                      .map((i) => i.name)
-                      .join(' / ')}
-                  </p>
+                  {!host && (
+                    <p className="card-ingredients">
+                      {c.ingredients
+                        .slice(0, 3)
+                        .map((i) => i.name)
+                        .join(' / ')}
+                    </p>
+                  )}
                   <div className="card-bottom">
                     <span>{c.alcohol ? c.alcohol.replace(/^度数\s*/, '') : '度数不明'}</span>
-                    <ArrowRight size={16} />
+                    {host ? (
+                      <span
+                        className={`cocktail-readiness ${c.available ? 'owned' : 'missing'}`}
+                        role="img"
+                        aria-label={c.available ? '作れる' : '材料不足'}
+                        title={c.available ? '作れる' : '材料不足'}
+                      >
+                        {c.available ? (
+                          <CircleCheck size={18} aria-hidden="true" />
+                        ) : (
+                          <CircleX size={18} aria-hidden="true" />
+                        )}
+                      </span>
+                    ) : (
+                      <ArrowRight size={16} />
+                    )}
                   </div>
-                  {c.substitution && (
+                  {!host && c.substitution && (
                     <span className="substitution">
                       <Sparkles size={12} />
                       同じ種類の材料で代用
@@ -437,12 +475,12 @@ function GuestMenu({ navigate, barName }: { navigate: (path: string) => void; ba
         data && (
           <Empty
             title={
-              data.availableTotal === 0
+              !host && data.availableTotal === 0
                 ? 'メニューを準備しています'
                 : '該当するカクテルがありません'
             }
           >
-            {data.availableTotal === 0 ? (
+            {!host && data.availableTotal === 0 ? (
               '家主が材料を登録すると、作れるカクテルがここに並びます。'
             ) : (
               <>
@@ -458,7 +496,21 @@ function GuestMenu({ navigate, barName }: { navigate: (path: string) => void; ba
     </main>
   );
 }
-function CocktailDetail({ id, navigate }: { id: string; navigate: (path: string) => void }) {
+function ingredientTone(i: Cocktail['ingredients'][number]) {
+  return i.substitute ? 'substitutable' : i.candidates.length ? 'owned' : 'missing';
+}
+function ingredientStatus(i: Cocktail['ingredients'][number]) {
+  return i.substitute ? '代用可能' : i.candidates.length ? '手元にある' : '不足';
+}
+function CocktailDetail({
+  id,
+  navigate,
+  host = false,
+}: {
+  id: string;
+  navigate: (path: string) => void;
+  host?: boolean;
+}) {
   const [busy, setBusy] = useState(false),
     [message, setMessage] = useState(''),
     [key, setKey] = useState(requestKey),
@@ -467,13 +519,16 @@ function CocktailDetail({ id, navigate }: { id: string; navigate: (path: string)
     data: cocktail,
     error,
     refresh,
-  } = usePoll<Cocktail>(ordered ? null : guestApi(`/cocktails/${id}`), false);
+  } = usePoll<Cocktail>(
+    ordered ? null : host ? `/api/host/cocktails/${id}` : guestApi(`/cocktails/${id}`),
+    false,
+  );
   useLayoutEffect(() => {
     // Completion replaces the detail without navigation; reset after the DOM update.
     if (ordered) window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [ordered]);
   async function order() {
-    if (!cocktail) return;
+    if (host || !cocktail) return;
     setBusy(true);
     setMessage('');
     try {
@@ -516,9 +571,9 @@ function CocktailDetail({ id, navigate }: { id: string; navigate: (path: string)
     );
   return (
     <main className="content narrow">
-      <button className="back-button" onClick={() => navigate('/')}>
+      <button className="back-button" onClick={() => navigate(host ? '/host/cocktails' : '/')}>
         <ArrowLeft size={18} />
-        メニュー
+        {host ? 'カクテル一覧' : 'メニュー'}
       </button>
       {error && <Notice>{error}</Notice>}
       {!cocktail ? (
@@ -548,10 +603,34 @@ function CocktailDetail({ id, navigate }: { id: string; navigate: (path: string)
           <h2 className="section-label">材料</h2>
           <div className="recipe-list">
             {cocktail.ingredients.map((i) => (
-              <div key={i.id}>
-                <span>
-                  {i.name}
-                  {i.substitute && <small>同じ種類の材料で代用</small>}
+              <div key={i.id} className={host ? ingredientTone(i) : undefined}>
+                <span className={host ? 'recipe-material' : undefined}>
+                  {host && (
+                    <span
+                      className="material-icon"
+                      role="img"
+                      aria-label={ingredientStatus(i)}
+                      title={ingredientStatus(i)}
+                    >
+                      {i.substitute ? (
+                        <ArrowLeftRight size={18} aria-hidden="true" />
+                      ) : i.candidates.length ? (
+                        <CircleCheck size={18} aria-hidden="true" />
+                      ) : (
+                        <CircleX size={18} aria-hidden="true" />
+                      )}
+                    </span>
+                  )}
+                  <span className="recipe-material-name">
+                    {i.name}
+                    {host
+                      ? i.substitute && (
+                          <small className="substitution-options">
+                            代用：{i.candidates.map((d) => d.name).join(' / ')}
+                          </small>
+                        )
+                      : i.substitute && <small>同じ種類の材料で代用</small>}
+                  </span>
                 </span>
                 <span>{i.quantity}</span>
               </div>
@@ -559,20 +638,24 @@ function CocktailDetail({ id, navigate }: { id: string; navigate: (path: string)
           </div>
           {cocktail.substitution && (
             <p className="hint">
-              代用品は家主が選びます。原レシピと味わいや度数が異なる場合があります。
+              {host
+                ? '代用すると、原レシピと味わいや度数が異なる場合があります。'
+                : '代用品は家主が選びます。原レシピと味わいや度数が異なる場合があります。'}
             </p>
           )}
           {message && <Notice>{message}</Notice>}
-          <div className="order-action">
-            <button disabled={busy || !cocktail.available} onClick={order}>
-              {busy
-                ? '注文を送信しています…'
-                : cocktail.available
-                  ? 'このカクテルを1杯注文'
-                  : '現在、材料が不足しています'}
-              {!busy && cocktail.available && <ArrowRight size={18} />}
-            </button>
-          </div>
+          {!host && (
+            <div className="order-action">
+              <button disabled={busy || !cocktail.available} onClick={order}>
+                {busy
+                  ? '注文を送信しています…'
+                  : cocktail.available
+                    ? 'このカクテルを1杯注文'
+                    : '現在、材料が不足しています'}
+                {!busy && cocktail.available && <ArrowRight size={18} />}
+              </button>
+            </div>
+          )}
         </>
       )}
     </main>
@@ -595,11 +678,7 @@ function OrderList({
     more: boolean;
     pendingCount?: number;
   }>(
-    host
-      ? status === 'counts'
-        ? null
-        : `/api/host/orders?status=${status}&page=${page}`
-      : guestApi(`/orders?page=${page}`),
+    host ? `/api/host/orders?status=${status}&page=${page}` : guestApi(`/orders?page=${page}`),
     host
       ? status === 'pending'
         ? 3000
@@ -660,21 +739,10 @@ function OrderList({
           >
             提供完了の履歴
           </button>
-          <button
-            className={status === 'counts' ? 'selected' : ''}
-            onClick={() => {
-              setStatus('counts');
-              setMessage('');
-            }}
-          >
-            注文数
-          </button>
         </div>
       )}
       {(error || message) && <Notice>{message || error}</Notice>}
-      {host && status === 'counts' ? (
-        <HostOrderCounts />
-      ) : loading && !data ? (
+      {loading && !data ? (
         <Loading />
       ) : data?.orders.length ? (
         <>
@@ -1049,7 +1117,7 @@ function Inventory() {
   );
 }
 type PublicBar = { id: string; name: string; acceptingOrders: boolean; inventoryVersion: number };
-function Invite() {
+function Invite({ mode = 'share' }: { mode?: 'share' | 'name' | 'access' }) {
   const { data, error, refresh } = usePoll<PublicBar & { inviteUrl: string }>(
     '/api/host/invitation',
     false,
@@ -1063,7 +1131,7 @@ function Invite() {
   }, [data?.name]);
   let qr: QRCode.QRCode | null = null;
   try {
-    if (data?.inviteUrl && !error)
+    if (mode === 'share' && data?.inviteUrl && !error)
       qr = QRCode.create(data.inviteUrl, { errorCorrectionLevel: 'H' });
   } catch {
     /* visible fallback below */
@@ -1075,6 +1143,7 @@ function Invite() {
       await api(path, { method, body: JSON.stringify(value) });
       await refresh();
       setConfirmRotate(false);
+      setMessage('設定を保存しました。');
     } catch (e) {
       setMessage((e as Error).message);
     } finally {
@@ -1082,103 +1151,121 @@ function Invite() {
     }
   }
   return (
-    <main className="content narrow">
+    <section className={mode === 'share' ? 'content narrow' : 'settings-detail'}>
       <section className="page-heading">
         <div>
           <div className="eyebrow">INVITE YOUR GUESTS</div>
-          <h1>客人をお迎えする</h1>
+          <h1>
+            {mode === 'share'
+              ? '客人をお迎えする'
+              : mode === 'name'
+                ? 'バーの名前'
+                : '注文受付・招待リンク'}
+          </h1>
         </div>
       </section>
-      <p>このQRコードを読み取って参加してもらってください。</p>
+      {mode === 'share' && <p>このQRコードを読み取って参加してもらってください。</p>}
       {error && <Notice>{error}</Notice>}
       {message && <Notice>{message}</Notice>}
       {data && !error && (
         <>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              void update('/api/host/bar', 'PATCH', { name });
-            }}
-          >
-            <label className="field-label">
-              バーの名前
-              <input
-                value={name}
-                maxLength={60}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </label>
-            <button disabled={busy || !name.trim()}>名前を保存</button>
-          </form>
-          <p>注文受付：{data.acceptingOrders ? '受付中' : '停止中'}</p>
-          <button
-            className="secondary"
-            disabled={busy}
-            onClick={() =>
-              update('/api/host/bar', 'PATCH', { acceptingOrders: !data.acceptingOrders })
-            }
-          >
-            {data.acceptingOrders ? '受付を停止する' : '受付を開始する'}
-          </button>
-          <div className="qr-panel">
-            {qr ? (
-              <div className="invite-card">
-                <div className="invite-card-heading">
-                  Millefleurs<span>{data.name}</span>
-                </div>
-                <InviteQr code={qr} />
-                <div className="invite-card-caption">
-                  <span>SCAN TO JOIN</span>
-                </div>
-              </div>
-            ) : (
-              <Notice>QRコードを生成できませんでした。</Notice>
-            )}
-          </div>
-          <label className="field-label">
-            参加用URL
-            <input readOnly value={data.inviteUrl} onFocus={(e) => e.target.select()} />
-          </label>
-          <button
-            className="secondary"
-            onClick={async () => {
-              try {
-                await navigator.clipboard.writeText(data.inviteUrl);
-                setMessage('参加用URLをコピーしました。');
-              } catch {
-                setMessage('参加用URLを選択してコピーしてください。');
+          {mode === 'name' && (
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                void update('/api/host/bar', 'PATCH', { name });
+              }}
+            >
+              <label className="field-label">
+                バーの名前
+                <input
+                  value={name}
+                  maxLength={60}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+              </label>
+              <button disabled={busy || !name.trim()}>名前を保存</button>
+            </form>
+          )}
+          {mode !== 'name' && <p>注文受付：{data.acceptingOrders ? '受付中' : '停止中'}</p>}
+          {mode === 'access' && (
+            <button
+              className="secondary"
+              disabled={busy}
+              onClick={() =>
+                update('/api/host/bar', 'PATCH', { acceptingOrders: !data.acceptingOrders })
               }
-            }}
-          >
-            URLをコピー
-          </button>
-          <p>
-            リンクを再発行すると、以前のQRと客人の参加状態が無効になります。注文履歴は残ります。
-          </p>
-          {confirmRotate ? (
+            >
+              {data.acceptingOrders ? '受付を停止する' : '受付を開始する'}
+            </button>
+          )}
+          {mode === 'share' && (
             <>
+              <div className="qr-panel">
+                {qr ? (
+                  <div className="invite-card">
+                    <div className="invite-card-heading">
+                      Millefleurs<span>{data.name}</span>
+                    </div>
+                    <InviteQr code={qr} />
+                    <div className="invite-card-caption">
+                      <span>SCAN TO JOIN</span>
+                    </div>
+                  </div>
+                ) : (
+                  <Notice>QRコードを生成できませんでした。</Notice>
+                )}
+              </div>
+              <label className="field-label">
+                参加用URL
+                <input readOnly value={data.inviteUrl} onFocus={(e) => e.target.select()} />
+              </label>
               <button
-                disabled={busy}
-                onClick={() => update('/api/host/invitation/rotate', 'POST', {})}
+                className="secondary"
+                onClick={async () => {
+                  try {
+                    await navigator.clipboard.writeText(data.inviteUrl);
+                    setMessage('参加用URLをコピーしました。');
+                  } catch {
+                    setMessage('参加用URLを選択してコピーしてください。');
+                  }
+                }}
               >
-                再発行して以前の招待を無効にする
-              </button>
-              <button className="text-button" onClick={() => setConfirmRotate(false)}>
-                戻る
+                URLをコピー
               </button>
             </>
-          ) : (
-            <button className="secondary" onClick={() => setConfirmRotate(true)}>
-              招待リンクを再発行
-            </button>
+          )}
+          {mode === 'access' && (
+            <>
+              <p>
+                リンクを再発行すると、以前のQRと客人の参加状態が無効になります。注文履歴は残ります。
+              </p>
+              {confirmRotate ? (
+                <>
+                  <button
+                    disabled={busy}
+                    onClick={() => update('/api/host/invitation/rotate', 'POST', {})}
+                  >
+                    再発行して以前の招待を無効にする
+                  </button>
+                  <button className="text-button" onClick={() => setConfirmRotate(false)}>
+                    戻る
+                  </button>
+                </>
+              ) : (
+                <button className="secondary" onClick={() => setConfirmRotate(true)}>
+                  招待リンクを再発行
+                </button>
+              )}
+            </>
           )}
         </>
       )}
-    </main>
+    </section>
   );
 }
-function Landing({ host = false }: { host?: boolean }) {
+function Landing() {
   const [error, setError] = useState(''),
     [busy, setBusy] = useState(false);
   return (
@@ -1200,8 +1287,8 @@ function Landing({ host = false }: { host?: boolean }) {
           try {
             await login();
             location.assign('/host');
-          } catch {
-            setError('ログインできませんでした。ポップアップを許可して再試行してください。');
+          } catch (e) {
+            setError(loginErrorMessage(e));
           } finally {
             setBusy(false);
           }
@@ -1210,22 +1297,28 @@ function Landing({ host = false }: { host?: boolean }) {
         {busy ? 'ログイン中…' : 'Googleで登録・ログイン'}
       </button>
       <p>客人の方は、家主から届いた招待QRを読み取ってください。</p>
-      {host && <a href="/">サービス案内へ</a>}
     </main>
   );
 }
 function HostArea() {
   const { user, ready } = useIdentity();
   const [registered, setRegistered] = useState(''),
-    [error, setError] = useState('');
+    [error, setError] = useState(''),
+    [needsName, setNeedsName] = useState(false);
   useEffect(() => {
     let active = true;
     setRegistered('');
     setError('');
     if (user)
-      api('/api/host/bootstrap', { method: 'POST', body: '{}' })
-        .then(() => {
-          if (active) setRegistered(user.uid);
+      api<{ bar: PublicBar & { nameConfigured: boolean } }>('/api/host/bootstrap', {
+        method: 'POST',
+        body: '{}',
+      })
+        .then(({ bar }) => {
+          if (active) {
+            setNeedsName(!bar.nameConfigured);
+            setRegistered(user.uid);
+          }
         })
         .catch((e) => {
           if (active) setError(e.message);
@@ -1242,7 +1335,7 @@ function HostArea() {
     return () => window.removeEventListener('host-session-expired', expired);
   }, []);
   if (!ready) return <Loading />;
-  if (!user) return <Landing host />;
+  if (!user) return <Landing />;
   if (error)
     return (
       <main className="content">
@@ -1254,6 +1347,7 @@ function HostArea() {
       </main>
     );
   if (registered !== user.uid) return <Loading />;
+  if (needsName) return <BarNameSetup key={user.uid} onDone={() => setNeedsName(false)} />;
   return (
     <HostContent
       key={user.uid}
@@ -1266,7 +1360,7 @@ function HostAccount({ displayName, email }: { displayName: string; email: strin
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   return (
-    <main className="content narrow">
+    <section className="settings-detail">
       <div className="eyebrow">YOUR ACCOUNT</div>
       <h1>アカウント</h1>
       <section className="account-card" aria-label="ログイン中のアカウント">
@@ -1299,23 +1393,135 @@ function HostAccount({ displayName, email }: { displayName: string; email: strin
         <LogOut size={18} aria-hidden="true" />
         {busy ? 'ログアウト中…' : 'ログアウト'}
       </button>
+    </section>
+  );
+}
+function BarNameSetup({ onDone }: { onDone: () => void }) {
+  const [name, setName] = useState(''),
+    [busy, setBusy] = useState(false),
+    [error, setError] = useState('');
+  async function submit(e: FormEvent) {
+    e.preventDefault();
+    setBusy(true);
+    setError('');
+    try {
+      await api('/api/host/bar', { method: 'PATCH', body: JSON.stringify({ name }) });
+      onDone();
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  }
+  return (
+    <main className="welcome">
+      <div className="eyebrow">WELCOME TO YOUR HOME BAR</div>
+      <h1>バーに名前をつけましょう</h1>
+      <p>客人をお迎えする、あなたのバーの名前です。あとから設定で変更できます。</p>
+      <p className="hint">
+        注文は受付中ではじまります。受付の停止は「設定」からいつでも変更できます。
+      </p>
+      <form onSubmit={submit}>
+        <label htmlFor="bar-name">バーの名前</label>
+        <input
+          id="bar-name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          maxLength={60}
+          placeholder="例：木漏れ日のバー"
+          required
+        />
+        {error && <Notice>{error}</Notice>}
+        <button disabled={busy || !name.trim()}>
+          {busy ? '保存しています…' : 'この名前ではじめる'}
+          <ArrowRight size={18} />
+        </button>
+      </form>
+    </main>
+  );
+}
+function HostSettings({
+  path,
+  navigate,
+  displayName,
+  email,
+}: {
+  path: string;
+  navigate: (path: string) => void;
+  displayName: string;
+  email: string | null;
+}) {
+  const item = path === '/host/account' ? 'account' : path.split('/')[3];
+  const entries = [
+    ['name', 'バーの名前', '客人に表示する名前を変更'],
+    ['access', '注文受付・招待リンク', '受付の開始・停止と招待リンクの再発行'],
+    ['counts', '注文数', 'カクテルごとの注文数とリセット'],
+    ['account', 'アカウント', 'ログイン情報とログアウト'],
+  ];
+  const detail = entries.some(([key]) => key === item);
+  return (
+    <main className="content narrow">
+      {detail ? (
+        <>
+          <button className="back-button" onClick={() => navigate('/host/settings')}>
+            <ArrowLeft size={18} />
+            設定一覧に戻る
+          </button>
+          {item === 'account' ? (
+            <HostAccount displayName={displayName} email={email} />
+          ) : item === 'counts' ? (
+            <HostOrderCounts />
+          ) : (
+            <Invite key={item} mode={item as 'name' | 'access'} />
+          )}
+        </>
+      ) : (
+        <>
+          <div className="eyebrow">YOUR PREFERENCES</div>
+          <h1>設定</h1>
+          <div className="settings-list">
+            {entries.map(([key, title, description]) => (
+              <button
+                className="settings-link"
+                key={key}
+                onClick={() => navigate(`/host/settings/${key}`)}
+              >
+                <span>
+                  <strong>{title}</strong>
+                  <small>{description}</small>
+                </span>
+                <ChevronRight size={20} />
+              </button>
+            ))}
+          </div>
+        </>
+      )}
     </main>
   );
 }
 function HostContent({ displayName, email }: { displayName: string; email: string | null }) {
   const { path, navigate } = useNavigation();
+  const detail = path.match(/^\/host\/cocktails\/(\d+)$/)?.[1];
   const tab =
-    path === '/host/account'
-      ? 'account'
-      : path.includes('inventory')
-        ? 'inventory'
-        : path.includes('invite')
-          ? 'invite'
-          : 'orders';
+    path.startsWith('/host/settings') || path === '/host/account'
+      ? 'settings'
+      : path.startsWith('/host/cocktails')
+        ? 'cocktails'
+        : path === '/host/inventory'
+          ? 'inventory'
+          : path === '/host/invite'
+            ? 'invite'
+            : 'orders';
   return (
     <>
-      {tab === 'account' ? (
-        <HostAccount displayName={displayName} email={email} />
+      {tab === 'settings' ? (
+        <HostSettings path={path} navigate={navigate} displayName={displayName} email={email} />
+      ) : tab === 'cocktails' ? (
+        detail ? (
+          <CocktailDetail key={detail} id={detail} navigate={navigate} host />
+        ) : (
+          <GuestMenu navigate={navigate} barName="" host />
+        )
       ) : tab === 'inventory' ? (
         <Inventory />
       ) : tab === 'invite' ? (
@@ -1324,27 +1530,22 @@ function HostContent({ displayName, email }: { displayName: string; email: strin
         <OrderList host />
       )}
       <nav className="bottom-nav" aria-label="家主メニュー">
-        {[
-          ['orders', '/host', '注文'],
-          ['inventory', '/host/inventory', '在庫'],
-          ['invite', '/host/invite', 'お迎え'],
-          ['account', '/host/account', 'アカウント'],
-        ].map(([key, path, label]) => (
+        {(
+          [
+            ['orders', '/host', '注文', ClipboardList],
+            ['cocktails', '/host/cocktails', 'カクテル', Martini],
+            ['inventory', '/host/inventory', '在庫', Package],
+            ['invite', '/host/invite', 'お迎え', QrCode],
+            ['settings', '/host/settings', '設定', Settings],
+          ] as const
+        ).map(([key, target, label, Icon]) => (
           <button
+            key={key}
             aria-current={tab === key ? 'page' : undefined}
             className={tab === key ? 'current' : ''}
-            key={key}
-            onClick={() => navigate(path)}
+            onClick={() => navigate(target)}
           >
-            {key === 'orders' ? (
-              <ClipboardList />
-            ) : key === 'inventory' ? (
-              <Package />
-            ) : key === 'account' ? (
-              <UserRound />
-            ) : (
-              <QrCode />
-            )}
+            <Icon />
             <span>{label}</span>
           </button>
         ))}

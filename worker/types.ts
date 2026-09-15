@@ -9,6 +9,7 @@ export type Bar = {
   id: string;
   owner_uid: string;
   name: string;
+  name_configured: number;
   accepting_orders: number;
   inventory_version: number;
   invite_version: number;

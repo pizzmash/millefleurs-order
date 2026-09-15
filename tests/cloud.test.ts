@@ -20,7 +20,12 @@ test('D1: two owners, scoped sessions, atomic ordering, invitation lifecycle', a
     const b = await s.bootstrap('bob');
     assert.equal(a.id, aAgain.id);
     assert.notEqual(a.id, b.id);
-    assert.equal(a.acceptingOrders, false);
+    assert.equal(a.acceptingOrders, true);
+    await request('/api/host/bar', {
+      uid: 'alice',
+      method: 'PATCH',
+      body: { acceptingOrders: false },
+    });
     const initial = await request('/api/host/invitation', { uid: 'alice' });
     const initialToken = ((await initial.json()) as any).inviteUrl.split('/').pop();
     assert.equal(

@@ -48,6 +48,7 @@ const presentBar = (b: Bar) => ({
   name: b.name,
   acceptingOrders: !!b.accepting_orders,
   inventoryVersion: b.inventory_version,
+  nameConfigured: !!b.name_configured,
 });
 function present(o: DbOrder, drinks: Drink[]): Order {
   return {
@@ -135,7 +136,19 @@ export function createCloudApp(
   app.get('/api/health', (c) => c.json({ ok: true }));
   app.use('/api/*', async (c, next) => {
     const origin = publicOrigin(c.env.PUBLIC_APP_URL, c.env.APP_ENV === 'local');
-    if (!['GET', 'HEAD'].includes(c.req.method) && c.req.header('Origin') !== origin)
+    const requestOrigin = c.req.header('Origin');
+    // Some embedded local browsers omit Origin. A custom header requires a CORS
+    // preflight from other sites, which this API does not authorize. Never use
+    // the fallback to override an explicit Origin or in deployed environments.
+    const localEmbeddedRequest =
+      c.env.APP_ENV === 'local' &&
+      requestOrigin === undefined &&
+      c.req.header('X-Millefleurs-Origin') === origin;
+    if (
+      !['GET', 'HEAD'].includes(c.req.method) &&
+      requestOrigin !== origin &&
+      !localEmbeddedRequest
+    )
       return c.json({ error: 'この画面から操作してください。' }, 403);
     await next();
   });
@@ -171,7 +184,7 @@ export function createCloudApp(
         'INSERT INTO users(firebase_uid,display_name,created_at) VALUES(?,?,?) ON CONFLICT(firebase_uid) DO NOTHING',
       ).bind(i.uid, i.name, new Date().toISOString()),
       c.env.DB.prepare(
-        "INSERT INTO bars(id,owner_uid,invite_token) SELECT ?,firebase_uid,? FROM users WHERE firebase_uid=? AND status='active' ON CONFLICT(owner_uid) DO NOTHING",
+        "INSERT INTO bars(id,owner_uid,invite_token,name_configured,accepting_orders) SELECT ?,firebase_uid,?,0,1 FROM users WHERE firebase_uid=? AND status='active' ON CONFLICT(owner_uid) DO NOTHING",
       ).bind(crypto.randomUUID(), randomToken(), i.uid),
     ]);
     const b = await c.env.DB.prepare(
@@ -194,9 +207,10 @@ export function createCloudApp(
     if (v.acceptingOrders !== undefined && typeof v.acceptingOrders !== 'boolean')
       return fail(400, '受付状態を確認してください。');
     await c.env.DB.prepare(
-      'UPDATE bars SET name=COALESCE(?,name),accepting_orders=COALESCE(?,accepting_orders) WHERE id=?',
+      'UPDATE bars SET name_configured=CASE WHEN ? IS NOT NULL THEN 1 ELSE name_configured END,name=COALESCE(?,name),accepting_orders=COALESCE(?,accepting_orders) WHERE id=?',
     )
       .bind(
+        typeof v.name === 'string' ? v.name.trim() : null,
         typeof v.name === 'string' ? v.name.trim() : null,
         typeof v.acceptingOrders === 'boolean' ? +v.acceptingOrders : null,
         b.id,
@@ -222,6 +236,32 @@ export function createCloudApp(
       .bind(randomToken(), b.id)
       .run();
     return c.json({ ok: true });
+  });
+  app.get('/api/host/menu', async (c) => {
+    const q = new URL(c.req.url).searchParams;
+    for (const key of ['min', 'max', 'kind', 'page']) {
+      const v = q.get(key);
+      if (
+        v &&
+        (!Number.isFinite(Number(v)) ||
+          Number(v) < 0 ||
+          (['kind', 'page'].includes(key) && !Number.isInteger(Number(v))))
+      )
+        return fail(400, '絞り込み条件を確認してください。');
+    }
+    if (q.get('min') && q.get('max') && Number(q.get('min')) > Number(q.get('max')))
+      return fail(400, '度数の下限は上限以下にしてください。');
+    const [data, counts] = await Promise.all([
+      catalog(c.env.DB, c.get('bar').id),
+      orderCounts(c.env.DB, c.get('bar').id),
+    ]);
+    return c.json(menu(data, q, new Map(counts.map((row) => [row.id, row.orderCount])), true));
+  });
+  app.get('/api/host/cocktails/:id', async (c) => {
+    const id = integer(Number(c.req.param('id')));
+    const { cocktail } = await catalogCocktail(c.env.DB, c.get('bar').id, id);
+    if (!cocktail) return fail(404, 'カクテルが見つかりません。');
+    return c.json(cocktail);
   });
   app.get('/api/host/inventory', async (c) => {
     const d = await catalog(c.env.DB, c.get('bar').id);

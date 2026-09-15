@@ -25,6 +25,8 @@ export async function api<T>(path: string, options: RequestInit = {}): Promise<T
     for (let attempt = 0; attempt < 2; attempt++) {
       const headers = new Headers(options.headers);
       if (options.body) headers.set('Content-Type', 'application/json');
+      if (!['GET', 'HEAD'].includes((options.method || 'GET').toUpperCase()))
+        headers.set('X-Millefleurs-Origin', location.origin);
       if (host) {
         if (!user) throw new ApiError('Googleでログインしてください。', 401);
         try {

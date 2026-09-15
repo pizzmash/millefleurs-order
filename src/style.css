@@ -381,6 +381,7 @@ small {
   min-height: 2.6em;
 }
 .card-bottom {
+  align-items: center;
   border-top: 1px solid var(--line);
   padding-top: 12px;
   display: flex;
@@ -425,6 +426,7 @@ small {
   padding: 3px 15px;
 }
 .bottom-nav button span {
+  white-space: nowrap;
   font-size: 0.75rem;
 }
 .bottom-nav .current {
@@ -1109,7 +1111,7 @@ small {
     min-width: 0;
     flex: 1;
     max-width: 180px;
-    padding: 3px 8px;
+    padding: 3px 4px;
   }
   .welcome {
     padding-top: 48px;
@@ -1435,4 +1437,77 @@ small {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+}
+
+.settings-list {
+  display: grid;
+  margin-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.settings-link {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  text-align: left;
+  background: transparent;
+  color: inherit;
+  border-radius: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 22px 4px;
+}
+.settings-link span {
+  min-width: 0;
+}
+.settings-link strong,
+.settings-link small {
+  display: block;
+}
+.settings-link small {
+  margin-top: 6px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.settings-link svg {
+  flex-shrink: 0;
+}
+.substitutable {
+  color: var(--accent);
+}
+.cocktail-readiness {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cocktail-readiness svg,
+.material-icon {
+  flex-shrink: 0;
+}
+.recipe-material {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+.material-icon {
+  display: inline-flex;
+  align-items: center;
+  height: 1.6em;
+}
+.recipe-material-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.recipe-list .substitution-options {
+  color: var(--accent);
+}
+.owned {
+  color: #b4d5ab;
+}
+.missing {
+  color: #e5b08b;
+}
+.menu-count {
+  flex-shrink: 0;
 }
