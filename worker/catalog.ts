@@ -119,11 +119,12 @@ export function menu(
   data: Awaited<ReturnType<typeof catalog>>,
   q: URLSearchParams,
   counts: Map<number, number> = new Map(),
+  host = false,
 ): Menu {
   const norm = (s: string) => s.normalize('NFKC').toLocaleLowerCase('ja');
   const available = data.cocktails.filter((c) => c.available);
   const keyword = norm((q.get('q') || '').trim());
-  const items = available.filter(
+  const items = (host ? data.cocktails : available).filter(
     (c) =>
       (!keyword ||
         norm(
@@ -136,11 +137,13 @@ export function menu(
       (!q.get('min') || (c.alcoholLow !== null && c.alcoholLow >= Number(q.get('min')))) &&
       (!q.get('max') || (c.alcoholHigh !== null && c.alcoholHigh <= Number(q.get('max')))),
   );
-  items.sort((a, b) =>
-    byPopularity(
-      { ...a, orderCount: counts.get(a.id) ?? 0 },
-      { ...b, orderCount: counts.get(b.id) ?? 0 },
-    ),
+  items.sort(
+    (a, b) =>
+      (host ? Number(b.available) - Number(a.available) : 0) ||
+      byPopularity(
+        { ...a, orderCount: counts.get(a.id) ?? 0 },
+        { ...b, orderCount: counts.get(b.id) ?? 0 },
+      ),
   );
   const pages = Math.max(1, Math.ceil(items.length / 24));
   const page = Math.min(pages, Math.max(1, Number(q.get('page')) || 1));

@@ -282,12 +282,63 @@ try {
         });
       }, uid);
       await hostPage.goto(`${origin}/host/inventory`);
+      if (uid === 'alice' || uid === 'bob') {
+        await hostPage.getByRole('heading', { name: 'バーに名前をつけましょう' }).waitFor();
+        await hostPage.reload();
+        await hostPage.getByRole('heading', { name: 'バーに名前をつけましょう' }).waitFor();
+        if (uid === 'alice') {
+          await hostPage.route('**/api/host/bar', (route) =>
+            route.fulfill({ status: 503, json: { error: '名前保存失敗のテスト' } }),
+          );
+          await hostPage.getByLabel('バーの名前').fill('初回の名前');
+          await hostPage.getByRole('button', { name: 'この名前ではじめる' }).click();
+          await hostPage.getByText('名前保存失敗のテスト').waitFor();
+          await hostPage.unroute('**/api/host/bar');
+        }
+        await hostPage.getByLabel('バーの名前').fill(`${uid}のバー`);
+        await hostPage.getByRole('button', { name: 'この名前ではじめる' }).click();
+      }
+      await hostPage.getByRole('switch', { name: '材料1の在庫' }).waitFor();
+      await hostPage.reload();
       await hostPage.getByRole('switch', { name: '材料1の在庫' }).waitFor();
     };
     await restore('alice');
     await verifyHostPolling(hostPage, origin);
     await hostPage.getByRole('button', { name: '注文', exact: true }).click();
-    await hostPage.getByRole('button', { name: '注文数', exact: true }).click();
+    assert.equal(await hostPage.getByRole('button', { name: '注文数', exact: true }).count(), 0);
+    await hostPage.getByRole('button', { name: 'カクテル', exact: true }).click();
+    await hostPage.locator('.cocktail-card').first().waitFor();
+    assert.equal(await hostPage.locator('.cocktail-card').count(), 2);
+    assert.equal(await hostPage.locator('.cocktail-readiness.owned').count(), 2);
+    assert.equal(await hostPage.locator('.cocktail-card .card-ingredients').count(), 0);
+    assert.equal(await hostPage.locator('.ingredient-legend').count(), 0);
+    assert.equal(
+      await hostPage.locator('.cocktail-card').filter({ hasText: '原材料なし' }).count(),
+      0,
+    );
+    await hostPage.locator('.cocktail-card').filter({ hasText: 'カクテル2' }).click();
+    await hostPage.locator('.recipe-list').waitFor();
+    assert.equal(await hostPage.getByRole('img', { name: '代用可能', exact: true }).count(), 1);
+    await hostPage.getByText('代用：材料1', { exact: true }).waitFor();
+    await hostPage.screenshot({
+      path: '.runtime/screenshots/host-detail-substitute.png',
+      fullPage: true,
+    });
+    assert.equal(await hostPage.locator('.order-action').count(), 0);
+    await hostPage.getByRole('button', { name: 'カクテル一覧', exact: true }).click();
+    await hostPage.locator('.cocktail-card').first().waitFor();
+    for (const width of [320, 390, 768, 1280]) {
+      await hostPage.setViewportSize({ width, height: 844 });
+      assert.ok(await hostPage.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+      await hostPage.screenshot({
+        path: `.runtime/screenshots/host-cocktails-${width}.png`,
+        fullPage: true,
+      });
+    }
+    await hostPage.setViewportSize({ width: 390, height: 844 });
+    await hostPage.getByRole('button', { name: '設定', exact: true }).click();
+    await hostPage.screenshot({ path: '.runtime/screenshots/host-settings.png', fullPage: true });
+    await hostPage.getByRole('button', { name: '注文数 カクテルごとの注文数とリセット' }).click();
     await hostPage.getByRole('heading', { name: 'この家の注文数' }).waitFor();
     await hostPage.locator('.popularity-list li').first().waitFor();
     const countBefore = await hostPage.locator('.popularity-summary > strong').textContent();
@@ -326,6 +377,7 @@ try {
     await expect(
       hostPage.getByRole('button', { name: '注文数をリセット', exact: true }),
     ).toBeFocused();
+    await hostPage.getByRole('button', { name: '注文', exact: true }).click();
     await hostPage.getByRole('button', { name: '提供完了の履歴', exact: true }).click();
     await hostPage.locator('.order-card').first().waitFor();
 
@@ -336,10 +388,19 @@ try {
       'true',
     );
     await hostPage.getByRole('button', { name: 'お迎え', exact: true }).click();
+    assert.equal(await hostPage.getByRole('button', { name: '名前を保存' }).count(), 0);
+    await hostPage.getByRole('button', { name: '設定', exact: true }).click();
+    await hostPage.getByRole('button', { name: 'バーの名前 客人に表示する名前を変更' }).click();
     await hostPage.getByLabel('バーの名前').fill('テストのホームバー');
     await hostPage.getByRole('button', { name: '名前を保存' }).click();
+    await hostPage.getByText('設定を保存しました。').waitFor();
+    await hostPage.getByRole('button', { name: '設定一覧に戻る' }).click();
+    await hostPage
+      .getByRole('button', { name: '注文受付・招待リンク 受付の開始・停止と招待リンクの再発行' })
+      .click();
     await hostPage.getByRole('button', { name: '受付を停止する' }).click();
     await hostPage.getByRole('button', { name: '受付を開始する' }).waitFor();
+    await hostPage.getByRole('button', { name: 'お迎え', exact: true }).click();
     await hostPage
       .locator('svg.invite-qr')
       .evaluate((element) => element.scrollIntoView({ block: 'center' }));
@@ -355,6 +416,10 @@ try {
     );
 
     const invitationBefore = await hostPage.getByLabel('参加用URL').inputValue();
+    await hostPage.getByRole('button', { name: '設定', exact: true }).click();
+    await hostPage
+      .getByRole('button', { name: '注文受付・招待リンク 受付の開始・停止と招待リンクの再発行' })
+      .click();
     await verifyConfirmation(hostPage, {
       trigger: '招待リンクを再発行',
       title: '招待リンクを再発行しますか？',
@@ -363,30 +428,31 @@ try {
       endpoint: '**/api/host/invitation/rotate',
       screenshot: 'confirm-invitation',
     });
-    assert.equal(await hostPage.getByLabel('参加用URL').inputValue(), invitationBefore);
     await hostPage.getByRole('button', { name: '招待リンクを再発行', exact: true }).click();
     await hostPage
       .getByRole('dialog')
       .getByRole('button', { name: '再発行する', exact: true })
       .click();
     await hostPage.getByText('招待リンクを再発行しました。').waitFor();
-    await expect(hostPage.getByLabel('参加用URL')).not.toHaveValue(invitationBefore);
     await expect(hostPage.getByRole('dialog')).toHaveCount(0);
     await expect(
       hostPage.getByRole('button', { name: '招待リンクを再発行', exact: true }),
     ).toBeFocused();
+    await hostPage.getByRole('button', { name: 'お迎え', exact: true }).click();
+    await expect(hostPage.getByLabel('参加用URL')).not.toHaveValue(invitationBefore);
 
     assert.equal(
       await hostPage.getByRole('button', { name: 'ログアウト', exact: true }).count(),
       0,
     );
-    await hostPage.getByRole('button', { name: 'アカウント', exact: true }).click();
+    await hostPage.getByRole('button', { name: '設定', exact: true }).click();
+    await hostPage.getByRole('button', { name: 'アカウント ログイン情報とログアウト' }).click();
     await hostPage.getByRole('heading', { name: 'アカウント', exact: true }).waitFor();
     await hostPage.getByRole('heading', { name: 'alice', exact: true }).waitFor();
     await hostPage.getByText('alice@example.com', { exact: true }).waitFor();
     assert.equal(
       await hostPage
-        .getByRole('button', { name: 'アカウント', exact: true })
+        .getByRole('button', { name: '設定', exact: true })
         .getAttribute('aria-current'),
       'page',
     );
@@ -414,6 +480,32 @@ try {
       await hostPage.getByRole('switch', { name: '材料1の在庫' }).getAttribute('aria-checked'),
       'false',
     );
+    await hostPage.getByRole('button', { name: 'カクテル', exact: true }).click();
+    await hostPage.locator('.cocktail-card').first().waitFor();
+    assert.equal(await hostPage.locator('.cocktail-readiness.missing').count(), 2);
+    assert.equal(await hostPage.locator('.availability').count(), 0);
+    assert.equal(await hostPage.locator('.cocktail-card .substitution').count(), 0);
+    await hostPage.locator('.cocktail-card').first().click();
+    await hostPage.locator('.recipe-list .missing').waitFor();
+    assert.equal(await hostPage.getByRole('img', { name: '不足', exact: true }).count(), 1);
+    assert.equal(await hostPage.locator('.ingredient-legend').count(), 0);
+    await hostPage.screenshot({
+      path: '.runtime/screenshots/host-detail-missing.png',
+      fullPage: true,
+    });
+    assert.equal(await hostPage.locator('.order-action').count(), 0);
+    await hostPage.getByRole('button', { name: '設定', exact: true }).click();
+    await hostPage
+      .getByRole('button', { name: '注文受付・招待リンク 受付の開始・停止と招待リンクの再発行' })
+      .click();
+    await hostPage.getByRole('button', { name: '招待リンクを再発行', exact: true }).click();
+    await hostPage.getByRole('button', { name: 'キャンセル', exact: true }).click();
+    await hostPage.getByRole('button', { name: '招待リンクを再発行', exact: true }).click();
+    await hostPage.getByRole('button', { name: '再発行する', exact: true }).click();
+    await hostPage.getByText('招待リンクを再発行しました。').waitFor();
+    await hostPage.getByRole('button', { name: 'お迎え', exact: true }).click();
+    await hostPage.getByLabel('参加用URL').waitFor();
+    assert.ok(!(await hostPage.getByLabel('参加用URL').inputValue()).endsWith(bt));
     await hostContext.close();
 
     assert.deepEqual(errors, []);

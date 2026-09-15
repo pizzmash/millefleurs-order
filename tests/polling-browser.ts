@@ -135,10 +135,21 @@ export async function verifyHostPolling(page: Page, origin: string) {
   await slow;
   assert.ok(count('/api/host/orders') > baseline);
   await page.getByRole('button', { name: 'お迎え', exact: true }).click();
-  await page.getByLabel('バーの名前').waitFor();
+  await page.getByLabel('参加用URL').waitFor();
   baseline = count('/api/host/invitation');
   await page.clock.runFor(7000);
   assert.equal(count('/api/host/invitation'), baseline, 'invitation must not poll');
+  await page.getByRole('button', { name: 'カクテル', exact: true }).click();
+  await page.locator('.cocktail-card').first().waitFor();
+  baseline = count('/api/host/menu');
+  await page.clock.runFor(31000);
+  assert.equal(count('/api/host/menu'), baseline, 'host catalog must not poll');
+  await page.locator('.cocktail-card').first().click();
+  await page.locator('.recipe-list').waitFor();
+  const detail = new URL(page.url()).pathname.replace('/host/', '/api/host/');
+  baseline = count(detail);
+  await page.clock.runFor(31000);
+  assert.equal(count(detail), baseline, 'host detail must not poll');
   await page.clock.resume();
 }
 
