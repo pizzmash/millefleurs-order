@@ -41,9 +41,8 @@ test('bar name setup persists only on valid name save, remains isolated and pres
     assert.equal((await s.bootstrap('bob')).nameConfigured, false);
     // Recreate the pre-migration schema to check existing rows receive the completed default.
     await s.db.exec('ALTER TABLE bars DROP COLUMN name_configured');
-    await s.db.exec(
-      readFileSync('migrations/0003_bar_name_setup.sql', 'utf8').replaceAll('\n', ' '),
-    );
+    // Preserve the file exactly: a standalone comment caused remote D1 error 7500.
+    await s.db.exec(readFileSync('migrations/0003_bar_name_setup.sql', 'utf8'));
     assert.equal((await s.bootstrap('alice')).nameConfigured, true);
     assert.equal((await s.bootstrap('bob')).nameConfigured, true);
   } finally {
